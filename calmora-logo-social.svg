@@ -1,0 +1,27 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="#f8f8f6"/>
+  
+  <!-- Central cooling wave icon -->
+  <g transform="translate(500, 380)">
+    <!-- Top wave -->
+    <path d="M -120 -40 Q -80 -60, -40 -40 T 40 -40 T 120 -40" 
+          stroke="#5BA8C6" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <!-- Middle wave -->
+    <path d="M -120 0 Q -80 -20, -40 0 T 40 0 T 120 0" 
+          stroke="#5BA8C6" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <!-- Bottom wave -->
+    <path d="M -120 40 Q -80 20, -40 40 T 40 40 T 120 40" 
+          stroke="#5BA8C6" stroke-width="16" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Brand name -->
+  <text x="500" y="620" font-family="system-ui, -apple-system, sans-serif" 
+        font-size="120" font-weight="300" fill="#2b2b2b" 
+        text-anchor="middle">Calmora</text>
+  
+  <!-- Tagline -->
+  <text x="500" y="690" font-family="system-ui, -apple-system, sans-serif" 
+        font-size="32" font-weight="400" fill="#666" 
+        text-anchor="middle">Cooling relief in minutes</text>
+</svg>
