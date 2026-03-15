@@ -1,4 +1,4 @@
-# Launch Checklist & Post-Launch A/B Testing Plan — Calmora Cooling Relief Cap
+# Launch Checklist & Post-Launch A/B Testing Plan — Calmora Calmora Spinal Stretcher
 
 **Timeline:** Launch is go/no-go on fixing OAuth credentials and uploading product images
 **Current readiness:** 75% (messaging, copy, structure complete; media + checkout audit pending)
@@ -28,16 +28,16 @@
 
 - [ ] **Store name:** Updated from "Mi tienda" to "Calmora" (if not already)
 - [ ] **Logo:** Present on header (if not using text logo, confirm it works)
-- [ ] **Hero headline:** "Cool Your Head. Calm Your Day." or equivalent
+- [ ] **Hero headline:** "Relief in Just 3 Minutes a Day" or equivalent
 - [ ] **Hero subheadline:** Present and benefit-focused
 - [ ] **Homepage sections:** All 6+ sections present and aligned
-- [ ] **Product page title:** "Cooling Relief Cap" (exact)
+- [ ] **Product page title:** "Calmora Spinal Stretcher" (exact)
 - [ ] **Product description:** Complete, ~8000 words, benefit-driven copy
 - [ ] **Product images:** At least 1 professional photo present (7 professional photos ideal, not required for soft launch)
 - [ ] **Product pricing:** $34.99 (displayed), $49.99 (compare-at visible)
 - [ ] **CTA button text:** "Add to Cart" (primary), with secondary CTAs nearby
 - [ ] **Trust bar:** Announcement bar + product page trust icons visible
-- [ ] **Announcement bar:** "Free Shipping • 30-Day Returns • Cooling Relief in Minutes"
+- [ ] **Announcement bar:** "Free Shipping • 30-Day Returns • Back Relief That Lasts"
 
 ### Policies & Legal (Non-Negotiable)
 
@@ -230,7 +230,7 @@
 ### Week 3: Homepage/Landing Page Variations
 
 **Test 1: Hero Headline**
-- **Control:** "Cool Your Head. Calm Your Day."
+- **Control:** "Relief in Just 3 Minutes a Day"
 - **Variant A:** "15-Minute Reset from Heat & Stress"
 - **Variant B:** "No Cords. No Fuss. Just Instant Cooling."
 - **Metric:** Homepage CTR to product page, time on page
@@ -286,7 +286,7 @@
 **Test 1: Welcome Email**
 - **Control:** "Welcome to Calmora ✓"
 - **Variant A:** "Your reset is on the way"
-- **Variant B:** "Get the most out of your Cooling Relief Cap"
+- **Variant B:** "Get the most out of your Calmora Spinal Stretcher"
 - **Metric:** Open rate, click rate
 - **Duration:** Minimum 500 sends (may take 2–3 weeks)
 - **Sample size:** 50/25/25 split
