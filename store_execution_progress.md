@@ -1,4 +1,4 @@
-# Store Execution Progress Report — Cooling Relief Cap (Calmora)
+# Store Execution Progress Report — Calmora Spinal Stretcher
 
 **Last updated:** 2026-03-12 17:37 UTC
 
