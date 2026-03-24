@@ -1,5 +1,11 @@
 # HEARTBEAT.md
 
-# Keep this file empty (or with only comments) to skip heartbeat API calls.
+## Daily Content Generation
 
-# Add tasks below when you want the agent to check something periodically.
+**Every day at ~9:00 AM UTC:**
+- Generate 6 new video scripts (2 per channel)
+- CALMORA, MONEYSTACK, CLAWTV
+- Save to `content/daily-scripts/scripts-YYYY-MM-DD.md`
+- Notify via Telegram when ready
+
+**Check:** If today's scripts already exist, skip generation.

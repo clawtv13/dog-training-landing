@@ -12,40 +12,56 @@ const router = express.Router();
  */
 router.post('/discover', authMiddleware, checkUsage('angles'), async (req, res) => {
   try {
-    const { shop, accessToken, shopId } = req.shopify;
-    const { productId } = req.body;
+    const { shopId, plan } = req.shopify;
+    const { productId, language = 'en' } = req.body;
+
+    console.log('Discover angles for productId:', productId, 'shopId:', shopId, 'plan:', plan, 'language:', language);
 
     if (!productId) {
       return res.status(400).json({ error: 'Product ID required' });
     }
+    
+    // Check language access based on plan
+    const planLanguages = {
+      free: ['en'],
+      trial: ['en'],
+      starter: ['en'],
+      pro: ['en', 'es'],
+      unlimited: ['en', 'es', 'fr', 'de', 'it', 'pt', 'nl']
+    };
+    const allowedLanguages = planLanguages[plan] || ['en'];
+    if (!allowedLanguages.includes(language)) {
+      return res.status(403).json({ 
+        error: `${language.toUpperCase()} language requires upgrade`,
+        upgrade: true
+      });
+    }
 
-    // Fetch product from Shopify
-    const product = await shopifyService.getProduct(shop, accessToken, productId);
+    // Get product from our DB (already synced)
+    const productResult = await pool.query(
+      'SELECT * FROM products WHERE id = $1 AND shop_id = $2',
+      [productId, shopId]
+    );
 
-    // Save product to DB if not exists
-    const productResult = await pool.query(`
-      INSERT INTO products (shop_id, shopify_product_id, title, description, price, compare_at_price, image_url, category, data)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
-      ON CONFLICT (shop_id, shopify_product_id) 
-      DO UPDATE SET title = $3, description = $4, price = $5, compare_at_price = $6, image_url = $7
-      RETURNING id
-    `, [
-      shopId,
-      productId,
-      product.title,
-      product.description,
-      product.price,
-      product.compare_at_price,
-      product.image_url,
-      product.category,
-      JSON.stringify(product.data)
-    ]);
+    if (productResult.rows.length === 0) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
 
-    const dbProductId = productResult.rows[0].id;
+    const product = productResult.rows[0];
+    const dbProductId = product.id;
+
+    console.log('Found product:', product.title);
 
     // Discover angles using AI
-    console.log(`Discovering angles for: ${product.title}`);
-    const { angles } = await aiService.discoverAngles(product);
+    console.log(`Discovering angles for: ${product.title} (plan: ${plan}, language: ${language})`);
+    const aiProduct = {
+      title: product.title,
+      description: product.description,
+      price: product.price,
+      compare_at_price: product.compare_at_price,
+      category: product.category,
+    };
+    const { angles } = await aiService.discoverAngles(aiProduct, plan, { language });
 
     if (!angles || angles.length === 0) {
       return res.status(500).json({ error: 'Failed to discover angles' });
@@ -55,8 +71,8 @@ router.post('/discover', authMiddleware, checkUsage('angles'), async (req, res) 
     const savedAngles = [];
     for (const angle of angles) {
       const result = await pool.query(`
-        INSERT INTO angles (product_id, name, audience, pain_point, hook, objection, emotion, target_demo)
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+        INSERT INTO angles (product_id, name, audience, pain_point, hook, objection, emotion)
+        VALUES ($1, $2, $3, $4, $5, $6, $7)
         RETURNING *
       `, [
         dbProductId,
@@ -65,8 +81,7 @@ router.post('/discover', authMiddleware, checkUsage('angles'), async (req, res) 
         angle.pain_point,
         angle.hook,
         angle.objection,
-        angle.emotion,
-        angle.target_demo
+        angle.emotion
       ]);
       savedAngles.push(result.rows[0]);
     }
@@ -91,8 +106,8 @@ router.post('/discover', authMiddleware, checkUsage('angles'), async (req, res) 
     });
 
   } catch (error) {
-    console.error('Discover angles error:', error);
-    res.status(500).json({ error: 'Failed to discover angles' });
+    console.error('Discover angles error:', error.message, error.stack);
+    res.status(500).json({ error: 'Discover failed: ' + error.message });
   }
 });
 

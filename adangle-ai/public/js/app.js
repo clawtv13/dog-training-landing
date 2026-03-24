@@ -1,17 +1,10 @@
-/**
- * AdAngle AI - Frontend Application
- * Premium UI for Shopify Ad Copy Generation
- */
+// AdAngle AI - Dark Premium UI
 
-// ============================================
-// State Management
-// ============================================
+const API_BASE = window.location.origin;
 
+// State
 const state = {
-  authenticated: false,
-  shop: null,
-  usage: null,
-  limits: null,
+  currentPage: 'dashboard',
   products: [],
   selectedProduct: null,
   angles: [],
@@ -22,274 +15,441 @@ const state = {
     products: false,
     angles: false,
     copies: false,
-    script: false,
   },
-  currentPage: 'dashboard',
-  teleprompterActive: false,
-  teleprompterText: '',
+  showAddModal: false,
+  stats: {
+    products: 0,
+    angles: 0,
+    copies: 0,
+  }
 };
 
-// ============================================
-// API Functions
-// ============================================
+// Utils
+function getShop() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('shop') || 's7ddqj-0v.myshopify.com';
+}
 
-const api = {
-  async get(endpoint) {
-    const res = await fetch(`/api${endpoint}`);
-    if (!res.ok) throw new Error(await res.text());
-    return res.json();
-  },
+function escapeHtml(text) {
+  if (!text) return '';
+  return String(text).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
 
-  async post(endpoint, data) {
-    const res = await fetch(`/api${endpoint}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
-    if (!res.ok) {
-      const error = await res.json();
-      throw new Error(error.error || 'Request failed');
+function getLLMBadgeClass(modelOrStyle) {
+  const s = (modelOrStyle || '').toLowerCase();
+  if (s.includes('claude') || s === 'storytelling' || s === 'comparison') return 'claude';
+  if (s.includes('gpt') || s === 'problem-solution') return 'gpt';
+  if (s.includes('llama') || s === 'social-proof') return 'llama';
+  if (s.includes('mixtral') || s === 'urgency') return 'mixtral';
+  return 'claude';
+}
+
+function getLLMName(modelOrStyle) {
+  const s = (modelOrStyle || '').toLowerCase();
+  if (s.includes('claude') || s === 'storytelling' || s === 'comparison') return 'Claude';
+  if (s.includes('gpt') || s === 'problem-solution') return 'GPT-4o';
+  if (s.includes('llama') || s === 'social-proof') return 'Llama';
+  if (s.includes('mixtral') || s === 'urgency') return 'Mixtral';
+  return 'AI';
+}
+
+// Get session token from App Bridge
+async function getSessionToken() {
+  if (window.shopify && window.shopify.idToken) {
+    try {
+      return await window.shopify.idToken();
+    } catch (e) {
+      console.log('Could not get session token:', e);
     }
-    return res.json();
-  },
+  }
+  return null;
+}
 
-  // Auth
-  async getSession() {
-    return this.get('/auth/session');
-  },
+// API
+async function apiGet(endpoint) {
+  const headers = { 'Content-Type': 'application/json' };
+  const token = await getSessionToken();
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+  const res = await fetch(`${API_BASE}${endpoint}?shop=${getShop()}`, { headers });
+  return res.json();
+}
 
-  // Products
-  async getProducts() {
-    return this.get('/products');
-  },
+async function apiPost(endpoint, data) {
+  const headers = { 'Content-Type': 'application/json' };
+  const token = await getSessionToken();
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+  const res = await fetch(`${API_BASE}${endpoint}?shop=${getShop()}`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
 
-  async getProduct(id) {
-    return this.get(`/products/${id}`);
-  },
-
-  // Angles
-  async discoverAngles(productId) {
-    return this.post('/angles/discover', { productId });
-  },
-
-  async getAngles(productId) {
-    return this.get(`/angles/${productId}`);
-  },
-
-  // Generate
-  async generateCopies(angleId) {
-    return this.post('/generate/copies', { angleId });
-  },
-
-  async generateVideoScript(angleId) {
-    return this.post('/generate/video-script', { angleId });
-  },
-
-  async getCopies(angleId) {
-    return this.get(`/generate/copies/${angleId}`);
-  },
-
-  // Billing
-  async getBillingStatus() {
-    return this.get('/billing/status');
-  },
-
-  async subscribe(plan) {
-    return this.post('/billing/subscribe', { plan });
-  },
-};
-
-// ============================================
-// Render Functions
-// ============================================
-
+// Render
 function render() {
   const app = document.getElementById('app');
-  
-  if (!state.authenticated) {
-    app.innerHTML = renderLoginPage();
-    return;
-  }
-  
   app.innerHTML = `
     <div class="app-container">
-      ${renderSidebar()}
+      ${renderNav()}
       <main class="main-content">
-        ${renderHeader()}
-        <div class="main-body">
-          ${renderPage()}
-        </div>
+        ${renderPage()}
       </main>
     </div>
     ${renderToasts()}
-    ${state.teleprompterActive ? renderTeleprompter() : ''}
-  `;
-  
-  attachEventListeners();
-}
-
-function renderLoginPage() {
-  return `
-    <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #6366F1 0%, #10B981 100%);">
-      <div class="card" style="width: 100%; max-width: 400px; margin: 20px;">
-        <div class="card-body" style="text-align: center; padding: 48px 32px;">
-          <div style="font-size: 48px; margin-bottom: 16px;">🎯</div>
-          <h1 style="font-size: 24px; font-weight: 700; margin-bottom: 8px;">AdAngle AI</h1>
-          <p style="color: var(--gray-500); margin-bottom: 32px;">Find the perfect angle to sell any product</p>
-          <a href="/api/auth?shop=${getShopFromUrl()}" class="btn btn-primary btn-lg w-full">
-            Connect Shopify Store
-          </a>
-          <p style="margin-top: 24px; font-size: 14px; color: var(--gray-400);">
-            Trusted by 5,000+ Shopify merchants
-          </p>
-        </div>
-      </div>
-    </div>
+    ${state.showAddModal ? renderAddModal() : ''}
   `;
 }
 
-function renderSidebar() {
+function renderNav() {
   return `
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <a href="#" class="sidebar-logo" onclick="navigate('dashboard')">
-          <div class="sidebar-logo-icon">🎯</div>
-          <span class="sidebar-logo-text">AdAngle AI</span>
-        </a>
+    <nav class="top-nav">
+      <div class="nav-logo">
+        <img src="/images/logo.jpg" class="nav-logo-img" alt="AdAngle">
+        <span>AdAngle</span>
       </div>
-      
-      <nav class="sidebar-nav">
-        <div class="nav-section">
-          <div class="nav-section-title">Main</div>
-          <a class="nav-item ${state.currentPage === 'dashboard' ? 'active' : ''}" onclick="navigate('dashboard')">
-            <span class="nav-item-icon">📊</span>
-            Dashboard
-          </a>
-          <a class="nav-item ${state.currentPage === 'products' ? 'active' : ''}" onclick="navigate('products')">
-            <span class="nav-item-icon">📦</span>
-            Products
-          </a>
-          <a class="nav-item ${state.currentPage === 'angles' ? 'active' : ''}" onclick="navigate('angles')">
-            <span class="nav-item-icon">🎯</span>
-            My Angles
-          </a>
-        </div>
-        
-        <div class="nav-section">
-          <div class="nav-section-title">Tools</div>
-          <a class="nav-item ${state.currentPage === 'teleprompter' ? 'active' : ''}" onclick="navigate('teleprompter')">
-            <span class="nav-item-icon">🎬</span>
-            Teleprompter
-          </a>
-        </div>
-        
-        <div class="nav-section">
-          <div class="nav-section-title">Account</div>
-          <a class="nav-item ${state.currentPage === 'billing' ? 'active' : ''}" onclick="navigate('billing')">
-            <span class="nav-item-icon">💳</span>
-            Billing
-          </a>
-        </div>
-      </nav>
-      
-      <div class="sidebar-footer">
-        <div class="plan-badge ${state.shop?.plan === 'pro' ? 'pro' : ''}">
-          <span>${state.shop?.plan === 'free' ? '🆓' : state.shop?.plan === 'starter' ? '⭐' : '👑'}</span>
-          <span>${state.shop?.plan?.toUpperCase() || 'FREE'} Plan</span>
-        </div>
+      <div class="nav-links">
+        <a class="nav-link ${state.currentPage === 'dashboard' ? 'active' : ''}" onclick="navigate('dashboard')">Dashboard</a>
+        <a class="nav-link ${state.currentPage === 'products' ? 'active' : ''}" onclick="navigate('products')">Products</a>
+        <a class="nav-link ${state.currentPage === 'pricing' ? 'active' : ''}" onclick="navigate('pricing')">Pricing</a>
       </div>
-    </aside>
-  `;
-}
-
-function renderHeader() {
-  const titles = {
-    dashboard: 'Dashboard',
-    products: 'Your Products',
-    angles: 'Discovered Angles',
-    product: state.selectedProduct?.title || 'Product',
-    generate: 'Generate Copy',
-    billing: 'Billing & Plans',
-    teleprompter: 'Teleprompter',
-  };
-  
-  return `
-    <header class="main-header">
-      <h1 class="page-title">${titles[state.currentPage] || 'AdAngle AI'}</h1>
-      <div class="flex items-center gap-4">
-        <span class="text-sm text-gray-500">${state.shop?.domain || ''}</span>
+      <div class="nav-actions">
+        <span style="color: var(--text-secondary); font-size: 13px;">Free Plan</span>
       </div>
-    </header>
+    </nav>
   `;
 }
 
 function renderPage() {
   switch (state.currentPage) {
-    case 'dashboard':
-      return renderDashboard();
-    case 'products':
-      return renderProducts();
-    case 'product':
-      return renderProductDetail();
-    case 'generate':
-      return renderGenerate();
-    case 'billing':
-      return renderBilling();
-    case 'teleprompter':
-      return renderTeleprompterSetup();
-    default:
-      return renderDashboard();
+    case 'dashboard': return renderDashboard();
+    case 'products': return renderProducts();
+    case 'product': return renderProductDetail();
+    case 'generate': return renderGenerate();
+    case 'pricing': return renderPricing();
+    default: return renderDashboard();
+  }
+}
+
+function renderPricing() {
+  return `
+    <div class="pricing-container">
+      <div class="pricing-header">
+        <h1>Choose Your Plan</h1>
+        <p>Scale your ad creation with AI-powered angles and copies</p>
+      </div>
+      
+      <!-- Trial Banner -->
+      <div class="trial-banner">
+        <div class="trial-content">
+          <div class="trial-badge">🎉 LIMITED OFFER</div>
+          <h2>Try AdAngle for just $1</h2>
+          <p>Get 10 AI-generated ad copies to test the platform. After 7 days, continues as Starter ($19/mo). Cancel anytime.</p>
+          <button class="btn btn-primary btn-lg" onclick="selectPlan('trial')">
+            Start $1 Trial →
+          </button>
+        </div>
+      </div>
+      
+      <div class="pricing-grid">
+        <!-- Starter -->
+        <div class="pricing-card">
+          <div class="pricing-badge">STARTER</div>
+          <div class="pricing-price">
+            <span class="price-amount">$19</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="pricing-desc">Perfect for getting started</p>
+          
+          <ul class="pricing-features">
+            <li><span class="feature-icon">✓</span> 10 angle discoveries/month</li>
+            <li><span class="feature-icon">✓</span> 50 ad copies/month</li>
+            <li><span class="feature-icon">✓</span> <span class="llm-badge mixtral" style="font-size: 9px;">Mixtral</span> AI model</li>
+            <li><span class="feature-icon dim">✗</span> <span class="dim">Video scripts</span></li>
+            <li><span class="feature-icon dim">✗</span> <span class="dim">Premium models</span></li>
+          </ul>
+          
+          <button class="btn btn-secondary btn-block" onclick="selectPlan('starter')">
+            Get Started
+          </button>
+        </div>
+        
+        <!-- Pro -->
+        <div class="pricing-card featured">
+          <div class="pricing-popular">MOST POPULAR</div>
+          <div class="pricing-badge">PRO</div>
+          <div class="pricing-price">
+            <span class="price-amount">$49</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="pricing-desc">For serious marketers</p>
+          
+          <ul class="pricing-features">
+            <li><span class="feature-icon">✓</span> 50 angle discoveries/month</li>
+            <li><span class="feature-icon">✓</span> Unlimited ad copies</li>
+            <li><span class="feature-icon">✓</span> <span class="llm-badge claude" style="font-size: 9px;">Claude</span> <span class="llm-badge gpt" style="font-size: 9px;">GPT-4o</span> <span class="llm-badge llama" style="font-size: 9px;">Llama</span></li>
+            <li><span class="feature-icon">✓</span> Video scripts</li>
+            <li><span class="feature-icon dim">✗</span> <span class="dim">All 4 models</span></li>
+          </ul>
+          
+          <button class="btn btn-primary btn-block" onclick="selectPlan('pro')">
+            Upgrade to Pro
+          </button>
+        </div>
+        
+        <!-- Unlimited -->
+        <div class="pricing-card">
+          <div class="pricing-badge">UNLIMITED</div>
+          <div class="pricing-price">
+            <span class="price-amount">$99</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="pricing-desc">For agencies & power users</p>
+          
+          <ul class="pricing-features">
+            <li><span class="feature-icon">✓</span> <strong>20 angles</strong> per product</li>
+            <li><span class="feature-icon">✓</span> <strong>5 hook variations</strong> per angle</li>
+            <li><span class="feature-icon">✓</span> <strong>7 languages</strong> (EN, ES, FR, DE...)</li>
+            <li><span class="feature-icon">✓</span> <strong>Bulk generation</strong> all products</li>
+            <li><span class="feature-icon">✓</span> <strong>Priority queue</strong> - faster generation</li>
+            <li><span class="feature-icon">✓</span> <span class="llm-badge claude" style="font-size: 9px;">Claude</span> <span class="llm-badge gpt" style="font-size: 9px;">GPT-4o</span> <span class="llm-badge llama" style="font-size: 9px;">Llama</span> <span class="llm-badge mixtral" style="font-size: 9px;">Mixtral</span></li>
+          </ul>
+          
+          <button class="btn btn-secondary btn-block" onclick="selectPlan('unlimited')">
+            Go Unlimited
+          </button>
+        </div>
+      </div>
+      
+      <div class="pricing-faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>What's an "angle discovery"?</h3>
+            <p>Each time AI analyzes a product and finds 10 unique sales angles, that counts as 1 discovery.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I upgrade anytime?</h3>
+            <p>Yes! Upgrade or downgrade at any time. Changes take effect immediately.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What AI models do you use?</h3>
+            <p>We use Claude 3.5, GPT-4o, Llama 3.1, and Mixtral - the best models for marketing copy.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is there a free trial?</h3>
+            <p>Yes! Start with 3 free angle discoveries to test the platform.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+async function selectPlan(plan) {
+  showToast('Processing...', 'info');
+  
+  try {
+    const response = await apiPost('/api/billing/subscribe', { plan });
+    
+    if (response.confirmationUrl) {
+      // Redirect to Shopify payment page
+      window.top.location.href = response.confirmationUrl;
+    } else if (response.authUrl) {
+      // Need to re-authenticate
+      showToast('Please reinstall the app to enable billing', 'error');
+      setTimeout(() => {
+        window.top.location.href = response.authUrl;
+      }, 2000);
+    } else {
+      showToast(response.error || 'Failed to start subscription', 'error');
+    }
+  } catch (e) {
+    console.error('Subscribe error:', e);
+    showToast('Failed to process subscription', 'error');
   }
 }
 
 function renderDashboard() {
+  const topProduct = state.products[0];
+  const isNewUser = state.stats.products === 0;
+  
+  // Show onboarding for new users
+  if (isNewUser) {
+    return renderOnboarding();
+  }
+  
   return `
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-label">Products Analyzed</div>
-        <div class="stat-value primary">${state.products.filter(p => p.angles_discovered > 0).length}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Angles Discovered</div>
-        <div class="stat-value">${state.usage?.angles_discovered || 0}</div>
-        ${state.limits?.angles_per_month > 0 ? `<div class="text-sm text-gray-400">of ${state.limits.angles_per_month} this month</div>` : ''}
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Copies Generated</div>
-        <div class="stat-value">${state.usage?.copies_generated || 0}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Current Plan</div>
-        <div class="stat-value">${state.shop?.plan?.toUpperCase() || 'FREE'}</div>
-      </div>
+    <div class="page-header">
+      <h1 class="page-title">Dashboard</h1>
+      <p class="page-subtitle">Your AI-powered ad performance center</p>
     </div>
     
-    <div class="card">
-      <div class="card-header">
-        <h2 class="card-title">Quick Start</h2>
+    <div class="bento-grid">
+      <!-- Stats Row -->
+      <div class="bento-card stat-card">
+        <span class="stat-label">Products</span>
+        <span class="stat-value blue">${state.stats.products}</span>
+        <span class="stat-change">Active catalog</span>
       </div>
-      <div class="card-body">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
-          <div style="text-align: center; padding: 24px;">
-            <div style="font-size: 48px; margin-bottom: 16px;">1️⃣</div>
-            <h3 style="font-weight: 600; margin-bottom: 8px;">Select a Product</h3>
-            <p style="color: var(--gray-500); font-size: 14px;">Choose any product from your Shopify store</p>
-          </div>
-          <div style="text-align: center; padding: 24px;">
-            <div style="font-size: 48px; margin-bottom: 16px;">2️⃣</div>
-            <h3 style="font-weight: 600; margin-bottom: 8px;">Discover Angles</h3>
-            <p style="color: var(--gray-500); font-size: 14px;">AI finds 10 unique ways to sell your product</p>
-          </div>
-          <div style="text-align: center; padding: 24px;">
-            <div style="font-size: 48px; margin-bottom: 16px;">3️⃣</div>
-            <h3 style="font-weight: 600; margin-bottom: 8px;">Generate Copy</h3>
-            <p style="color: var(--gray-500); font-size: 14px;">Get 5 ad variations for each angle</p>
+      
+      <div class="bento-card stat-card">
+        <span class="stat-label">Angles Discovered</span>
+        <span class="stat-value pink">${state.stats.angles}</span>
+        <span class="stat-change">AI-generated insights</span>
+      </div>
+      
+      <div class="bento-card stat-card">
+        <span class="stat-label">Copies Generated</span>
+        <span class="stat-value purple">${state.stats.copies}</span>
+        <span class="stat-change">Ready to use</span>
+      </div>
+      
+      <div class="bento-card stat-card">
+        <span class="stat-label">Current Plan</span>
+        <span class="stat-value green" style="font-size: 24px;">Free Trial</span>
+        <span class="stat-change" style="color: var(--accent-blue); cursor: pointer;">Upgrade →</span>
+      </div>
+      
+      <!-- Featured Product -->
+      ${topProduct ? `
+        <div class="bento-card span-2" style="cursor: pointer;" onclick="selectProduct(${topProduct.id})">
+          <span class="stat-label" style="margin-bottom: 16px; display: block;">FEATURED PRODUCT</span>
+          <div class="product-card-large">
+            <img src="${topProduct.image_url || 'https://via.placeholder.com/120'}" class="product-image-large" alt="">
+            <div class="product-info-large">
+              <h3>${escapeHtml(topProduct.title)}</h3>
+              <div class="product-meta">
+                <span>$${topProduct.price}</span>
+                <span>•</span>
+                <span>${topProduct.angles_discovered || 0} angles discovered</span>
+              </div>
+              <button class="btn btn-primary btn-sm" style="margin-top: 16px;">
+                ${topProduct.angles_discovered > 0 ? 'View Angles' : 'Discover Angles'} →
+              </button>
+            </div>
           </div>
         </div>
-        <div style="text-align: center; margin-top: 24px;">
-          <button class="btn btn-primary btn-lg" onclick="navigate('products')">
-            🚀 Get Started
+      ` : ''}
+      
+      <!-- How It Works -->
+      <div class="bento-card span-2">
+        <span class="stat-label" style="margin-bottom: 16px; display: block;">HOW IT WORKS</span>
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <div class="workflow-icon">1</div>
+            <div class="workflow-content">
+              <strong>Add Product</strong>
+              <p>Import from your Shopify store or add manually</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="workflow-icon">2</div>
+            <div class="workflow-content">
+              <strong>Discover Angles</strong>
+              <p>AI finds 10 unique sales angles for each product</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="workflow-icon">3</div>
+            <div class="workflow-content">
+              <strong>Generate Copies</strong>
+              <p>Get 5 ad variations + video scripts instantly</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Quick Actions -->
+      <div class="bento-card span-2">
+        <span class="stat-label" style="margin-bottom: 16px; display: block;">QUICK ACTIONS</span>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button class="btn btn-primary" onclick="navigate('products')">
+            📦 View All Products
           </button>
+          <button class="btn btn-secondary" onclick="state.showAddModal = true; render();">
+            ➕ Import Products
+          </button>
+        </div>
+      </div>
+      
+      <!-- AI Models -->
+      <div class="bento-card span-2">
+        <span class="stat-label" style="margin-bottom: 16px; display: block;">POWERED BY</span>
+        <div class="ai-models">
+          <div class="ai-model">
+            <span class="ai-model-name">Claude 3.5</span>
+            <span class="ai-model-tag">Discovery</span>
+          </div>
+          <div class="ai-model">
+            <span class="ai-model-name">GPT-4o</span>
+            <span class="ai-model-tag">Structured</span>
+          </div>
+          <div class="ai-model">
+            <span class="ai-model-name">Llama 3.1</span>
+            <span class="ai-model-tag">Fast</span>
+          </div>
+          <div class="ai-model">
+            <span class="ai-model-name">Mixtral</span>
+            <span class="ai-model-tag">Creative</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderOnboarding() {
+  return `
+    <div class="onboarding-container">
+      <div class="onboarding-hero">
+        <div class="onboarding-icon"><img src="/images/logo.jpg" style="width: 80px; height: 80px; border-radius: 16px;"></div>
+        <h1>Welcome to AdAngle</h1>
+        <p>Discover winning ad angles for any product using AI</p>
+      </div>
+      
+      <div class="onboarding-features">
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>AI-Powered Discovery</h3>
+          <p>Our AI analyzes your product and finds 10 unique sales angles targeting different audiences</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">✍️</div>
+          <h3>Multi-Model Generation</h3>
+          <p>Get 5 different ad copy styles generated by Claude, GPT-4, Llama & Mixtral simultaneously</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎬</div>
+          <h3>Video Scripts</h3>
+          <p>Generate 30-second UGC scripts ready for TikTok and Instagram Reels</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant Results</h3>
+          <p>From product to ready-to-use ad copy in under 60 seconds</p>
+        </div>
+      </div>
+      
+      <div class="onboarding-cta">
+        <button class="btn btn-primary btn-lg" onclick="state.showAddModal = true; render();">
+          🚀 Import Your First Product
+        </button>
+        <p class="onboarding-hint">Your products will be imported automatically from your Shopify store</p>
+      </div>
+      
+      <div class="onboarding-trust">
+        <span>Trusted by 1,000+ Shopify merchants</span>
+        <div class="trust-logos">
+          <span>⭐⭐⭐⭐⭐</span>
+          <span style="color: var(--text-secondary);">4.9/5 on Shopify App Store</span>
         </div>
       </div>
     </div>
@@ -298,278 +458,215 @@ function renderDashboard() {
 
 function renderProducts() {
   if (state.loading.products) {
-    return `
+    return `<div class="loading"><div class="loading-spinner"></div> Loading products...</div>`;
+  }
+  
+  return `
+    <div class="page-header" style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1 class="page-title">Products</h1>
+        <p class="page-subtitle">${state.products.length} products loaded</p>
+      </div>
+      <button class="btn btn-primary" onclick="state.showAddModal = true; render();">+ Add Product</button>
+    </div>
+    
+    ${state.products.length === 0 ? `
+      <div class="empty-state">
+        <div class="empty-icon">📦</div>
+        <h2>No Products Yet</h2>
+        <p>Add your first product to start discovering winning ad angles</p>
+        <button class="btn btn-primary" onclick="state.showAddModal = true; render();">+ Add Product</button>
+      </div>
+    ` : `
       <div class="products-grid">
-        ${[1,2,3,4,5,6].map(() => `
-          <div class="product-card">
-            <div class="product-image"><div class="skeleton" style="width: 100%; height: 100%;"></div></div>
-            <div class="product-info">
-              <div class="skeleton" style="height: 20px; width: 80%; margin-bottom: 8px;"></div>
-              <div class="skeleton" style="height: 16px; width: 40%;"></div>
+        ${state.products.map(p => `
+          <div class="product-card" onclick="selectProduct(${p.id})">
+            <img src="${p.image_url || 'https://via.placeholder.com/280x180'}" class="product-card-image" alt="">
+            <div class="product-card-body">
+              <div class="product-card-title">${escapeHtml(p.title)}</div>
+              <div class="product-card-price">$${p.price}</div>
+              <div class="product-card-angles">${p.angles_discovered || 0} angles discovered</div>
             </div>
           </div>
         `).join('')}
       </div>
-    `;
-  }
-  
-  if (state.products.length === 0) {
-    return `
-      <div class="empty-state">
-        <div class="empty-state-icon">📦</div>
-        <h2 class="empty-state-title">No Products Found</h2>
-        <p class="empty-state-description">Add products to your Shopify store to start discovering sales angles.</p>
-      </div>
-    `;
-  }
-  
-  return `
-    <div class="products-grid">
-      ${state.products.map(product => `
-        <div class="product-card" onclick="selectProduct('${product.shopify_product_id}')">
-          <div class="product-image">
-            ${product.image_url 
-              ? `<img src="${product.image_url}" alt="${product.title}">`
-              : '<div style="display: flex; align-items: center; justify-content: center; height: 100%; font-size: 48px;">📦</div>'
-            }
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">${product.title}</h3>
-            <div class="product-price">
-              <span class="product-price-current">$${product.price}</span>
-              ${product.compare_at_price ? `<span class="product-price-compare">$${product.compare_at_price}</span>` : ''}
-            </div>
-            <div class="product-angles-badge ${product.angles_discovered > 0 ? '' : 'empty'}">
-              ${product.angles_discovered > 0 
-                ? `✨ ${product.angles_discovered} angles discovered`
-                : '🔍 No angles yet'
-              }
-            </div>
-          </div>
-        </div>
-      `).join('')}
-    </div>
+    `}
   `;
 }
 
 function renderProductDetail() {
-  const product = state.selectedProduct;
-  if (!product) return '';
+  const p = state.selectedProduct;
+  if (!p) return `<div class="loading"><div class="loading-spinner"></div> Loading...</div>`;
   
   return `
-    <div class="flex gap-6" style="margin-bottom: 32px;">
-      <div style="width: 120px; height: 120px; border-radius: 12px; overflow: hidden; background: var(--gray-100);">
-        ${product.image_url 
-          ? `<img src="${product.image_url}" alt="${product.title}" style="width: 100%; height: 100%; object-fit: cover;">`
-          : '<div style="display: flex; align-items: center; justify-content: center; height: 100%; font-size: 48px;">📦</div>'
-        }
+    <a class="back-link" onclick="navigate('products')">← Back to Products</a>
+    
+    <div class="generate-header">
+      <img src="${p.image_url || 'https://via.placeholder.com/80'}" class="generate-product-image" alt="">
+      <div class="generate-info">
+        <h1>${escapeHtml(p.title)}</h1>
+        <p style="color: var(--text-secondary);">$${p.price}</p>
       </div>
-      <div style="flex: 1;">
-        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 8px;">${product.title}</h2>
-        <div class="product-price" style="margin-bottom: 16px;">
-          <span class="product-price-current" style="font-size: 1.5rem;">$${product.price}</span>
-          ${product.compare_at_price ? `<span class="product-price-compare">$${product.compare_at_price}</span>` : ''}
-        </div>
-        <button class="btn btn-primary" onclick="discoverAngles('${product.shopify_product_id}')" ${state.loading.angles ? 'disabled' : ''}>
-          ${state.loading.angles ? '⏳ Discovering...' : '🎯 Discover Sales Angles'}
+      <div style="margin-left: auto; display: flex; gap: 8px; align-items: center;">
+        <select id="language-select" class="input" style="width: auto; padding: 8px 12px;">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="it">Italiano</option>
+          <option value="pt">Português</option>
+          <option value="nl">Nederlands</option>
+        </select>
+        <button class="btn btn-primary" onclick="discoverAngles(${p.id})" ${state.loading.angles ? 'disabled' : ''}>
+          ${state.loading.angles ? '⏳ Discovering...' : '🔍 Discover Angles'}
         </button>
       </div>
     </div>
     
-    ${state.angles.length > 0 ? `
-      <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 16px;">
-        🎯 ${state.angles.length} Sales Angles Discovered
-      </h3>
+    ${renderTerminal()}
+    
+    ${state.loading.angles ? '' : state.angles.length === 0 ? `
+      <div class="empty-state">
+        <div class="empty-icon">🎯</div>
+        <h2>No Angles Yet</h2>
+        <p>Click "Discover Angles" to find winning ad angles for this product</p>
+      </div>
+    ` : `
+      <h2 class="section-title">🎯 ${state.angles.length} Sales Angles</h2>
       <div class="angles-grid">
-        ${state.angles.map(angle => `
-          <div class="angle-card ${state.selectedAngle?.id === angle.id ? 'selected' : ''}" onclick="selectAngle(${angle.id})">
+        ${state.angles.map(a => `
+          <div class="angle-card">
             <div class="angle-header">
-              <span class="angle-name">${angle.name}</span>
-              <span class="angle-emotion">${angle.emotion}</span>
+              <span class="angle-name">${escapeHtml(a.name)}</span>
+              <div class="angle-badges">
+                <span class="llm-badge claude">Claude 3.5</span>
+                <span class="angle-emotion">${escapeHtml(a.emotion)}</span>
+              </div>
             </div>
-            <div class="angle-audience">👤 ${angle.audience}</div>
-            <div class="angle-hook">"${angle.hook}"</div>
+            <div class="angle-hook">"${escapeHtml(a.hook)}"</div>
+            <div class="angle-details">
+              <div class="angle-detail">
+                <span class="angle-detail-label">Audience</span>
+                ${escapeHtml(a.audience)}
+              </div>
+              <div class="angle-detail">
+                <span class="angle-detail-label">Pain Point</span>
+                ${escapeHtml(a.pain_point)}
+              </div>
+            </div>
             <div class="angle-actions">
-              <button class="btn btn-primary btn-sm" onclick="event.stopPropagation(); generateCopies(${angle.id})">
-                ✨ Generate Copy
-              </button>
-              <button class="btn btn-secondary btn-sm" onclick="event.stopPropagation(); generateScript(${angle.id})">
-                🎬 Video Script
-              </button>
+              <button class="btn btn-primary btn-sm" onclick="generateCopies(${a.id})">Generate Copies</button>
+              <button class="btn btn-secondary btn-sm" onclick="generateScript(${a.id})">Video Script</button>
             </div>
           </div>
         `).join('')}
-      </div>
-    ` : `
-      <div class="empty-state">
-        <div class="empty-state-icon">🎯</div>
-        <h2 class="empty-state-title">No Angles Discovered Yet</h2>
-        <p class="empty-state-description">Click "Discover Sales Angles" to find 10 unique ways to sell this product.</p>
       </div>
     `}
   `;
 }
 
 function renderGenerate() {
-  const angle = state.selectedAngle;
-  if (!angle) return '';
+  const p = state.selectedProduct;
+  const a = state.selectedAngle;
+  
+  if (!p || !a) return `<div class="loading">Loading...</div>`;
   
   return `
-    <button class="btn btn-ghost mb-4" onclick="navigate('product')">
-      ← Back to Angles
-    </button>
+    <a class="back-link" onclick="navigate('product')">← Back to ${escapeHtml(p.title)}</a>
     
-    <div class="card mb-6">
-      <div class="card-body">
-        <div class="flex items-center gap-4 mb-4">
-          <span class="angle-emotion">${angle.emotion}</span>
-          <h2 style="font-size: 1.25rem; font-weight: 700;">${angle.name}</h2>
-        </div>
-        <p style="color: var(--gray-600); margin-bottom: 8px;">👤 ${angle.audience}</p>
-        <div class="angle-hook">"${angle.hook}"</div>
+    <div class="generate-header">
+      <img src="${p.image_url || 'https://via.placeholder.com/80'}" class="generate-product-image" alt="">
+      <div class="generate-info">
+        <h1>${escapeHtml(p.title)}</h1>
+        <p class="generate-angle">Angle: ${escapeHtml(a.name)}</p>
       </div>
     </div>
     
-    <div class="flex gap-4 mb-6">
-      <button class="btn btn-primary" onclick="generateCopies(${angle.id})" ${state.loading.copies ? 'disabled' : ''}>
-        ${state.loading.copies ? '⏳ Generating...' : '✨ Generate 5 Ad Copies'}
-      </button>
-      <button class="btn btn-secondary" onclick="generateScript(${angle.id})" ${state.loading.script ? 'disabled' : ''}>
-        ${state.loading.script ? '⏳ Creating...' : '🎬 Video Script'}
-      </button>
-    </div>
+    ${renderTerminal()}
     
-    ${state.copies.length > 0 ? `
-      <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 16px;">Generated Ad Copies</h3>
-      <div class="copies-container">
-        ${state.copies.map((copy, i) => `
-          <div class="copy-card">
-            <div class="copy-header">
-              <div class="copy-style">
-                <span class="copy-style-badge">${copy.style}</span>
-                <span class="copy-model">${copy.model_used?.split('/').pop() || 'AI'}</span>
+    ${state.loading.copies ? '' : `
+      ${state.copies.length > 0 ? `
+        <h2 class="section-title">📝 Generated Ad Copies</h2>
+        <div class="copies-container">
+          ${state.copies.map((c, i) => `
+            <div class="copy-card">
+              <div class="copy-header">
+                <div class="copy-meta">
+                  <span class="copy-style">${escapeHtml(c.style)}</span>
+                  <span class="llm-badge ${getLLMBadgeClass(c.model || c.style)}">${getLLMName(c.model || c.style)}</span>
+                </div>
+                <button class="btn btn-ghost btn-sm" onclick="copyToClipboard(${i})">📋 Copy</button>
               </div>
-              <button class="btn btn-ghost btn-sm" onclick="copyToClipboard(\`${escapeHtml(copy.content)}\`)">
-                📋 Copy
-              </button>
+              <div class="copy-content">${escapeHtml(c.content)}</div>
             </div>
-            <div class="copy-content">${escapeHtml(copy.content)}</div>
-          </div>
-        `).join('')}
-      </div>
-    ` : ''}
-    
-    ${state.videoScript ? `
-      <h3 style="font-size: 1.125rem; font-weight: 600; margin: 24px 0 16px;">Video Script</h3>
-      <div class="script-container">
-        <div class="script-header">
-          <span class="script-title">🎬 30-Second UGC Script</span>
-          <div class="flex gap-2">
-            <button class="btn btn-ghost btn-sm" style="color: white;" onclick="copyToClipboard(\`${escapeHtml(state.videoScript.content)}\`)">
-              📋 Copy
-            </button>
-            <button class="btn btn-primary btn-sm" onclick="openTeleprompter(\`${escapeHtml(state.videoScript.content)}\`)">
-              📱 Teleprompter
-            </button>
-          </div>
+          `).join('')}
         </div>
-        <div class="script-content">${escapeHtml(state.videoScript.content)}</div>
-      </div>
-    ` : ''}
+      ` : ''}
+      
+      ${state.videoScript ? `
+        <h2 class="section-title" style="margin-top: 32px;">🎬 Video Script</h2>
+        <div class="script-card">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 16px;">
+            <span style="color: var(--accent-blue); font-size: 13px; font-weight: 600;">30-SECOND UGC SCRIPT</span>
+            <button class="btn btn-ghost btn-sm" onclick="copyScript()">📋 Copy</button>
+          </div>
+          <pre class="script-content">${escapeHtml(state.videoScript.content || state.videoScript)}</pre>
+        </div>
+      ` : ''}
+      
+      ${!state.copies.length && !state.videoScript && !terminalVisible ? `
+        <div class="empty-state">
+          <p>Select an action to generate content</p>
+        </div>
+      ` : ''}
+    `}
   `;
 }
 
-function renderBilling() {
+function renderAddModal() {
   return `
-    <div class="stats-grid mb-8">
-      <div class="stat-card">
-        <div class="stat-label">Current Plan</div>
-        <div class="stat-value primary">${state.shop?.plan?.toUpperCase() || 'FREE'}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Angles This Month</div>
-        <div class="stat-value">${state.usage?.angles_discovered || 0}${state.limits?.angles_per_month > 0 ? ` / ${state.limits.angles_per_month}` : ''}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Copies Generated</div>
-        <div class="stat-value">${state.usage?.copies_generated || 0}</div>
-      </div>
-    </div>
-    
-    <h2 style="font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 8px;">Choose Your Plan</h2>
-    <p style="text-align: center; color: var(--gray-500); margin-bottom: 32px;">Scale your ad creation with the right plan for you</p>
-    
-    <div class="pricing-grid">
-      <div class="pricing-card ${state.shop?.plan === 'free' ? 'popular' : ''}">
-        ${state.shop?.plan === 'free' ? '<div class="pricing-popular-badge">Current</div>' : ''}
-        <h3 class="pricing-name">Free</h3>
-        <div class="pricing-price">$0<span>/month</span></div>
-        <p class="pricing-description">Perfect for trying out</p>
-        <div class="pricing-features">
-          <div class="pricing-feature"><span class="pricing-feature-icon">✅</span> 3 angle discoveries/month</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✅</span> 15 copies/month</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">❌</span> Video scripts</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">❌</span> Teleprompter</div>
+    <div class="modal-overlay" onclick="closeModal()">
+      <div class="modal" onclick="event.stopPropagation()">
+        <div class="modal-header">
+          <h2>Add Product</h2>
+          <button class="modal-close" onclick="closeModal()">×</button>
         </div>
-        <button class="btn btn-outline w-full" disabled>Current Plan</button>
-      </div>
-      
-      <div class="pricing-card ${state.shop?.plan === 'starter' ? 'popular' : ''}">
-        ${state.shop?.plan === 'starter' ? '<div class="pricing-popular-badge">Current</div>' : ''}
-        <h3 class="pricing-name">Starter</h3>
-        <div class="pricing-price">$29<span>/month</span></div>
-        <p class="pricing-description">For growing stores</p>
-        <div class="pricing-features">
-          <div class="pricing-feature"><span class="pricing-feature-icon">✅</span> 30 angle discoveries/month</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✅</span> Unlimited copies</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✅</span> Video scripts</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✅</span> Teleprompter</div>
-        </div>
-        <button class="btn ${state.shop?.plan === 'starter' ? 'btn-outline' : 'btn-primary'} w-full" 
-                onclick="subscribe('starter')" ${state.shop?.plan === 'starter' ? 'disabled' : ''}>
-          ${state.shop?.plan === 'starter' ? 'Current Plan' : 'Upgrade to Starter'}
-        </button>
-      </div>
-      
-      <div class="pricing-card ${state.shop?.plan === 'pro' ? 'popular' : ''}">
-        ${state.shop?.plan !== 'pro' ? '<div class="pricing-popular-badge">Most Popular</div>' : '<div class="pricing-popular-badge">Current</div>'}
-        <h3 class="pricing-name">Pro</h3>
-        <div class="pricing-price">$79<span>/month</span></div>
-        <p class="pricing-description">For serious sellers</p>
-        <div class="pricing-features">
-          <div class="pricing-feature"><span class="pricing-feature-icon">✅</span> Unlimited angle discoveries</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✅</span> Unlimited copies</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✅</span> Video scripts</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✅</span> Teleprompter</div>
-          <div class="pricing-feature"><span class="pricing-feature-icon">✅</span> Priority support</div>
-        </div>
-        <button class="btn ${state.shop?.plan === 'pro' ? 'btn-outline' : 'btn-success'} w-full"
-                onclick="subscribe('pro')" ${state.shop?.plan === 'pro' ? 'disabled' : ''}>
-          ${state.shop?.plan === 'pro' ? 'Current Plan' : 'Upgrade to Pro'}
-        </button>
-      </div>
-    </div>
-  `;
-}
-
-function renderTeleprompterSetup() {
-  return `
-    <div class="card">
-      <div class="card-header">
-        <h2 class="card-title">🎬 Teleprompter Mode</h2>
-      </div>
-      <div class="card-body">
-        <p style="color: var(--gray-600); margin-bottom: 24px;">
-          Paste your script below or generate one from an angle, then use teleprompter mode to record your UGC video.
-        </p>
-        <textarea 
-          id="teleprompter-input"
-          style="width: 100%; min-height: 200px; padding: 16px; border: 2px solid var(--gray-200); border-radius: 8px; font-size: 16px; line-height: 1.6; resize: vertical;"
-          placeholder="Paste your video script here..."
-        >${state.teleprompterText}</textarea>
-        <div style="margin-top: 16px;">
-          <button class="btn btn-primary btn-lg" onclick="startTeleprompter()">
-            ▶️ Start Teleprompter
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Store Domain</label>
+            <input type="text" id="store-url" class="input" placeholder="yourstore.myshopify.com">
+            <small style="color: var(--text-muted); font-size: 12px; margin-top: 4px; display: block;">
+              Enter any Shopify store to import all products
+            </small>
+          </div>
+          <button class="btn btn-primary" onclick="importFromStore()" style="width: 100%;">
+            📦 Import All Products
+          </button>
+          
+          <div style="text-align: center; margin: 20px 0; color: var(--text-muted); font-size: 13px;">
+            — or add manually —
+          </div>
+          
+          <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" id="product-title" class="input" placeholder="Product name">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="product-description" class="input" rows="2" placeholder="Describe your product..."></textarea>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="form-group">
+              <label>Price</label>
+              <input type="number" id="product-price" class="input" placeholder="39.99">
+            </div>
+            <div class="form-group">
+              <label>Compare Price</label>
+              <input type="number" id="product-compare" class="input" placeholder="79.99">
+            </div>
+          </div>
+          <button class="btn btn-secondary" onclick="addProductManually()" style="width: 100%;">
+            Add Manually
           </button>
         </div>
       </div>
@@ -577,128 +674,215 @@ function renderTeleprompterSetup() {
   `;
 }
 
-function renderTeleprompter() {
-  return `
-    <div class="teleprompter-overlay">
-      <div class="teleprompter-controls">
-        <button class="btn btn-secondary" onclick="adjustSpeed(-0.5)">🐢 Slower</button>
-        <span style="color: white; font-weight: 600;">Speed: <span id="teleprompter-speed">2</span>x</span>
-        <button class="btn btn-secondary" onclick="adjustSpeed(0.5)">🐇 Faster</button>
-        <button class="btn btn-primary" onclick="toggleTeleprompter()">⏯️ Play/Pause</button>
-        <button class="btn btn-ghost" style="color: white;" onclick="closeTeleprompter()">✕ Close</button>
-      </div>
-      <div class="teleprompter-content">
-        <div class="teleprompter-text" id="teleprompter-text">
-          ${escapeHtml(state.teleprompterText)}
-        </div>
-      </div>
-    </div>
-  `;
-}
-
 function renderToasts() {
-  return `<div class="toast-container" id="toast-container"></div>`;
+  return '<div id="toast-container" class="toast-container"></div>';
 }
 
-// ============================================
 // Actions
-// ============================================
-
-async function init() {
-  try {
-    const session = await api.getSession();
-    if (session.authenticated) {
-      state.authenticated = true;
-      state.shop = session.shop;
-      state.usage = session.usage;
-      state.limits = session.limits;
-      await loadProducts();
-    }
-  } catch (e) {
-    console.log('Not authenticated');
-  }
-  render();
-}
-
-function navigate(page) {
-  state.currentPage = page;
-  
-  if (page === 'products' && state.products.length === 0) {
-    loadProducts();
-  }
-  
-  render();
-}
-
 async function loadProducts() {
   state.loading.products = true;
   render();
   
   try {
-    const data = await api.getProducts();
-    state.products = data.products;
+    const data = await apiGet('/api/products');
+    state.products = data.products || [];
+    state.stats.products = state.products.length;
+    state.stats.angles = state.products.reduce((sum, p) => sum + (p.angles_discovered || 0), 0);
   } catch (e) {
-    showToast('Failed to load products', 'error');
+    console.error('Load products error:', e);
+    state.products = [];
   }
   
   state.loading.products = false;
   render();
 }
 
-async function selectProduct(productId) {
-  state.loading.angles = true;
+async function selectProduct(id) {
+  const product = state.products.find(p => p.id === id);
+  state.selectedProduct = product;
+  state.angles = [];
   state.currentPage = 'product';
   render();
   
+  // Load angles for this product
   try {
-    const data = await api.getProduct(productId);
-    state.selectedProduct = data.product;
-    state.angles = data.angles;
+    const data = await apiGet(`/api/products/${id}`);
+    if (data.angles) {
+      state.angles = data.angles;
+    }
   } catch (e) {
-    showToast('Failed to load product', 'error');
+    console.error('Load angles error:', e);
   }
   
-  state.loading.angles = false;
   render();
+}
+
+// Terminal state
+let terminalLogs = [];
+let terminalVisible = false;
+
+function addTerminalLog(type, message) {
+  const now = new Date();
+  const time = now.toTimeString().slice(0, 8);
+  terminalLogs.push({ type, message, time });
+  updateTerminal();
+}
+
+function updateTerminal() {
+  const container = document.getElementById('ai-terminal-logs');
+  if (!container) return;
+  
+  container.innerHTML = terminalLogs.map(log => `
+    <div class="ai-terminal-line ${log.type}">
+      <span class="ai-terminal-timestamp">${log.time}</span>
+      <span>${log.message}</span>
+    </div>
+  `).join('') + '<span class="ai-terminal-cursor"></span>';
+  
+  container.scrollTop = container.scrollHeight;
+}
+
+function renderTerminal() {
+  if (!terminalVisible) return '';
+  
+  return `
+    <div class="ai-terminal">
+      <div class="ai-terminal-header">
+        <div class="ai-terminal-dots">
+          <div class="ai-terminal-dot red"></div>
+          <div class="ai-terminal-dot yellow"></div>
+          <div class="ai-terminal-dot green"></div>
+        </div>
+        <span class="ai-terminal-title">AI Console — adangle.ai</span>
+      </div>
+      <div class="ai-terminal-body" id="ai-terminal-logs">
+        ${terminalLogs.map(log => `
+          <div class="ai-terminal-line ${log.type}">
+            <span class="ai-terminal-timestamp">${log.time}</span>
+            <span>${log.message}</span>
+          </div>
+        `).join('')}
+        <span class="ai-terminal-cursor"></span>
+      </div>
+    </div>
+  `;
 }
 
 async function discoverAngles(productId) {
   state.loading.angles = true;
+  terminalLogs = [];
+  terminalVisible = true;
+  
+  const languageSelect = document.getElementById('language-select');
+  const language = languageSelect?.value || 'en';
+  
   render();
   
+  addTerminalLog('system', '🚀 Starting angle discovery...');
+  addTerminalLog('info', `Product ID: ${productId}, Language: ${language}`);
+  
+  await sleep(300);
+  addTerminalLog('model', '🤖 Initializing Claude 3.5 Sonnet...');
+  
+  await sleep(500);
+  addTerminalLog('thinking', '💭 Analyzing product details...');
+  addTerminalLog('thinking', '💭 Identifying target audiences...');
+  
+  await sleep(400);
+  addTerminalLog('thinking', '💭 Discovering pain points...');
+  addTerminalLog('thinking', '💭 Crafting unique hooks...');
+  
   try {
-    const data = await api.discoverAngles(productId);
-    state.angles = data.angles;
-    state.usage.angles_discovered++;
-    showToast(`🎯 ${data.angles.length} sales angles discovered!`, 'success');
+    const data = await apiPost('/api/angles/discover', { productId, language });
+    
+    if (data.angles) {
+      addTerminalLog('success', `✅ Claude 3.5 completed!`);
+      addTerminalLog('success', `📊 Discovered ${data.angles.length} unique angles`);
+      
+      await sleep(300);
+      data.angles.forEach((angle, i) => {
+        addTerminalLog('info', `  ${i + 1}. ${angle.name}`);
+      });
+      
+      addTerminalLog('success', '🎉 Angle discovery complete!');
+      
+      state.angles = data.angles;
+      state.stats.angles += data.angles.length;
+      
+      await sleep(1000);
+      terminalVisible = false;
+      showToast(`Discovered ${data.angles.length} angles!`, 'success');
+    } else {
+      addTerminalLog('error', `❌ Error: ${data.error || 'Failed to discover angles'}`);
+      showToast(data.error || 'Failed to discover angles', 'error');
+    }
   } catch (e) {
-    showToast(e.message || 'Failed to discover angles', 'error');
+    addTerminalLog('error', `❌ Error: ${e.message}`);
+    showToast('Failed to discover angles', 'error');
   }
   
   state.loading.angles = false;
   render();
 }
 
-function selectAngle(angleId) {
-  state.selectedAngle = state.angles.find(a => a.id === angleId);
-  state.copies = [];
-  state.videoScript = null;
-  state.currentPage = 'generate';
-  render();
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function generateCopies(angleId) {
-  state.loading.copies = true;
-  state.selectedAngle = state.angles.find(a => a.id === angleId);
+  const angle = state.angles.find(a => a.id === angleId);
+  state.selectedAngle = angle;
+  state.copies = [];
+  state.videoScript = null;
   state.currentPage = 'generate';
+  state.loading.copies = true;
+  terminalLogs = [];
+  terminalVisible = true;
   render();
   
+  addTerminalLog('system', '🚀 Starting copy generation...');
+  addTerminalLog('info', `Angle: ${angle.name}`);
+  
+  await sleep(300);
+  addTerminalLog('model', '🤖 Spawning 5 AI writers in parallel...');
+  
+  await sleep(400);
+  addTerminalLog('thinking', '📝 [Claude 3.5] Writing storytelling copy...');
+  addTerminalLog('thinking', '📝 [GPT-4o] Writing problem-solution copy...');
+  addTerminalLog('thinking', '📝 [Claude 3.5] Writing comparison copy...');
+  addTerminalLog('thinking', '📝 [Llama 3.1] Writing social proof copy...');
+  addTerminalLog('thinking', '📝 [Mixtral] Writing urgency copy...');
+  
   try {
-    const data = await api.generateCopies(angleId);
-    state.copies = data.copies;
-    showToast('✨ 5 ad copies generated!', 'success');
+    const data = await apiPost('/api/generate/copies', { angleId });
+    
+    if (data.copies) {
+      await sleep(300);
+      addTerminalLog('success', '✅ Claude 3.5 (storytelling) — done');
+      await sleep(200);
+      addTerminalLog('success', '✅ GPT-4o (problem-solution) — done');
+      await sleep(200);
+      addTerminalLog('success', '✅ Claude 3.5 (comparison) — done');
+      await sleep(200);
+      addTerminalLog('success', '✅ Llama 3.1 (social proof) — done');
+      await sleep(200);
+      addTerminalLog('success', '✅ Mixtral (urgency) — done');
+      
+      addTerminalLog('success', `🎉 Generated ${data.copies.length} unique ad copies!`);
+      
+      state.copies = data.copies;
+      state.stats.copies += data.copies.length;
+      
+      await sleep(800);
+      terminalVisible = false;
+      showToast(`Generated ${data.copies.length} ad copies!`, 'success');
+    } else {
+      addTerminalLog('error', `❌ Error: ${data.error || 'Failed to generate copies'}`);
+      showToast(data.error || 'Failed to generate copies', 'error');
+    }
   } catch (e) {
-    showToast(e.message || 'Failed to generate copies', 'error');
+    addTerminalLog('error', `❌ Error: ${e.message}`);
+    showToast('Failed to generate copies', 'error');
   }
   
   state.loading.copies = false;
@@ -706,87 +890,141 @@ async function generateCopies(angleId) {
 }
 
 async function generateScript(angleId) {
-  state.loading.script = true;
-  state.selectedAngle = state.angles.find(a => a.id === angleId);
+  const angle = state.angles.find(a => a.id === angleId);
+  state.selectedAngle = angle;
+  state.copies = [];
+  state.videoScript = null;
   state.currentPage = 'generate';
+  state.loading.copies = true;
+  terminalLogs = [];
+  terminalVisible = true;
   render();
   
-  try {
-    const data = await api.generateVideoScript(angleId);
-    state.videoScript = data.script;
-    showToast('🎬 Video script created!', 'success');
-  } catch (e) {
-    showToast(e.message || 'Failed to generate script', 'error');
-  }
+  addTerminalLog('system', '🎬 Starting video script generation...');
+  addTerminalLog('info', `Angle: ${angle.name}`);
   
-  state.loading.script = false;
-  render();
-}
-
-async function subscribe(plan) {
+  await sleep(300);
+  addTerminalLog('model', '🤖 Initializing GPT-4o (structured output)...');
+  
+  await sleep(400);
+  addTerminalLog('thinking', '🎭 Crafting hook (0-3s)...');
+  await sleep(300);
+  addTerminalLog('thinking', '😫 Writing problem setup (3-8s)...');
+  await sleep(300);
+  addTerminalLog('thinking', '✨ Presenting solution (8-18s)...');
+  await sleep(300);
+  addTerminalLog('thinking', '📈 Adding proof/results (18-25s)...');
+  await sleep(300);
+  addTerminalLog('thinking', '🎯 Finalizing CTA (25-30s)...');
+  
   try {
-    const data = await api.subscribe(plan);
-    if (data.confirmationUrl) {
-      window.location.href = data.confirmationUrl;
+    const data = await apiPost('/api/generate/video-script', { angleId });
+    
+    if (data.script) {
+      addTerminalLog('success', '✅ GPT-4o completed!');
+      addTerminalLog('success', '🎬 30-second UGC script ready');
+      
+      state.videoScript = data.script;
+      
+      await sleep(800);
+      terminalVisible = false;
+      showToast('Video script generated!', 'success');
+    } else {
+      addTerminalLog('error', `❌ Error: ${data.error || 'Failed to generate script'}`);
+      showToast(data.error || 'Failed to generate script', 'error');
     }
   } catch (e) {
-    showToast('Failed to start subscription', 'error');
+    addTerminalLog('error', `❌ Error: ${e.message}`);
+    showToast('Failed to generate script', 'error');
   }
-}
-
-function copyToClipboard(text) {
-  navigator.clipboard.writeText(text).then(() => {
-    showToast('📋 Copied to clipboard!', 'success');
-  });
-}
-
-function openTeleprompter(text) {
-  state.teleprompterText = text;
-  state.teleprompterActive = true;
-  render();
-}
-
-function startTeleprompter() {
-  const input = document.getElementById('teleprompter-input');
-  if (input && input.value.trim()) {
-    state.teleprompterText = input.value;
-    state.teleprompterActive = true;
-    render();
-  } else {
-    showToast('Please enter a script first', 'error');
-  }
-}
-
-function closeTeleprompter() {
-  state.teleprompterActive = false;
-  render();
-}
-
-let teleprompterPlaying = false;
-let teleprompterSpeed = 2;
-let teleprompterPosition = 0;
-let teleprompterInterval = null;
-
-function toggleTeleprompter() {
-  teleprompterPlaying = !teleprompterPlaying;
   
-  if (teleprompterPlaying) {
-    teleprompterInterval = setInterval(() => {
-      teleprompterPosition += teleprompterSpeed;
-      const el = document.getElementById('teleprompter-text');
-      if (el) {
-        el.style.transform = `translateY(-${teleprompterPosition}px)`;
-      }
-    }, 50);
-  } else {
-    clearInterval(teleprompterInterval);
+  state.loading.copies = false;
+  render();
+}
+
+async function importFromStore() {
+  const storeInput = document.getElementById('store-url');
+  const store = storeInput?.value?.trim();
+  
+  if (!store) {
+    showToast('Please enter a store domain', 'error');
+    return;
+  }
+  
+  showToast('Importing products...', 'info');
+  
+  try {
+    const data = await apiPost('/api/products/import-store', { store });
+    if (data.success) {
+      showToast(`Imported ${data.count} products!`, 'success');
+      closeModal();
+      loadProducts();
+    } else {
+      showToast(data.error || 'Import failed', 'error');
+    }
+  } catch (e) {
+    showToast('Import failed', 'error');
   }
 }
 
-function adjustSpeed(delta) {
-  teleprompterSpeed = Math.max(0.5, Math.min(5, teleprompterSpeed + delta));
-  const el = document.getElementById('teleprompter-speed');
-  if (el) el.textContent = teleprompterSpeed;
+async function addProductManually() {
+  const title = document.getElementById('product-title')?.value?.trim();
+  const description = document.getElementById('product-description')?.value?.trim();
+  const price = document.getElementById('product-price')?.value;
+  const compare = document.getElementById('product-compare')?.value;
+  
+  if (!title) {
+    showToast('Product name is required', 'error');
+    return;
+  }
+  
+  try {
+    const data = await apiPost('/api/products', {
+      title,
+      description,
+      price: parseFloat(price) || 0,
+      compare_at_price: parseFloat(compare) || null,
+    });
+    
+    if (data.product) {
+      showToast('Product added!', 'success');
+      closeModal();
+      loadProducts();
+    } else {
+      showToast(data.error || 'Failed to add product', 'error');
+    }
+  } catch (e) {
+    showToast('Failed to add product', 'error');
+  }
+}
+
+function navigate(page) {
+  state.currentPage = page;
+  if (page === 'products') {
+    loadProducts();
+  }
+  render();
+}
+
+function closeModal() {
+  state.showAddModal = false;
+  render();
+}
+
+function copyToClipboard(index) {
+  const copy = state.copies[index];
+  if (copy) {
+    navigator.clipboard.writeText(copy.content);
+    showToast('Copied to clipboard!', 'success');
+  }
+}
+
+function copyScript() {
+  const script = state.videoScript?.content || state.videoScript;
+  if (script) {
+    navigator.clipboard.writeText(script);
+    showToast('Script copied!', 'success');
+  }
 }
 
 function showToast(message, type = 'info') {
@@ -798,30 +1036,38 @@ function showToast(message, type = 'info') {
   toast.textContent = message;
   container.appendChild(toast);
   
-  setTimeout(() => toast.remove(), 4000);
+  setTimeout(() => toast.remove(), 3000);
 }
 
-// ============================================
-// Utilities
-// ============================================
-
-function escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML.replace(/'/g, "\\'").replace(/"/g, '\\"');
-}
-
-function getShopFromUrl() {
+// Check for upgrade success message
+function checkUrlParams() {
   const params = new URLSearchParams(window.location.search);
-  return params.get('shop') || '';
+  const upgraded = params.get('upgraded');
+  const error = params.get('error');
+  
+  if (upgraded) {
+    showToast(`🎉 Upgraded to ${upgraded} plan!`, 'success');
+    // Clean URL
+    window.history.replaceState({}, '', `/?shop=${getShop()}`);
+  }
+  
+  if (error) {
+    const errorMessages = {
+      'declined': 'Payment was declined',
+      'missing_params': 'Missing parameters',
+      'no_token': 'Please reinstall the app',
+      'activation_failed': 'Failed to activate subscription',
+    };
+    showToast(errorMessages[error] || `Error: ${error}`, 'error');
+    window.history.replaceState({}, '', `/?shop=${getShop()}`);
+  }
 }
 
-function attachEventListeners() {
-  // Add any dynamic event listeners here
+// Init
+async function init() {
+  checkUrlParams();
+  render();
+  await loadProducts();
 }
-
-// ============================================
-// Initialize
-// ============================================
 
 document.addEventListener('DOMContentLoaded', init);

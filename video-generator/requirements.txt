@@ -1,0 +1,30 @@
+# Video Generator - Script to Video AI
+# Clone of CapCut's "Create with AI"
+
+# Core
+moviepy==1.0.3
+edge-tts==6.1.9
+aiofiles==23.2.1
+
+# APIs
+httpx==0.27.0
+pexels-api==1.0.1
+
+# LLM
+openai==1.14.0
+
+# Utils
+python-dotenv==1.0.1
+pydantic==2.6.3
+rich==13.7.1
+typer==0.9.0
+
+# Image/Video processing
+Pillow==10.2.0
+numpy==1.26.4
+
+# Audio processing (for music mixing + auto-ducking)
+pydub==0.25.1
+
+# Web UI
+streamlit==1.32.0

@@ -1,0 +1,38 @@
+{
+  "calmora": {
+    "youtube": {
+      "APISID": "9G3hywz29pHR_3qw/AdVfR8JyFVaJy0iOo",
+      "HSID": "AwvrhQ8qPauI",
+      "SAPISID": "iEomfZdyPuax6V0z/A5-Kk0wWlLR8lxPov",
+      "SID": "g.a0008AgAwzWumxr9evL_HqZHsN-IZp",
+      "SSID": "A5Uk8dGNGCacDaBNR"
+    },
+    "tiktok": {
+      "sessionid": "",
+      "sid_tt": ""
+    },
+    "instagram": {
+      "sessionid": "",
+      "csrftoken": "",
+      "ds_user_id": ""
+    }
+  },
+  "moneystack": {
+    "youtube": {
+      "SID": "g.a0008AgAw67MKgCRqwQkVxBZMvupZ5pePsJcsg136bsFKeJ6eY9m4fDs_P2aGG-o1uruN6vSpwACgYKAWMSARcSFQHGX2MitDqVYUmcMPkrRz39JsOqnRoVAUF8yKpChoHTmejCo-cdhKH21bmR0076",
+      "HSID": "",
+      "SSID": "AvgFh4WgiIiCertXl",
+      "APISID": "kl2KgDUw3RG_3C5E/AwAqBOXEUe-iwINZe",
+      "SAPISID": "LTLUksMIAN0aNfJR/A3pz6o0G1OcEMnfEU"
+    },
+    "tiktok": {
+      "sessionid": "",
+      "sid_tt": ""
+    },
+    "instagram": {
+      "sessionid": "",
+      "csrftoken": "",
+      "ds_user_id": ""
+    }
+  }
+}

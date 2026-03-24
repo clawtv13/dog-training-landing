@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crianza Consciente para Padres Separados</title>
+    <meta name="description" content="Newsletter gratuita con estrategias basadas en neurociencia para criar hijos emocionalmente sanos después de una separación.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2D5A4A;
+            --primary-light: #3D7A6A;
+            --accent: #D4A574;
+            --text: #2C2C2C;
+            --text-light: #666;
+            --bg: #FDFBF7;
+            --white: #fff;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--bg) 0%, #F5F0E8 100%);
+        }
+        
+        .hero-container {
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* FORM */
+        .form-container {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            margin-bottom: 24px;
+        }
+        
+        .form-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        
+        .form-group {
+            margin-bottom: 12px;
+        }
+        
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        
+        .btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-1px);
+        }
+        
+        .privacy {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 12px;
+        }
+        
+        /* SOCIAL PROOF */
+        .social-proof {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+        
+        .avatars {
+            display: flex;
+        }
+        
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid var(--white);
+            margin-left: -8px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .avatar:first-child {
+            margin-left: 0;
+        }
+        
+        .social-proof-text {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .social-proof-text strong {
+            color: var(--text);
+        }
+        
+        /* BENEFITS */
+        .benefits {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+        
+        .benefits-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 48px;
+            color: var(--primary);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        
+        .benefit {
+            padding: 24px;
+            border-radius: 12px;
+            background: var(--bg);
+        }
+        
+        .benefit-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+        
+        .benefit h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        
+        .benefit p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        /* WHAT YOU GET */
+        .what-you-get {
+            padding: 80px 20px;
+            background: var(--bg);
+        }
+        
+        .what-you-get-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .email-preview {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .email-day {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .email-subject {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        
+        .email-excerpt {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        /* ABOUT */
+        .about {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+        
+        .about-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-text {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .book-mention {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: var(--bg);
+            border-radius: 8px;
+        }
+        
+        .book-mention img {
+            width: 50px;
+            border-radius: 4px;
+        }
+        
+        .book-mention-text {
+            text-align: left;
+            font-size: 13px;
+        }
+        
+        .book-mention-text strong {
+            display: block;
+            color: var(--text);
+        }
+        
+        /* FINAL CTA */
+        .final-cta {
+            padding: 80px 20px;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .final-cta-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+        
+        .final-cta p {
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+        
+        .final-cta .form-container {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .final-cta input {
+            background: var(--white);
+        }
+        
+        .final-cta .btn {
+            background: var(--accent);
+        }
+        
+        .final-cta .btn:hover {
+            background: #C49564;
+        }
+        
+        .final-cta .privacy {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* FOOTER */
+        footer {
+            padding: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-light);
+            background: var(--bg);
+        }
+        
+        /* SUCCESS MESSAGE */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 32px;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .success-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .success-message h3 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .form-container.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-container">
+            <span class="badge">NEWSLETTER GRATUITA</span>
+            
+            <h1>Criar hijos felices después de una separación es posible</h1>
+            
+            <p class="subtitle">Estrategias basadas en neurociencia para que tu hijo crezca emocionalmente sano, aunque sus padres vivan en dos casas.</p>
+            
+            <div class="social-proof">
+                <div class="avatars">
+                    <div class="avatar">👩</div>
+                    <div class="avatar">👨</div>
+                    <div class="avatar">👩</div>
+                    <div class="avatar">👨</div>
+                </div>
+                <span class="social-proof-text"><strong>+500 padres</strong> ya reciben los emails</span>
+            </div>
+            
+            <div class="form-container" id="hero-form">
+                <p class="form-title">Recibe un email diario con una estrategia práctica:</p>
+                <form action="YOUR_FORM_ENDPOINT" method="POST" id="signup-form-hero">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Tu email" required>
+                    </div>
+                    <button type="submit" class="btn">Quiero empezar →</button>
+                </form>
+                <p class="privacy">🔒 Sin spam. Cancela cuando quieras.</p>
+            </div>
+            
+            <div class="success-message" id="hero-success">
+                <div class="success-icon">✅</div>
+                <h3>¡Bienvenido/a!</h3>
+                <p>Revisa tu email. Tu primer email llega en minutos.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- BENEFITS -->
+    <section class="benefits">
+        <div class="benefits-container">
+            <h2 class="section-title">Qué vas a aprender</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <div class="benefit-icon">🧠</div>
+                    <h3>Neurociencia práctica</h3>
+                    <p>Entiende cómo funciona el cerebro de tu hijo durante una separación y cómo responder a sus emociones.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">🏠</div>
+                    <h3>Dos casas, un equipo</h3>
+                    <p>Estrategias para co-parentear aunque tu ex no coopere (o sea difícil).</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">💪</div>
+                    <h3>Resiliencia emocional</h3>
+                    <p>Herramientas para que tu hijo procese la separación sin cargar con traumas de por vida.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">❤️</div>
+                    <h3>Autocuidado sin culpa</h3>
+                    <p>No puedes dar lo que no tienes. Aprende a cuidarte para cuidar mejor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- WHAT YOU GET -->
+    <section class="what-you-get">
+        <div class="what-you-get-container">
+            <h2 class="section-title">Un email, una idea, una acción</h2>
+            
+            <div class="email-preview">
+                <div class="email-day">DÍA 1</div>
+                <div class="email-subject">Tu hijo no está "roto" por la separación (y tú tampoco)</div>
+                <div class="email-excerpt">El cerebro de tu hijo es increíblemente plástico. Lo que determina su desarrollo no es la separación, sino cómo le ayudas a procesarla...</div>
+            </div>
+            
+            <div class="email-preview">
+                <div class="email-day">DÍA 4</div>
+                <div class="email-subject">Por qué tu hijo se porta peor justo cuando vuelve contigo</div>
+                <div class="email-excerpt">Tu hijo ha contenido sus emociones durante días. Cuando vuelve contigo —a su lugar seguro— finalmente puede soltar todo...</div>
+            </div>
+            
+            <div class="email-preview">
+                <div class="email-day">DÍA 7</div>
+                <div class="email-subject">Tu ex tiene pareja nueva. Tu hijo la llama "mamá". Socorro.</div>
+                <div class="email-excerpt">El amor no es un pastel del que quedan menos trozos cuantas más personas comen. Tu hijo puede querer a la nueva pareja Y seguir queriéndote igual...</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="about-container">
+            <h2 class="section-title">Basado en ciencia, no en opiniones</h2>
+            
+            <p class="about-text">Todo el contenido está basado en el trabajo de <strong>Daniel J. Siegel</strong>, neuropsiquiatra de UCLA y autor de "El Cerebro del Niño", adaptado específicamente para padres separados.</p>
+            
+            <p class="about-text">Porque criar a tu hijo no tiene por qué ser un campo de batalla. Y tu separación no tiene que definir su futuro.</p>
+            
+            <div class="book-mention">
+                <div>📚</div>
+                <div class="book-mention-text">
+                    <strong>El Cerebro del Niño</strong>
+                    Daniel J. Siegel y Tina Payne Bryson
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="final-cta-container">
+            <h2>Empieza hoy. Gratis.</h2>
+            <p>Un email corto cada día con algo que puedes aplicar inmediatamente.</p>
+            
+            <div class="form-container" id="footer-form">
+                <form action="YOUR_FORM_ENDPOINT" method="POST" id="signup-form-footer">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Tu email" required>
+                    </div>
+                    <button type="submit" class="btn">Suscribirme gratis →</button>
+                </form>
+                <p class="privacy">Sin spam. Cancela en cualquier momento.</p>
+            </div>
+            
+            <div class="success-message" id="footer-success">
+                <div class="success-icon">✅</div>
+                <h3>¡Hecho!</h3>
+                <p>Revisa tu bandeja de entrada.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Crianza Consciente. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script>
+        // Simple form handling - replace with your email service
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                // Here you would send to your email service (ConvertKit, Mailchimp, etc.)
+                console.log('Form submitted:', data);
+                
+                // Show success message
+                const formContainer = this.closest('.form-container');
+                const successMessage = formContainer.nextElementSibling;
+                
+                formContainer.classList.add('hidden');
+                successMessage.classList.add('show');
+            });
+        });
+    </script>
+</body>
+</html>

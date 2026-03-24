@@ -1,0 +1,4 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  5346  100   328  100  5018   2333  35697 --:--:-- --:--:-- --:--:-- 38185
+{"message":"Cannot complete operation: Question with UUID 5fbb9727-96cc-4c10-b2eb-6ad7e7ef7c09 has incorrect isFirst flag at index 0.","errorType":"VALIDATION","errors":[{"errorType":"VALIDATION","msg":"Cannot complete operation: Question with UUID 5fbb9727-96cc-4c10-b2eb-6ad7e7ef7c09 has incorrect isFirst flag at index 0."}]}

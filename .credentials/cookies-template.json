@@ -1,0 +1,38 @@
+{
+  "calmora": {
+    "youtube": {
+      "SID": "YOUR_SID_HERE",
+      "HSID": "YOUR_HSID_HERE",
+      "SSID": "YOUR_SSID_HERE",
+      "APISID": "YOUR_APISID_HERE",
+      "SAPISID": "YOUR_SAPISID_HERE"
+    },
+    "tiktok": {
+      "sessionid": "YOUR_SESSIONID_HERE",
+      "sid_tt": "YOUR_SID_TT_HERE"
+    },
+    "instagram": {
+      "sessionid": "YOUR_IG_SESSIONID_HERE",
+      "csrftoken": "YOUR_CSRFTOKEN_HERE",
+      "ds_user_id": "YOUR_USER_ID_HERE"
+    }
+  },
+  "moneystack": {
+    "youtube": {
+      "SID": "",
+      "HSID": "",
+      "SSID": "",
+      "APISID": "",
+      "SAPISID": ""
+    },
+    "tiktok": {
+      "sessionid": "",
+      "sid_tt": ""
+    },
+    "instagram": {
+      "sessionid": "",
+      "csrftoken": "",
+      "ds_user_id": ""
+    }
+  }
+}

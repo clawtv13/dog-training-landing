@@ -1,0 +1,1046 @@
+{% comment %}
+  ============================================================================
+  VITALIZEN ENHANCED SECTIONS - Redesigned to Match Brand
+  ============================================================================
+  
+  These sections are designed to match the existing VitaliZen brand aesthetic:
+  - Font: Inter (body), Jost (headings, weight 800)
+  - Primary background: #f8f8f6 (warm off-white)
+  - Text color: rgb(43, 43, 43) at 75% opacity
+  - Button color: #1c1c1c (dark charcoal/black)
+  - Accent green: rgb(75, 88, 62) / #4b583e (olive/sage)
+  - Success green: #53af01 (for checkmarks)
+  - Border radius: 6px (buttons), 10px (media/cards)
+  - Font sizes: 1.5rem body (desktop 1.6rem), headings scale 1.0
+  
+  Installation: Add to theme.liquid before </body> or as snippets
+  ============================================================================
+{% endcomment %}
+
+<style>
+  /* ============================================================================
+     CSS CUSTOM PROPERTIES - VitaliZen Design System
+     ============================================================================ */
+  :root {
+    /* Colors - extracted from existing site */
+    --vz-bg-primary: #f8f8f6;
+    --vz-bg-white: #ffffff;
+    --vz-bg-dark: #1c1c1c;
+    --vz-bg-muted: #f3f1ec;
+    
+    --vz-text-primary: rgba(43, 43, 43, 0.75);
+    --vz-text-dark: #2b2b2b;
+    --vz-text-white: #ffffff;
+    --vz-text-muted: rgba(43, 43, 43, 0.6);
+    
+    --vz-accent-olive: rgb(75, 88, 62);
+    --vz-accent-green: #53af01;
+    --vz-accent-red: #dc3545;
+    
+    --vz-button-bg: #1c1c1c;
+    --vz-button-text: #ffffff;
+    --vz-button-radius: 6px;
+    
+    --vz-border-light: rgba(43, 43, 43, 0.1);
+    --vz-shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --vz-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.08);
+    
+    /* Typography - matching existing site */
+    --vz-font-body: Inter, sans-serif;
+    --vz-font-heading: Jost, sans-serif;
+    --vz-heading-weight: 800;
+    
+    /* Spacing */
+    --vz-section-padding: 36px;
+    --vz-section-padding-mobile: 27px;
+    --vz-card-radius: 10px;
+  }
+
+  /* ============================================================================
+     SECTION A: PRICE COMPARISON TABLE
+     ============================================================================
+     
+     Position: Below the existing "VitaGlow Pro vs. Competitors" section
+     Purpose: Show savings vs professional treatments
+     Design: Clean, minimal table matching existing comparison table style
+  */
+  
+  .vz-price-comparison {
+    background: var(--vz-bg-white);
+    padding: var(--vz-section-padding) 0;
+  }
+  
+  .vz-price-comparison__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .vz-price-comparison__title {
+    font-family: var(--vz-font-heading);
+    font-weight: var(--vz-heading-weight);
+    font-size: 2.4rem;
+    color: var(--vz-text-dark);
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 0.06rem;
+  }
+  
+  .vz-price-comparison__subtitle {
+    font-family: var(--vz-font-body);
+    font-size: 1.5rem;
+    color: var(--vz-text-muted);
+    text-align: center;
+    margin: 0 0 2rem 0;
+    line-height: 1.6;
+  }
+  
+  .vz-price-comparison__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--vz-font-body);
+    font-size: 1.4rem;
+  }
+  
+  .vz-price-comparison__table thead {
+    background: var(--vz-bg-dark);
+  }
+  
+  .vz-price-comparison__table th {
+    padding: 1.2rem 1rem;
+    font-family: var(--vz-font-heading);
+    font-weight: var(--vz-heading-weight);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: var(--vz-text-white);
+    text-align: left;
+  }
+  
+  .vz-price-comparison__table th:last-child {
+    text-align: right;
+  }
+  
+  .vz-price-comparison__table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--vz-border-light);
+    color: var(--vz-text-primary);
+  }
+  
+  .vz-price-comparison__table td:last-child {
+    text-align: right;
+    font-weight: 600;
+  }
+  
+  .vz-price-comparison__table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .vz-price-comparison__row--highlight {
+    background: var(--vz-bg-muted);
+  }
+  
+  .vz-price-comparison__row--highlight td {
+    color: var(--vz-text-dark);
+    font-weight: 600;
+  }
+  
+  .vz-price-comparison__row--highlight td:last-child {
+    color: var(--vz-accent-olive);
+    font-weight: 700;
+  }
+  
+  .vz-price-comparison__savings {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--vz-bg-muted);
+    border-radius: var(--vz-card-radius);
+  }
+  
+  .vz-price-comparison__savings-text {
+    font-family: var(--vz-font-body);
+    font-size: 1.4rem;
+    color: var(--vz-text-primary);
+    margin: 0;
+  }
+  
+  .vz-price-comparison__savings-amount {
+    font-family: var(--vz-font-heading);
+    font-weight: var(--vz-heading-weight);
+    color: var(--vz-accent-olive);
+  }
+  
+  @media screen and (max-width: 749px) {
+    .vz-price-comparison {
+      padding: var(--vz-section-padding-mobile) 0;
+    }
+    
+    .vz-price-comparison__title {
+      font-size: 2rem;
+    }
+    
+    .vz-price-comparison__table {
+      font-size: 1.3rem;
+    }
+    
+    .vz-price-comparison__table th,
+    .vz-price-comparison__table td {
+      padding: 0.8rem 0.6rem;
+    }
+  }
+
+  /* ============================================================================
+     SECTION B: CTA BUTTON (Inline/Floating)
+     ============================================================================
+     
+     Position: After testimonials or key sections
+     Purpose: Drive conversions with consistent button styling
+     Design: Matches existing product-form button exactly
+  */
+  
+  .vz-cta-section {
+    background: var(--vz-bg-muted);
+    padding: var(--vz-section-padding) 0;
+  }
+  
+  .vz-cta-section__container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  
+  .vz-cta-section__title {
+    font-family: var(--vz-font-heading);
+    font-weight: var(--vz-heading-weight);
+    font-size: 2rem;
+    color: var(--vz-text-dark);
+    margin: 0 0 0.75rem 0;
+    letter-spacing: 0.06rem;
+  }
+  
+  .vz-cta-section__subtitle {
+    font-family: var(--vz-font-body);
+    font-size: 1.4rem;
+    color: var(--vz-text-muted);
+    margin: 0 0 1.5rem 0;
+    line-height: 1.6;
+  }
+  
+  .vz-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--vz-button-bg);
+    color: var(--vz-button-text);
+    font-family: var(--vz-font-body);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 1.2rem 2.4rem;
+    border-radius: var(--vz-button-radius);
+    border: 1px solid var(--vz-button-bg);
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    min-width: 200px;
+  }
+  
+  .vz-cta-button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+  
+  .vz-cta-button:active {
+    transform: translateY(0);
+  }
+  
+  .vz-cta-section__trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-family: var(--vz-font-body);
+    font-size: 1.2rem;
+    color: var(--vz-text-muted);
+    flex-wrap: wrap;
+  }
+  
+  .vz-cta-section__trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  
+  @media screen and (max-width: 749px) {
+    .vz-cta-section {
+      padding: var(--vz-section-padding-mobile) 0;
+    }
+    
+    .vz-cta-button {
+      width: 100%;
+    }
+  }
+
+  /* ============================================================================
+     SECTION C: COUNTDOWN TIMER
+     ============================================================================
+     
+     Position: Above or near the product form
+     Purpose: Create professional urgency without being aggressive
+     Design: Clean, minimal, matches existing countdown in cart
+  */
+  
+  .vz-countdown {
+    background: var(--vz-bg-dark);
+    padding: 1rem 1.5rem;
+  }
+  
+  .vz-countdown__container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .vz-countdown__label {
+    font-family: var(--vz-font-heading);
+    font-weight: var(--vz-heading-weight);
+    font-size: 1.3rem;
+    color: var(--vz-text-white);
+    letter-spacing: 0.06rem;
+  }
+  
+  .vz-countdown__timer {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .vz-countdown__unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 3.5rem;
+  }
+  
+  .vz-countdown__number {
+    font-family: var(--vz-font-heading);
+    font-weight: var(--vz-heading-weight);
+    font-size: 1.8rem;
+    color: var(--vz-text-white);
+    line-height: 1;
+    letter-spacing: 0.02rem;
+  }
+  
+  .vz-countdown__text {
+    font-family: var(--vz-font-body);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+  }
+  
+  .vz-countdown__separator {
+    font-family: var(--vz-font-heading);
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0.1rem;
+    align-self: flex-start;
+    margin-top: 0.2rem;
+  }
+  
+  .vz-countdown__subtext {
+    width: 100%;
+    text-align: center;
+    font-family: var(--vz-font-body);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5rem;
+  }
+  
+  @media screen and (max-width: 749px) {
+    .vz-countdown__label {
+      font-size: 1.2rem;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    
+    .vz-countdown__number {
+      font-size: 1.6rem;
+    }
+    
+    .vz-countdown__unit {
+      min-width: 3rem;
+    }
+  }
+
+  /* ============================================================================
+     SECTION D: STICKY CART (MOBILE)
+     ============================================================================
+     
+     Position: Fixed to bottom of screen on mobile
+     Purpose: Persistent add-to-cart access while scrolling
+     Design: Matches existing sticky-atc component styling
+  */
+  
+  .vz-sticky-cart {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--vz-bg-white);
+    padding: 0.8rem 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+    z-index: 999;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    display: none;
+  }
+  
+  .vz-sticky-cart.is-visible {
+    transform: translateY(0);
+  }
+  
+  @media screen and (max-width: 749px) {
+    .vz-sticky-cart {
+      display: block;
+    }
+  }
+  
+  .vz-sticky-cart__container {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .vz-sticky-cart__image {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--vz-button-radius);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  .vz-sticky-cart__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .vz-sticky-cart__info {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .vz-sticky-cart__title {
+    font-family: var(--vz-font-body);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--vz-text-dark);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .vz-sticky-cart__price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .vz-sticky-cart__price-current {
+    font-family: var(--vz-font-body);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--vz-text-dark);
+  }
+  
+  .vz-sticky-cart__price-compare {
+    font-family: var(--vz-font-body);
+    font-size: 1.1rem;
+    color: var(--vz-text-muted);
+    text-decoration: line-through;
+  }
+  
+  .vz-sticky-cart__button {
+    background: var(--vz-button-bg);
+    color: var(--vz-button-text);
+    font-family: var(--vz-font-body);
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 0.9rem 1.5rem;
+    border-radius: var(--vz-button-radius);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+  }
+  
+  .vz-sticky-cart__button:hover {
+    opacity: 0.9;
+  }
+
+  /* ============================================================================
+     SECTION E: EXIT POPUP
+     ============================================================================
+     
+     Position: Overlay triggered on exit intent
+     Purpose: Capture leaving visitors with a gentle offer
+     Design: Professional, clean modal matching brand aesthetic
+  */
+  
+  .vz-exit-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .vz-exit-popup.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .vz-exit-popup__content {
+    background: var(--vz-bg-white);
+    border-radius: var(--vz-card-radius);
+    max-width: 420px;
+    width: 100%;
+    padding: 2.5rem 2rem;
+    position: relative;
+    box-shadow: var(--vz-shadow-medium);
+    text-align: center;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+  }
+  
+  .vz-exit-popup.is-visible .vz-exit-popup__content {
+    transform: scale(1);
+  }
+  
+  .vz-exit-popup__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--vz-text-muted);
+    transition: color 0.2s ease;
+  }
+  
+  .vz-exit-popup__close:hover {
+    color: var(--vz-text-dark);
+  }
+  
+  .vz-exit-popup__close svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  
+  .vz-exit-popup__icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .vz-exit-popup__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .vz-exit-popup__title {
+    font-family: var(--vz-font-heading);
+    font-weight: var(--vz-heading-weight);
+    font-size: 2rem;
+    color: var(--vz-text-dark);
+    margin: 0 0 0.75rem 0;
+    letter-spacing: 0.06rem;
+  }
+  
+  .vz-exit-popup__subtitle {
+    font-family: var(--vz-font-body);
+    font-size: 1.4rem;
+    color: var(--vz-text-primary);
+    margin: 0 0 1.5rem 0;
+    line-height: 1.6;
+  }
+  
+  .vz-exit-popup__offer {
+    background: var(--vz-bg-muted);
+    border-radius: var(--vz-button-radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .vz-exit-popup__offer-text {
+    font-family: var(--vz-font-body);
+    font-size: 1.3rem;
+    color: var(--vz-text-primary);
+    margin: 0;
+  }
+  
+  .vz-exit-popup__offer-code {
+    font-family: var(--vz-font-heading);
+    font-weight: var(--vz-heading-weight);
+    color: var(--vz-accent-olive);
+    letter-spacing: 0.1rem;
+  }
+  
+  .vz-exit-popup__cta {
+    display: block;
+    width: 100%;
+    background: var(--vz-button-bg);
+    color: var(--vz-button-text);
+    font-family: var(--vz-font-body);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 1.1rem 2rem;
+    border-radius: var(--vz-button-radius);
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    margin-bottom: 1rem;
+  }
+  
+  .vz-exit-popup__cta:hover {
+    opacity: 0.9;
+  }
+  
+  .vz-exit-popup__dismiss {
+    font-family: var(--vz-font-body);
+    font-size: 1.2rem;
+    color: var(--vz-text-muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+  
+  .vz-exit-popup__dismiss:hover {
+    color: var(--vz-text-dark);
+  }
+  
+  @media screen and (max-width: 749px) {
+    .vz-exit-popup__content {
+      padding: 2rem 1.5rem;
+    }
+    
+    .vz-exit-popup__title {
+      font-size: 1.8rem;
+    }
+  }
+</style>
+
+
+{% comment %}
+  ============================================================================
+  SECTION A: PRICE COMPARISON TABLE - HTML
+  ============================================================================
+{% endcomment %}
+
+<section class="vz-price-comparison">
+  <div class="vz-price-comparison__container">
+    <h2 class="vz-price-comparison__title">Cost Per Treatment</h2>
+    <p class="vz-price-comparison__subtitle">How VitaGlow Pro compares to professional treatments</p>
+    
+    <table class="vz-price-comparison__table">
+      <thead>
+        <tr>
+          <th>Treatment</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>LED Facial at Med Spa</td>
+          <td>$150-300/session</td>
+        </tr>
+        <tr>
+          <td>Dermatologist LED Treatment</td>
+          <td>$200-500/session</td>
+        </tr>
+        <tr>
+          <td>Monthly Facials (12 months)</td>
+          <td>$1,800-3,600/year</td>
+        </tr>
+        <tr class="vz-price-comparison__row--highlight">
+          <td>VitaGlow Pro (unlimited sessions)</td>
+          <td>{{ product.price | money }}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="vz-price-comparison__savings">
+      <p class="vz-price-comparison__savings-text">
+        You save <span class="vz-price-comparison__savings-amount">$1,730+</span> in your first year alone
+      </p>
+    </div>
+  </div>
+</section>
+
+
+{% comment %}
+  ============================================================================
+  SECTION B: CTA BUTTON - HTML
+  ============================================================================
+{% endcomment %}
+
+<section class="vz-cta-section">
+  <div class="vz-cta-section__container">
+    <h2 class="vz-cta-section__title">Ready to Transform Your Skin?</h2>
+    <p class="vz-cta-section__subtitle">Join 1,200+ customers who already made the switch</p>
+    
+    <a href="#product-form" class="vz-cta-button">
+      Get Yours Now — {{ product.price | money }}
+    </a>
+    
+    <div class="vz-cta-section__trust">
+      <span class="vz-cta-section__trust-item">🚚 Free Shipping</span>
+      <span class="vz-cta-section__trust-item">🛡️ 90-Day Guarantee</span>
+      <span class="vz-cta-section__trust-item">⭐ Trusted by 1,200+</span>
+    </div>
+  </div>
+</section>
+
+
+{% comment %}
+  ============================================================================
+  SECTION C: COUNTDOWN TIMER - HTML
+  ============================================================================
+{% endcomment %}
+
+<div class="vz-countdown" id="vzCountdown">
+  <div class="vz-countdown__container">
+    <span class="vz-countdown__label">🔥 Sale ends in:</span>
+    
+    <div class="vz-countdown__timer">
+      <div class="vz-countdown__unit">
+        <span class="vz-countdown__number" id="vzCountdownHours">00</span>
+        <span class="vz-countdown__text">hrs</span>
+      </div>
+      <span class="vz-countdown__separator">:</span>
+      <div class="vz-countdown__unit">
+        <span class="vz-countdown__number" id="vzCountdownMinutes">00</span>
+        <span class="vz-countdown__text">min</span>
+      </div>
+      <span class="vz-countdown__separator">:</span>
+      <div class="vz-countdown__unit">
+        <span class="vz-countdown__number" id="vzCountdownSeconds">00</span>
+        <span class="vz-countdown__text">sec</span>
+      </div>
+    </div>
+    
+    <p class="vz-countdown__subtext">Don't miss 30% off — Back to $99 after timer ends</p>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Countdown Timer - ends at midnight tonight (user's timezone)
+  function initCountdown() {
+    const hoursEl = document.getElementById('vzCountdownHours');
+    const minutesEl = document.getElementById('vzCountdownMinutes');
+    const secondsEl = document.getElementById('vzCountdownSeconds');
+    
+    if (!hoursEl || !minutesEl || !secondsEl) return;
+    
+    function getEndTime() {
+      const now = new Date();
+      const end = new Date(now);
+      end.setHours(23, 59, 59, 999);
+      return end;
+    }
+    
+    function updateCountdown() {
+      const now = new Date();
+      const end = getEndTime();
+      const diff = end - now;
+      
+      if (diff <= 0) {
+        hoursEl.textContent = '00';
+        minutesEl.textContent = '00';
+        secondsEl.textContent = '00';
+        return;
+      }
+      
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      hoursEl.textContent = hours.toString().padStart(2, '0');
+      minutesEl.textContent = minutes.toString().padStart(2, '0');
+      secondsEl.textContent = seconds.toString().padStart(2, '0');
+    }
+    
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCountdown);
+  } else {
+    initCountdown();
+  }
+})();
+</script>
+
+
+{% comment %}
+  ============================================================================
+  SECTION D: STICKY CART (MOBILE) - HTML
+  ============================================================================
+{% endcomment %}
+
+<div class="vz-sticky-cart" id="vzStickyCart">
+  <div class="vz-sticky-cart__container">
+    <div class="vz-sticky-cart__image">
+      {% if product.featured_image %}
+        <img 
+          src="{{ product.featured_image | image_url: width: 100 }}" 
+          alt="{{ product.title | escape }}"
+          loading="lazy"
+        >
+      {% endif %}
+    </div>
+    
+    <div class="vz-sticky-cart__info">
+      <h4 class="vz-sticky-cart__title">{{ product.title }}</h4>
+      <div class="vz-sticky-cart__price">
+        <span class="vz-sticky-cart__price-current">{{ product.price | money }}</span>
+        {% if product.compare_at_price > product.price %}
+          <span class="vz-sticky-cart__price-compare">{{ product.compare_at_price | money }}</span>
+        {% endif %}
+      </div>
+    </div>
+    
+    <button 
+      type="submit" 
+      class="vz-sticky-cart__button"
+      form="product-form-{{ section.id }}"
+    >
+      Add to Cart
+    </button>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Sticky Cart - Show when product form is out of viewport
+  function initStickyCart() {
+    const stickyCart = document.getElementById('vzStickyCart');
+    const productForm = document.querySelector('[data-type="add-to-cart-form"]');
+    
+    if (!stickyCart || !productForm) return;
+    
+    // Only show on mobile (handled by CSS, but we still need scroll logic)
+    let isVisible = false;
+    
+    function checkVisibility() {
+      const formRect = productForm.getBoundingClientRect();
+      const shouldShow = formRect.bottom < 0 || formRect.top > window.innerHeight;
+      
+      if (shouldShow !== isVisible) {
+        isVisible = shouldShow;
+        stickyCart.classList.toggle('is-visible', isVisible);
+      }
+    }
+    
+    // Throttled scroll handler
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          checkVisibility();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    checkVisibility();
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStickyCart);
+  } else {
+    initStickyCart();
+  }
+})();
+</script>
+
+
+{% comment %}
+  ============================================================================
+  SECTION E: EXIT POPUP - HTML
+  ============================================================================
+{% endcomment %}
+
+<div class="vz-exit-popup" id="vzExitPopup">
+  <div class="vz-exit-popup__content">
+    <button class="vz-exit-popup__close" aria-label="Close popup" id="vzExitPopupClose">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    
+    <div class="vz-exit-popup__icon">
+      {% if product.featured_image %}
+        <img 
+          src="{{ product.featured_image | image_url: width: 120 }}" 
+          alt="{{ product.title | escape }}"
+          loading="lazy"
+        >
+      {% endif %}
+    </div>
+    
+    <h2 class="vz-exit-popup__title">Wait! Don't Leave Yet</h2>
+    <p class="vz-exit-popup__subtitle">
+      Your skin transformation is just a click away. Here's something special for you:
+    </p>
+    
+    <div class="vz-exit-popup__offer">
+      <p class="vz-exit-popup__offer-text">
+        Use code <span class="vz-exit-popup__offer-code">GLOW10</span> for an extra 10% off
+      </p>
+    </div>
+    
+    <a href="#product-form" class="vz-exit-popup__cta" id="vzExitPopupCta">
+      Claim My Discount
+    </a>
+    
+    <button class="vz-exit-popup__dismiss" id="vzExitPopupDismiss">
+      No thanks, I'll pay full price
+    </button>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Exit Popup - Trigger on exit intent (desktop) or scroll up (mobile)
+  function initExitPopup() {
+    const popup = document.getElementById('vzExitPopup');
+    const closeBtn = document.getElementById('vzExitPopupClose');
+    const ctaBtn = document.getElementById('vzExitPopupCta');
+    const dismissBtn = document.getElementById('vzExitPopupDismiss');
+    
+    if (!popup) return;
+    
+    const STORAGE_KEY = 'vz_exit_popup_shown';
+    const COOLDOWN_HOURS = 24;
+    
+    // Check if popup was recently shown
+    function wasRecentlyShown() {
+      try {
+        const timestamp = localStorage.getItem(STORAGE_KEY);
+        if (!timestamp) return false;
+        const hoursSince = (Date.now() - parseInt(timestamp)) / (1000 * 60 * 60);
+        return hoursSince < COOLDOWN_HOURS;
+      } catch (e) {
+        return false;
+      }
+    }
+    
+    function markAsShown() {
+      try {
+        localStorage.setItem(STORAGE_KEY, Date.now().toString());
+      } catch (e) {}
+    }
+    
+    function showPopup() {
+      if (wasRecentlyShown()) return;
+      popup.classList.add('is-visible');
+      document.body.style.overflow = 'hidden';
+      markAsShown();
+    }
+    
+    function hidePopup() {
+      popup.classList.remove('is-visible');
+      document.body.style.overflow = '';
+    }
+    
+    // Exit intent detection (desktop)
+    function handleMouseLeave(e) {
+      if (e.clientY <= 0) {
+        showPopup();
+        document.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    }
+    
+    // Scroll up detection (mobile) - removed as it can be annoying
+    // Instead, we'll use a 60-second delay for mobile
+    let mobileTimeout = null;
+    
+    function initTriggers() {
+      if (wasRecentlyShown()) return;
+      
+      // Desktop: exit intent
+      if (window.innerWidth > 749) {
+        document.addEventListener('mouseleave', handleMouseLeave);
+      } else {
+        // Mobile: show after 60 seconds of browsing
+        mobileTimeout = setTimeout(showPopup, 60000);
+      }
+    }
+    
+    // Event listeners
+    closeBtn?.addEventListener('click', hidePopup);
+    dismissBtn?.addEventListener('click', hidePopup);
+    
+    ctaBtn?.addEventListener('click', (e) => {
+      hidePopup();
+      // Let the link navigate normally
+    });
+    
+    // Close on overlay click
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) hidePopup();
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && popup.classList.contains('is-visible')) {
+        hidePopup();
+      }
+    });
+    
+    // Initialize after a short delay to let page load
+    setTimeout(initTriggers, 5000);
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initExitPopup);
+  } else {
+    initExitPopup();
+  }
+})();
+</script>

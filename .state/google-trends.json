@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-03-24T20:00:01.830527",
+  "source": "Fallback (curated)",
+  "topics": [
+    {
+      "query": "how to stop dog barking at night",
+      "value": 800,
+      "growth": "High"
+    },
+    {
+      "query": "puppy biting too hard",
+      "value": 750,
+      "growth": "High"
+    },
+    {
+      "query": "dog pulling on leash",
+      "value": 700,
+      "growth": "Medium"
+    },
+    {
+      "query": "separation anxiety in dogs",
+      "value": 650,
+      "growth": "High"
+    },
+    {
+      "query": "crate training puppy crying",
+      "value": 600,
+      "growth": "Medium"
+    },
+    {
+      "query": "dog reactivity training",
+      "value": 550,
+      "growth": "High"
+    },
+    {
+      "query": "teach dog recall",
+      "value": 500,
+      "growth": "Medium"
+    },
+    {
+      "query": "puppy potty training regression",
+      "value": 480,
+      "growth": "Medium"
+    },
+    {
+      "query": "dog resource guarding",
+      "value": 450,
+      "growth": "High"
+    },
+    {
+      "query": "counter surfing dog",
+      "value": 420,
+      "growth": "Low"
+    },
+    {
+      "query": "dog anxiety symptoms",
+      "value": 400,
+      "growth": "Medium"
+    },
+    {
+      "query": "teach dog stay command",
+      "value": 380,
+      "growth": "Low"
+    },
+    {
+      "query": "puppy socialization checklist",
+      "value": 350,
+      "growth": "Medium"
+    },
+    {
+      "query": "dog jumping on guests",
+      "value": 320,
+      "growth": "Low"
+    },
+    {
+      "query": "fearful dog training",
+      "value": 300,
+      "growth": "Medium"
+    }
+  ]
+}

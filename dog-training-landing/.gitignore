@@ -1,0 +1,7 @@
+.credentials/
+.state/
+../.credentials/
+scripts/*token*
+scripts/*api*
+**/credentials.json
+**/*-token.txt
