@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QR48M1K012"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QR48M1K012');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog News & Stories | Clever Dog Method</title>
+    <meta name="description" content="Latest dog news, heartwarming stories, breed updates, and canine health discoveries. Stay informed about the dog world.">
+    <meta name="keywords" content="dog news, pet news, dog stories, canine health news, dog breed news">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cleverdogmethod.com/news/">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cleverdogmethod.com/news/">
+    <meta property="og:title" content="Dog News & Stories | Clever Dog Method">
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    
+    <style>
+        .news-hero {
+            background: linear-gradient(135deg, #2D3748 0%, #1A202C 100%);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+        .news-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        .news-hero p {
+            font-size: 20px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+            padding: 60px 0;
+        }
+        .news-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .news-card-content {
+            padding: 24px;
+        }
+        .news-card-tag {
+            display: inline-block;
+            background: #FED7D7;
+            color: #C53030;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .news-card-tag.science { background: #C6F6D5; color: #276749; }
+        .news-card-tag.heartwarming { background: #FED7E2; color: #97266D; }
+        .news-card-tag.health { background: #BEE3F8; color: #2B6CB0; }
+        .news-card-tag.trends { background: #E9D8FD; color: #6B46C1; }
+        
+        .news-card h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .news-card h2 a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        .news-card h2 a:hover {
+            color: var(--primary);
+        }
+        .news-card p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .news-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .news-source {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .category-btn {
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: var(--bg-alt);
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .category-btn:hover, .category-btn.active {
+            background: #2D3748;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-content">
+            <a href="/" class="logo">
+                <span class="logo-icon">🐕</span>
+                Clever Dog Method
+            </a>
+            <a href="/#pricing" class="nav-cta">Get Started →</a>
+        </div>
+    </nav>
+
+    <header class="news-hero">
+        <div class="container">
+            <h1>📰 Dog News & Stories</h1>
+            <p>The latest discoveries, heartwarming tales, and trending topics from the dog world</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="categories">
+            <a href="/news/" class="category-btn active">All News</a>
+            <a href="/news/?cat=science" class="category-btn">🔬 Science</a>
+            <a href="/news/?cat=heartwarming" class="category-btn">❤️ Heartwarming</a>
+            <a href="/news/?cat=health" class="category-btn">🏥 Health</a>
+            <a href="/news/?cat=trends" class="category-btn">📈 Trends</a>
+            <a href="/blog/" class="category-btn">📝 Blog</a>
+        </div>
+
+        <div class="news-grid">
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=400&q=80" alt="Dog brain scan" loading="lazy">
+                <div class="news-card-content">
+                    <span class="news-card-tag science">Science</span>
+                    <h2><a href="/news/dogs-understand-words-study.html">New Study: Dogs Understand Words Better Than We Thought</a></h2>
+                    <p>Researchers discover that dogs process language in surprisingly similar ways to humans, with implications for training methods.</p>
+                    <div class="news-card-meta">
+                        <span>📅 March 17, 2024</span>
+                        <span class="news-source">🔗 Nature Journal</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=400&q=80" alt="Rescue dog" loading="lazy">
+                <div class="news-card-content">
+                    <span class="news-card-tag heartwarming">Heartwarming</span>
+                    <h2><a href="/news/shelter-dog-saves-family.html">Shelter Dog Adopted Just in Time Saves Family From House Fire</a></h2>
+                    <p>Max, a 3-year-old mixed breed, alerted his new family to smoke just two weeks after adoption.</p>
+                    <div class="news-card-meta">
+                        <span>📅 March 16, 2024</span>
+                        <span class="news-source">🔗 Local News</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?w=400&q=80" alt="Dog health" loading="lazy">
+                <div class="news-card-content">
+                    <span class="news-card-tag health">Health</span>
+                    <h2><a href="/news/dog-food-recall-2024.html">FDA Issues Recall on Popular Dog Food Brands</a></h2>
+                    <p>Several brands recalled due to potential contamination. Check if your dog's food is affected.</p>
+                    <div class="news-card-meta">
+                        <span>📅 March 15, 2024</span>
+                        <span class="news-source">🔗 FDA</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?w=400&q=80" alt="Dog trends" loading="lazy">
+                <div class="news-card-content">
+                    <span class="news-card-tag trends">Trends</span>
+                    <h2><a href="/news/most-popular-breeds-2024.html">The Most Popular Dog Breeds of 2024 Revealed</a></h2>
+                    <p>French Bulldogs hold the top spot for the third year, but a surprising breed is climbing fast.</p>
+                    <div class="news-card-meta">
+                        <span>📅 March 14, 2024</span>
+                        <span class="news-source">🔗 AKC</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1453227588063-bb302b62f50b?w=400&q=80" alt="Dog therapy" loading="lazy">
+                <div class="news-card-content">
+                    <span class="news-card-tag science">Science</span>
+                    <h2><a href="/news/therapy-dogs-reduce-anxiety.html">Study: 10 Minutes With a Therapy Dog Reduces Anxiety by 60%</a></h2>
+                    <p>Universities adding "puppy rooms" during exam season see significant improvements in student mental health.</p>
+                    <div class="news-card-meta">
+                        <span>📅 March 13, 2024</span>
+                        <span class="news-source">🔗 Psychology Today</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&q=80" alt="Dog technology" loading="lazy">
+                <div class="news-card-content">
+                    <span class="news-card-tag trends">Trends</span>
+                    <h2><a href="/news/ai-dog-training-apps.html">AI-Powered Dog Training Apps: Do They Actually Work?</a></h2>
+                    <p>We tested the top 5 AI training apps to see if technology can really help train your dog.</p>
+                    <div class="news-card-meta">
+                        <span>📅 March 12, 2024</span>
+                        <span class="news-source">🔗 Tech Review</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Train Your Dog the Smart Way</h2>
+            <p>Join 67,000+ owners using brain training methods</p>
+            <a href="/#pricing" class="cta-button">Learn More →</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">🐕 Clever Dog Method</div>
+                <nav class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/blog/">Blog</a>
+                    <a href="/news/">News</a>
+                    <a href="/privacy.html">Privacy</a>
+                    <a href="/contact.html">Contact</a>
+                </nav>
+                <p style="margin-top: 20px; font-size: 12px; opacity: 0.5;">© 2024 Clever Dog Method. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
