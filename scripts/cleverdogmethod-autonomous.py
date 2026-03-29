@@ -221,17 +221,6 @@ Output: HTML only. No wrapper."""
         return None
 
 def create_html_post(keyword, content):
-    """Create HTML post with product CTA"""
-    
-    # Load product CTA
-    cta_file = Path("/root/.openclaw/workspace/dog-training-landing-clean/blog/_includes/product-cta.html")
-    product_cta = ''
-    if cta_file.exists():
-        with open(cta_file, 'r') as f:
-            product_cta = f.read()
-    
-    # Append CTA to content
-    content_with_cta = content + '\n\n' + product_cta
     """Create full HTML blog post"""
     
     slug = keyword.lower().replace(' ', '-')
@@ -269,7 +258,7 @@ def create_html_post(keyword, content):
                 <span>Reading time: 5 min</span>
             </div>
             
-            {content_with_cta}
+            {content}
             
             <div class="cta-box">
                 <h3>Ready to Transform Your Dog's Behavior?</h3>
