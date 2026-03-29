@@ -141,21 +141,42 @@ def generate_content(keyword, retry=0):
         log(f"❌ Max retries exceeded for: {keyword}", "ERROR")
         return None
     
-    prompt = f"""Write a comprehensive dog training blog post about: {keyword}
+    # V3 Optimized Prompt - Concise & High-Impact
+    prompt = f"""Expert dog training blog: {keyword}
 
-Title: Complete Guide to {keyword.title()}
+1000 words. 4-5 H2 sections. 3+ specific scenarios (breed/age/timing). 4-question FAQ. HTML only: h2,p,ul,li,strong,em.
 
-Requirements:
-- 800-1200 words
-- SEO optimized
-- Practical actionable tips
-- Include H2 sections
-- Conversational but professional tone
-- No fluff, pure value
-- Include FAQ section at end
+Voice:
+❌ "Teaching sit is important"
+✅ "Sit is impulse-control foundation—I use it to stop jumping, begging, door-rushing in 90% of cases"
 
-Format as HTML with proper semantic tags (h2, p, ul, strong).
-Do not include <html> or <body> tags, just the content."""
+❌ "Reward when they do well"
+✅ "Mark exact moment bottom touches ground with 'YES!' then treat within 2sec"
+
+❌ "Practice makes perfect"
+✅ "5min sessions 2x daily first week. Most dogs nail this in 3-7 days"
+
+Scenarios must include:
+- Dog: "8mo Golden Retriever Max"
+- Counts: "5 reps/session, 3 sessions daily"
+- Setup: "indoors, 6ft leash"
+- Success: "day 3, Max held sit 15sec"
+
+Structure:
+1. Understanding [Behavior] in Dogs
+2. Step-by-Step Training Method
+3. Common Challenges & Solutions
+4. Troubleshooting: When Progress Stalls
+5. FAQ (4 questions)
+
+Forbidden: "every dog different", "be patient", "consistency key", "practice regularly"
+
+Edge cases:
+- Aggression → management + pro referral
+- Puppy → age expectations (8-16wk vs 4-6mo)
+- Off-leash → safety + enclosed area
+
+Output: HTML only. No wrapper."""
 
     try:
         response = requests.post(
@@ -200,6 +221,17 @@ Do not include <html> or <body> tags, just the content."""
         return None
 
 def create_html_post(keyword, content):
+    """Create HTML post with product CTA"""
+    
+    # Load product CTA
+    cta_file = Path("/root/.openclaw/workspace/dog-training-landing-clean/blog/_includes/product-cta.html")
+    product_cta = ''
+    if cta_file.exists():
+        with open(cta_file, 'r') as f:
+            product_cta = f.read()
+    
+    # Append CTA to content
+    content_with_cta = content + '\n\n' + product_cta
     """Create full HTML blog post"""
     
     slug = keyword.lower().replace(' ', '-')
@@ -237,7 +269,7 @@ def create_html_post(keyword, content):
                 <span>Reading time: 5 min</span>
             </div>
             
-            {content}
+            {content_with_cta}
             
             <div class="cta-box">
                 <h3>Ready to Transform Your Dog's Behavior?</h3>
