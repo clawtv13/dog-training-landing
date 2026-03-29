@@ -1,0 +1,40 @@
+{
+  "name": "re-engagement",
+  "description": "3-email sequence for cold subscribers who haven't opened in 30+ days",
+  "trigger": "no_opens_30_days",
+  "goal": "Re-activate dormant subscribers or clean list",
+  "emails": [
+    {
+      "day": 0,
+      "subject_A": "Did I lose you? 🥺",
+      "subject_B": "{{first_name}}, are you still there?",
+      "body": "Hey {{first_name}},\n\nI noticed you haven't opened my emails in a while.\n\nThat's totally fine - inboxes are overwhelming.\n\nBut before I let you go, I wanted to check:\n\n**Are you still interested in AI automation?**\n\nIf YES → Hit reply and say \"YES\" (I'll keep you on the list)\n\nIf NO → No hard feelings. [Click here to unsubscribe]({{unsubscribe_link}})\n\nIf MAYBE → Let me know what you'd actually want to read about:\n- [ ] Content automation\n- [ ] Email marketing\n- [ ] Lead generation\n- [ ] Revenue automation\n- [ ] Case studies\n- [ ] Step-by-step tutorials\n\nReply with your picks, and I'll tailor future emails to YOU.\n\n**Why I'm Doing This:**\n\nI'd rather have 100 engaged readers than 10,000 ghost subscribers.\n\nIf you're not getting value, I want to know. So I can fix it or let you go.\n\nLet me know,\nn0mad\n\nP.S. If I don't hear from you, I'll assume you're not interested and remove you from the list. No spam, no BS.",
+      "cta": "Stay Subscribed",
+      "cta_url": "{{preferences_link}}"
+    },
+    {
+      "day": 3,
+      "subject_A": "🎁 Last Chance: Here's Something You'll Actually Want",
+      "subject_B": "Before you go... take this",
+      "body": "{{first_name}},\n\nStill haven't heard from you. That's okay.\n\nBefore you go, I want to give you something valuable:\n\n**The Complete AI Automation Playbook (Free)**\n\n- 20+ Automation Blueprints\n- Copy-paste templates\n- Tool recommendations (free + paid)\n- Case studies with real results\n\n**No strings attached.** Just a thank-you for being a subscriber.\n\n[Download the Playbook]({{playbook_link}})\n\n**And if you're done with these emails?**\n\n[Unsubscribe here]({{unsubscribe_link}}). No hard feelings.\n\nEither way, I hope this helps you build something great.\n\nn0mad\n\nP.S. This is the last email you'll get from me unless you download the playbook or reply.",
+      "cta": "Download Playbook",
+      "cta_url": "{{playbook_link}}"
+    },
+    {
+      "day": 7,
+      "subject_A": "Goodbye, {{first_name}}",
+      "subject_B": "Final email (I'm removing you)",
+      "body": "{{first_name}},\n\nThis is it.\n\nI'm removing you from the email list after this.\n\n**Why?**\n\nYou haven't opened an email in over 30 days. That tells me you're either:\n- Not interested anymore\n- Too busy\n- Found what you needed elsewhere\n\nAnd that's totally fine.\n\n**But if I'm wrong...**\n\nIf you DO want to stay, [click here to confirm]({{resubscribe_link}}).\n\nYou'll get:\n- Weekly automation tutorials\n- Case studies & real results\n- Exclusive tips & tools\n- First access to new products\n\n**If you don't click, you're automatically unsubscribed in 24 hours.**\n\nNo more emails. No more notifications. Clean slate.\n\n**Your call.**\n\n[Stay Subscribed]({{resubscribe_link}}) | [Unsubscribe]({{unsubscribe_link}})\n\nThanks for being here (even if it's just been for a while),\nn0mad\n\nP.S. If you want back in later, you can always re-subscribe at {{website_link}}. But you'll lose your subscriber perks and start from scratch.",
+      "cta": "Confirm Subscription",
+      "cta_url": "{{resubscribe_link}}",
+      "final_email": true
+    }
+  ],
+  "variables": {
+    "unsubscribe_link": "https://aiautomationbuilder.com/unsubscribe",
+    "preferences_link": "https://aiautomationbuilder.com/preferences",
+    "playbook_link": "https://aiautomationbuilder.com/playbook",
+    "resubscribe_link": "https://aiautomationbuilder.com/resubscribe",
+    "website_link": "https://aiautomationbuilder.com"
+  }
+}

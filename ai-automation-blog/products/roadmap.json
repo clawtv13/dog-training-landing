@@ -1,0 +1,50 @@
+{
+  "month_1": {
+    "focus": "Quick wins - Launch first 2 products",
+    "products": [
+      {
+        "name": "AI Automation Starter Kit",
+        "type": "ebook",
+        "tier": "low_ticket",
+        "price": 29,
+        "priority": "HIGH",
+        "status": "ready_to_launch",
+        "source": "lead-magnets/ai-automation-lead-magnet.md",
+        "description": "Complete starter guide to AI automation for solopreneurs",
+        "estimated_pages": 25,
+        "time_to_create": "DONE (expand existing lead magnet)",
+        "launch_date": "Week 1"
+      },
+      {
+        "name": "100 ChatGPT Prompts for Solopreneurs",
+        "type": "swipe_file",
+        "tier": "low_ticket",
+        "price": 19,
+        "priority": "HIGH",
+        "description": "Curated collection of high-value prompts for automation and productivity",
+        "includes": [
+          "Content creation prompts",
+          "Business prompts",
+          "Automation prompts",
+          "Analysis prompts"
+        ],
+        "time_to_create": "2-3 days",
+        "launch_date": "Week 2"
+      }
+    ],
+    "revenue_target": 500,
+    "subscriber_target": 100
+  },
+  "month_2": {
+    "focus": "Scale - Video course + bundle",
+    "products": [],
+    "revenue_target": 3000,
+    "subscriber_target": 500
+  },
+  "month_3": {
+    "focus": "Premium - Cohort course + consulting",
+    "products": [],
+    "revenue_target": 10000,
+    "subscriber_target": 1000
+  }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "timestamp": "2026-03-29T12:00:08.478243",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 29\n\n\ud83e\udd16 Curating 29 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 29 items\n\n",
+      "timestamp": "2026-03-29T12:00:01.509989"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response - the response is either empty, malformed, or contains non-JSON content at the beginning",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling and response validation for Claude API calls. Implement fallback parsing that strips non-JSON content, validates response format, and gracefully degrades to the simple scoring algorithm when API responses are malformed.",
+      "code_fix": "try:\n    response = claude_api.call()\n    # Strip whitespace and non-JSON prefix\n    clean_response = response.strip()\n    if clean_response.startswith('```json'):\n        clean_response = clean_response.split('```json')[1].split('```')[0].strip()\n    elif clean_response.startswith('```'):\n        clean_response = clean_response.split('```')[1].split('```')[0].strip()\n    \n    curated_items = json.loads(clean_response)\nexcept (json.JSONDecodeError, IndexError, AttributeError) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    curated_items = simple_scoring_fallback(items)"
+    }
+  }
+]

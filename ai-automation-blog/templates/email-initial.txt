@@ -1,0 +1,43 @@
+Subject: Partnership opportunity: AI Automation Builder blog
+
+Hi {contact_name},
+
+I'm {your_name}, founder of AI Automation Builder — a blog helping solopreneurs and indie hackers build automated businesses.
+
+I came across {company_name} and think there's a strong alignment with our audience:
+
+• **Our readers:** Builders automating workflows, not just consuming content
+• **Our focus:** Practical tutorials, case studies, and tool reviews
+• **Our growth:** {traffic_metric} monthly visitors ({growth_rate}% MoM growth)
+
+**Why {company_name} fits:**
+{why_relevant}
+
+**Sponsorship options:**
+
+**Bronze ($500/month):**
+• Logo in newsletter footer (going to {subscriber_count} subscribers)
+• Mention in 1 relevant blog post
+
+**Silver ($1,000/month):**
+• Everything in Bronze
+• Dedicated tutorial featuring {product_name}
+• Social media shoutout (Twitter + LinkedIn)
+
+**Gold ($2,000/month):**
+• Everything in Silver
+• Custom integration guide (SEO-optimized)
+• Guest post by your team
+• Priority placement in newsletter
+
+I'm flexible on the format. What matters most is creating genuine value for both our audiences.
+
+Would you be open to a quick call next week to explore this?
+
+Best,
+{your_name}
+{your_title}
+AI Automation Builder
+{website_url}
+
+P.S. Recent posts you might like: {relevant_post_links}

@@ -1,0 +1,47 @@
+{
+  "product_id": "100-chatgpt-prompts-for-solopreneurs",
+  "name": "100 ChatGPT Prompts for Solopreneurs",
+  "type": "swipe_file",
+  "tier": "low_ticket",
+  "price": 19,
+  "status": "idea",
+  "created": "2026-03-29T10:53:07.116329",
+  "description": "Curated collection of high-value prompts for automation and productivity",
+  "source_content": [],
+  "deliverables": [
+    "PDF with all prompts",
+    "Editable Notion database",
+    "Usage guide",
+    "Bonus: Prompt engineering tips"
+  ],
+  "target_audience": "Solopreneurs and indie hackers building automated businesses",
+  "pain_points": [
+    "Wasting time on repetitive tasks",
+    "Don't know where to start with AI automation",
+    "Tried automation tools but got overwhelmed",
+    "Need proven templates and systems that actually work"
+  ],
+  "value_proposition": "100 ChatGPT Prompts for Solopreneurs gives you battle-tested systems to automate your business without the learning curve. Skip months of trial and error.",
+  "production_steps": [
+    "Collect and categorize prompts",
+    "Test each prompt",
+    "Write usage instructions",
+    "Design PDF layout",
+    "Build Notion database"
+  ],
+  "time_estimate": "2-3 days",
+  "launch_strategy": "email_sequence",
+  "pricing_strategy": "value_based",
+  "upsells": [
+    {
+      "name": "Video Masterclass",
+      "price": 197,
+      "discount": "50% for existing customers"
+    },
+    {
+      "name": "Product Bundle",
+      "price": 149,
+      "savings": "$96"
+    }
+  ]
+}

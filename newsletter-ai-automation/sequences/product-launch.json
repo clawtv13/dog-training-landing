@@ -1,0 +1,66 @@
+{
+  "name": "product-launch",
+  "description": "7-email sequence for launching new products to existing list",
+  "trigger": "manual",
+  "goal": "Generate excitement and sales for new product",
+  "emails": [
+    {
+      "day": 0,
+      "subject_A": "🚨 Something big is coming...",
+      "subject_B": "I've been working on this for 3 months",
+      "body": "{{first_name}},\n\nI've been quiet lately.\n\nThere's a reason.\n\nFor the past 3 months, I've been building something. Something big.\n\n**I can't tell you what it is yet.**\n\nBut here's what I CAN tell you:\n\n✅ It will save you 20+ hours/week\n✅ It's based on my proven automation framework\n✅ It's launching in 7 days\n✅ Early subscribers get 50% off\n\n**More Details:**\n- Day 2: First reveal\n- Day 4: Behind-the-scenes look\n- Day 6: Early access\n- Day 7: Official launch\n\nThis is going to change how you work.\n\nStay tuned,\nn0mad\n\nP.S. Seriously, don't miss this. Set a reminder.",
+      "cta": "Mark Your Calendar",
+      "cta_url": "{{landing_page_link}}",
+      "teaser": true
+    },
+    {
+      "day": 2,
+      "subject_A": "🎯 REVEALED: The All-in-One Automation Platform",
+      "subject_B": "Introducing: AutomationOS",
+      "body": "{{first_name}},\n\nOkay, I can finally tell you.\n\n**Introducing: AutomationOS**\n\nThe all-in-one platform for solopreneurs who want to automate everything.\n\n**What It Does:**\n\n🤖 **Content Engine**\n- AI blog writer\n- Auto-publish to newsletter + social\n- SEO optimization\n\n📧 **Email Automation**\n- Welcome sequences\n- Drip campaigns\n- Behavioral triggers\n\n💰 **Revenue Systems**\n- Product delivery\n- Payment processing\n- Customer onboarding\n\n📊 **Analytics Dashboard**\n- Performance tracking\n- A/B testing\n- Revenue attribution\n\n**The Problem It Solves:**\n\nRight now, you're using 10+ tools:\n- Blog platform\n- Email service\n- Social scheduler\n- Payment processor\n- Analytics tool\n- Etc.\n\n**Each costs $20-50/month. Total: $200-500/month.**\n\nAutomationOS replaces all of them.\n\n**One platform. One price. Everything automated.**\n\n**Launching in 5 days.**\n\n[Join the Waitlist (50% Off)]({{waitlist_link}})\n\nMore details coming soon,\nn0mad",
+      "cta": "Join Waitlist",
+      "cta_url": "{{waitlist_link}}"
+    },
+    {
+      "day": 3,
+      "subject_A": "📹 Behind the Scenes: Building AutomationOS",
+      "subject_B": "How I built this (and almost quit)",
+      "body": "{{first_name}},\n\nBuilding AutomationOS almost broke me.\n\n**The Journey:**\n\n**Month 1:** Built the content engine. Tested with 10 beta users. 8 said it was \"too complicated.\" Back to the drawing board.\n\n**Month 2:** Simplified everything. Made it 1-click setup. Beta users loved it. Then the servers crashed. Spent 2 weeks fixing infrastructure.\n\n**Month 3:** Added email automation, payment processing, analytics. Integrated everything. Finally, it worked.\n\n**The Result:** A platform I'm genuinely proud of.\n\n**Watch the Behind-the-Scenes Video:**\n[See How It Works]({{demo_video_link}})\n\nInside:\n- Full platform walkthrough\n- Live demo of automations\n- Real results from beta users\n- Pricing reveal\n\n**Beta User Results:**\n- \"Saved 25 hours/week\" - Sarah M.\n- \"Made $5K in first month\" - Mike R.\n- \"Replaced 7 tools with one\" - Jennifer K.\n\n**Launching in 4 days.**\n\n[Secure Your 50% Discount]({{waitlist_link}})\n\nn0mad\n\nP.S. Waitlist closes in 48 hours. After that, no early access discount.",
+      "cta": "Watch Demo",
+      "cta_url": "{{demo_video_link}}"
+    },
+    {
+      "day": 5,
+      "subject_A": "⚡ Early Access: AutomationOS (24 Hours Only)",
+      "subject_B": "You're in. Here's your early access link.",
+      "body": "{{first_name}},\n\nThis is it.\n\n**AutomationOS is officially live.**\n\n**But only for waitlist members.**\n\nPublic launch is in 2 days. Right now, it's just you.\n\n**Your Early Access Perks:**\n\n✅ 50% off lifetime (never pay full price)\n✅ Founding member badge\n✅ Priority support (direct access to me)\n✅ Free upgrades forever\n✅ Private community access\n\n**Pricing:**\n- **Regular Price:** $49/month\n- **Your Price:** $24/month (forever)\n\nOr pay annually and get 2 months free:\n- **Regular Price:** $490/year\n- **Your Price:** $245/year (forever)\n\n**What You Get:**\n- Unlimited automation workflows\n- Unlimited email sends\n- Unlimited content generation\n- All features unlocked\n- No hidden fees\n\n**This Offer:**\n- Available for 24 hours only\n- Then price goes to $49/month\n- Founding member spots are limited to 500\n\n[Claim Your 50% Discount]({{checkout_link}})\n\n**Money-Back Guarantee:**\nTry it for 30 days. If you don't save 20+ hours, full refund.\n\nLet's build your empire,\nn0mad\n\nP.S. After 24 hours, this link expires. Don't wait.",
+      "cta": "Get 50% Off Now",
+      "cta_url": "{{checkout_link}}",
+      "early_access": true
+    },
+    {
+      "day": 6,
+      "subject_A": "⏰ 12 Hours Left (50% Discount Ends Soon)",
+      "subject_B": "Don't miss this - offer expires tonight",
+      "body": "{{first_name}},\n\nThe clock is ticking.\n\n**AutomationOS early access closes in 12 hours.**\n\nAfter tonight:\n- Price doubles to $49/month\n- No more founding member perks\n- Priority support ends\n- This opportunity is gone\n\n**What You're Walking Away From:**\n\n❌ $24/month (50% off for life)\n❌ Founding member status\n❌ Direct access to me\n❌ Free upgrades forever\n❌ 500+ hours/year saved\n\n**The Math:**\n- Current tools: $200-500/month\n- AutomationOS: $24/month\n- **Savings: $176-476/month**\n\n**That's $2,112-5,712/year.**\n\nFor $24/month.\n\n**But forget the money. Here's what really matters:**\n\n**Where will you be in 6 months?**\n\n**Without AutomationOS:**\n- Still juggling 10+ tools\n- Still overwhelmed with tasks\n- Still trading time for money\n\n**With AutomationOS:**\n- One platform, everything automated\n- 20+ hours/week freed up\n- Scalable, sustainable business\n\n[Lock in 50% Off (12 Hours Left)]({{checkout_link}})\n\nYour move,\nn0mad\n\nP.S. I won't offer this price again. This is it.",
+      "cta": "Claim Discount",
+      "cta_url": "{{checkout_link}}",
+      "urgency": true
+    },
+    {
+      "day": 7,
+      "subject_A": "🎉 Welcome to AutomationOS (Public Launch)",
+      "subject_B": "It's official - we're live!",
+      "body": "{{first_name}},\n\n**AutomationOS is officially public.**\n\nEarly access is over. Now it's available to everyone.\n\n**What This Means:**\n\n✅ If you joined early access → You're locked in at $24/month forever. You won the game.\n\n❌ If you didn't → Price is now $49/month. You missed the deal.\n\n**No hard feelings either way.**\n\nIf you're not ready for AutomationOS, that's fine. Keep following the newsletter - I'll keep sending free automation tips.\n\n**But if you want in now:**\n[Join AutomationOS (Full Price)]({{checkout_link}})\n\n**Full Price Perks:**\n- All features unlocked\n- Community access\n- 30-day money-back guarantee\n- Priority support upgrade available\n\n**The Choice:**\n\nJoin now at $49/month, or wait and regret missing the $24/month deal.\n\nYour call,\nn0mad\n\nP.S. No more discounts. No more early access. This is the price going forward.\n\n---\n\n**Thank You:**\n\nTo everyone who joined early access - you're the reason this exists.\n\nI built AutomationOS for you. Now let's use it to build something incredible.\n\nSee you inside,\nn0mad",
+      "cta": "Join Now",
+      "cta_url": "{{checkout_link}}",
+      "public_launch": true
+    }
+  ],
+  "variables": {
+    "landing_page_link": "https://automationos.com",
+    "waitlist_link": "https://automationos.com/waitlist",
+    "demo_video_link": "https://automationos.com/demo",
+    "checkout_link": "https://automationos.com/checkout"
+  }
+}

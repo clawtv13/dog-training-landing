@@ -1,0 +1,461 @@
+[
+  {
+    "company": "Make (Integromat)",
+    "contact": "Partnerships Team",
+    "email": "partnerships@make.com",
+    "website": "https://make.com",
+    "category": "automation",
+    "tier": "gold",
+    "notes": "Visual automation platform. Perfect fit for audience."
+  },
+  {
+    "company": "Zapier",
+    "contact": "Brand Partnerships",
+    "email": "partnerships@zapier.com",
+    "website": "https://zapier.com",
+    "category": "automation",
+    "tier": "gold",
+    "notes": "Market leader in automation. High budget."
+  },
+  {
+    "company": "n8n",
+    "contact": "Marketing Team",
+    "email": "hello@n8n.io",
+    "website": "https://n8n.io",
+    "category": "automation",
+    "tier": "silver",
+    "notes": "Open-source alternative. Growing fast."
+  },
+  {
+    "company": "Notion",
+    "contact": "Partnerships",
+    "email": "partnerships@notion.so",
+    "website": "https://notion.so",
+    "category": "productivity",
+    "tier": "gold",
+    "notes": "Huge with solopreneurs. Perfect audience fit."
+  },
+  {
+    "company": "Airtable",
+    "contact": "Partner Team",
+    "email": "partnerships@airtable.com",
+    "website": "https://airtable.com",
+    "category": "database",
+    "tier": "gold",
+    "notes": "No-code database. Used by automation builders."
+  },
+  {
+    "company": "Retool",
+    "contact": "Marketing",
+    "email": "hello@retool.com",
+    "website": "https://retool.com",
+    "category": "internal-tools",
+    "tier": "gold",
+    "notes": "Internal tools builder. Enterprise focus."
+  },
+  {
+    "company": "Bubble.io",
+    "contact": "Partnerships",
+    "email": "partnerships@bubble.io",
+    "website": "https://bubble.io",
+    "category": "no-code",
+    "tier": "silver",
+    "notes": "No-code web apps. Strong community."
+  },
+  {
+    "company": "Webflow",
+    "contact": "Brand Team",
+    "email": "partnerships@webflow.com",
+    "website": "https://webflow.com",
+    "category": "web-design",
+    "tier": "gold",
+    "notes": "Design + automation. Perfect for landing pages."
+  },
+  {
+    "company": "Supabase",
+    "contact": "Partnerships",
+    "email": "partnerships@supabase.com",
+    "website": "https://supabase.com",
+    "category": "backend",
+    "tier": "silver",
+    "notes": "Open-source Firebase alternative. Dev tools."
+  },
+  {
+    "company": "Vercel",
+    "contact": "Partnerships",
+    "email": "partnerships@vercel.com",
+    "website": "https://vercel.com",
+    "category": "hosting",
+    "tier": "gold",
+    "notes": "Frontend cloud. Used by builders."
+  },
+  {
+    "company": "Railway",
+    "contact": "Team",
+    "email": "contact@railway.app",
+    "website": "https://railway.app",
+    "category": "hosting",
+    "tier": "bronze",
+    "notes": "Developer infrastructure. Growing fast."
+  },
+  {
+    "company": "Replicate",
+    "contact": "Partnerships",
+    "email": "team@replicate.com",
+    "website": "https://replicate.com",
+    "category": "ai",
+    "tier": "silver",
+    "notes": "Run AI models via API. Perfect for AI automation."
+  },
+  {
+    "company": "OpenAI",
+    "contact": "Partnerships",
+    "email": "partnerships@openai.com",
+    "website": "https://openai.com",
+    "category": "ai",
+    "tier": "gold",
+    "notes": "Industry leader. High budget."
+  },
+  {
+    "company": "Anthropic",
+    "contact": "Partnerships",
+    "email": "partnerships@anthropic.com",
+    "website": "https://anthropic.com",
+    "category": "ai",
+    "tier": "gold",
+    "notes": "Claude API. Growing fast."
+  },
+  {
+    "company": "Perplexity AI",
+    "contact": "Team",
+    "email": "hello@perplexity.ai",
+    "website": "https://perplexity.ai",
+    "category": "ai",
+    "tier": "silver",
+    "notes": "AI search. Good for research automation."
+  },
+  {
+    "company": "Coda",
+    "contact": "Partnerships",
+    "email": "partnerships@coda.io",
+    "website": "https://coda.io",
+    "category": "productivity",
+    "tier": "silver",
+    "notes": "Docs that think. Automation features."
+  },
+  {
+    "company": "ClickUp",
+    "contact": "Partnerships",
+    "email": "partnerships@clickup.com",
+    "website": "https://clickup.com",
+    "category": "project-mgmt",
+    "tier": "gold",
+    "notes": "All-in-one PM tool. Strong automation."
+  },
+  {
+    "company": "Linear",
+    "contact": "Partnerships",
+    "email": "hello@linear.app",
+    "website": "https://linear.app",
+    "category": "project-mgmt",
+    "tier": "silver",
+    "notes": "Issue tracking. Developer focused."
+  },
+  {
+    "company": "Cal.com",
+    "contact": "Partnerships",
+    "email": "partnerships@cal.com",
+    "website": "https://cal.com",
+    "category": "scheduling",
+    "tier": "bronze",
+    "notes": "Open-source scheduling. Automation-friendly."
+  },
+  {
+    "company": "Lemlist",
+    "contact": "Partnerships",
+    "email": "partnerships@lemlist.com",
+    "website": "https://lemlist.com",
+    "category": "outreach",
+    "tier": "silver",
+    "notes": "Cold email automation. Good fit."
+  },
+  {
+    "company": "Apollo.io",
+    "contact": "Partnerships",
+    "email": "partnerships@apollo.io",
+    "website": "https://apollo.io",
+    "category": "sales",
+    "tier": "gold",
+    "notes": "Sales intelligence. B2B automation."
+  },
+  {
+    "company": "HubSpot",
+    "contact": "Partner Program",
+    "email": "partners@hubspot.com",
+    "website": "https://hubspot.com",
+    "category": "crm",
+    "tier": "gold",
+    "notes": "CRM + marketing automation. Big budget."
+  },
+  {
+    "company": "Intercom",
+    "contact": "Partnerships",
+    "email": "partnerships@intercom.com",
+    "website": "https://intercom.com",
+    "category": "support",
+    "tier": "gold",
+    "notes": "Customer messaging. Automation features."
+  },
+  {
+    "company": "Tally",
+    "contact": "Team",
+    "email": "hello@tally.so",
+    "website": "https://tally.so",
+    "category": "forms",
+    "tier": "bronze",
+    "notes": "Simple forms. Free tier."
+  },
+  {
+    "company": "Typeform",
+    "contact": "Partnerships",
+    "email": "partnerships@typeform.com",
+    "website": "https://typeform.com",
+    "category": "forms",
+    "tier": "silver",
+    "notes": "Beautiful forms. Good integrations."
+  },
+  {
+    "company": "Stripe",
+    "contact": "Partnerships",
+    "email": "partnerships@stripe.com",
+    "website": "https://stripe.com",
+    "category": "payments",
+    "tier": "gold",
+    "notes": "Payment infrastructure. Essential tool."
+  },
+  {
+    "company": "Lemon Squeezy",
+    "contact": "Team",
+    "email": "hello@lemonsqueezy.com",
+    "website": "https://lemonsqueezy.com",
+    "category": "payments",
+    "tier": "silver",
+    "notes": "Merchant of record. Indie hacker favorite."
+  },
+  {
+    "company": "Gumroad",
+    "contact": "Partnerships",
+    "email": "support@gumroad.com",
+    "website": "https://gumroad.com",
+    "category": "payments",
+    "tier": "bronze",
+    "notes": "Creator platform. Simple."
+  },
+  {
+    "company": "ConvertKit",
+    "contact": "Partnerships",
+    "email": "partnerships@convertkit.com",
+    "website": "https://convertkit.com",
+    "category": "email",
+    "tier": "silver",
+    "notes": "Email for creators. Automation strong."
+  },
+  {
+    "company": "Beehiiv",
+    "contact": "Partnerships",
+    "email": "hello@beehiiv.com",
+    "website": "https://beehiiv.com",
+    "category": "newsletter",
+    "tier": "silver",
+    "notes": "Newsletter platform. Growing fast."
+  },
+  {
+    "company": "Ghost",
+    "contact": "Team",
+    "email": "hello@ghost.org",
+    "website": "https://ghost.org",
+    "category": "publishing",
+    "tier": "bronze",
+    "notes": "Open-source CMS. Newsletter features."
+  },
+  {
+    "company": "Framer",
+    "contact": "Partnerships",
+    "email": "partnerships@framer.com",
+    "website": "https://framer.com",
+    "category": "design",
+    "tier": "silver",
+    "notes": "Design tool + hosting. No-code."
+  },
+  {
+    "company": "Figma",
+    "contact": "Partnerships",
+    "email": "partnerships@figma.com",
+    "website": "https://figma.com",
+    "category": "design",
+    "tier": "gold",
+    "notes": "Design tool. Massive user base."
+  },
+  {
+    "company": "Canva",
+    "contact": "Partnerships",
+    "email": "partnerships@canva.com",
+    "website": "https://canva.com",
+    "category": "design",
+    "tier": "gold",
+    "notes": "Design for everyone. Huge market."
+  },
+  {
+    "company": "Descript",
+    "contact": "Partnerships",
+    "email": "partnerships@descript.com",
+    "website": "https://descript.com",
+    "category": "video",
+    "tier": "silver",
+    "notes": "Video editing. AI features."
+  },
+  {
+    "company": "Riverside.fm",
+    "contact": "Partnerships",
+    "email": "hello@riverside.fm",
+    "website": "https://riverside.fm",
+    "category": "podcasting",
+    "tier": "silver",
+    "notes": "Podcast recording. High quality."
+  },
+  {
+    "company": "Dub.co",
+    "contact": "Team",
+    "email": "team@dub.co",
+    "website": "https://dub.co",
+    "category": "link-mgmt",
+    "tier": "bronze",
+    "notes": "Link management. Open-source."
+  },
+  {
+    "company": "Plausible",
+    "contact": "Team",
+    "email": "hello@plausible.io",
+    "website": "https://plausible.io",
+    "category": "analytics",
+    "tier": "bronze",
+    "notes": "Privacy-first analytics. GA alternative."
+  },
+  {
+    "company": "PostHog",
+    "contact": "Partnerships",
+    "email": "hey@posthog.com",
+    "website": "https://posthog.com",
+    "category": "analytics",
+    "tier": "silver",
+    "notes": "Product analytics. Open-source."
+  },
+  {
+    "company": "Mixpanel",
+    "contact": "Partnerships",
+    "email": "partnerships@mixpanel.com",
+    "website": "https://mixpanel.com",
+    "category": "analytics",
+    "tier": "gold",
+    "notes": "Product analytics. Enterprise."
+  },
+  {
+    "company": "Hotjar",
+    "contact": "Partnerships",
+    "email": "partnerships@hotjar.com",
+    "website": "https://hotjar.com",
+    "category": "analytics",
+    "tier": "silver",
+    "notes": "User behavior. Heatmaps."
+  },
+  {
+    "company": "Loops.so",
+    "contact": "Team",
+    "email": "hello@loops.so",
+    "website": "https://loops.so",
+    "category": "email",
+    "tier": "bronze",
+    "notes": "Email for SaaS. New but growing."
+  },
+  {
+    "company": "Resend",
+    "contact": "Team",
+    "email": "hello@resend.com",
+    "website": "https://resend.com",
+    "category": "email-api",
+    "tier": "silver",
+    "notes": "Email API for devs. Modern."
+  },
+  {
+    "company": "Clerk",
+    "contact": "Partnerships",
+    "email": "partnerships@clerk.dev",
+    "website": "https://clerk.dev",
+    "category": "auth",
+    "tier": "silver",
+    "notes": "Authentication. Developer-friendly."
+  },
+  {
+    "company": "Auth0",
+    "contact": "Partnerships",
+    "email": "partnerships@auth0.com",
+    "website": "https://auth0.com",
+    "category": "auth",
+    "tier": "gold",
+    "notes": "Enterprise auth. Big budget."
+  },
+  {
+    "company": "Sanity",
+    "contact": "Partnerships",
+    "email": "hello@sanity.io",
+    "website": "https://sanity.io",
+    "category": "cms",
+    "tier": "silver",
+    "notes": "Headless CMS. Developer tool."
+  },
+  {
+    "company": "Contentful",
+    "contact": "Partnerships",
+    "email": "partnerships@contentful.com",
+    "website": "https://contentful.com",
+    "category": "cms",
+    "tier": "gold",
+    "notes": "Enterprise CMS. High budget."
+  },
+  {
+    "company": "PlanetScale",
+    "contact": "Team",
+    "email": "hello@planetscale.com",
+    "website": "https://planetscale.com",
+    "category": "database",
+    "tier": "silver",
+    "notes": "Serverless MySQL. Developer tool."
+  },
+  {
+    "company": "Neon",
+    "contact": "Team",
+    "email": "hello@neon.tech",
+    "website": "https://neon.tech",
+    "category": "database",
+    "tier": "bronze",
+    "notes": "Serverless Postgres. Growing."
+  },
+  {
+    "company": "Upstash",
+    "contact": "Team",
+    "email": "hello@upstash.com",
+    "website": "https://upstash.com",
+    "category": "database",
+    "tier": "bronze",
+    "notes": "Serverless Redis/Kafka. Developer tool."
+  },
+  {
+    "company": "Windmill",
+    "contact": "Team",
+    "email": "contact@windmill.dev",
+    "website": "https://windmill.dev",
+    "category": "automation",
+    "tier": "bronze",
+    "notes": "Open-source workflow engine. Growing."
+  }
+]

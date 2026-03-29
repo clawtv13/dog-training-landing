@@ -1,0 +1,185 @@
+{
+  "product_id": "100-chatgpt-prompts-for-solopreneurs",
+  "product_name": "100 ChatGPT Prompts for Solopreneurs",
+  "recommended_price": 39,
+  "pricing_rationale": {
+    "competitor_avg": 22,
+    "value_based": 39,
+    "final_recommendation": 39,
+    "reasoning": "Premium positioning in market, emphasizing high value delivered"
+  },
+  "competitor_analysis": {
+    "product_type": "swipe_file",
+    "niche": "automation",
+    "market_range": {
+      "low": 8,
+      "average": 22,
+      "high": 46
+    },
+    "competitors": [
+      {
+        "name": "Competitor A",
+        "price": 17,
+        "positioning": "budget"
+      },
+      {
+        "name": "Competitor B",
+        "price": 19,
+        "positioning": "mainstream"
+      },
+      {
+        "name": "Competitor C",
+        "price": 24,
+        "positioning": "premium"
+      }
+    ],
+    "recommended_positioning": "premium_mainstream",
+    "price_sensitivity": "low"
+  },
+  "value_analysis": {
+    "product_id": "100-chatgpt-prompts-for-solopreneurs",
+    "value_score": 67.0,
+    "value_breakdown": {
+      "time_saved": {
+        "hours": 5,
+        "value": 250,
+        "score": 25
+      },
+      "money_impact": {
+        "amount": 500,
+        "score": 5.0
+      },
+      "expertise": {
+        "score": 12
+      },
+      "support": {
+        "score": 10
+      },
+      "uniqueness": {
+        "score": 15
+      }
+    },
+    "calculated_price": 33,
+    "recommended_price": 39,
+    "pricing_rationale": "Based on 5h time saved + $500 potential impact"
+  },
+  "pricing_tiers": {
+    "basic": {
+      "name": "100 ChatGPT Prompts for Solopreneurs (Basic)",
+      "price": 39,
+      "description": "Core product only",
+      "includes": [
+        "PDF with all prompts",
+        "Editable Notion database"
+      ],
+      "best_for": "DIY learners"
+    },
+    "pro": {
+      "name": "100 ChatGPT Prompts for Solopreneurs (Pro)",
+      "price": 58,
+      "description": "Everything + bonuses",
+      "includes": [
+        "PDF with all prompts",
+        "Editable Notion database",
+        "Usage guide",
+        "Bonus: Prompt engineering tips",
+        "Bonus templates",
+        "Email support (30 days)",
+        "Updates for 1 year"
+      ],
+      "best_for": "Serious implementers",
+      "badge": "MOST POPULAR"
+    },
+    "premium": {
+      "name": "100 ChatGPT Prompts for Solopreneurs (Premium)",
+      "price": 97,
+      "description": "Pro + 1-on-1 support",
+      "includes": [
+        "PDF with all prompts",
+        "Editable Notion database",
+        "Usage guide",
+        "Bonus: Prompt engineering tips",
+        "Everything in Pro",
+        "1-on-1 implementation call (30 min)",
+        "Priority support",
+        "Lifetime updates"
+      ],
+      "best_for": "Fast-track success"
+    }
+  },
+  "break_even_analysis": {
+    "price": 39,
+    "fixed_costs": 150,
+    "revenue_per_sale": 37.05,
+    "break_even_units": 5,
+    "break_even_revenue": 195,
+    "profitability_scenarios": {
+      "10_sales": 220,
+      "25_sales": 776,
+      "50_sales": 1702,
+      "100_sales": 3554
+    }
+  },
+  "ab_test_suggestions": [
+    {
+      "test_id": "price_point",
+      "hypothesis": "Lower price increases conversion more than lost revenue",
+      "variants": {
+        "A": {
+          "price": 39,
+          "expected_conversion": 0.02
+        },
+        "B": {
+          "price": 31,
+          "expected_conversion": 0.03
+        }
+      },
+      "success_metric": "total_revenue",
+      "duration": "7 days",
+      "traffic_split": "50/50"
+    },
+    {
+      "test_id": "anchor_pricing",
+      "hypothesis": "Showing original price increases perceived value",
+      "variants": {
+        "A": {
+          "show_original": false
+        },
+        "B": {
+          "show_original": true,
+          "original_price": 58
+        }
+      },
+      "success_metric": "conversion_rate",
+      "duration": "7 days",
+      "traffic_split": "50/50"
+    },
+    {
+      "test_id": "payment_plan",
+      "hypothesis": "Payment plan option increases total buyers",
+      "variants": {
+        "A": {
+          "payment_options": [
+            "full_payment"
+          ]
+        },
+        "B": {
+          "payment_options": [
+            "full_payment",
+            "2x_installments"
+          ]
+        }
+      },
+      "success_metric": "total_buyers",
+      "duration": "14 days",
+      "traffic_split": "50/50"
+    }
+  ],
+  "pricing_psychology": [
+    "Use charm pricing ($X7 or $X9)",
+    "Show value comparison (hours saved \u00d7 $50/hr)",
+    "Display social proof (X people bought)",
+    "Add guarantee to reduce risk",
+    "Use scarcity (limited time)"
+  ]
+}

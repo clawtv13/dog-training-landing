@@ -1,0 +1,49 @@
+{
+  "product_id": "ai-automation-starter-kit",
+  "name": "AI Automation Starter Kit",
+  "type": "ebook",
+  "tier": "low_ticket",
+  "price": 29,
+  "status": "ready_to_launch",
+  "created": "2026-03-29T10:53:07.116137",
+  "description": "Complete starter guide to AI automation for solopreneurs",
+  "source_content": [],
+  "deliverables": [
+    "PDF ebook (DRM-free)",
+    "EPUB format",
+    "Notion template version",
+    "Bonus: Quick reference cheat sheet"
+  ],
+  "target_audience": "Solopreneurs and indie hackers building automated businesses",
+  "pain_points": [
+    "Wasting time on repetitive tasks",
+    "Don't know where to start with AI automation",
+    "Tried automation tools but got overwhelmed",
+    "Need proven templates and systems that actually work"
+  ],
+  "value_proposition": "AI Automation Starter Kit gives you battle-tested systems to automate your business without the learning curve. Skip months of trial and error.",
+  "production_steps": [
+    "Compile content from source posts",
+    "Structure into chapters",
+    "Add examples and case studies",
+    "Design PDF layout",
+    "Proofread and edit",
+    "Convert to EPUB",
+    "Create cheat sheet bonus"
+  ],
+  "time_estimate": "DONE (expand existing lead magnet)",
+  "launch_strategy": "email_sequence",
+  "pricing_strategy": "value_based",
+  "upsells": [
+    {
+      "name": "Video Masterclass",
+      "price": 197,
+      "discount": "50% for existing customers"
+    },
+    {
+      "name": "Product Bundle",
+      "price": 149,
+      "savings": "$96"
+    }
+  ]
+}

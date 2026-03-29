@@ -1,0 +1,12 @@
+{
+  "name": "Complete Automation System",
+  "products": [
+    "AI Automation Starter Kit",
+    "100 ChatGPT Prompts for Solopreneurs"
+  ],
+  "individual_price": 78,
+  "bundle_price": 59,
+  "savings": 19,
+  "discount_percentage": 35,
+  "value_proposition": "Get all 2 products for $59 (save $19)"
+}

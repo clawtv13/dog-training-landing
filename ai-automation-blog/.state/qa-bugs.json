@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-03-29T10:05:33.042490",
+  "bugs": [
+    {
+      "test": "posts_visible",
+      "error": "Less than 2 posts visible",
+      "details": "Found 1 h3 tags",
+      "severity": "high",
+      "timestamp": "2026-03-29T10:05:31.860829"
+    }
+  ],
+  "warnings": [],
+  "tests_run": 8,
+  "tests_passed": 7,
+  "tests_failed": 1
+}

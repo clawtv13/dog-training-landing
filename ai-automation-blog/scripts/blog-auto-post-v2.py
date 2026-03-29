@@ -787,6 +787,25 @@ def main():
             logger.info("🚀 Deploying to GitHub...")
             
             deployed = deploy_to_github()
+
+            
+            # Run post-deploy QA tests
+            if deployed:
+                logger.info("🧪 Running post-deploy QA tests...")
+                try:
+                    import subprocess
+                    qa_result = subprocess.run(
+                        ['bash', 'scripts/post-deploy-qa.sh'],
+                        capture_output=True,
+                        text=True,
+                        timeout=300
+                    )
+                    if qa_result.returncode == 0:
+                        logger.info("✅ All QA tests passed")
+                    else:
+                        logger.warning("⚠️  QA found issues (auto-fix attempted)")
+                except Exception as e:
+                    logger.error(f"QA test error: {e}")
             
             if deployed:
                 send_telegram_notification(posts_created, errors_encountered if errors_encountered else None)

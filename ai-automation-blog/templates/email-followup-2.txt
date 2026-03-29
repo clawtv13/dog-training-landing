@@ -1,0 +1,25 @@
+Subject: Last follow-up: {company_name} partnership
+
+Hi {contact_name},
+
+I know you're busy, so I'll keep this brief.
+
+I wanted to reach out one last time about partnering with AI Automation Builder.
+
+**What's changed since my first email:**
+• Traffic: {old_traffic} → {new_traffic} monthly visitors
+• Newsletter: {subscriber_growth} new subscribers
+• Engagement: {engagement_metric}
+
+I genuinely think {company_name} would resonate with our audience. But if now's not the right time, no worries at all.
+
+Would you be open to staying in touch for the future? I can add you to my quarterly update list so you can see how we're growing.
+
+Either way, thanks for your time!
+
+Best,
+{your_name}
+{your_title}
+AI Automation Builder
+
+P.S. If you know someone else on your team I should talk to, I'd really appreciate an intro.

@@ -1,0 +1,37 @@
+{
+  "name": "abandoned-cart",
+  "description": "3-email sequence for users who clicked pricing but didn't buy",
+  "trigger": "clicked_pricing_link",
+  "goal": "Recover lost conversions",
+  "emails": [
+    {
+      "day": 0,
+      "subject_A": "Did you have questions about the Masterclass?",
+      "subject_B": "Still thinking about it? I'm here to help",
+      "body": "Hey {{first_name}},\n\nI noticed you checked out the AI Automation Masterclass. Awesome!\n\nThen... nothing. That's okay. Big decisions take time.\n\n**Common Questions I Get:**\n\n**Q: Is this right for my skill level?**\nA: If you can copy-paste, you can do this. No coding required.\n\n**Q: How much time does it take?**\nA: 1-2 hours to complete the course. Then 30 min to set up each automation.\n\n**Q: What if it doesn't work for me?**\nA: 100% money-back guarantee. Build 3 automations. If you don't save 10+ hours/week, full refund.\n\n**Q: Is $97 worth it?**\nA: If it saves you 20 hours/month, and your time is worth $25/hour, that's $500/month value. You decide.\n\n**Got other questions?** Hit reply. I'll personally answer.\n\n[Enroll Now for $97]({{course_link}})\n\n- n0mad\n\nP.S. The 67% discount ends soon. After that, it's $297.",
+      "cta": "Enroll Now",
+      "cta_url": "{{course_link}}"
+    },
+    {
+      "day": 1,
+      "subject_A": "🎁 Bonus: I'll Set Up Your First Automation (Free)",
+      "subject_B": "Special Deal: Let Me Build Your First Automation",
+      "body": "{{first_name}},\n\nStill on the fence about the Masterclass?\n\nI get it. You want proof this works.\n\n**Here's my offer:**\n\nEnroll today, and I'll personally set up your first automation for you. FREE.\n\n**What I'll Build:**\n- Your choice: Content automation, email sequence, or lead gen system\n- 30-minute 1-on-1 call\n- I'll screen-share and build it with you\n- You keep the automation forever\n\n**Value: $297**\n**Your Cost: $0** (just enroll in the course)\n\n**Why Am I Doing This?**\n\nBecause once you see it work, you'll build 10 more. That's how automation works - one success leads to another.\n\n**This Offer:**\n- Only for the next 20 people\n- Must enroll within 24 hours\n- Reply \"AUTOMATION\" after enrolling to claim\n\n[Enroll + Get Free Setup]({{course_link}})\n\nLet me prove this to you,\nn0mad\n\nP.S. I'm limiting this to 20 people because I physically can't do more. First come, first served.",
+      "cta": "Claim Free Setup",
+      "cta_url": "{{course_link}}",
+      "bonus": true
+    },
+    {
+      "day": 2,
+      "subject_A": "Honest question: What's holding you back?",
+      "subject_B": "Can I ask why you didn't join?",
+      "body": "{{first_name}},\n\nI'll be direct.\n\nYou looked at the Masterclass. You didn't buy.\n\nThat's fine - but I want to know why.\n\n**Was it:**\n- Too expensive?\n- Not convinced it would work?\n- Bad timing?\n- Something else?\n\nHit reply and tell me. Seriously.\n\nIf there's something I got wrong in how I explained it, I want to fix that.\n\nAnd if it's just not right for you, that's okay too. No hard feelings.\n\n**But if the only thing stopping you is doubt...**\n\nRemember:\n- 100% money-back guarantee\n- Lifetime access + updates\n- Private community support\n- Proven system (50+ success stories)\n\n[Give It a Shot (67% Off)]({{course_link}})\n\nWhatever you decide, I appreciate you being here.\n\nn0mad\n\nP.S. This is my last email about the Masterclass. I won't bug you again. Promise.",
+      "cta": "Last Chance",
+      "cta_url": "{{course_link}}",
+      "final_email": true
+    }
+  ],
+  "variables": {
+    "course_link": "https://aiautomationbuilder.com/masterclass"
+  }
+}

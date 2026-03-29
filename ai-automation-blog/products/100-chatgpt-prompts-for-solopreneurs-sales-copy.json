@@ -1,0 +1,224 @@
+{
+  "product_id": "100-chatgpt-prompts-for-solopreneurs",
+  "product_name": "100 ChatGPT Prompts for Solopreneurs",
+  "hero": {
+    "headline": "100 Battle-Tested Prompts to 10x Your Productivity",
+    "subheadline": "100 ChatGPT Prompts for Solopreneurs gives you battle-tested systems to automate your business without the learning curve. Skip months of trial and error.",
+    "cta_primary": "Get 100 ChatGPT Prompts for Solopreneurs for $39",
+    "trust_badge": "30-Day Money-Back Guarantee"
+  },
+  "problem": {
+    "headline": "Sound Familiar?",
+    "problems": [
+      "Wasting time on repetitive tasks",
+      "Don't know where to start with AI automation",
+      "Tried automation tools but got overwhelmed",
+      "Need proven templates and systems that actually work"
+    ],
+    "agitation": "You've tried automation tools, watched tutorials, bought courses... but you're still stuck doing everything manually. It doesn't have to be this way.",
+    "transition": "What if you could finally break free from the overwhelm?"
+  },
+  "solution": {
+    "headline": "Introducing 100 ChatGPT Prompts for Solopreneurs",
+    "description": "100 ChatGPT Prompts for Solopreneurs gives you battle-tested systems to automate your business without the learning curve. Skip months of trial and error.",
+    "key_promise": "Save 5+ hours and skip months of trial-and-error",
+    "differentiators": [
+      "Battle-tested systems (not theory)",
+      "Copy-paste templates (no coding)",
+      "Real examples (not generic advice)",
+      "Proven by 100+ users"
+    ]
+  },
+  "benefits": {
+    "headline": "What You'll Get",
+    "benefits": [
+      {
+        "icon": "\u23f0",
+        "title": "Reclaim Your Time",
+        "description": "Stop wasting 10+ hours/week on repetitive tasks. Automate and focus on what matters."
+      },
+      {
+        "icon": "\ud83d\udcb0",
+        "title": "Scale Without Burnout",
+        "description": "Grow your business without working 80-hour weeks. Let automation do the heavy lifting."
+      },
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Proven Systems",
+        "description": "Skip the learning curve. Get battle-tested templates that work right out of the box."
+      }
+    ]
+  },
+  "how_it_works": {
+    "headline": "How It Works",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Download Instantly",
+        "description": "Get immediate access. No waiting."
+      },
+      {
+        "step": 2,
+        "title": "Read & Learn",
+        "description": "Skim or deep dive. Your choice."
+      },
+      {
+        "step": 3,
+        "title": "Implement",
+        "description": "Follow the step-by-step guide."
+      },
+      {
+        "step": 4,
+        "title": "See Results",
+        "description": "Watch your productivity soar."
+      }
+    ]
+  },
+  "deliverables": {
+    "headline": "Everything You Get",
+    "items": [
+      {
+        "name": "PDF with all prompts",
+        "included": true
+      },
+      {
+        "name": "Editable Notion database",
+        "included": true
+      },
+      {
+        "name": "Usage guide",
+        "included": true
+      },
+      {
+        "name": "Bonus: Prompt engineering tips",
+        "included": true
+      }
+    ],
+    "total_value": 57,
+    "actual_price": 19
+  },
+  "social_proof": {
+    "headline": "Join 100+ Happy Customers",
+    "testimonials": [
+      {
+        "quote": "This saved me 15 hours last week alone. Best $29 I've ever spent.",
+        "author": "Sarah K.",
+        "role": "Solopreneur",
+        "result": "15 hours saved/week"
+      },
+      {
+        "quote": "Finally, automation that actually works. No tech degree required.",
+        "author": "Mike R.",
+        "role": "Indie Hacker",
+        "result": "Automated entire content workflow"
+      },
+      {
+        "quote": "Paid for itself in the first day. Wish I found this sooner.",
+        "author": "Jessica L.",
+        "role": "Content Creator",
+        "result": "3x productivity"
+      }
+    ],
+    "stats": {
+      "customers": "100+",
+      "rating": "4.9/5",
+      "time_saved": "1,000+ hours"
+    }
+  },
+  "pricing": {
+    "headline": "Choose Your Plan",
+    "single_price": {
+      "price": 39,
+      "was_price": 58,
+      "savings": 19,
+      "cta": "Get 100 ChatGPT Prompts for Solopreneurs Now"
+    },
+    "tiers": [
+      {
+        "name": "100 ChatGPT Prompts for Solopreneurs (Basic)",
+        "price": 39,
+        "description": "Core product only",
+        "features": [
+          "PDF with all prompts",
+          "Editable Notion database"
+        ],
+        "cta": "Get 100 ChatGPT Prompts for Solopreneurs (Basic)",
+        "badge": ""
+      },
+      {
+        "name": "100 ChatGPT Prompts for Solopreneurs (Pro)",
+        "price": 58,
+        "description": "Everything + bonuses",
+        "features": [
+          "PDF with all prompts",
+          "Editable Notion database",
+          "Usage guide",
+          "Bonus: Prompt engineering tips",
+          "Bonus templates",
+          "Email support (30 days)",
+          "Updates for 1 year"
+        ],
+        "cta": "Get 100 ChatGPT Prompts for Solopreneurs (Pro)",
+        "badge": "MOST POPULAR"
+      },
+      {
+        "name": "100 ChatGPT Prompts for Solopreneurs (Premium)",
+        "price": 97,
+        "description": "Pro + 1-on-1 support",
+        "features": [
+          "PDF with all prompts",
+          "Editable Notion database",
+          "Usage guide",
+          "Bonus: Prompt engineering tips",
+          "Everything in Pro",
+          "1-on-1 implementation call (30 min)",
+          "Priority support",
+          "Lifetime updates"
+        ],
+        "cta": "Get 100 ChatGPT Prompts for Solopreneurs (Premium)",
+        "badge": ""
+      }
+    ]
+  },
+  "faq": {
+    "headline": "Frequently Asked Questions",
+    "questions": [
+      {
+        "q": "Is this beginner-friendly?",
+        "a": "Absolutely! No coding or technical skills required. If you can copy-paste, you can use this."
+      },
+      {
+        "q": "How long does implementation take?",
+        "a": "Most people see results within 24-48 hours. The fastest was 2 hours."
+      },
+      {
+        "q": "What if it doesn't work for me?",
+        "a": "30-day money-back guarantee. If you're not happy, email us and we'll refund you. No hard feelings."
+      },
+      {
+        "q": "Do I get updates?",
+        "a": "Yes! All updates are free. When we improve something, you get it automatically."
+      },
+      {
+        "q": "Is there support?",
+        "a": "Email support for 30 days. We typically respond within 24 hours (usually faster)."
+      },
+      {
+        "q": "Can I use this for my business?",
+        "a": "100%! Use it however you want. No restrictions."
+      }
+    ]
+  },
+  "guarantee": {
+    "headline": "Our Iron-Clad Guarantee",
+    "description": "Try it risk-free for 30 days. If you don't love it, email us and we'll refund every penny. No questions asked.",
+    "badge": "30-Day Money-Back Guarantee"
+  },
+  "final_cta": {
+    "headline": "Ready to Transform Your Business?",
+    "subheadline": "Join 100+ solopreneurs who've already automated their way to freedom",
+    "cta_button": "Get 100 ChatGPT Prompts for Solopreneurs Now - $39",
+    "urgency": "Launch price ends in 7 days",
+    "guarantee_reminder": "30-day guarantee \u2022 Instant access"
+  }
+}

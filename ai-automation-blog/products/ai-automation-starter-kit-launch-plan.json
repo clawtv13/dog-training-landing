@@ -1,0 +1,358 @@
+{
+  "product_id": "ai-automation-starter-kit",
+  "product_name": "AI Automation Starter Kit",
+  "price": 29,
+  "tier": "low_ticket",
+  "sequence_type": "7_day_sprint",
+  "duration_days": 7,
+  "launch_date": null,
+  "status": "planned",
+  "timeline": [
+    {
+      "day": -3,
+      "date": "Launch Day -3",
+      "action": "teaser",
+      "description": "Build anticipation",
+      "tasks": [
+        "Send teaser email",
+        "Post on social media",
+        "Add countdown timer to site"
+      ]
+    },
+    {
+      "day": 0,
+      "date": "Launch Day 0",
+      "action": "launch",
+      "description": "Open cart",
+      "tasks": [
+        "Send launch email",
+        "Publish landing page",
+        "Post on all social channels",
+        "Enable payment processing",
+        "Start Facebook/Twitter ads (if budget)"
+      ]
+    },
+    {
+      "day": 2,
+      "date": "Launch Day 2",
+      "action": "value",
+      "description": "Share case study",
+      "tasks": [
+        "Send case study email",
+        "Post customer results",
+        "Share implementation tips"
+      ]
+    },
+    {
+      "day": 4,
+      "date": "Launch Day 4",
+      "action": "objection",
+      "description": "Handle doubts",
+      "tasks": [
+        "Send FAQ email",
+        "Post common objections + answers",
+        "Host Q&A session"
+      ]
+    },
+    {
+      "day": 6,
+      "date": "Launch Day 6",
+      "action": "urgency",
+      "description": "Final 24h push",
+      "tasks": [
+        "Send urgency email",
+        "Post countdown",
+        "Remind of bonuses expiring"
+      ]
+    },
+    {
+      "day": 7,
+      "date": "Launch Day 7",
+      "action": "close",
+      "description": "Cart closes",
+      "tasks": [
+        "Send cart closed email",
+        "Thank buyers",
+        "Survey non-buyers"
+      ]
+    }
+  ],
+  "assets_required": [
+    {
+      "asset": "Landing page",
+      "status": "needed",
+      "priority": "high"
+    },
+    {
+      "asset": "Sales copy",
+      "status": "needed",
+      "priority": "high"
+    },
+    {
+      "asset": "Product mockup images",
+      "status": "needed",
+      "priority": "medium"
+    },
+    {
+      "asset": "Email sequence (7 emails)",
+      "status": "needed",
+      "priority": "high"
+    },
+    {
+      "asset": "Social media graphics",
+      "status": "needed",
+      "priority": "medium"
+    },
+    {
+      "asset": "Testimonials/social proof",
+      "status": "needed",
+      "priority": "high"
+    },
+    {
+      "asset": "FAQ page",
+      "status": "needed",
+      "priority": "medium"
+    },
+    {
+      "asset": "Payment page (Gumroad/Stripe)",
+      "status": "needed",
+      "priority": "high"
+    }
+  ],
+  "email_sequence": [
+    {
+      "email_id": 1,
+      "day": -3,
+      "subject": "Something new is coming...",
+      "framework": "curiosity",
+      "preview": "I've been working on something that will change how you...",
+      "body_outline": [
+        "Hook: Share the problem you're solving",
+        "Hint at the solution (don't reveal yet)",
+        "Build anticipation",
+        "CTA: 'Keep an eye on your inbox'"
+      ],
+      "status": "template_ready"
+    },
+    {
+      "email_id": 2,
+      "day": 0,
+      "subject": "\ud83d\ude80 AI Automation Starter Kit is now available",
+      "framework": "AIDA",
+      "preview": "Get AI Automation Starter Kit for just $29 (limited time)",
+      "body_outline": [
+        "Attention: Announce the launch",
+        "Interest: What it is and what it does",
+        "Desire: Show the transformation",
+        "Action: Buy now link + urgency"
+      ],
+      "status": "template_ready"
+    },
+    {
+      "email_id": 3,
+      "day": 2,
+      "subject": "How Sarah saved 10 hours/week with AI Automation Starter Kit",
+      "framework": "story",
+      "preview": "Real results from a beta tester",
+      "body_outline": [
+        "Share customer story",
+        "Before/after transformation",
+        "Specific results",
+        "CTA: Get the same results"
+      ],
+      "status": "needs_customer_story"
+    },
+    {
+      "email_id": 4,
+      "day": 4,
+      "subject": "Is this right for you?",
+      "framework": "FAQ",
+      "preview": "Answering the most common questions",
+      "body_outline": [
+        "Address main objections",
+        "Who it's for / who it's not for",
+        "Money-back guarantee",
+        "CTA: Risk-free purchase"
+      ],
+      "status": "template_ready"
+    },
+    {
+      "email_id": 5,
+      "day": 6,
+      "subject": "Last 24 hours to get {name}",
+      "framework": "urgency",
+      "preview": "Cart closes tomorrow at midnight",
+      "body_outline": [
+        "Reminder: Cart closing soon",
+        "What you'll miss out on",
+        "Final bonus (if any)",
+        "CTA: Don't miss this"
+      ],
+      "status": "template_ready"
+    },
+    {
+      "email_id": 6,
+      "day": 7,
+      "subject": "FINAL CALL: 3 hours left",
+      "framework": "scarcity",
+      "preview": "This is your last chance",
+      "body_outline": [
+        "Ultra short email",
+        "Countdown timer",
+        "Direct link to buy",
+        "One-sentence reminder of value"
+      ],
+      "status": "template_ready"
+    },
+    {
+      "email_id": 7,
+      "day": 8,
+      "subject": "Cart is now closed",
+      "framework": "follow_up",
+      "preview": "Thanks + next steps",
+      "body_outline": [
+        "Thank buyers / acknowledge non-buyers",
+        "For buyers: What to expect next",
+        "For non-buyers: Survey (why didn't you buy?)",
+        "Hint at next product"
+      ],
+      "status": "template_ready"
+    }
+  ],
+  "social_posts": [
+    {
+      "day": -7,
+      "platform": "twitter",
+      "content": "Building something new \ud83d\udc40\n\nIt's going to help solopreneurs automate their business without the overwhelm.\n\nMore soon...",
+      "media": "behind_the_scenes_screenshot"
+    },
+    {
+      "day": -3,
+      "platform": "twitter",
+      "content": "\ud83d\ude80 Launching something on Monday\n\nIf you've ever felt overwhelmed by automation tools, this is for you.\n\nDetails dropping soon.",
+      "media": "teaser_graphic"
+    },
+    {
+      "day": 0,
+      "platform": "twitter",
+      "content": "\ud83c\udf89 AI Automation Starter Kit is LIVE!\n\nComplete starter guide to AI automation for solopreneurs\n\nOnly $29 for the next 7 days.\n\n[LINK]\n\n#automation #solopreneur",
+      "media": "product_mockup"
+    },
+    {
+      "day": 3,
+      "platform": "twitter",
+      "content": "50+ people have grabbed AI Automation Starter Kit already \ud83d\udd25\n\nHere's what they're saying:\n\n[testimonial screenshot]\n\nGet yours: [LINK]",
+      "media": "testimonial_graphic"
+    },
+    {
+      "day": 6,
+      "platform": "twitter",
+      "content": "\u23f0 24 hours left to get AI Automation Starter Kit\n\nAfter tomorrow, it's gone (or price goes up).\n\nDon't miss out: [LINK]",
+      "media": "countdown_timer"
+    }
+  ],
+  "landing_page": {
+    "url_slug": "ai-automation-starter-kit",
+    "template": "sales_page_long_form",
+    "sections": [
+      {
+        "type": "hero",
+        "headline": "Transform Your Business in [X] Days",
+        "subheadline": "Complete starter guide to AI automation for solopreneurs",
+        "cta": "Get AI Automation Starter Kit Now - $29",
+        "image": "hero_mockup.png"
+      },
+      {
+        "type": "problem",
+        "headline": "Struggling with [pain point]?",
+        "bullets": [
+          "Wasting time on repetitive tasks",
+          "Don't know where to start with AI automation",
+          "Tried automation tools but got overwhelmed",
+          "Need proven templates and systems that actually work"
+        ]
+      },
+      {
+        "type": "solution",
+        "headline": "Introducing AI Automation Starter Kit",
+        "description": "AI Automation Starter Kit gives you battle-tested systems to automate your business without the learning curve. Skip months of trial and error."
+      },
+      {
+        "type": "deliverables",
+        "headline": "What You Get",
+        "items": [
+          "PDF ebook (DRM-free)",
+          "EPUB format",
+          "Notion template version",
+          "Bonus: Quick reference cheat sheet"
+        ]
+      },
+      {
+        "type": "social_proof",
+        "headline": "What People Are Saying",
+        "testimonials": []
+      },
+      {
+        "type": "pricing",
+        "headline": "Get Started Today",
+        "price": 29,
+        "guarantee": "30-day money-back guarantee"
+      },
+      {
+        "type": "faq",
+        "headline": "Frequently Asked Questions",
+        "questions": [
+          {
+            "q": "Who is this for?",
+            "a": "Solopreneurs and indie hackers building automated businesses"
+          },
+          {
+            "q": "What format is it?",
+            "a": "You'll get PDF ebook (DRM-free), EPUB format"
+          },
+          {
+            "q": "How long does it take to implement?",
+            "a": "Most people see results within 7 days of implementing the systems"
+          },
+          {
+            "q": "What if it doesn't work for me?",
+            "a": "30-day money-back guarantee. No questions asked."
+          },
+          {
+            "q": "Is there ongoing support?",
+            "a": "Yes! You get lifetime access plus email support for 30 days"
+          }
+        ]
+      },
+      {
+        "type": "cta_final",
+        "headline": "Ready to Transform Your Business?",
+        "cta": "Get AI Automation Starter Kit Now - $29",
+        "urgency": "Limited time offer"
+      }
+    ],
+    "payment_integration": "gumroad",
+    "analytics": [
+      "google_analytics",
+      "facebook_pixel"
+    ]
+  },
+  "success_metrics": {
+    "email_open_rate_target": 0.4,
+    "email_click_rate_target": 0.1,
+    "landing_page_conversion_target": 0.02,
+    "revenue_targets": {
+      "conservative": 290,
+      "realistic": 725,
+      "optimistic": 1450
+    },
+    "subscriber_target": 100
+  },
+  "scarcity": {
+    "type": "time_limited",
+    "mechanism": "Cart closes after 7 days",
+    "countdown": "visible_on_landing_page",
+    "bonus": "Early bird bonus (first 50 buyers)",
+    "price_increase": "Price increases to $43.5 after launch"
+  }
+}

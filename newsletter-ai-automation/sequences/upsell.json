@@ -1,0 +1,44 @@
+{
+  "name": "upsell",
+  "description": "4-email sequence for users who downloaded lead magnet",
+  "trigger": "downloaded_starter_kit",
+  "goal": "Convert free users to paid course",
+  "emails": [
+    {
+      "day": 1,
+      "subject_A": "🔥 How's the Starter Kit working out?",
+      "subject_B": "Quick check-in: Did you try the automations?",
+      "body": "Hey {{first_name}}!\n\nYou downloaded the AI Automation Starter Kit yesterday. Nice!\n\n**Quick question:** Did you try any of the automations yet?\n\nHere's what most people start with:\n\n1️⃣ **The 5-Minute Blog-to-Email Automation**\n- Easiest to set up\n- Immediate time savings\n- Works with any blog platform\n\n2️⃣ **The Social Media Auto-Poster**\n- Publish once, distribute everywhere\n- Saves 5-10 hours/week\n- Set-and-forget system\n\n3️⃣ **The Lead Magnet Delivery System**\n- Captures emails automatically\n- Sends welcome sequence\n- Builds your list on autopilot\n\n**Stuck on anything?** Hit reply. I'm here to help.\n\n**Want More?**\n\nThe Starter Kit has 5 automations. The full Masterclass has 50+.\n\nIf you're ready to go deeper:\n\n[Check Out the Full Masterclass]({{course_link}})\n\nKeep building,\nn0mad",
+      "cta": "See Full Course",
+      "cta_url": "{{course_link}}"
+    },
+    {
+      "day": 3,
+      "subject_A": "⚡ The One Automation That Changed Everything",
+      "subject_B": "This automation saved me 30 hours/week",
+      "body": "{{first_name}},\n\nYou know what changed my business?\n\nNot one big thing. One AUTOMATION.\n\n**The Content Multiplication System:**\n\n1. Write one blog post (1 hour)\n2. AI extracts 10 social posts (2 minutes)\n3. AI creates email newsletter (3 minutes)\n4. AI generates video script (2 minutes)\n5. Everything auto-publishes (0 minutes)\n\n**Result:** 1 hour of work = 1 week of content.\n\nThat's not in the Starter Kit. It's in the Masterclass.\n\n**Inside the Masterclass:**\n- The Content Multiplication System (full tutorial)\n- 50+ automation blueprints\n- Copy-paste templates\n- Private community\n- Weekly live Q&A\n\n**Plus:** If you enroll now, I'll personally set up your first automation for free.\n\n[Enroll in the Masterclass]({{course_link}})\n\nThis is how you scale,\nn0mad\n\nP.S. The Starter Kit was the appetizer. This is the main course.",
+      "cta": "Enroll Now",
+      "cta_url": "{{course_link}}"
+    },
+    {
+      "day": 5,
+      "subject_A": "📊 Your Automation Potential (Data Inside)",
+      "subject_B": "I calculated how much time you're losing",
+      "body": "{{first_name}},\n\nLet's do some math.\n\n**Average solopreneur spends:**\n- 10 hrs/week on content creation\n- 8 hrs/week on email marketing\n- 5 hrs/week on social media\n- 5 hrs/week on admin tasks\n\n**Total: 28 hours/week**\n\nWith automation, you can cut that by 70%.\n\n**That's 20 hours/week saved.**\n\n**What could you do with 20 extra hours?**\n- Build a new product\n- Learn a new skill\n- Spend time with family\n- Actually rest for once\n\n**The Investment:**\n- Masterclass: $97\n- Time to implement: 5 hours\n- Time saved per year: 1,040 hours\n\n**ROI:** If your time is worth $25/hour, that's $26,000/year in value.\n\nFor $97.\n\n**The Math Checks Out.**\n\n[Stop Trading Time for Money]({{course_link}})\n\nLet's build your freedom,\nn0mad\n\nP.S. Still not sure? Reply with your biggest time-waster. I'll send you a custom automation blueprint. Free.",
+      "cta": "Enroll Now",
+      "cta_url": "{{course_link}}"
+    },
+    {
+      "day": 7,
+      "subject_A": "🎯 Final Thought: Automation vs. Hustle",
+      "subject_B": "The truth about working smarter",
+      "body": "{{first_name}},\n\nEveryone says \"work smarter, not harder.\"\n\nBut what does that actually mean?\n\n**Hustle Culture Says:**\n- Wake up at 4 AM\n- Grind 16 hours/day\n- Sleep is for the weak\n- No pain, no gain\n\n**Automation Culture Says:**\n- Build systems that work while you sleep\n- Leverage technology, not just effort\n- Work 4 hours, earn the same as 16\n- Time freedom > money\n\nI tried both. Hustle culture almost killed me.\n\nAutomation culture saved me.\n\n**Here's the truth:**\n\nYou can keep hustling. Keep grinding. Keep burning out.\n\nOr you can build systems that do the work for you.\n\n**The Masterclass teaches the second way.**\n\nNo fluff. No motivational BS. Just practical automations that save time and make money.\n\n[Build Your Automation Empire]({{course_link}})\n\nOr don't. Keep hustling. But in 6 months, don't wonder why you're still stuck.\n\nYour move,\nn0mad\n\nP.S. This is my last email about the Masterclass. After this, you're on your own.\n\n---\n\n**One Last Thing:**\n\nIf you're not ready for the Masterclass, that's fine. But stay subscribed to this newsletter.\n\nI'll keep sending free automation tutorials, case studies, and tips.\n\nYou'll learn a ton either way.\n\nSee you in your inbox,\nn0mad",
+      "cta": "Last Chance",
+      "cta_url": "{{course_link}}",
+      "final_email": true
+    }
+  ],
+  "variables": {
+    "course_link": "https://aiautomationbuilder.com/masterclass"
+  }
+}

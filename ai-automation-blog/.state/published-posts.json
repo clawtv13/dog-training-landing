@@ -10,5 +10,41 @@
     "title": "CERN uses ultra-compact AI models on FPGAs for real-time LHC data filtering",
     "published_at": "2026-03-29T00:57:31.861675",
     "source_item_id": 40
+  },
+  {
+    "url": "/posts/2026-03-29-the-first-40-months-of-the-ai-era.html",
+    "title": "The first 40 months of the AI era",
+    "source_id": 63,
+    "excerpt": "HN Score: 113 points, 51 comments...",
+    "word_count": 946,
+    "published_at": "2026-03-29T09:50:09.284978",
+    "fingerprint": "6357273f976afca588bebc63b300fea6"
+  },
+  {
+    "url": "/posts/2026-03-29-ai-overly-affirms-users-asking-for-personal-advice.html",
+    "title": "AI overly affirms users asking for personal advice",
+    "source_id": 39,
+    "excerpt": "HN Score: 384 points, 305 comments...",
+    "word_count": 965,
+    "published_at": "2026-03-29T09:50:53.261573",
+    "fingerprint": "ab56107530ea1efe9f78030a1ced46f0"
+  },
+  {
+    "url": "/posts/2026-03-29-cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering.html",
+    "title": "CERN uses ultra-compact AI models on FPGAs for real-time LHC data filtering",
+    "source_id": 40,
+    "excerpt": "HN Score: 251 points, 118 comments...",
+    "word_count": 931,
+    "published_at": "2026-03-29T10:00:44.325605",
+    "fingerprint": "bdd8d4a9f8515d98306ca93fb91b896b"
+  },
+  {
+    "url": "/posts/2026-03-29-folk-are-getting-dangerously-attached-to-ai-that-always-tells-them-theyre-right.html",
+    "title": "Folk are getting dangerously attached to AI that always tells them they're right",
+    "source_id": 41,
+    "excerpt": "HN Score: 204 points, 150 comments...",
+    "word_count": 915,
+    "published_at": "2026-03-29T10:01:25.256270",
+    "fingerprint": "12fc00117a2e26e9336ef40302950a12"
   }
 ]

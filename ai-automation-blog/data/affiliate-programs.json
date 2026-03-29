@@ -1,0 +1,317 @@
+[
+  {
+    "name": "Make (Integromat)",
+    "url": "https://www.make.com/en/partners/affiliates",
+    "commission_rate": 30,
+    "commission_type": "recurring",
+    "cookie_duration": 90,
+    "min_payout": 100,
+    "status": "active",
+    "notes": "30% recurring commission. Great for automation content.",
+    "products": [
+      {
+        "name": "Make",
+        "category": "automation",
+        "base_url": "https://make.com",
+        "affiliate_link": "https://make.com?via=ai-automation",
+        "commission_rate": 30,
+        "recommended": true,
+        "keywords": ["Make", "Integromat", "automation platform", "workflow automation", "visual automation"]
+      }
+    ]
+  },
+  {
+    "name": "AppSumo",
+    "url": "https://appsumo.com/partners/",
+    "commission_rate": 30,
+    "commission_type": "one-time",
+    "cookie_duration": 60,
+    "min_payout": 50,
+    "status": "active",
+    "notes": "Lifetime deals. High conversion.",
+    "products": [
+      {
+        "name": "AppSumo Deals",
+        "category": "deals",
+        "base_url": "https://appsumo.com",
+        "affiliate_link": "https://appsumo.com?ref=ai-automation",
+        "commission_rate": 30,
+        "recommended": true,
+        "keywords": ["AppSumo", "lifetime deal", "LTD", "software deals"]
+      }
+    ]
+  },
+  {
+    "name": "DigitalOcean",
+    "url": "https://www.digitalocean.com/partners/referral-program",
+    "commission_rate": 25,
+    "commission_type": "recurring",
+    "cookie_duration": 90,
+    "min_payout": 25,
+    "status": "active",
+    "notes": "$25 per signup. Good for hosting content.",
+    "products": [
+      {
+        "name": "DigitalOcean",
+        "category": "hosting",
+        "base_url": "https://digitalocean.com",
+        "affiliate_link": "https://m.do.co/c/your-ref-code",
+        "commission_rate": 25,
+        "recommended": true,
+        "keywords": ["DigitalOcean", "VPS", "cloud hosting", "droplet", "server hosting"]
+      }
+    ]
+  },
+  {
+    "name": "Notion",
+    "url": "https://www.notion.so/affiliates",
+    "commission_rate": 50,
+    "commission_type": "recurring",
+    "cookie_duration": 90,
+    "min_payout": 50,
+    "status": "active",
+    "notes": "50% recurring on paid plans. Great for productivity content.",
+    "products": [
+      {
+        "name": "Notion",
+        "category": "productivity",
+        "base_url": "https://notion.so",
+        "affiliate_link": "https://notion.so?via=ai-automation",
+        "commission_rate": 50,
+        "recommended": true,
+        "keywords": ["Notion", "workspace", "productivity app", "note-taking", "database"]
+      }
+    ]
+  },
+  {
+    "name": "ConvertKit",
+    "url": "https://convertkit.com/affiliates",
+    "commission_rate": 30,
+    "commission_type": "recurring",
+    "cookie_duration": 90,
+    "min_payout": 50,
+    "status": "active",
+    "notes": "30% recurring. Good for email automation content.",
+    "products": [
+      {
+        "name": "ConvertKit",
+        "category": "email",
+        "base_url": "https://convertkit.com",
+        "affiliate_link": "https://convertkit.com?lmref=your-ref",
+        "commission_rate": 30,
+        "recommended": true,
+        "keywords": ["ConvertKit", "email marketing", "newsletter", "email automation"]
+      }
+    ]
+  },
+  {
+    "name": "Beehiiv",
+    "url": "https://beehiiv.com/affiliates",
+    "commission_rate": 50,
+    "commission_type": "recurring",
+    "cookie_duration": 90,
+    "min_payout": 50,
+    "status": "active",
+    "notes": "50% recurring for first 12 months. Newsletter platform.",
+    "products": [
+      {
+        "name": "Beehiiv",
+        "category": "newsletter",
+        "base_url": "https://beehiiv.com",
+        "affiliate_link": "https://beehiiv.com?via=ai-automation",
+        "commission_rate": 50,
+        "recommended": true,
+        "keywords": ["Beehiiv", "newsletter platform", "email newsletter", "creator tool"]
+      }
+    ]
+  },
+  {
+    "name": "Webflow",
+    "url": "https://webflow.com/affiliates",
+    "commission_rate": 50,
+    "commission_type": "one-time",
+    "cookie_duration": 90,
+    "min_payout": 100,
+    "status": "active",
+    "notes": "50% of first year. Good for no-code content.",
+    "products": [
+      {
+        "name": "Webflow",
+        "category": "web-design",
+        "base_url": "https://webflow.com",
+        "affiliate_link": "https://webflow.com?via=ai-automation",
+        "commission_rate": 50,
+        "recommended": true,
+        "keywords": ["Webflow", "website builder", "no-code", "web design", "CMS"]
+      }
+    ]
+  },
+  {
+    "name": "Bubble.io",
+    "url": "https://bubble.io/affiliates",
+    "commission_rate": 25,
+    "commission_type": "recurring",
+    "cookie_duration": 90,
+    "min_payout": 50,
+    "status": "active",
+    "notes": "25% recurring. No-code app builder.",
+    "products": [
+      {
+        "name": "Bubble",
+        "category": "no-code",
+        "base_url": "https://bubble.io",
+        "affiliate_link": "https://bubble.io?ref=ai-automation",
+        "commission_rate": 25,
+        "recommended": true,
+        "keywords": ["Bubble", "no-code", "app builder", "web app", "visual programming"]
+      }
+    ]
+  },
+  {
+    "name": "Supabase",
+    "url": "https://supabase.com/partners",
+    "commission_rate": 10,
+    "commission_type": "recurring",
+    "cookie_duration": 90,
+    "min_payout": 100,
+    "status": "active",
+    "notes": "10% recurring. Open-source Firebase alternative.",
+    "products": [
+      {
+        "name": "Supabase",
+        "category": "backend",
+        "base_url": "https://supabase.com",
+        "affiliate_link": "https://supabase.com?ref=ai-automation",
+        "commission_rate": 10,
+        "recommended": true,
+        "keywords": ["Supabase", "backend", "database", "auth", "Postgres", "Firebase alternative"]
+      }
+    ]
+  },
+  {
+    "name": "Vercel",
+    "url": "https://vercel.com/partners",
+    "commission_rate": 20,
+    "commission_type": "recurring",
+    "cookie_duration": 90,
+    "min_payout": 100,
+    "status": "active",
+    "notes": "20% recurring. Frontend cloud platform.",
+    "products": [
+      {
+        "name": "Vercel",
+        "category": "hosting",
+        "base_url": "https://vercel.com",
+        "affiliate_link": "https://vercel.com?via=ai-automation",
+        "commission_rate": 20,
+        "recommended": true,
+        "keywords": ["Vercel", "hosting", "deployment", "Next.js", "frontend", "serverless"]
+      }
+    ]
+  },
+  {
+    "name": "Replicate",
+    "url": "https://replicate.com/affiliates",
+    "commission_rate": 20,
+    "commission_type": "recurring",
+    "cookie_duration": 90,
+    "min_payout": 50,
+    "status": "active",
+    "notes": "20% recurring. AI model API. Perfect for AI automation content.",
+    "products": [
+      {
+        "name": "Replicate",
+        "category": "ai",
+        "base_url": "https://replicate.com",
+        "affiliate_link": "https://replicate.com?via=ai-automation",
+        "commission_rate": 20,
+        "recommended": true,
+        "keywords": ["Replicate", "AI models", "machine learning", "API", "Stable Diffusion"]
+      }
+    ]
+  },
+  {
+    "name": "Anthropic",
+    "url": "https://anthropic.com/partners",
+    "commission_rate": 10,
+    "commission_type": "recurring",
+    "cookie_duration": 90,
+    "min_payout": 100,
+    "status": "active",
+    "notes": "10% recurring. Claude API.",
+    "products": [
+      {
+        "name": "Claude",
+        "category": "ai",
+        "base_url": "https://anthropic.com",
+        "affiliate_link": "https://anthropic.com?ref=ai-automation",
+        "commission_rate": 10,
+        "recommended": true,
+        "keywords": ["Claude", "Anthropic", "AI assistant", "LLM", "language model"]
+      }
+    ]
+  },
+  {
+    "name": "Lemon Squeezy",
+    "url": "https://lemonsqueezy.com/affiliates",
+    "commission_rate": 30,
+    "commission_type": "recurring",
+    "cookie_duration": 90,
+    "min_payout": 50,
+    "status": "active",
+    "notes": "30% recurring. Merchant of record. Indie hacker favorite.",
+    "products": [
+      {
+        "name": "Lemon Squeezy",
+        "category": "payments",
+        "base_url": "https://lemonsqueezy.com",
+        "affiliate_link": "https://lemonsqueezy.com?aff=your-code",
+        "commission_rate": 30,
+        "recommended": true,
+        "keywords": ["Lemon Squeezy", "payments", "merchant of record", "selling digital products"]
+      }
+    ]
+  },
+  {
+    "name": "Descript",
+    "url": "https://descript.com/affiliates",
+    "commission_rate": 25,
+    "commission_type": "one-time",
+    "cookie_duration": 60,
+    "min_payout": 50,
+    "status": "active",
+    "notes": "25% one-time. Video editing with AI.",
+    "products": [
+      {
+        "name": "Descript",
+        "category": "video",
+        "base_url": "https://descript.com",
+        "affiliate_link": "https://descript.com?via=ai-automation",
+        "commission_rate": 25,
+        "recommended": true,
+        "keywords": ["Descript", "video editing", "podcast editing", "transcription", "AI editing"]
+      }
+    ]
+  },
+  {
+    "name": "Framer",
+    "url": "https://framer.com/affiliates",
+    "commission_rate": 50,
+    "commission_type": "recurring",
+    "cookie_duration": 90,
+    "min_payout": 50,
+    "status": "active",
+    "notes": "50% recurring. Design tool + hosting.",
+    "products": [
+      {
+        "name": "Framer",
+        "category": "design",
+        "base_url": "https://framer.com",
+        "affiliate_link": "https://framer.com?via=ai-automation",
+        "commission_rate": 50,
+        "recommended": true,
+        "keywords": ["Framer", "design tool", "website builder", "prototyping", "no-code"]
+      }
+    ]
+  }
+]

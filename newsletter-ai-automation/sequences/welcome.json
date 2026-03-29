@@ -1,0 +1,65 @@
+{
+  "name": "welcome",
+  "description": "5-email welcome sequence for new subscribers",
+  "goal": "Deliver value, build trust, convert to first paid product",
+  "target_conversion": "2-5%",
+  "emails": [
+    {
+      "day": 0,
+      "subject_A": "🎁 Your AI Automation Starter Kit is Here (Open Now)",
+      "subject_B": "Welcome! Here's Your AI Automation Toolkit",
+      "body": "Hey {{first_name}}! 👋\n\nYou just joined 10,000+ solopreneurs building businesses with AI automation.\n\nHere's your promised **AI Automation Starter Kit**:\n\n✅ **5 Copy-Paste AI Prompts** that save 10 hours/week\n✅ **The 3-Step Automation Framework** (steal this)\n✅ **Free Tools List** - No paid software needed\n\n👉 [Download Your Starter Kit]({{download_link}})\n\n**Quick Question:** What's eating most of your time right now?\n\n1️⃣ Content creation (blog, social, newsletter)\n2️⃣ Customer support / emails\n3️⃣ Marketing / lead generation\n4️⃣ Operations / admin tasks\n\nHit reply and let me know - I'll send you a custom automation blueprint.\n\nLet's build something,\nn0mad\n\nP.S. Check your spam folder and whitelist this email. You don't want to miss what's coming.\n\n---\n\n**Links in this email:**\n- Starter Kit: {{download_link}}\n- Follow on X: {{twitter_link}}\n- Read the blog: {{blog_link}}",
+      "cta": "Download Starter Kit",
+      "cta_url": "{{download_link}}",
+      "segment": "all"
+    },
+    {
+      "day": 2,
+      "subject_A": "🚀 Your First Automation (Live in 15 Minutes)",
+      "subject_B": "Automate This Today: Save 2 Hours Instantly",
+      "body": "{{first_name}},\n\nTheory is boring. Let's build something NOW.\n\nHere's a **15-minute automation** that saves 2 hours/week:\n\n## **Auto-Publish Blog to Newsletter + Social**\n\n**The Problem:** You write a blog post, then manually:\n- Copy to newsletter\n- Format for email\n- Schedule social posts\n- Post to LinkedIn/X/etc.\n\n**The Fix:** One automation does it all.\n\n### **Step 1:** RSS to Email (5 min)\n- Use Beehiiv's RSS-to-email feature\n- New blog post → Auto-sends to subscribers\n- Set it once, never touch again\n\n### **Step 2:** Auto-Post to Social (10 min)\n- Use Zapier/Make.com (free tier)\n- RSS feed → Auto-post to X, LinkedIn, Facebook\n- Add custom intro text per platform\n\n**Full Tutorial:** [Click here for the step-by-step walkthrough]({{tutorial_link}})\n\n**Real Result:** I published 47 blog posts last month. I manually touched ZERO.\n\nThat's the power of automation.\n\n**Action:** Build this today. Reply with a screenshot when it's live. I'll send you my next automation blueprint.\n\nYou got this,\nn0mad\n\n---\n\n**Quick Links:**\n- Tutorial: {{tutorial_link}}\n- Blog Archive: {{blog_link}}\n- Need help? Hit reply.",
+      "cta": "Get Tutorial",
+      "cta_url": "{{tutorial_link}}",
+      "segment": "all"
+    },
+    {
+      "day": 5,
+      "subject_A": "📈 How Sarah Made $5K/Month (With This System)",
+      "subject_B": "Case Study: From 0 to $5K in 90 Days",
+      "body": "{{first_name}},\n\nMeet Sarah. 3 months ago:\n\n❌ Spending 60 hours/week on manual tasks\n❌ $0 in revenue\n❌ Burned out, ready to quit\n\nToday:\n\n✅ 15 hours/week of work\n✅ $5,000/month revenue\n✅ Built a sustainable business\n\n**What Changed?** She automated everything.\n\n## **Sarah's 3-Step Automation Stack:**\n\n### **1. Content Engine (Save 20 hrs/week)**\n- AI blog writer (automated)\n- RSS to newsletter (automated)\n- Social media scheduler (automated)\n\n### **2. Lead Generation (Save 15 hrs/week)**\n- SEO content pipeline (automated)\n- Email capture system (automated)\n- Follow-up sequences (automated)\n\n### **3. Product Delivery (Save 10 hrs/week)**\n- Course hosting (automated)\n- Payment processing (automated)\n- Customer onboarding (automated)\n\n**The Result:** Sarah works 15 hours/week and makes $5K/month.\n\n**Her Revenue Breakdown:**\n- $2,000 - Automation course\n- $1,500 - Consulting (3 clients)\n- $1,000 - Newsletter sponsors\n- $500 - Affiliate income\n\n**Want the full breakdown?** I documented her entire system:\n\n👉 [Read Sarah's Case Study]({{case_study_link}})\n\nInside:\n- Exact tools she used (most are free)\n- Step-by-step setup guide\n- Her automation workflows (copy-paste ready)\n- Revenue screenshots (proof)\n\n**The Truth:** Automation isn't magic. It's a system. And I can teach you that system.\n\nRead the case study. Then reply with your biggest takeaway.\n\nLet's build,\nn0mad\n\nP.S. Sarah started with ZERO coding skills. If she can do it, you can too.\n\n---\n\n**Links:**\n- Case Study: {{case_study_link}}\n- Sarah's X Profile: {{case_study_twitter}}\n- Build Your Stack: {{automation_guide_link}}",
+      "cta": "Read Case Study",
+      "cta_url": "{{case_study_link}}",
+      "segment": "all"
+    },
+    {
+      "day": 7,
+      "subject_A": "🎯 Ready to Build Your Automation Empire?",
+      "subject_B": "Special Offer: AI Automation Masterclass (48 Hours Only)",
+      "body": "{{first_name}},\n\nYou've seen:\n- The Starter Kit\n- Quick-win automation\n- Sarah's $5K/month system\n\nNow it's YOUR turn.\n\n## **Introducing: The AI Automation Masterclass**\n\n**What You Get:**\n\n### **Module 1: Content Automation**\n- AI blog writer (set up in 1 hour)\n- Auto-publish to newsletter + social\n- SEO optimization workflows\n\n### **Module 2: Lead Generation**\n- Email capture systems\n- Automated welcome sequences\n- Engagement tracking & segmentation\n\n### **Module 3: Revenue Automation**\n- Product creation & delivery\n- Payment processing setup\n- Customer onboarding flows\n\n### **Module 4: Scale & Optimize**\n- Performance tracking dashboards\n- A/B testing automation\n- Scaling strategies\n\n**BONUS:**\n- 50+ Copy-Paste Automation Templates\n- Private Community Access\n- Weekly Live Q&A Sessions\n- Lifetime Updates\n\n### **Normal Price: $297**\n### **Your Price: $97** (67% off)\n\n**Why the discount?** You're an early subscriber. This is my thank-you.\n\n**48-Hour Window:** This offer expires in 2 days.\n\n👉 [Enroll Now for $97]({{course_link}})\n\n### **Money-Back Guarantee:**\nTake the course. Build 3 automations. If you don't save 10+ hours/week, I'll refund 100%. No questions.\n\n**Who This Is For:**\n- Solopreneurs drowning in manual tasks\n- Content creators wanting to scale\n- Anyone tired of trading time for money\n\n**Who This ISN'T For:**\n- People looking for \"get rich quick\"\n- Those unwilling to implement\n- Anyone expecting magic without work\n\n**The Choice:**\n\nOption 1: Keep doing everything manually. Stay overwhelmed.\n\nOption 2: Invest $97. Learn the system. Build your automation empire.\n\nI know what I'd choose.\n\n[Enroll for $97 (48 Hours Only)]({{course_link}})\n\nLet's build something incredible,\nn0mad\n\nP.S. Questions? Hit reply. I read every email.\n\n---\n\n**Links:**\n- Enroll Now: {{course_link}}\n- FAQ: {{faq_link}}\n- Testimonials: {{testimonials_link}}",
+      "cta": "Enroll for $97",
+      "cta_url": "{{course_link}}",
+      "segment": "all",
+      "conversion_email": true
+    },
+    {
+      "day": 10,
+      "subject_A": "⏰ Last Call: Offer Expires Tonight",
+      "subject_B": "Final Hours: Don't Miss This Opportunity",
+      "body": "{{first_name}},\n\nThis is it. The clock is ticking.\n\n**The AI Automation Masterclass closes in 12 hours.**\n\nAfter tonight:\n- Price goes back to $297\n- Bonuses disappear\n- This opportunity is gone\n\n### **What You're Walking Away From:**\n\n❌ 20+ hours/week saved\n❌ $5K+ monthly revenue potential\n❌ A proven automation system\n❌ Lifetime access to all updates\n❌ Private community support\n\nAll for $97.\n\n**The Math:**\nIf this course saves you 20 hours/month, and your time is worth $50/hour, that's $1,000/month in value.\n\n**ROI:** 10x in the first month alone.\n\nBut forget the numbers. Here's what matters:\n\n### **Where Will You Be in 90 Days?**\n\n**Without this course:**\n- Still manually creating content\n- Still overwhelmed with tasks\n- Still trading time for money\n\n**With this course:**\n- Automated content machine running\n- 20+ hours/week freed up\n- Building real, sustainable revenue\n\n**Social Proof:**\n\n\"I made back the $97 in the first week. Now I'm making $3K/month.\" - Mike R.\n\n\"Finally have time for my family again. This changed my life.\" - Jennifer K.\n\n\"Best investment I've made in my business. Period.\" - Carlos M.\n\n### **Your Move:**\n\n[Enroll Now for $97 (Expires Tonight)]({{course_link}})\n\n**Still Unsure?** Reply with your concerns. I'll personally respond.\n\n**100% Money-Back Guarantee:** Zero risk. All upside.\n\nDon't let this slip away,\nn0mad\n\nP.S. After tonight, I won't mention this offer again. This is your last chance.\n\n---\n\n**Quick Links:**\n- Enroll Now: {{course_link}}\n- Read Reviews: {{reviews_link}}\n- Questions? Reply to this email.",
+      "cta": "Enroll Before Midnight",
+      "cta_url": "{{course_link}}",
+      "segment": "all",
+      "urgency": true
+    }
+  ],
+  "variables": {
+    "download_link": "https://aiautomationbuilder.com/starter-kit",
+    "tutorial_link": "https://aiautomationbuilder.com/blog/auto-publish-tutorial",
+    "case_study_link": "https://aiautomationbuilder.com/case-study-sarah",
+    "course_link": "https://aiautomationbuilder.com/masterclass",
+    "faq_link": "https://aiautomationbuilder.com/faq",
+    "testimonials_link": "https://aiautomationbuilder.com/testimonials",
+    "blog_link": "https://aiautomationbuilder.com/blog",
+    "twitter_link": "https://x.com/aiautomationbldr"
+  }
+}

@@ -1,4 +1,49 @@
 {
-  "posts": [],
-  "summary": {}
+  "posts": [
+    {
+      "post_slug": "2026-03-29-the-first-40-months-of-the-ai-era",
+      "title": "The first 40 months of the AI era",
+      "published_at": "2026-03-29T09:50:09.284094",
+      "word_count": 946,
+      "source_score": 39,
+      "views": 0,
+      "clicks": 0,
+      "engagement_score": 0.0
+    },
+    {
+      "post_slug": "2026-03-29-ai-overly-affirms-users-asking-for-personal-advice",
+      "title": "AI overly affirms users asking for personal advice",
+      "published_at": "2026-03-29T09:50:53.260788",
+      "word_count": 965,
+      "source_score": 39,
+      "views": 0,
+      "clicks": 0,
+      "engagement_score": 0.0
+    },
+    {
+      "post_slug": "2026-03-29-cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering",
+      "title": "CERN uses ultra-compact AI models on FPGAs for real-time LHC data filtering",
+      "published_at": "2026-03-29T10:00:44.324793",
+      "word_count": 931,
+      "source_score": 39,
+      "views": 0,
+      "clicks": 0,
+      "engagement_score": 0.0
+    },
+    {
+      "post_slug": "2026-03-29-folk-are-getting-dangerously-attached-to-ai-that-always-tells-them-theyre-right",
+      "title": "Folk are getting dangerously attached to AI that always tells them they're right",
+      "published_at": "2026-03-29T10:01:25.255486",
+      "word_count": 915,
+      "source_score": 39,
+      "views": 0,
+      "clicks": 0,
+      "engagement_score": 0.0
+    }
+  ],
+  "summary": {
+    "total_posts": 4,
+    "avg_word_count": 939.25,
+    "last_updated": "2026-03-29T10:01:25.255530"
+  }
 }

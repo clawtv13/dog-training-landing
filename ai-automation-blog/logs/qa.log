@@ -1,0 +1,62 @@
+============================================================
+🤖 POST-DEPLOY QA WORKFLOW
+============================================================
+
+📋 Step 1: Running QA tests...
+============================================================
+🔍 QA AGENT - AUTOMATED TESTING
+Time: 2026-03-29 10:05:01 UTC
+Target: https://clawtv13.github.io/ai-automation-blog/
+============================================================
+
+⏳ Waiting 30s for deployment to complete...
+
+🧪 homepage_loads
+   Homepage returns HTTP 200
+   ✅ PASSED
+
+🧪 json_loads
+   posts/index.json is valid JSON
+   ✅ PASSED
+
+🧪 javascript_executing
+   JavaScript loads posts
+   ✅ PASSED
+
+🧪 posts_visible
+   Posts appear on homepage
+   ❌ FAILED: Less than 2 posts visible
+
+🧪 post_pages_load
+   Individual post pages load
+   ✅ PASSED
+
+🧪 links_work
+   About/Archive/Resources links work
+   ✅ PASSED
+
+🧪 mobile_responsive
+   Mobile viewport configured
+   ✅ PASSED
+
+🧪 seo_tags
+   SEO meta tags present
+   ✅ PASSED
+
+============================================================
+📊 TEST RESULTS
+============================================================
+
+✅ Passed: 7/8
+❌ Failed: 1/8
+⚠️  Warnings: 0
+
+❌ BUGS FOUND: 1
+
+   Bug: posts_visible
+   Error: Less than 2 posts visible
+   Details: Found 1 h3 tags
+
+💾 Bug report saved: /root/.openclaw/workspace/ai-automation-blog/.state/qa-bugs.json
+
+============================================================

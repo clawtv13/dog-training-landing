@@ -1,0 +1,35 @@
+2026-03-29 10:00:01,701 [INFO] ============================================================
+2026-03-29 10:00:01,701 [INFO] AI AUTOMATION BUILDER - BLOG AUTO-POSTING V2
+2026-03-29 10:00:01,701 [INFO] Running at: 2026-03-29 10:00:01 UTC
+2026-03-29 10:00:01,701 [INFO] ============================================================
+2026-03-29 10:00:01,701 [INFO] 🔍 Fetching unpublished content...
+2026-03-29 10:00:01,702 [WARNING] ⚠️  Duplicate detected: The first 40 months of the AI era...
+2026-03-29 10:00:01,702 [INFO] ⏭️  Skipping duplicate: The first 40 months of the AI era
+2026-03-29 10:00:01,702 [WARNING] ⚠️  Duplicate detected: AI overly affirms users asking for personal advice...
+2026-03-29 10:00:01,702 [INFO] ⏭️  Skipping duplicate: AI overly affirms users asking for personal advice
+2026-03-29 10:00:01,704 [INFO] 📚 Found 28 unique unpublished items
+2026-03-29 10:00:01,704 [INFO] 📊 Found 28 unpublished items
+2026-03-29 10:00:01,704 [INFO] 🎯 Publishing top 2 today
+2026-03-29 10:00:01,704 [INFO] 
+📝 Processing: CERN uses ultra-compact AI models on FPGAs for real-time LHC...
+2026-03-29 10:00:01,704 [INFO]    Score: 39 | Source: Hacker News
+2026-03-29 10:00:01,704 [INFO] 📝 Generating: CERN uses ultra-compact AI models on FPGAs for real-time LHC...
+2026-03-29 10:00:44,322 [INFO] ✅ Generated in 42.6s
+2026-03-29 10:00:44,323 [INFO] ✅ Created: 2026-03-29-cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering.html
+2026-03-29 10:00:44,325 [INFO] 📊 Analytics updated: 2026-03-29-cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering
+2026-03-29 10:00:44,326 [INFO] 💾 Saved to published state: CERN uses ultra-compact AI models on FPGAs for rea
+2026-03-29 10:00:44,326 [INFO] ✅ Published: 2026-03-29-cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering
+2026-03-29 10:00:44,326 [INFO] 
+📝 Processing: Folk are getting dangerously attached to AI that always tell...
+2026-03-29 10:00:44,326 [INFO]    Score: 39 | Source: Hacker News
+2026-03-29 10:00:44,326 [INFO] 📝 Generating: Folk are getting dangerously attached to AI that always tell...
+2026-03-29 10:01:25,252 [INFO] ✅ Generated in 40.9s
+2026-03-29 10:01:25,254 [INFO] ✅ Created: 2026-03-29-folk-are-getting-dangerously-attached-to-ai-that-always-tells-them-theyre-right.html
+2026-03-29 10:01:25,256 [INFO] 📊 Analytics updated: 2026-03-29-folk-are-getting-dangerously-attached-to-ai-that-always-tells-them-theyre-right
+2026-03-29 10:01:25,256 [INFO] 💾 Saved to published state: Folk are getting dangerously attached to AI that a
+2026-03-29 10:01:25,256 [INFO] ✅ Published: 2026-03-29-folk-are-getting-dangerously-attached-to-ai-that-always-tells-them-theyre-right
+2026-03-29 10:01:25,257 [INFO] 
+✅ Created 2 posts
+2026-03-29 10:01:25,257 [INFO] 🚀 Deploying to GitHub...
+2026-03-29 10:01:26,013 [INFO] ✅ Deployed to GitHub Pages
+2026-03-29 10:01:26,191 [INFO] ✅ AUTOMATION COMPLETE
