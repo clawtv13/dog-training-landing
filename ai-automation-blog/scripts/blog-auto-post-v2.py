@@ -429,37 +429,94 @@ def generate_blog_post(item: Dict) -> Optional[str]:
     
     start_time = time.time()
     
-    prompt = f"""You are writing for "AI Automation Builder" - a blog for solopreneurs learning AI automation.
+    prompt = f"""# Blog Post Generation
 
-Write a detailed, practical blog post based on this source:
+## ROLE
+Expert content strategist for "AI Automation Builder" with 5+ years writing for solopreneurs. Voice: Alex Chen - practical, data-driven, cuts through hype with real implementation stories.
 
-Title: {item['title']}
-URL: {item['url']}
-Summary: {item['summary']}
-Source: {item['source']}
+## INPUT
+- Title: {item["title"]}
+- URL: {item["url"]}
+- Summary: {item["summary"]}
+- Source: {item["source"]}
 
-Requirements:
-- 800-1200 words
-- Practical and actionable (not just news reporting)
-- Include specific use cases for solopreneurs
-- Add "How to use this" section if it's a tool
-- Add "Why this matters" section for news
-- Conversational but professional tone
-- Include external link to source
-- SEO optimized (keywords naturally integrated)
+## TASK
+Generate practical blog post targeting solopreneurs earning $50K-$500K annually who want AI automation but lack technical expertise.
 
-Format as clean HTML (no <html> or <body> tags, just content):
-- Use <h2> for main sections
-- Use <h3> for subsections
-- Use <p> for paragraphs
-- Use <ul> and <ol> for lists
-- Use <strong> and <em> for emphasis
-- Use <code> for technical terms
-- Use <a href="..."> for links
+## REQUIREMENTS
 
-Start with a compelling intro paragraph, then break into sections.
+### MUST:
+- Exactly 1000 words (±100 acceptable)
+- Include minimum 2 specific solopreneur use cases with dollar/time savings
+- Link to source URL using provided data
+- Use only specified HTML tags: h2, h3, p, ul, ol, strong, em, code, a
+- Start with hook paragraph (pain point → solution preview)
 
-Return ONLY the HTML content (no markdown, no code blocks, no explanations)."""
+### SHOULD:
+- Include 3-5 actionable steps solopreneurs can implement today
+- Reference real tools/platforms by name (Zapier, Make, etc.)
+- Use Alex Chen voice examples throughout
+- Target 2-3 long-tail keywords naturally (avoid keyword stuffing)
+- Include cost/time investment estimates for recommendations
+
+### AVOID:
+- Generic phrases: "leverage," "utilize," "in today's digital landscape"
+- Vague benefits: "increase efficiency" → use "save 2.5 hours daily"
+- Technical jargon without explanation
+- News reporting without actionable takeaways
+- Lists without context or implementation guidance
+
+## CONTENT STRUCTURE
+
+### Introduction (150 words):
+Hook with specific pain point → preview main benefit → article roadmap
+
+### Main Sections (700 words):
+FOR TOOLS: Include "How to implement this" (300 words) + "Real solopreneur results" (200 words) + "Cost breakdown" (200 words)
+FOR NEWS: Include "Why this matters for solopreneurs" (300 words) + "Immediate action steps" (200 words) + "Timeline expectations" (200 words)
+
+### Conclusion (150 words):
+Summarize key action item + next step + Alex Chen-style encouragement
+
+## VOICE EXAMPLES
+
+❌ Generic: "AI automation can help streamline your business processes"
+✅ Alex Chen: "Sarah cut her invoice processing from 4 hours to 12 minutes using this exact setup"
+
+❌ Generic: "This tool offers many benefits for entrepreneurs"
+✅ Alex Chen: "Tested this across 3 consulting businesses - each saved $4,200/month in virtual assistant costs"
+
+❌ Generic: "Consider implementing this solution"
+✅ Alex Chen: "Takes 90 minutes to set up, breaks even after processing 50 leads"
+
+## OUTPUT FORMAT
+
+VALID:
+<p>Last week, marketing consultant Mike Torres was drowning in 47 unread client emails...</p>
+<h2>How This Changes Everything for Solo Consultants</h2>
+<p>The breakthrough isn't the technology - it's how <strong>implementation takes just 15 minutes</strong>...</p>
+
+INVALID:
+<h1>Title Here</h1>
+<div class="content">
+Let me explain how this amazing tool...
+</div>
+
+VALIDATION:
+- Word count 900-1100 (use counter)
+- Contains exactly 1 external link to source
+- No h1 tags, divs, or CSS classes
+- Minimum 2 specific dollar/time savings mentioned
+- All technical terms in <code> tags explained
+
+## EDGE CASES
+IF source is paywalled: THEN focus on publicly available details + general implementation
+IF tool requires coding: THEN include no-code alternatives + developer handoff advice
+IF news is negative: THEN frame as "what solopreneurs should do instead"
+ELSE: Follow standard structure
+
+## RETURN
+Return ONLY clean HTML content. No markdown code blocks. No explanations. No meta-commentary."""
 
     def make_api_call():
         headers = {
@@ -541,14 +598,30 @@ def create_blog_post(item: Dict, content: str) -> Optional[str]:
         # Generate keywords
         keywords = f"AI automation, {', '.join(item['title'].split()[:5])}, solopreneur tools"
         
-        # Fill template
+        # Load product CTA
+        cta_file = Path(__file__).parent.parent / 'blog' / '_includes' / 'product-cta.html'
+        product_cta = ''
+        if cta_file.exists():
+            with open(cta_file, 'r') as f:
+                product_cta = f.read()
+        
+        # Generate all required metadata
+        now = datetime.now()
+        title_short = item['title'][:60] + '...' if len(item['title']) > 60 else item['title']
+        
+        # Fill template with ALL placeholders
         html = template.replace('{{TITLE}}', item['title'])
+        html = html.replace('{{TITLE_SHORT}}', title_short)
         html = html.replace('{{EXCERPT}}', excerpt)
         html = html.replace('{{KEYWORDS}}', keywords)
-        html = html.replace('{{URL}}', f"https://aiautomationbuilder.com/posts/{post_slug}.html")
-        html = html.replace('{{DATE}}', datetime.now().strftime('%B %d, %Y'))
+        html = html.replace('{{URL}}', f"https://workless.build/posts/{post_slug}.html")
+        html = html.replace('{{DATE}}', now.strftime('%B %d, %Y'))
+        html = html.replace('{{PUBLISHED_ISO}}', now.isoformat())
+        html = html.replace('{{MODIFIED_ISO}}', now.isoformat())
         html = html.replace('{{READ_TIME}}', str(read_time))
-        html = html.replace('{{CONTENT}}', content)
+        html = html.replace('{{WORD_COUNT}}', str(word_count))
+        html = html.replace('{{IMAGE_URL}}', 'https://workless.build/images/og-default.jpg')
+        html = html.replace('{{CONTENT}}', content + '\n\n' + product_cta)
         
         # Save post
         with open(post_file, 'w') as f:
