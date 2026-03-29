@@ -1,0 +1,95 @@
+# IMAGE PROMPTS FOR KOURI RICHINS DOCUMENTARY
+# Format: 9:16 vertical | Cinematic documentary aesthetic | 30 total prompts
+
+PROMPT_001: Dark establishing shot of Park City Utah at night, luxury mountain homes with warm lights glowing, snow-covered peaks in background, cinematic noir atmosphere, moody documentary photography, 9:16 vertical format
+
+PROMPT_002: Vintage 911 dispatcher console with red emergency lights, dramatic shadows, close-up of phone receiver, true crime documentary aesthetic, dark atmospheric lighting, film grain texture
+
+PROMPT_003: Bedroom crime scene photography style, dark master bedroom with unmade bed, forensic markers visible, documentary evidence photography, somber lighting, professional crime scene aesthetic, 9:16 vertical
+
+PROMPT_004: Fentanyl pills scattered on dark surface with forensic ruler for scale, macro photography, clinical documentary style, harsh lighting, evidence photography aesthetic, medical examiner perspective
+
+PROMPT_005: Utah courthouse exterior, modern architecture, dramatic sky, establishing shot for documentary, professional architectural photography, moody atmosphere, 9:16 vertical format
+
+PROMPT_006: Young family portrait style photograph, happy couple with three young children, outdoor mountain setting, warm lighting, but with subtle ominous undertone, documentary family photo aesthetic
+
+PROMPT_007: Luxury real estate open house sign, modern home exterior, "SOLD" sticker, real estate photography style, professional commercial aesthetic, bright daylight but slightly cold atmosphere
+
+PROMPT_008: Financial documents scattered on desk, red ink showing debt, calculator, coffee mug, overhead documentary photography, harsh office lighting, investigative journalism aesthetic, 9:16 vertical
+
+PROMPT_009: Forensic accountant testimony visualization, charts showing negative net worth, financial graphs declining, documentary infographic style, professional presentation aesthetic, dark background
+
+PROMPT_010: Valentine's Day dinner table setting, romantic restaurant ambiance, two wine glasses, candles, but atmosphere feels ominous and sinister, cinematic documentary lighting
+
+PROMPT_011: Close-up of prescription pill bottle with warning labels, hydrocodone visible, clinical pharmaceutical photography, harsh lighting, medical documentary aesthetic
+
+PROMPT_012: Text message conversation on smartphone screen, glowing in darkness, ominous green chat bubbles, documentary evidence style, dark atmospheric lighting, 9:16 vertical
+
+PROMPT_013: Sober living house exterior, modest residential building, overcast day, documentary location photography, neutral but slightly ominous atmosphere, investigative journalism style
+
+PROMPT_014: Moscow Mule copper mug on dark counter, condensation visible, lime garnish, atmospheric drink photography, sinister undertone, cinematic still life, film noir lighting
+
+PROMPT_015: Bedroom nightstand with drink glass and clock showing 3:00 AM, dark moody lighting, crime scene aesthetic, documentary photography, dramatic shadows
+
+PROMPT_016: Medical examiner's laboratory, clinical sterile environment, toxicology equipment, professional documentary photography, fluorescent lighting, cold scientific atmosphere
+
+PROMPT_017: Children's book cover mockup "Are You with Me?", colorful but unsettling, close-up product photography, documentary evidence style, soft lighting with dark vignette
+
+PROMPT_018: Television studio set, author interview chair, bright studio lights, behind-the-scenes documentary photography, professional broadcast aesthetic, 9:16 vertical
+
+PROMPT_019: Detective's investigation board, photographs connected by red string, evidence markers, case files, documentary investigation aesthetic, dramatic lighting, noir atmosphere
+
+PROMPT_020: Smartphone with multiple life insurance policy documents on screen, digital evidence photography, glowing screen in darkness, investigative documentary style
+
+PROMPT_021: Park City luxury home exterior at dusk, modern architecture, expensive property, establishing shot, real estate photography style, slightly ominous atmosphere
+
+PROMPT_022: Court trial witness stand close-up, empty chair with microphone, dramatic courtroom lighting, documentary legal photography, professional judicial aesthetic
+
+PROMPT_023: Forensic evidence bags with labeled contents on metal table, clinical photography, harsh fluorescent lighting, police evidence room aesthetic, documentary crime photography
+
+PROMPT_024: Jury box in courtroom, empty seats in dramatic lighting, legal documentary photography, professional judicial architecture, somber atmosphere, 9:16 vertical
+
+PROMPT_025: Close-up of legal document with "GUILTY" stamp in red ink, official court paperwork, documentary evidence photography, harsh overhead lighting
+
+PROMPT_026: Prison bars casting shadows, dramatic noir lighting, cinematic documentary aesthetic, symbolizing justice and consequences, professional photography, 9:16 vertical
+
+PROMPT_027: Three empty children's chairs at dining table, haunting documentary photography, natural window lighting, emotional atmospheric shot, representing loss and tragedy
+
+PROMPT_028: Utah mountain landscape at sunset, beautiful but melancholic, establishing shot for documentary conclusion, professional landscape photography, bittersweet atmosphere
+
+PROMPT_029: Close-up of wedding ring on dark surface, symbolizing broken marriage, cinematic still life photography, dramatic lighting, documentary aesthetic, film noir style
+
+PROMPT_030: Courtroom exterior at night, modern justice building, dramatic architecture lighting, final establishing shot, professional documentary photography, 9:16 vertical format
+
+---
+
+# BATCH GENERATION INSTRUCTIONS FOR AUTOWHISK:
+
+1. Import all 30 prompts into AutoWhisk
+2. Model recommendation: Realistic Vision or DreamShaper
+3. Settings:
+   - Aspect ratio: 9:16 (portrait/vertical)
+   - Style: Photorealistic documentary
+   - Quality: High
+   - Negative prompt: "cartoon, anime, illustration, drawing, painting, low quality, blurry"
+4. Generate all 30 in batch mode
+5. Export as numbered sequence: 001-030.jpg
+
+---
+
+# IMAGE TIMING GUIDE (for video editing):
+
+00:00-02:15 → PROMPTS 001-003 (Cold Open)
+02:15-05:30 → PROMPTS 004-006 (Intro)
+05:30-13:00 → PROMPTS 007-012 (Act I - Perfect Life)
+13:00-23:00 → PROMPTS 013-023 (Act II - Murder & Investigation)
+23:00-28:00 → PROMPTS 024-028 (Act III - Trial)
+28:00-END → PROMPTS 029-030 (Outro)
+
+---
+
+# ALTERNATE PROMPTS (if any fail):
+
+ALT_001: Snowy mountain town at twilight, luxury homes on hillside, moody documentary establishing shot
+ALT_002: Emergency services dispatch center, dramatic red lighting, professional documentary photography
+ALT_003: Crime scene tape across bedroom door, investigative journalism aesthetic, dark atmosphere

@@ -1,0 +1,127 @@
+{
+  "name": "Video Distribution Testable",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "id": "manual-test-trigger"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {"id": "a1", "name": "id", "value": "test123abc", "type": "string"},
+            {"id": "a2", "name": "name", "value": "health-test-video.mp4", "type": "string"},
+            {"id": "a3", "name": "mimeType", "value": "video/mp4", "type": "string"},
+            {"id": "a4", "name": "size", "value": "5242880", "type": "number"}
+          ]
+        },
+        "options": {}
+      },
+      "name": "Simulate Drive Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [450, 300],
+      "id": "simulate-drive"
+    },
+    {
+      "parameters": {
+        "jsCode": "const file = $input.item.json;\nconst name = file.name.toLowerCase();\n\nlet channel = \"UNKNOWN\";\nif (name.includes(\"health\")) channel = \"HEALTH_HACKS\";\nelse if (name.includes(\"money\")) channel = \"MONEYSTACK\";\n\nif (!['mp4','mov','avi'].some(ext => name.endsWith(ext))) throw new Error(\"Not video\");\n\nconst ts = new Date().toISOString().split('T')[0].replace(/-/g,'');\nconst id = Math.random().toString(36).substring(2,6);\n\nreturn {videoId: `${channel.toLowerCase()}-${ts}-${id}`, channel, filename: file.name, driveId: file.id};"
+      },
+      "name": "Extract Channel",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300],
+      "id": "extract-channel"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {"id": "b1", "name": "text", "value": "This is a simulated transcript for testing the workflow without actually calling Whisper API. This video talks about five foods that boost your energy naturally without needing caffeine or energy drinks.", "type": "string"}
+          ]
+        }
+      },
+      "name": "Simulate Whisper",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [850, 300],
+      "id": "simulate-whisper"
+    },
+    {
+      "parameters": {
+        "jsCode": "const channel = $node['Extract Channel'].json.channel;\nconst transcript = $json.text;\n\nconst prompt = 'Channel: ' + channel + '\\nTranscript: ' + transcript + '\\n\\nGenerate unique titles/descriptions for each platform. TikTok: viral hook. Instagram: aspirational story. YouTube: SEO educational. Output JSON: {\"tiktok\":{\"title\":\"\",\"caption\":\"\",\"hashtags\":[]},\"instagram\":{\"title\":\"\",\"caption\":\"\",\"hashtags\":[]},\"youtube\":{\"title\":\"\",\"description\":\"\",\"tags\":[]}}';\n\nreturn {json: {prompt: prompt}};"
+      },
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 300],
+      "id": "build-prompt"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Content-Type", "value": "application/json"}]},
+        "sendBody": true,
+        "bodyParametersJson": "={ {\"model\": \"anthropic/claude-3.5-sonnet\", \"messages\": [{\"role\": \"user\", \"content\": $json.prompt}], \"max_tokens\": 1500} }"
+      },
+      "name": "Claude Generate",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1250, 300],
+      "credentials": {"httpHeaderAuth": {"id": "3gSZJR3pD1a9Obmb"}},
+      "id": "claude-gen"
+    },
+    {
+      "parameters": {
+        "jsCode": "const txt = $json.choices[0].message.content;\nlet c;\ntry {c = JSON.parse(txt);} catch {c = JSON.parse(txt.replace(/```json/g,'').replace(/```/g,'').trim());}\nreturn {tiktok: c.tiktok, instagram: c.instagram, youtube: c.youtube};"
+      },
+      "name": "Parse",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1450, 300],
+      "id": "parse"
+    },
+    {
+      "parameters": {
+        "jsCode": "const m = {video_id: $node['Extract Channel'].json.videoId, channel: $node['Extract Channel'].json.channel, filename: $node['Extract Channel'].json.filename, transcription: $node['Simulate Whisper'].json.text, content: {tiktok: $json.tiktok, instagram: $json.instagram, youtube: $json.youtube}, created: new Date().toISOString()};\nconst fs = require('fs'), d = '/workspace/.state/videos';\nif (!fs.existsSync(d)) fs.mkdirSync(d, {recursive: true});\nfs.writeFileSync(d + '/' + m.video_id + '.json', JSON.stringify(m, null, 2));\nreturn {json: m};"
+      },
+      "name": "Save",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1650, 300],
+      "id": "save-meta"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.telegram.org/bot8318289285:AAGFvnbGoLh0uXO9Rcz9N23iW25DEYh-BBU/sendMessage",
+        "sendBody": true,
+        "bodyParametersJson": "={ {\"chat_id\": \"8116230130\", \"text\": \"🎬 TEST WORKFLOW\\n\\n📹 \" + $json.video_id + \"\\n\\n📱 TikTok: \" + $json.content.tiktok.title + \"\\n📸 Instagram: \" + $json.content.instagram.title + \"\\n🎥 YouTube: \" + $json.content.youtube.title} }"
+      },
+      "name": "Telegram",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1850, 300],
+      "id": "telegram-notify"
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {"main": [[{"node": "Simulate Drive Data"}]]},
+    "Simulate Drive Data": {"main": [[{"node": "Extract Channel"}]]},
+    "Extract Channel": {"main": [[{"node": "Simulate Whisper"}]]},
+    "Simulate Whisper": {"main": [[{"node": "Build Prompt"}]]},
+    "Build Prompt": {"main": [[{"node": "Claude Generate"}]]},
+    "Claude Generate": {"main": [[{"node": "Parse"}]]},
+    "Parse": {"main": [[{"node": "Save"}]]},
+    "Save": {"main": [[{"node": "Telegram"}]]}
+  },
+  "settings": {"executionOrder": "v1"}
+}

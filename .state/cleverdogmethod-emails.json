@@ -1,0 +1,62 @@
+[
+  {
+    "email": "test@example.com",
+    "resource": "stop-puppy-biting",
+    "page": "/free-resources.html",
+    "source": "test",
+    "timestamp": "2026-03-26T14:52:00Z",
+    "captured_at": "2026-03-26T14:53:43.961532"
+  },
+  {
+    "email": "",
+    "resource": "",
+    "page": "",
+    "source": "",
+    "timestamp": "",
+    "captured_at": "2026-03-26T14:59:31.824055"
+  },
+  {
+    "email": "direct-test@example.com",
+    "resource": "test",
+    "page": "/test",
+    "source": "direct",
+    "timestamp": "2026-03-26T15:04:00Z",
+    "captured_at": "2026-03-26T15:05:27.592275"
+  },
+  {
+    "email": "test-from-n8n@example.com",
+    "resource": "test",
+    "page": "/test",
+    "source": "n8n-container",
+    "timestamp": "2026-03-26",
+    "captured_at": "2026-03-26T15:10:48.946374"
+  },
+  {
+    "email": "retry-after-changes@example.com",
+    "resource": "stop-puppy-biting",
+    "page": "/free-resources.html",
+    "source": "retry-test-15:15",
+    "timestamp": "2026-03-26T11:15:18.539-04:00",
+    "captured_at": "2026-03-26T15:15:18.543806"
+  },
+  {
+    "email": "direct-ngrok-test@example.com",
+    "resource": "brain-games",
+    "page": "/test",
+    "source": "direct",
+    "timestamp": "2026-03-26T15:38:18.284081"
+  },
+  {
+    "email": "final-working@example.com",
+    "resource": "stop-puppy-biting",
+    "page": "/free-resources",
+    "source": "final-test",
+    "timestamp": "2026-03-26T15:39:16.546699"
+  },
+  {
+    "email": "aaaaa@gmail.com",
+    "resource": "house-training-guide",
+    "page": "free-resources",
+    "timestamp": "2026-03-26T15:44:32.981442"
+  }
+]

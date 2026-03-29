@@ -1,0 +1,123 @@
+{
+  "name": "Video Distribution (Transcript Upload)",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {"item": [{"mode": "everyMinute", "minute": 5}]},
+        "triggerOn": "specificFolder",
+        "event": "fileCreated",
+        "options": {}
+      },
+      "name": "Google Drive Trigger",
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 3,
+      "position": [240, 300],
+      "id": "gdrive-trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "const file = $input.item.json;\nif (!file || !file.name) throw new Error('No file data');\n\nconst name = file.name.trim().toLowerCase();\n\n// Only process .txt files\nif (!name.endsWith('.txt')) {\n  throw new Error('Not a transcript file (must be .txt)');\n}\n\n// Extract base name (without .txt)\nconst baseName = name.replace('.txt', '');\n\n// Determine channel from base name\nlet channel = \"UNKNOWN\";\nif (baseName.includes('health')) channel = \"HEALTH_HACKS\";\nelse if (baseName.includes('money')) channel = \"MONEYSTACK\";\n\nconst ts = new Date().toISOString().split('T')[0].replace(/-/g,'');\nconst id = Math.random().toString(36).substring(2, 8);\nconst videoId = `${channel.toLowerCase()}-${ts}-${id}`;\n\nreturn {videoId, channel, filename: file.name, txtFileId: file.id, baseName, detectedAt: new Date().toISOString()};"
+      },
+      "name": "Detect Transcript File",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300],
+      "id": "detect-transcript"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {"__rl": true, "value": "={{ $json.txtFileId }}", "mode": "id"},
+        "options": {"binaryProperty": "transcript"}
+      },
+      "name": "Download Transcript",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [680, 300],
+      "id": "download-transcript"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Read transcript from binary data\nconst transcriptBuffer = $binary.transcript.data;\nconst transcriptText = transcriptBuffer.toString('utf8');\n\nif (!transcriptText || transcriptText.trim().length < 10) {\n  throw new Error('Transcript file is empty or too short');\n}\n\nreturn {\n  text: transcriptText.trim(),\n  videoId: $node['Detect Transcript File'].json.videoId,\n  channel: $node['Detect Transcript File'].json.channel\n};"
+      },
+      "name": "Parse Transcript",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [900, 300],
+      "id": "parse-transcript"
+    },
+    {
+      "parameters": {
+        "jsCode": "const channel = $json.channel;\nconst transcript = $json.text;\n\nconst prompt = `You are a social media strategist. Generate unique titles/descriptions for this video.\\n\\nCHANNEL: ${channel}\\nTRANSCRIPT: ${transcript}\\n\\nGenerate platform-specific content:\\n\\nTIKTOK: Viral hook, casual tone, emoji-rich\\nINSTAGRAM: Aspirational story, relatable\\nYOUTUBE: SEO-optimized, educational\\n\\nOutput ONLY valid JSON: {\"tiktok\":{\"title\":\"\",\"caption\":\"\",\"hashtags\":[]},\"instagram\":{\"title\":\"\",\"caption\":\"\",\"hashtags\":[]},\"youtube\":{\"title\":\"\",\"description\":\"\",\"tags\":[]}}`;\n\nreturn {prompt, channel, videoId: $json.videoId};"
+      },
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 300],
+      "id": "build-prompt"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Content-Type", "value": "application/json"}]},
+        "sendBody": true,
+        "bodyParametersJson": "={{ {\"model\": \"anthropic/claude-3.5-sonnet\", \"messages\": [{\"role\": \"user\", \"content\": $json.prompt}], \"max_tokens\": 2000, \"temperature\": 0.7} }}",
+        "options": {"timeout": 60000}
+      },
+      "name": "Claude Generate",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1340, 300],
+      "credentials": {"httpHeaderAuth": {"id": "3gSZJR3pD1a9Obmb", "name": "OpenRouter API"}},
+      "id": "claude-generate"
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $json.choices[0].message.content;\nlet content;\ntry {content = JSON.parse(response);} catch {content = JSON.parse(response.replace(/```json\\n?/g,'').replace(/```/g,'').trim());}\nreturn {tiktok: content.tiktok, instagram: content.instagram, youtube: content.youtube};"
+      },
+      "name": "Parse Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1560, 300],
+      "id": "parse-response"
+    },
+    {
+      "parameters": {
+        "jsCode": "const m = {video_id: $node['Parse Transcript'].json.videoId, channel: $node['Parse Transcript'].json.channel, filename: $node['Detect Transcript File'].json.filename.replace('.txt',''), transcription: $node['Parse Transcript'].json.text, content: {tiktok: $json.tiktok, instagram: $json.instagram, youtube: $json.youtube}, created_at: new Date().toISOString()}; const fs = require('fs'), d = '/workspace/.state/videos'; if (!fs.existsSync(d)) fs.mkdirSync(d, {recursive: true}); fs.writeFileSync(`${d}/${m.video_id}.json`, JSON.stringify(m, null, 2)); return {json: m};"
+      },
+      "name": "Save Metadata",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1780, 300],
+      "id": "save-metadata"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.telegram.org/bot8318289285:AAGFvnbGoLh0uXO9Rcz9N23iW25DEYh-BBU/sendMessage",
+        "sendBody": true,
+        "bodyParametersJson": "={{ {\"chat_id\": \"8116230130\", \"text\": `🎬 VIDEO READY\\n\\n📹 ${$json.video_id}\\n📂 ${$json.channel}\\n\\n📱 TikTok: ${$json.content.tiktok.title}\\n📸 Instagram: ${$json.content.instagram.title}\\n🎥 YouTube: ${$json.content.youtube.title}\\n\\n✅ Metadata: .state/videos/${$json.video_id}.json`} }}"
+      },
+      "name": "Telegram Notify",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2000, 300],
+      "id": "telegram-notify"
+    }
+  ],
+  "connections": {
+    "Google Drive Trigger": {"main": [[{"node": "Detect Transcript File"}]]},
+    "Detect Transcript File": {"main": [[{"node": "Download Transcript"}]]},
+    "Download Transcript": {"main": [[{"node": "Parse Transcript"}]]},
+    "Parse Transcript": {"main": [[{"node": "Build Prompt"}]]},
+    "Build Prompt": {"main": [[{"node": "Claude Generate"}]]},
+    "Claude Generate": {"main": [[{"node": "Parse Response"}]]},
+    "Parse Response": {"main": [[{"node": "Save Metadata"}]]},
+    "Save Metadata": {"main": [[{"node": "Telegram Notify"}]]}
+  },
+  "settings": {"executionOrder": "v1"}
+}

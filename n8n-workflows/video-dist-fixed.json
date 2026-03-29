@@ -1,0 +1,126 @@
+{
+  "name": "Video Distribution Fixed",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {"item": [{"mode": "everyMinute", "minute": 5}]},
+        "triggerOn": "specificFolder",
+        "folderToWatch": {"__rl": true, "value": "", "mode": "list"},
+        "event": "fileCreated",
+        "options": {"fileTypes": ["videos"]}
+      },
+      "name": "Google Drive Trigger",
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const file = $input.item.json;\nconst name = file.name.toLowerCase();\n\nlet channel = \"UNKNOWN\";\nif (name.includes(\"health\")) channel = \"HEALTH_HACKS\";\nelse if (name.includes(\"money\")) channel = \"MONEYSTACK\";\n\nif (!['mp4','mov','avi'].some(ext => name.endsWith(ext))) throw new Error(\"Not video\");\n\nconst ts = new Date().toISOString().split('T')[0].replace(/-/g,'');\nconst id = Math.random().toString(36).substring(2,6);\n\nreturn {videoId: `${channel.toLowerCase()}-${ts}-${id}`, channel, filename: file.name, driveId: file.id};"
+      },
+      "name": "Extract Channel",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {"__rl": true, "value": "={{ $json.driveId }}", "mode": "id"},
+        "options": {"binaryProperty": "videoData"}
+      },
+      "name": "Download Video",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/audio/transcriptions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {"name": "file", "value": "={{ $binary.videoData }}"},
+            {"name": "model", "value": "whisper-1"}
+          ]
+        }
+      },
+      "name": "Whisper",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [850, 300],
+      "credentials": {"httpHeaderAuth": {"id": "IOM5aJbZXVSocHRK"}}
+    },
+    {
+      "parameters": {
+        "jsCode": "const channel = $node['Extract Channel'].json.channel;\nconst transcript = $node['Whisper'].json.text;\n\nconst prompt = 'Channel: ' + channel + '\\nTranscript: ' + transcript + '\\n\\nGenerate unique titles/descriptions for each platform. TikTok: viral hook. Instagram: aspirational story. YouTube: SEO educational. Output JSON: {\"tiktok\":{\"title\":\"\",\"caption\":\"\",\"hashtags\":[]},\"instagram\":{\"title\":\"\",\"caption\":\"\",\"hashtags\":[]},\"youtube\":{\"title\":\"\",\"description\":\"\",\"tags\":[]}}';\n\nreturn {json: {prompt: prompt}};"
+      },
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Content-Type", "value": "application/json"}]},
+        "sendBody": true,
+        "bodyParametersJson": "={ {\"model\": \"anthropic/claude-3.5-sonnet\", \"messages\": [{\"role\": \"user\", \"content\": $json.prompt}], \"max_tokens\": 1500} }"
+      },
+      "name": "Claude Generate",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1250, 300],
+      "credentials": {"httpHeaderAuth": {"id": "3gSZJR3pD1a9Obmb"}}
+    },
+    {
+      "parameters": {
+        "jsCode": "const txt = $json.choices[0].message.content;\nlet c;\ntry {c = JSON.parse(txt);} catch {c = JSON.parse(txt.replace(/```json/g,'').replace(/```/g,'').trim());}\nreturn {tiktok: c.tiktok, instagram: c.instagram, youtube: c.youtube};"
+      },
+      "name": "Parse",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1450, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const m = {video_id: $node['Extract Channel'].json.videoId, channel: $node['Extract Channel'].json.channel, filename: $node['Extract Channel'].json.filename, transcription: $node['Whisper'].json.text, content: {tiktok: $json.tiktok, instagram: $json.instagram, youtube: $json.youtube}, created: new Date().toISOString()};\nconst fs = require('fs'), d = '/workspace/.state/videos';\nif (!fs.existsSync(d)) fs.mkdirSync(d, {recursive: true});\nfs.writeFileSync(d + '/' + m.video_id + '.json', JSON.stringify(m, null, 2));\nreturn {json: m};"
+      },
+      "name": "Save",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1650, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.telegram.org/bot8318289285:AAGFvnbGoLh0uXO9Rcz9N23iW25DEYh-BBU/sendMessage",
+        "sendBody": true,
+        "bodyParametersJson": "={ {\"chat_id\": \"8116230130\", \"text\": \"🎬 \" + $json.video_id + \"\\n\\n📱 TikTok: \" + $json.content.tiktok.title + \"\\n📸 Instagram: \" + $json.content.instagram.title + \"\\n🎥 YouTube: \" + $json.content.youtube.title} }"
+      },
+      "name": "Telegram",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1850, 300]
+    }
+  ],
+  "connections": {
+    "Google Drive Trigger": {"main": [[{"node": "Extract Channel"}]]},
+    "Extract Channel": {"main": [[{"node": "Download Video"}]]},
+    "Download Video": {"main": [[{"node": "Whisper"}]]},
+    "Whisper": {"main": [[{"node": "Build Prompt"}]]},
+    "Build Prompt": {"main": [[{"node": "Claude Generate"}]]},
+    "Claude Generate": {"main": [[{"node": "Parse"}]]},
+    "Parse": {"main": [[{"node": "Save"}]]},
+    "Save": {"main": [[{"node": "Telegram"}]]}
+  },
+  "settings": {"executionOrder": "v1"}
+}

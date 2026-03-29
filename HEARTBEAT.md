@@ -1,11 +1,19 @@
 # HEARTBEAT.md
 
-## Daily Content Generation
+## Active Daily Tasks
 
-**Every day at ~9:00 AM UTC:**
-- Generate 6 new video scripts (2 per channel)
-- CALMORA, MONEYSTACK, CLAWTV
-- Save to `content/daily-scripts/scripts-YYYY-MM-DD.md`
-- Notify via Telegram when ready
+### CleverDogMethod SEO Blog
+- 6 posts/day (08:00 + 20:00 UTC)
+- Automated via cron
+- No heartbeat action needed
 
-**Check:** If today's scripts already exist, skip generation.
+### Mind Crimes Documentaries
+- 1 video/day (Mon-Fri @ 08:00 UTC)
+- Full package sent via Telegram
+- No heartbeat action needed
+
+---
+
+**Current status:** All tasks automated via cron.
+
+If nothing needs attention, reply HEARTBEAT_OK.

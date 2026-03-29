@@ -1,0 +1,93 @@
+{
+  "name": "CleverDog Email Capture v3",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "email-signup",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "a1b2c3d4e5f6",
+      "name": "Email Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "chatId": "8116230130",
+        "text": "=🎉 NUEVO EMAIL CAPTURADO\n\n📧 {{ $json.body.email }}\n📁 {{ $json.body.resource }}\n📍 {{ $json.body.page }}\n🕒 {{ $now.format('HH:mm') }} UTC",
+        "additionalFields": {}
+      },
+      "id": "b2c3d4e5f6g7",
+      "name": "Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [450, 250],
+      "credentials": {
+        "telegramApi": "telegram-bot-cleverdogmethod"
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://172.17.0.1:9999/save-email",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $json.body.email }}"
+            },
+            {
+              "name": "resource",
+              "value": "={{ $json.body.resource }}"
+            },
+            {
+              "name": "page",
+              "value": "={{ $json.body.page }}"
+            },
+            {
+              "name": "source",
+              "value": "={{ $json.body.source }}"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ $now.toISO() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c3d4e5f6g7h8",
+      "name": "Storage",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [450, 350],
+      "continueOnFail": true
+    }
+  ],
+  "connections": {
+    "Email Webhook": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Storage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "tags": []
+}

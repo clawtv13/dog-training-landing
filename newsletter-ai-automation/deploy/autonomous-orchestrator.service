@@ -1,0 +1,19 @@
+[Unit]
+Description=AI Automation Builder - Autonomous Orchestrator
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/.openclaw/workspace/newsletter-ai-automation
+Environment="OPENROUTER_API_KEY=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"
+Environment="TELEGRAM_BOT_TOKEN=8318289285:AAGFvnbGoLh0uXO9Rcz9N23iW25DEYh-BBU"
+Environment="TELEGRAM_CHAT_ID=8116230130"
+ExecStart=/usr/bin/python3 /root/.openclaw/workspace/newsletter-ai-automation/scripts/autonomous-orchestrator.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/root/.openclaw/workspace/newsletter-ai-automation/logs/orchestrator.log
+StandardError=append:/root/.openclaw/workspace/newsletter-ai-automation/logs/orchestrator-error.log
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,67 @@
+# CleverDogMethod Short - How to Stop Leash Pulling in 30 Seconds
+Generated: 2026-03-29 01:21 UTC
+
+============================================================
+SCRIPT (Copy to CapCut script input)
+============================================================
+
+HOOK: "Is your dog dragging you down the street like you're water skiing? Here's how to stop it in 30 seconds."
+
+WHY: "Your dog pulls because they think tension on the leash means 'go faster.' We're gonna flip that script."
+
+STEP 1: "The second your dog pulls, immediately stop walking. Don't say anything, just become a tree."
+
+STEP 2: "Wait for your dog to look back at you or create any slack in the leash - even a tiny bit counts."
+
+STEP 3: "The instant there's slack, say 'yes!' and start walking again. If they pull, repeat."
+
+RESULT: "Your dog will quickly learn that pulling makes the fun stop, but a loose leash keeps the walk going. Most dogs get this within 2-3 tries."
+
+CTA: "Follow for more dog training hacks that actually work! And drop a 🐕 if you're trying this today."
+
+============================================================
+CAPCUT AI PROMPT (Copy to CapCut AI generator)
+============================================================
+
+Create a 60-second vertical video (9:16) for dog training. Open with dramatic close-up of frustrated owner being dragged by excited dog on sidewalk, quick zoom on strained leash, bold white text overlay Stop Being Your Dog's Sled! 🛑 with black drop shadow. Cut to confident dog trainer in medium shot against clean outdoor background, steady camera, overlay text Fix This in 30 Seconds. Show clear numbered demonstrations: Step 1 - overhead angle of trainer stopping dead when dog pulls, BECOME A TREE text in large yellow font. Step 2 - side angle showing dog looking back confused, WAIT FOR SLACK in green text with arrow pointing to loose leash. Step 3 - medium shot of trainer saying YES! with enthusiastic gesture, REWARD IMMEDIATELY in blue text. Include quick before/after split screen showing chaotic pulling vs calm walking. Use smooth transitions between steps, upbeat but instructional music, professional yet approachable tone. End with trainer and well-behaved dog walking together, text overlay Follow @DogTrainingPro for More! 🐕 in bold white with pulsing animation. Keep pacing energetic with 3-4 second cuts maximum.
+
+============================================================
+PRODUCTION NOTES
+============================================================
+
+Video Specs:
+- Duration: 30-45 seconds
+- Format: 9:16 (vertical)
+- Resolution: 1080x1920
+- FPS: 30
+- Music: Upbeat, subtle (royalty-free from CapCut library)
+
+Text Overlay Style:
+- Font: Bold, sans-serif (Montserrat or similar)
+- Color: White with dark outline
+- Size: Large (readable on mobile)
+- Position: Center or lower third
+- Animation: Pop-in or slide-in
+
+Pacing:
+- Quick cuts (3-5 seconds per scene)
+- Match voiceover timing
+- Sync text with key words
+
+CTA:
+- End screen: "CleverDogMethod.com"
+- Duration: 3-5 seconds
+- Logo + website URL
+
+============================================================
+
+Ready to create in CapCut:
+1. Open CapCut
+2. New Project → Vertical (9:16)
+3. Paste script (if using text-to-video)
+4. OR paste CapCut AI prompt
+5. Generate
+6. Review & tweak
+7. Export 1080p
+8. Upload to YouTube Shorts
+

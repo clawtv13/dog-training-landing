@@ -1,0 +1,96 @@
+{
+  "name": "CleverDog Email Capture v2",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "cleverdogmethod-email",
+        "responseMode": "onReceived",
+        "responseData": "allEntries",
+        "options": {}
+      },
+      "id": "webhook-1",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "cleverdogmethod-email-v2"
+    },
+    {
+      "parameters": {
+        "url": "http://172.17.0.1:9999/save-email",
+        "method": "POST",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $json.body.email }}"
+            },
+            {
+              "name": "resource",
+              "value": "={{ $json.body.resource }}"
+            },
+            {
+              "name": "page",
+              "value": "={{ $json.body.page }}"
+            },
+            {
+              "name": "source",
+              "value": "={{ $json.body.source }}"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ $now.toISO() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "http-1",
+      "name": "Save to Storage",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "chatId": "8116230130",
+        "text": "=🎉 New email signup!\n\n📧 {{ $json.body.email }}\n📁 Resource: {{ $json.body.resource }}\n📍 Page: {{ $json.body.page }}\n🕒 {{ $now.format('HH:mm') }}",
+        "additionalFields": {}
+      },
+      "id": "telegram-1",
+      "name": "Notify Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [680, 300],
+      "credentials": {
+        "telegramApi": "telegram-bot-cleverdogmethod"
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Save to Storage",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Notify Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": []
+}

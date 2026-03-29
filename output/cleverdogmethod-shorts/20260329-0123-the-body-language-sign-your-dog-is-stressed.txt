@@ -1,0 +1,77 @@
+# CleverDogMethod Short - The Body Language Sign Your Dog is Stressed
+Generated: 2026-03-29 01:23 UTC
+
+============================================================
+SCRIPT (Copy to CapCut script input)
+============================================================
+
+HOOK: "If your dog is doing THIS with their mouth, they're screaming for help and you're probably missing it."
+
+WHY: "When dogs are stressed, they pant differently than when they're just hot - and most owners have no clue there's a difference."
+
+STEP 1: "Look at your dog's tongue - stress panting makes it super long and curled at the edges, like they can't control it."
+
+STEP 2: "Check if they're drooling more than usual - stressed dogs produce way more saliva than normal."
+
+STEP 3: "Notice the timing - if they're panting heavily but haven't been exercising or it's not hot, that's your red flag."
+
+RESULT: "Once you spot this, you can immediately remove them from whatever's causing the stress - nail trims, loud noises, new people - and watch them calm down instantly."
+
+CTA: "Follow for more dog body language secrets that'll make you the owner your dog actually needs!"
+
+============================================================
+CAPCUT AI PROMPT (Copy to CapCut AI generator)
+============================================================
+
+Create a 60-second vertical video (9:16) about dog stress signals. Open with extreme close-up of dog's face showing stressed panting, text overlay If your dog is doing THIS with their mouth, they're screaming for help and you're probably missing it in bold yellow font with black outline. Cut to medium shot of concerned dog owner looking confused, then quick zoom on dog's open mouth. Text overlay When dogs are stressed, they pant differently than when they're just hot - and most owners have no clue in white font.
+
+Transition to Step 1: Close-up macro shot of dog's tongue showing long, curled edges during stress panting. Camera slowly pushes in on tongue detail. Text overlay STEP 1: Look at your dog's tongue - stress panting makes it super long and curled at the edges with number 1 in bright circle.
+
+Step 2: Medium shot transitioning to close-up of dog's mouth showing excessive drooling. Camera tilts down to show saliva drops. Text overlay STEP 2: Check if they're drooling more than usual - stressed dogs produce way more saliva with number 2 in bright circle.
+
+Step 3: Split screen showing calm dog vs stressed dog panting in similar temperature environment. Quick cuts between both dogs. Text overlay STEP 3: Notice the timing - if they're panting heavily but haven't been exercising, that's your red flag with number 3 in bright circle.
+
+End with before/after: stressed dog being removed from stressful situation, then same dog calm and relaxed. Text overlay Once you spot this, you can immediately help them calm down instantly followed by CTA Follow for more dog secrets that'll make you the owner your dog needs! in bold white text with paw print emojis.
+
+Use quick jump cuts, upbeat but educational background music, warm lighting throughout. Professional yet approachable tone with smooth transitions between segments.
+
+============================================================
+PRODUCTION NOTES
+============================================================
+
+Video Specs:
+- Duration: 30-45 seconds
+- Format: 9:16 (vertical)
+- Resolution: 1080x1920
+- FPS: 30
+- Music: Upbeat, subtle (royalty-free from CapCut library)
+
+Text Overlay Style:
+- Font: Bold, sans-serif (Montserrat or similar)
+- Color: White with dark outline
+- Size: Large (readable on mobile)
+- Position: Center or lower third
+- Animation: Pop-in or slide-in
+
+Pacing:
+- Quick cuts (3-5 seconds per scene)
+- Match voiceover timing
+- Sync text with key words
+
+CTA:
+- End screen: "CleverDogMethod.com"
+- Duration: 3-5 seconds
+- Logo + website URL
+
+============================================================
+
+Ready to create in CapCut:
+1. Open CapCut
+2. New Project → Vertical (9:16)
+3. Paste script (if using text-to-video)
+4. OR paste CapCut AI prompt
+5. Generate
+6. Review & tweak
+7. Export 1080p
+8. Upload to YouTube Shorts
+

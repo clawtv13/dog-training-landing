@@ -1,0 +1,297 @@
+{
+  "name": "Video Distribution Complete",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute",
+              "minute": 5
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "event": "fileCreated",
+        "options": {
+          "fileTypes": [
+            "videos"
+          ]
+        }
+      },
+      "name": "Google Drive Trigger",
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 3,
+      "position": [
+        240,
+        300
+      ],
+      "id": "gdrive-trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract channel from filename\nconst file = $input.item.json;\n\n// Validate input\nif (!file || !file.name) {\n  throw new Error('No file data received from trigger');\n}\n\nconst name = file.name.toLowerCase();\n\n// Determine channel\nlet channel = \"UNKNOWN\";\nif (name.includes(\"health\")) {\n  channel = \"HEALTH_HACKS\";\n} else if (name.includes(\"money\")) {\n  channel = \"MONEYSTACK\";\n}\n\n// Validate file type\nconst validExtensions = ['mp4', 'mov', 'avi', 'webm'];\nconst hasValidExtension = validExtensions.some(ext => name.endsWith(ext));\n\nif (!hasValidExtension) {\n  throw new Error(`Invalid file type. Must be: ${validExtensions.join(', ')}`);\n}\n\n// Generate unique video ID\nconst timestamp = new Date().toISOString().split('T')[0].replace(/-/g, '');\nconst randomId = Math.random().toString(36).substring(2, 8);\nconst videoId = `${channel.toLowerCase()}-${timestamp}-${randomId}`;\n\n// Return structured data\nreturn {\n  videoId: videoId,\n  channel: channel,\n  filename: file.name,\n  driveId: file.id,\n  mimeType: file.mimeType || 'video/mp4',\n  size: file.size || 0,\n  detectedAt: new Date().toISOString()\n};"
+      },
+      "name": "Extract Channel Info",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        460,
+        300
+      ],
+      "id": "extract-channel"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.driveId }}",
+          "mode": "id"
+        },
+        "options": {
+          "binaryProperty": "videoFile"
+        }
+      },
+      "name": "Download Video",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        680,
+        300
+      ],
+      "id": "download-video"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/audio/transcriptions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "file",
+              "value": "={{ $binary.videoFile }}"
+            },
+            {
+              "name": "model",
+              "value": "whisper-1"
+            },
+            {
+              "name": "response_format",
+              "value": "json"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "name": "Whisper Transcribe",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        900,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "IOM5aJbZXVSocHRK",
+          "name": "OpenAI API"
+        }
+      },
+      "id": "whisper-transcribe"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build prompt for Claude\nconst channel = $node['Extract Channel Info'].json.channel;\nconst transcript = $json.text;\nconst filename = $node['Extract Channel Info'].json.filename;\n\n// Build comprehensive prompt\nconst prompt = `You are a social media content strategist. Generate unique, platform-optimized titles and descriptions for this video.\n\nCHANNEL: ${channel}\nFILENAME: ${filename}\nTRANSCRIPT: ${transcript}\n\nGenerate 3 DIFFERENT variations tailored to each platform:\n\n**TIKTOK:**\n- Title: Viral hook (first 3 words grab attention)\n- Caption: 2-3 sentences, casual tone, emoji-rich\n- Hashtags: 5-7 trending + niche tags\n\n**INSTAGRAM:**\n- Title: Aspirational/inspirational angle\n- Caption: Story format, 3-4 sentences, relatable\n- Hashtags: 10-15 mixed (trending + niche + community)\n\n**YOUTUBE:**\n- Title: SEO-optimized (include main keyword)\n- Description: Educational format, 4-5 sentences, include CTA\n- Tags: 10-12 keywords (mix broad + specific)\n\nOUTPUT ONLY VALID JSON (no markdown, no explanation):\n{\n  \"tiktok\": {\n    \"title\": \"\",\n    \"caption\": \"\",\n    \"hashtags\": []\n  },\n  \"instagram\": {\n    \"title\": \"\",\n    \"caption\": \"\",\n    \"hashtags\": []\n  },\n  \"youtube\": {\n    \"title\": \"\",\n    \"description\": \"\",\n    \"tags\": []\n  }\n}`;\n\nreturn {\n  prompt: prompt,\n  channel: channel,\n  videoId: $node['Extract Channel Info'].json.videoId\n};"
+      },
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1120,
+        300
+      ],
+      "id": "build-prompt"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParametersJson": "={{ {\n  \"model\": \"anthropic/claude-3.5-sonnet\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": $json.prompt\n    }\n  ],\n  \"max_tokens\": 2000,\n  \"temperature\": 0.7\n} }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "name": "Claude Generate",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1340,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "3gSZJR3pD1a9Obmb",
+          "name": "OpenRouter API"
+        }
+      },
+      "id": "claude-generate"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse and validate Claude response\nconst response = $json.choices[0].message.content;\nlet content;\n\ntry {\n  // Try direct parse first\n  content = JSON.parse(response);\n} catch (error) {\n  // Try cleaning markdown wrapper\n  const cleaned = response\n    .replace(/```json\\n?/g, '')\n    .replace(/```\\n?/g, '')\n    .trim();\n  \n  try {\n    content = JSON.parse(cleaned);\n  } catch (error2) {\n    throw new Error(`Failed to parse Claude response: ${error2.message}`);\n  }\n}\n\n// Validate structure\nif (!content.tiktok || !content.instagram || !content.youtube) {\n  throw new Error('Invalid content structure from Claude');\n}\n\n// Return clean structured data\nreturn {\n  tiktok: content.tiktok,\n  instagram: content.instagram,\n  youtube: content.youtube,\n  parsedAt: new Date().toISOString()\n};"
+      },
+      "name": "Parse Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1560,
+        300
+      ],
+      "id": "parse-response"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build complete metadata object\nconst metadata = {\n  video_id: $node['Extract Channel Info'].json.videoId,\n  channel: $node['Extract Channel Info'].json.channel,\n  filename: $node['Extract Channel Info'].json.filename,\n  drive_id: $node['Extract Channel Info'].json.driveId,\n  transcription: $node['Whisper Transcribe'].json.text,\n  content: {\n    tiktok: $json.tiktok,\n    instagram: $json.instagram,\n    youtube: $json.youtube\n  },\n  metadata: {\n    size: $node['Extract Channel Info'].json.size,\n    mime_type: $node['Extract Channel Info'].json.mimeType,\n    detected_at: $node['Extract Channel Info'].json.detectedAt\n  },\n  created_at: new Date().toISOString()\n};\n\n// Save to disk\nconst fs = require('fs');\nconst dir = '/workspace/.state/videos';\n\n// Create directory if doesn't exist\nif (!fs.existsSync(dir)) {\n  fs.mkdirSync(dir, { recursive: true });\n}\n\n// Write metadata file\nconst filepath = `${dir}/${metadata.video_id}.json`;\nfs.writeFileSync(filepath, JSON.stringify(metadata, null, 2));\n\n// Return for next node\nreturn { json: metadata };"
+      },
+      "name": "Save Metadata",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1780,
+        300
+      ],
+      "id": "save-metadata"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.telegram.org/bot8318289285:AAGFvnbGoLh0uXO9Rcz9N23iW25DEYh-BBU/sendMessage",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"chat_id\": \"8116230130\",\n  \"text\": `🎬 VIDEO PROCESSED\\n\\n📹 ID: ${$json.video_id}\\n📂 Channel: ${$json.channel}\\n📄 File: ${$json.filename}\\n\\n📱 TIKTOK\\nTitle: ${$json.content.tiktok.title}\\nHashtags: ${$json.content.tiktok.hashtags.slice(0,3).join(' ')}\\n\\n📸 INSTAGRAM\\nTitle: ${$json.content.instagram.title}\\nHashtags: ${$json.content.instagram.hashtags.slice(0,3).join(' ')}\\n\\n🎥 YOUTUBE\\nTitle: ${$json.content.youtube.title}\\nTags: ${$json.content.youtube.tags.slice(0,3).join(', ')}\\n\\n✅ Metadata saved to: .state/videos/${$json.video_id}.json`,\n  \"parse_mode\": \"Markdown\",\n  \"disable_web_page_preview\": true\n} }}",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "name": "Telegram Notify",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2000,
+        300
+      ],
+      "id": "telegram-notify"
+    }
+  ],
+  "connections": {
+    "Google Drive Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract Channel Info",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Channel Info": {
+      "main": [
+        [
+          {
+            "node": "Download Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Video": {
+      "main": [
+        [
+          {
+            "node": "Whisper Transcribe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Whisper Transcribe": {
+      "main": [
+        [
+          {
+            "node": "Build Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Prompt": {
+      "main": [
+        [
+          {
+            "node": "Claude Generate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude Generate": {
+      "main": [
+        [
+          {
+            "node": "Parse Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Response": {
+      "main": [
+        [
+          {
+            "node": "Save Metadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Metadata": {
+      "main": [
+        [
+          {
+            "node": "Telegram Notify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

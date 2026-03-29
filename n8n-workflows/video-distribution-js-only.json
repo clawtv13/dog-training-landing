@@ -1,0 +1,120 @@
+{
+  "name": "Video Distribution (JS Only)",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [{"mode": "everyMinute", "minute": 5}]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {"__rl": true, "value": "", "mode": "list"},
+        "event": "fileCreated",
+        "options": {"fileTypes": ["videos"]}
+      },
+      "name": "Google Drive Trigger",
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const file = $input.item.json;\nconst name = file.name.toLowerCase();\n\nlet channel = \"UNKNOWN\";\nif (name.includes(\"health\")) channel = \"HEALTH_HACKS\";\nelse if (name.includes(\"money\")) channel = \"MONEYSTACK\";\n\nif (!['mp4','mov','avi'].some(ext => name.endsWith(ext))) {\n  throw new Error(\"Not a video\");\n}\n\nconst ts = new Date().toISOString().split('T')[0].replace(/-/g,'');\nconst id = Math.random().toString(36).substring(2,6);\n\nreturn {\n  videoId: `${channel.toLowerCase()}-${ts}-${id}`,\n  channel,\n  filename: file.name,\n  driveId: file.id,\n  size: file.size\n};"
+      },
+      "name": "Extract Channel",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {"__rl": true, "value": "={{ $json.driveId }}", "mode": "id"},
+        "options": {"binaryProperty": "videoData"}
+      },
+      "name": "Download Video",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/audio/transcriptions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {"name": "file", "value": "={{ $binary.videoData }}", "type": "file"},
+            {"name": "model", "value": "whisper-1"}
+          ]
+        },
+        "options": {"timeout": 60000}
+      },
+      "name": "Whisper Transcribe",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [850, 300],
+      "credentials": {
+        "httpHeaderAuth": {"name": "OpenAI", "value": "YOUR_OPENAI_KEY"}
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"model\": \"anthropic/claude-3.5-sonnet\",\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": `Channel: ${$node['Extract Channel'].json.channel}\\nTranscript: ${$json.text}\\n\\nGenerate 3 unique titles/descriptions for TikTok, Instagram, YouTube. Different angle for each platform. Output JSON only: {\\\"tiktok\\\":{\\\"title\\\":\\\"\\\",\\\"caption\\\":\\\"\\\",\\\"hashtags\\\":[]},\\\"instagram\\\":{...},\\\"youtube\\\":{...}}`\n  }],\n  \"max_tokens\": 1500\n}}"
+      },
+      "name": "Generate Content",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.item.json.choices[0].message.content;\nlet content;\ntry {\n  content = JSON.parse(response);\n} catch {\n  const clean = response.replace(/```json\\n?/g,'').replace(/```/g,'').trim();\n  content = JSON.parse(clean);\n}\n\nreturn {\n  tiktok: content.tiktok,\n  instagram: content.instagram,\n  youtube: content.youtube\n};"
+      },
+      "name": "Parse AI Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const meta = {\n  video_id: $node['Extract Channel'].json.videoId,\n  channel: $node['Extract Channel'].json.channel,\n  filename: $node['Extract Channel'].json.filename,\n  transcription: $node['Whisper Transcribe'].json.text,\n  content: {\n    tiktok: $json.tiktok,\n    instagram: $json.instagram,\n    youtube: $json.youtube\n  },\n  created: new Date().toISOString()\n};\n\nconst fs = require('fs');\nconst dir = '/workspace/.state/videos';\nif (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});\nfs.writeFileSync(`${dir}/${meta.video_id}.json`, JSON.stringify(meta, null, 2));\n\nreturn {json: meta};"
+      },
+      "name": "Save Metadata",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1450, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://api.telegram.org/bot{{ $env.TELEGRAM_BOT_TOKEN }}/sendMessage",
+        "method": "POST",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"chat_id\": \"8116230130\",\n  \"text\": `🎬 Video Ready!\\n\\n📹 ${$json.video_id}\\n\\n📱 TikTok:\\n${$json.content.tiktok.title}\\n\\n📸 Instagram:\\n${$json.content.instagram.title}\\n\\n🎥 YouTube:\\n${$json.content.youtube.title}\\n\\n✅ Metadata saved`,\n  \"parse_mode\": \"Markdown\"\n}}"
+      },
+      "name": "Telegram Notify",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1650, 300]
+    }
+  ],
+  "connections": {
+    "Google Drive Trigger": {"main": [[{"node": "Extract Channel"}]]},
+    "Extract Channel": {"main": [[{"node": "Download Video"}]]},
+    "Download Video": {"main": [[{"node": "Whisper Transcribe"}]]},
+    "Whisper Transcribe": {"main": [[{"node": "Generate Content"}]]},
+    "Generate Content": {"main": [[{"node": "Parse AI Response"}]]},
+    "Parse AI Response": {"main": [[{"node": "Save Metadata"}]]},
+    "Save Metadata": {"main": [[{"node": "Telegram Notify"}]]}
+  },
+  "settings": {"executionOrder": "v1"}
+}

@@ -1,0 +1,67 @@
+# CleverDogMethod Short - How to Teach Your Dog to Stay (5 Minute Method)
+Generated: 2026-03-29 01:23 UTC
+
+============================================================
+SCRIPT (Copy to CapCut script input)
+============================================================
+
+HOOK: "Your dog bolts the second you say 'stay'? Here's why that's happening..."
+
+WHY: "Most people make the mistake of stepping too far away too fast. Your dog thinks you're leaving forever and panics!"
+
+STEP 1: "Start with your dog sitting right in front of you. Put your hand up like a stop sign and say 'stay' - but don't move your feet yet."
+
+STEP 2: "Wait just 2 seconds, then immediately step back to them and give a treat. You're teaching them that staying means you come back!"
+
+STEP 3: "Only add distance once they're solid at 2 seconds. Then try 3 seconds, then 4. Build it up slowly - patience pays off."
+
+RESULT: "In 5 minutes, your dog will understand that 'stay' doesn't mean goodbye - it means 'wait for me to come back to you.'"
+
+CTA: "Follow for more training hacks that actually work! Which command should I cover next?"
+
+============================================================
+CAPCUT AI PROMPT (Copy to CapCut AI generator)
+============================================================
+
+Create a 60-second vertical video (9:16) for dog training. Open with close-up of excited dog jumping and ignoring owner's stay command, quick zoom on frustrated owner's face. Text overlay Your Dog Won't Stay? Here's Why ⬇️ in bold white font with black shadow. Cut to medium shot of trainer explaining with hand gestures, text You're Moving Too Fast! appears with red X animation. Transition to Step 1: overhead angle showing dog sitting, trainer's hand in stop sign position, STEP 1: Hand Up, Feet Still overlay in yellow box. Step 2: side angle, trainer stepping back to dog after 2 seconds, giving treat, STEP 2: Come Back Fast + Treat in green box. Step 3: wider shot showing gradual distance increase, timer counting 2-3-4 seconds, STEP 3: Build Up Slowly in blue box. Final scene: split-screen before/after comparison, dog successfully staying while owner walks away. Upbeat but calm background music. Professional yet encouraging tone. Quick cuts every 3-4 seconds. End with Follow for More Training Hacks! and comment prompt What Command Next? in animated text bubbles.
+
+============================================================
+PRODUCTION NOTES
+============================================================
+
+Video Specs:
+- Duration: 30-45 seconds
+- Format: 9:16 (vertical)
+- Resolution: 1080x1920
+- FPS: 30
+- Music: Upbeat, subtle (royalty-free from CapCut library)
+
+Text Overlay Style:
+- Font: Bold, sans-serif (Montserrat or similar)
+- Color: White with dark outline
+- Size: Large (readable on mobile)
+- Position: Center or lower third
+- Animation: Pop-in or slide-in
+
+Pacing:
+- Quick cuts (3-5 seconds per scene)
+- Match voiceover timing
+- Sync text with key words
+
+CTA:
+- End screen: "CleverDogMethod.com"
+- Duration: 3-5 seconds
+- Logo + website URL
+
+============================================================
+
+Ready to create in CapCut:
+1. Open CapCut
+2. New Project → Vertical (9:16)
+3. Paste script (if using text-to-video)
+4. OR paste CapCut AI prompt
+5. Generate
+6. Review & tweak
+7. Export 1080p
+8. Upload to YouTube Shorts
+

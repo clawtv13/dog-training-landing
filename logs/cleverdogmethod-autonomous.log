@@ -1,0 +1,188 @@
+[2026-03-27 16:02:40] [INFO] ============================================================
+[2026-03-27 16:02:40] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-27 16:02:40] [INFO] ============================================================
+[2026-03-27 16:02:40] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-27 16:02:40] [INFO] ✅ Selected 6 candidate keywords
+[2026-03-27 16:02:40] [INFO] 📝 Processing: clicker training for dogs
+[2026-03-27 16:03:18] [INFO] ✅ Generated 1099 words for: clicker training for dogs
+[2026-03-27 16:03:18] [INFO] 💾 Saved: clicker-training-for-dogs.html
+[2026-03-27 16:03:18] [ERROR] ❌ Git error: error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/clawtv13/dog-training-landing.git'
+
+[2026-03-27 16:03:18] [ERROR] ❌ Deploy failed: clicker-training-for-dogs
+[2026-03-27 16:03:18] [INFO] 📝 Processing: german shepherd training
+[2026-03-27 16:03:59] [INFO] ✅ Generated 1282 words for: german shepherd training
+[2026-03-27 16:03:59] [INFO] 💾 Saved: german-shepherd-training.html
+[2026-03-27 16:03:59] [ERROR] ❌ Git error: error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/clawtv13/dog-training-landing.git'
+
+[2026-03-27 16:03:59] [ERROR] ❌ Deploy failed: german-shepherd-training
+[2026-03-27 16:03:59] [INFO] 📝 Processing: dog leash training
+[2026-03-27 16:04:39] [INFO] ✅ Generated 1122 words for: dog leash training
+[2026-03-27 16:04:39] [INFO] 💾 Saved: dog-leash-training.html
+[2026-03-27 16:04:39] [ERROR] ❌ Git error: error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/clawtv13/dog-training-landing.git'
+
+[2026-03-27 16:04:39] [ERROR] ❌ Deploy failed: dog-leash-training
+[2026-03-27 16:04:39] [INFO] 📝 Processing: pitbull training
+[2026-03-27 16:05:29] [INFO] ✅ Generated 1144 words for: pitbull training
+[2026-03-27 16:05:29] [INFO] 💾 Saved: pitbull-training.html
+[2026-03-27 16:05:29] [ERROR] ❌ Git error: error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/clawtv13/dog-training-landing.git'
+
+[2026-03-27 16:05:29] [ERROR] ❌ Deploy failed: pitbull-training
+[2026-03-27 16:05:29] [INFO] 📝 Processing: off-leash dog training
+[2026-03-27 16:06:10] [INFO] ✅ Generated 1066 words for: off-leash dog training
+[2026-03-27 16:06:10] [INFO] 💾 Saved: off-leash-dog-training.html
+[2026-03-27 16:06:10] [ERROR] ❌ Git error: error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/clawtv13/dog-training-landing.git'
+
+[2026-03-27 16:06:10] [ERROR] ❌ Deploy failed: off-leash-dog-training
+[2026-03-27 16:06:10] [INFO] 📝 Processing: positive reinforcement dog training
+[2026-03-27 16:06:46] [INFO] ✅ Generated 1075 words for: positive reinforcement dog training
+[2026-03-27 16:06:46] [INFO] 💾 Saved: positive-reinforcement-dog-training.html
+[2026-03-27 16:06:46] [ERROR] ❌ Git error: error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/clawtv13/dog-training-landing.git'
+
+[2026-03-27 16:06:46] [ERROR] ❌ Deploy failed: positive-reinforcement-dog-training
+[2026-03-27 16:06:46] [INFO] ============================================================
+[2026-03-27 16:06:46] [INFO] 📊 SUMMARY: 0/3 posts published
+[2026-03-27 16:06:46] [INFO] ============================================================
+[2026-03-27 20:00:01] [INFO] ============================================================
+[2026-03-27 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-27 20:00:01] [INFO] ============================================================
+[2026-03-27 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-27 20:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-03-27 20:00:01] [INFO] 📝 Processing: puppy biting training
+[2026-03-27 20:00:42] [INFO] ✅ Generated 1063 words for: puppy biting training
+[2026-03-27 20:00:42] [INFO] 💾 Saved: puppy-biting-training.html
+[2026-03-27 20:00:43] [INFO] ✅ Deployed: puppy-biting-training
+[2026-03-27 20:00:43] [INFO] ✅ Published: Complete Guide to Puppy Biting Training
+[2026-03-27 20:00:53] [INFO] 📝 Processing: dog training for barking
+[2026-03-27 20:01:32] [INFO] ✅ Generated 1137 words for: dog training for barking
+[2026-03-27 20:01:32] [INFO] 💾 Saved: dog-training-for-barking.html
+[2026-03-27 20:01:33] [INFO] ✅ Deployed: dog-training-for-barking
+[2026-03-27 20:01:33] [INFO] ✅ Published: Complete Guide to Dog Training For Barking
+[2026-03-27 20:01:43] [INFO] 📝 Processing: dog socialization training
+[2026-03-27 20:02:25] [INFO] ✅ Generated 1193 words for: dog socialization training
+[2026-03-27 20:02:25] [INFO] 💾 Saved: dog-socialization-training.html
+[2026-03-27 20:02:25] [INFO] ✅ Deployed: dog-socialization-training
+[2026-03-27 20:02:25] [INFO] ✅ Published: Complete Guide to Dog Socialization Training
+[2026-03-27 20:02:25] [INFO] ============================================================
+[2026-03-27 20:02:25] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-27 20:02:25] [INFO] ============================================================
+[2026-03-27 20:00:01] [INFO] ============================================================
+[2026-03-27 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-27 20:00:01] [INFO] ============================================================
+[2026-03-27 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-27 20:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-03-27 20:00:01] [INFO] 📝 Processing: puppy biting training
+[2026-03-27 20:00:42] [INFO] ✅ Generated 1063 words for: puppy biting training
+[2026-03-27 20:00:42] [INFO] 💾 Saved: puppy-biting-training.html
+[2026-03-27 20:00:43] [INFO] ✅ Deployed: puppy-biting-training
+[2026-03-27 20:00:43] [INFO] ✅ Published: Complete Guide to Puppy Biting Training
+[2026-03-27 20:00:53] [INFO] 📝 Processing: dog training for barking
+[2026-03-27 20:01:32] [INFO] ✅ Generated 1137 words for: dog training for barking
+[2026-03-27 20:01:32] [INFO] 💾 Saved: dog-training-for-barking.html
+[2026-03-27 20:01:33] [INFO] ✅ Deployed: dog-training-for-barking
+[2026-03-27 20:01:33] [INFO] ✅ Published: Complete Guide to Dog Training For Barking
+[2026-03-27 20:01:43] [INFO] 📝 Processing: dog socialization training
+[2026-03-27 20:02:25] [INFO] ✅ Generated 1193 words for: dog socialization training
+[2026-03-27 20:02:25] [INFO] 💾 Saved: dog-socialization-training.html
+[2026-03-27 20:02:25] [INFO] ✅ Deployed: dog-socialization-training
+[2026-03-27 20:02:25] [INFO] ✅ Published: Complete Guide to Dog Socialization Training
+[2026-03-27 20:02:25] [INFO] ============================================================
+[2026-03-27 20:02:25] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-27 20:02:25] [INFO] ============================================================
+[2026-03-28 08:00:01] [INFO] ============================================================
+[2026-03-28 08:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-28 08:00:01] [INFO] ============================================================
+[2026-03-28 08:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-28 08:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-03-28 08:00:01] [INFO] 📝 Processing: rescue dog training
+[2026-03-28 08:00:35] [INFO] ✅ Generated 1086 words for: rescue dog training
+[2026-03-28 08:00:35] [INFO] 💾 Saved: rescue-dog-training.html
+[2026-03-28 08:00:36] [INFO] ✅ Deployed: rescue-dog-training
+[2026-03-28 08:00:36] [INFO] ✅ Published: Complete Guide to Rescue Dog Training
+[2026-03-28 08:00:46] [INFO] 📝 Processing: dog training collars
+[2026-03-28 08:01:23] [INFO] ✅ Generated 1133 words for: dog training collars
+[2026-03-28 08:01:23] [INFO] 💾 Saved: dog-training-collars.html
+[2026-03-28 08:01:23] [INFO] ✅ Deployed: dog-training-collars
+[2026-03-28 08:01:23] [INFO] ✅ Published: Complete Guide to Dog Training Collars
+[2026-03-28 08:01:33] [INFO] 📝 Processing: dog agility courses
+[2026-03-28 08:02:17] [INFO] ✅ Generated 1229 words for: dog agility courses
+[2026-03-28 08:02:17] [INFO] 💾 Saved: dog-agility-courses.html
+[2026-03-28 08:02:18] [INFO] ✅ Deployed: dog-agility-courses
+[2026-03-28 08:02:18] [INFO] ✅ Published: Complete Guide to Dog Agility Courses
+[2026-03-28 08:02:18] [INFO] ============================================================
+[2026-03-28 08:02:18] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-28 08:02:18] [INFO] ============================================================
+[2026-03-28 08:00:01] [INFO] ============================================================
+[2026-03-28 08:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-28 08:00:01] [INFO] ============================================================
+[2026-03-28 08:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-28 08:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-03-28 08:00:01] [INFO] 📝 Processing: rescue dog training
+[2026-03-28 08:00:35] [INFO] ✅ Generated 1086 words for: rescue dog training
+[2026-03-28 08:00:35] [INFO] 💾 Saved: rescue-dog-training.html
+[2026-03-28 08:00:36] [INFO] ✅ Deployed: rescue-dog-training
+[2026-03-28 08:00:36] [INFO] ✅ Published: Complete Guide to Rescue Dog Training
+[2026-03-28 08:00:46] [INFO] 📝 Processing: dog training collars
+[2026-03-28 08:01:23] [INFO] ✅ Generated 1133 words for: dog training collars
+[2026-03-28 08:01:23] [INFO] 💾 Saved: dog-training-collars.html
+[2026-03-28 08:01:23] [INFO] ✅ Deployed: dog-training-collars
+[2026-03-28 08:01:23] [INFO] ✅ Published: Complete Guide to Dog Training Collars
+[2026-03-28 08:01:33] [INFO] 📝 Processing: dog agility courses
+[2026-03-28 08:02:17] [INFO] ✅ Generated 1229 words for: dog agility courses
+[2026-03-28 08:02:17] [INFO] 💾 Saved: dog-agility-courses.html
+[2026-03-28 08:02:18] [INFO] ✅ Deployed: dog-agility-courses
+[2026-03-28 08:02:18] [INFO] ✅ Published: Complete Guide to Dog Agility Courses
+[2026-03-28 08:02:18] [INFO] ============================================================
+[2026-03-28 08:02:18] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-28 08:02:18] [INFO] ============================================================
+[2026-03-28 20:00:01] [INFO] ============================================================
+[2026-03-28 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-28 20:00:01] [INFO] ============================================================
+[2026-03-28 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-28 20:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-03-28 20:00:01] [INFO] 📝 Processing: puppy training classes
+[2026-03-28 20:00:34] [INFO] ✅ Generated 1068 words for: puppy training classes
+[2026-03-28 20:00:34] [INFO] 💾 Saved: puppy-training-classes.html
+[2026-03-28 20:00:35] [INFO] ✅ Deployed: puppy-training-classes
+[2026-03-28 20:00:35] [INFO] ✅ Published: Complete Guide to Puppy Training Classes
+[2026-03-28 20:00:45] [INFO] 📝 Processing: protection dog training
+[2026-03-28 20:01:21] [INFO] ✅ Generated 1016 words for: protection dog training
+[2026-03-28 20:01:21] [INFO] 💾 Saved: protection-dog-training.html
+[2026-03-28 20:01:22] [INFO] ✅ Deployed: protection-dog-training
+[2026-03-28 20:01:22] [INFO] ✅ Published: Complete Guide to Protection Dog Training
+[2026-03-28 20:01:32] [INFO] 📝 Processing: e-collar training
+[2026-03-28 20:02:08] [INFO] ✅ Generated 1010 words for: e-collar training
+[2026-03-28 20:02:08] [INFO] 💾 Saved: e-collar-training.html
+[2026-03-28 20:02:09] [INFO] ✅ Deployed: e-collar-training
+[2026-03-28 20:02:09] [INFO] ✅ Published: Complete Guide to E-Collar Training
+[2026-03-28 20:02:09] [INFO] ============================================================
+[2026-03-28 20:02:09] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-28 20:02:09] [INFO] ============================================================
+[2026-03-28 20:00:01] [INFO] ============================================================
+[2026-03-28 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-28 20:00:01] [INFO] ============================================================
+[2026-03-28 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-28 20:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-03-28 20:00:01] [INFO] 📝 Processing: puppy training classes
+[2026-03-28 20:00:34] [INFO] ✅ Generated 1068 words for: puppy training classes
+[2026-03-28 20:00:34] [INFO] 💾 Saved: puppy-training-classes.html
+[2026-03-28 20:00:35] [INFO] ✅ Deployed: puppy-training-classes
+[2026-03-28 20:00:35] [INFO] ✅ Published: Complete Guide to Puppy Training Classes
+[2026-03-28 20:00:45] [INFO] 📝 Processing: protection dog training
+[2026-03-28 20:01:21] [INFO] ✅ Generated 1016 words for: protection dog training
+[2026-03-28 20:01:21] [INFO] 💾 Saved: protection-dog-training.html
+[2026-03-28 20:01:22] [INFO] ✅ Deployed: protection-dog-training
+[2026-03-28 20:01:22] [INFO] ✅ Published: Complete Guide to Protection Dog Training
+[2026-03-28 20:01:32] [INFO] 📝 Processing: e-collar training
+[2026-03-28 20:02:08] [INFO] ✅ Generated 1010 words for: e-collar training
+[2026-03-28 20:02:08] [INFO] 💾 Saved: e-collar-training.html
+[2026-03-28 20:02:09] [INFO] ✅ Deployed: e-collar-training
+[2026-03-28 20:02:09] [INFO] ✅ Published: Complete Guide to E-Collar Training
+[2026-03-28 20:02:09] [INFO] ============================================================
+[2026-03-28 20:02:09] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-28 20:02:09] [INFO] ============================================================

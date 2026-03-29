@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-03-27T02:27:22.773312",
+  "topics": [
+    {
+      "title": "How to Stop Aggression",
+      "keywords": "dog training for aggression",
+      "volume": 12100,
+      "priority": 5,
+      "type": "problem"
+    },
+    {
+      "title": "How to Stop Reactive Behavior",
+      "keywords": "reactive dog training",
+      "volume": 5400,
+      "priority": 5,
+      "type": "problem"
+    },
+    {
+      "title": "How to Stop Separation Anxiety",
+      "keywords": "dog training for separation anxiety",
+      "volume": 3600,
+      "priority": 5,
+      "type": "problem"
+    },
+    {
+      "title": "Puppy Socialization: 7-Day Plan",
+      "keywords": "puppy socialization",
+      "volume": 1900,
+      "priority": 5,
+      "type": "puppy"
+    },
+    {
+      "title": "How to Stop Anxiety",
+      "keywords": "dog training for anxiety",
+      "volume": 1600,
+      "priority": 5,
+      "type": "problem"
+    },
+    {
+      "title": "Crate Training For Puppies: 7-Day Plan",
+      "keywords": "crate training for puppies",
+      "volume": 27100,
+      "priority": 4,
+      "type": "puppy"
+    }
+  ]
+}

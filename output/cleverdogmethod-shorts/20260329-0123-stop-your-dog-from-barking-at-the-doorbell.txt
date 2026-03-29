@@ -1,0 +1,77 @@
+# CleverDogMethod Short - Stop Your Dog From Barking at the Doorbell
+Generated: 2026-03-29 01:23 UTC
+
+============================================================
+SCRIPT (Copy to CapCut script input)
+============================================================
+
+HOOK: "Your dog turns into a maniac every time someone rings the doorbell? Here's how to fix it in just one week."
+
+WHY: "Dogs bark at doorbells because they think they're protecting your home. But you can teach them the doorbell actually means something good is coming."
+
+STEP 1: "Ring your doorbell yourself, then immediately toss high-value treats away from the door. Do this 5 times in a row."
+
+STEP 2: "Wait 10 minutes, then repeat the process. Your dog will start looking for treats instead of barking at the sound."
+
+STEP 3: "Practice this twice a day for a week. Eventually, your dog will hear the doorbell and run to where the treats usually land."
+
+RESULT: "Now when real visitors come, your dog associates the doorbell with good things instead of intruders. No more embarrassing barking fits!"
+
+CTA: "Follow me for more dog training hacks that actually work!"
+
+============================================================
+CAPCUT AI PROMPT (Copy to CapCut AI generator)
+============================================================
+
+Create a 60-second vertical video (9:16) for dog training. Open with close-up of frustrated owner covering ears while dog barks aggressively at front door, doorbell sound effect, text overlay Dog Goes CRAZY at Doorbell? 🔔😤 in bold yellow font with black outline. Quick zoom-in on barking dog's face showing intense reaction.
+
+Cut to medium shot of calm professional dog trainer in modern living room, facing camera with confident smile, text overlay Fix This in Just 1 Week! ⬇️ in white bold font. Transition to split-screen showing BEFORE (chaotic barking) vs AFTER (calm dog) with dramatic before/after text effects.
+
+Show trainer explaining with hand gestures, then cut to overhead angle of trainer at front door ringing doorbell, immediately tossing treats across the room. Text overlay STEP 1: Ring Bell + Toss Treats Away with animated arrows pointing to treat locations. Show dog's confused but interested reaction from side angle.
+
+Quick montage of training sessions with time-lapse effect, showing Day 1, Day 3, Day 5 text overlays. Multiple camera angles: close-up of doorbell being pressed, medium shot of treats being thrown, low angle of dog running toward treats instead of door.
+
+Final scene shows real visitor arriving, dog calmly walking to treat area instead of barking, owner smiling with relief. Text overlay SUCCESS! No More Barking! ✅ in green bold font.
+
+End with trainer pointing to camera, text overlay Follow for More Training Hacks! 🐕 with subscribe animation. Upbeat, motivational background music throughout. Professional yet approachable tone with smooth crossfade transitions between scenes.
+
+============================================================
+PRODUCTION NOTES
+============================================================
+
+Video Specs:
+- Duration: 30-45 seconds
+- Format: 9:16 (vertical)
+- Resolution: 1080x1920
+- FPS: 30
+- Music: Upbeat, subtle (royalty-free from CapCut library)
+
+Text Overlay Style:
+- Font: Bold, sans-serif (Montserrat or similar)
+- Color: White with dark outline
+- Size: Large (readable on mobile)
+- Position: Center or lower third
+- Animation: Pop-in or slide-in
+
+Pacing:
+- Quick cuts (3-5 seconds per scene)
+- Match voiceover timing
+- Sync text with key words
+
+CTA:
+- End screen: "CleverDogMethod.com"
+- Duration: 3-5 seconds
+- Logo + website URL
+
+============================================================
+
+Ready to create in CapCut:
+1. Open CapCut
+2. New Project → Vertical (9:16)
+3. Paste script (if using text-to-video)
+4. OR paste CapCut AI prompt
+5. Generate
+6. Review & tweak
+7. Export 1080p
+8. Upload to YouTube Shorts
+

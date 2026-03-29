@@ -1,0 +1,47 @@
+# AI Automation Builder - Recommended Cron Schedule
+# Add these to crontab: crontab -e
+
+# ============================================================================
+# CONTENT RESEARCH (Automated)
+# ============================================================================
+
+# Daily research (09:00 UTC) - RSS feeds, basic scraping
+0 9 * * * cd /root/.openclaw/workspace/newsletter-ai-automation && export OPENROUTER_API_KEY="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" && python3 scripts/daily-research.py >> logs/research.log 2>&1
+
+# Real-time monitoring (every 2 hours) - Breaking news, HN, GitHub
+0 */2 * * * cd /root/.openclaw/workspace/newsletter-ai-automation && export OPENROUTER_API_KEY="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" && export TELEGRAM_BOT_TOKEN="8318289285:AAGFvnbGoLh0uXO9Rcz9N23iW25DEYh-BBU" && export TELEGRAM_CHAT_ID="8116230130" && python3 scripts/realtime-research.py >> logs/realtime.log 2>&1
+
+# ============================================================================
+# NEWSLETTER GENERATION (Automated)
+# ============================================================================
+
+# Weekly generation (Wednesday 10:00 UTC) - Creates draft
+0 10 * * 3 cd /root/.openclaw/workspace/newsletter-ai-automation && export OPENROUTER_API_KEY="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" && export TELEGRAM_BOT_TOKEN="8318289285:AAGFvnbGoLh0uXO9Rcz9N23iW25DEYh-BBU" && export TELEGRAM_CHAT_ID="8116230130" && python3 scripts/weekly-generate.py >> logs/generate.log 2>&1
+
+# ============================================================================
+# AUTONOMOUS SYSTEM (Self-Healing)
+# ============================================================================
+
+# Orchestrator health checks (every 3 hours) - Monitors, heals, optimizes
+0 */3 * * * cd /root/.openclaw/workspace/newsletter-ai-automation && export OPENROUTER_API_KEY="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" && export TELEGRAM_BOT_TOKEN="8318289285:AAGFvnbGoLh0uXO9Rcz9N23iW25DEYh-BBU" && export TELEGRAM_CHAT_ID="8116230130" && python3 scripts/autonomous-orchestrator.py --single-check >> logs/orchestrator.log 2>&1
+
+# ============================================================================
+# SCHEDULE SUMMARY
+# ============================================================================
+
+# 09:00 UTC - Daily research (RSS)
+# Every 2 hours - Real-time monitoring (HN, GitHub, breaking news)
+# Every 3 hours - Orchestrator (health, healing, optimization)
+# Wednesday 10:00 - Weekly newsletter generation
+# Manual: Thursday review (30 min), Friday publish (via Beehiiv)
+
+# ============================================================================
+# FREQUENCY BREAKDOWN
+# ============================================================================
+
+# Daily: 12 real-time checks + 1 daily research + 8 orchestrator checks = 21 automated runs
+# Weekly: 1 newsletter generation + 7 days × 21 runs = 148 automated operations
+# Monthly: ~600 automated operations
+
+# Human intervention: 30 min/week review + occasional decision approvals
+# Autonomy level: 95%+

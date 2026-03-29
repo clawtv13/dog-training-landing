@@ -1,0 +1,98 @@
+{
+  "name": "CleverDog Email Capture WORKING",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "cleverdogmethod-email",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "webhook-final",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "cleverdogmethod-working"
+    },
+    {
+      "parameters": {
+        "chatId": "8116230130",
+        "text": "=🎉 NEW EMAIL SIGNUP\n━━━━━━━━━━━━━━━━━━\n📧 EMAIL: {{ $json.body.email }}\n📁 RESOURCE: {{ $json.body.resource }}\n📍 PAGE: {{ $json.body.page }}\n🔖 SOURCE: {{ $json.body.source }}\n🕒 TIME: {{ $now.format('YYYY-MM-DD HH:mm:ss') }} UTC\n━━━━━━━━━━━━━━━━━━",
+        "additionalFields": {}
+      },
+      "id": "telegram-final",
+      "name": "Telegram Notification",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [460, 300],
+      "credentials": {
+        "telegramApi": "telegram-bot-cleverdogmethod"
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://172.17.0.1:9999/save-email",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $json.body.email }}"
+            },
+            {
+              "name": "resource",
+              "value": "={{ $json.body.resource }}"
+            },
+            {
+              "name": "page",
+              "value": "={{ $json.body.page }}"
+            },
+            {
+              "name": "source",
+              "value": "={{ $json.body.source }}"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ $now.toISO() }}"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 5000
+        }
+      },
+      "id": "http-final",
+      "name": "Save to File",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [460, 450],
+      "continueOnFail": true
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Telegram Notification",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Save to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": []
+}

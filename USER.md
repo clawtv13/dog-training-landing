@@ -1,17 +1,22 @@
 # USER.md - About Your Human
 
-_Learn about the person you're helping. Update this as you go._
-
-- **Name:**
-- **What to call them:**
-- **Pronouns:** _(optional)_
-- **Timezone:**
-- **Notes:**
+- **Name:** n0mad
+- **What to call them:** n0mad
+- **Timezone:** España (UTC+1)
 
 ## Context
 
-_(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)_
+Builder running multiple automated content businesses:
+- Mind Crimes (launching)
+- CleverDogMethod (live)
+- VitaliZen, Health Hacks, MONEYSTACK
+
+Communication style: Direct, no fluff. Values efficiency and working systems.
+
+## API Keys & Credentials
+
+- **GitHub Token:** `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`
 
 ---
 
-The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
+_Iré aprendiendo más y actualizando esto._

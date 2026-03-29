@@ -1,0 +1,73 @@
+# CleverDogMethod Short - Why Your Dog Pulls You to Every Dog They See
+Generated: 2026-03-29 01:24 UTC
+
+============================================================
+SCRIPT (Copy to CapCut script input)
+============================================================
+
+HOOK: "Your dog sees another dog and suddenly you're water skiing down the sidewalk? Here's why."
+
+WHY: "Your dog thinks meeting every dog equals party time. But the pulling actually makes them MORE excited because tension creates arousal."
+
+STEP 1: "The second your dog spots another dog, STOP walking. Don't move until the leash goes slack."
+
+STEP 2: "When they look back at you - even for a split second - say 'yes' and take ONE step forward."
+
+STEP 3: "Repeat this stop-and-go until you pass the other dog. No pulling = forward movement. Pulling = statue mode."
+
+RESULT: "In just a few walks, your dog learns that calm behavior gets them closer to what they want, not dragging you like a sled dog."
+
+CTA: "Follow for more dog training hacks that actually work! Which tip should I cover next?"
+
+============================================================
+CAPCUT AI PROMPT (Copy to CapCut AI generator)
+============================================================
+
+Create a 60-second vertical video (9:16) for dog training education. Open with dynamic close-up of dog owner being dragged sideways by excited dog on leash toward another dog, camera shaking to emphasize chaos. Bold white text overlay with black outline: Water skiing down the sidewalk? Here's why 🐕 with playful font. Quick cut to medium shot of hyperactive dog straining against leash, then zoom to dog's excited face. Text overlay: Every dog = PARTY TIME! 
+
+Transition to professional trainer in calm outdoor setting. Medium shot showing trainer explaining with hand gestures, text overlay: Tension = MORE excitement in red warning font. Cut to split-screen comparison: left side showing pulling dog, right side showing calm walking.
+
+Step-by-step demonstration sequence: Close-up of trainer's feet stopping immediately when dog pulls. Text overlay: STEP 1: STOP = No forward movement in large numbered format. Medium shot of dog looking back confused, trainer saying yes with enthusiastic gesture. Text overlay: STEP 2: Eye contact = YES + one step with checkmark animation. Wide shot showing stop-and-go pattern past another dog. Text overlay: STEP 3: Repeat until success with progress arrows.
+
+End with satisfying before/after montage: chaotic pulling vs peaceful walking side-by-side. Upbeat, motivational background music throughout. Professional yet approachable tone. Final frame: Follow @DogTrainingPro for more hacks! 🎯 with engagement stickers.
+
+============================================================
+PRODUCTION NOTES
+============================================================
+
+Video Specs:
+- Duration: 30-45 seconds
+- Format: 9:16 (vertical)
+- Resolution: 1080x1920
+- FPS: 30
+- Music: Upbeat, subtle (royalty-free from CapCut library)
+
+Text Overlay Style:
+- Font: Bold, sans-serif (Montserrat or similar)
+- Color: White with dark outline
+- Size: Large (readable on mobile)
+- Position: Center or lower third
+- Animation: Pop-in or slide-in
+
+Pacing:
+- Quick cuts (3-5 seconds per scene)
+- Match voiceover timing
+- Sync text with key words
+
+CTA:
+- End screen: "CleverDogMethod.com"
+- Duration: 3-5 seconds
+- Logo + website URL
+
+============================================================
+
+Ready to create in CapCut:
+1. Open CapCut
+2. New Project → Vertical (9:16)
+3. Paste script (if using text-to-video)
+4. OR paste CapCut AI prompt
+5. Generate
+6. Review & tweak
+7. Export 1080p
+8. Upload to YouTube Shorts
+

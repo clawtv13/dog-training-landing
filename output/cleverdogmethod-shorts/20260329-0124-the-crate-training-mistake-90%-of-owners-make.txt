@@ -1,0 +1,67 @@
+# CleverDogMethod Short - The Crate Training Mistake 90% of Owners Make
+Generated: 2026-03-29 01:24 UTC
+
+============================================================
+SCRIPT (Copy to CapCut script input)
+============================================================
+
+HOOK: "Your dog HATES their crate because you're making the same mistake 90% of owners make!"
+
+WHY: "You're using the crate as punishment when your dog misbehaves. This makes them think crate equals bad things happening."
+
+STEP 1: "Stop sending your dog to their crate when they're in trouble. Never use it for timeouts."
+
+STEP 2: "Instead, feed your dog their meals inside the crate with the door open. Let them choose to go in."
+
+STEP 3: "Toss high-value treats randomly into the crate throughout the day, even when you're just hanging out."
+
+RESULT: "Within a week, your dog will start going to their crate on their own because they'll associate it with amazing things, not punishment!"
+
+CTA: "Follow me for more dog training hacks that actually work!"
+
+============================================================
+CAPCUT AI PROMPT (Copy to CapCut AI generator)
+============================================================
+
+Create a 60-second vertical video (9:16) for dog training education. Open with dramatic close-up of anxious dog cowering in crate while owner points sternly, quick zoom on dog's worried face, bold red text overlay Your dog HATES their crate because you're making the same mistake 90% of owners make! in impact font with white outline. Cut to medium shot of frustrated owner using crate as punishment timeout, red X animation overlay. Transition with swipe effect to explanation scene showing split-screen: left side owner sending dog to crate angrily (labeled WRONG in red), right side happy dog eating in open crate (labeled RIGHT in green). Step 1: Close-up of owner's hands NOT pointing to crate during misbehavior, text STEP 1: Stop using crate as punishment in bold yellow. Step 2: Overhead shot of dog choosing to enter open crate for mealtime, gentle push-in camera movement, text STEP 2: Feed meals in open crate. Step 3: Side angle showing owner casually tossing treats into crate, dog happily following, text STEP 3: Random high-value treats throughout day. Result scene: Time-lapse style showing dog voluntarily entering crate multiple times, excited tail wagging, green checkmark animation, text Within 1 week = Crate Success! Professional upbeat background music throughout. End with medium shot of smiling trainer, text overlay Follow @DogTrainingPro for more hacks! Professional yet warm tone, smooth transitions between scenes.
+
+============================================================
+PRODUCTION NOTES
+============================================================
+
+Video Specs:
+- Duration: 30-45 seconds
+- Format: 9:16 (vertical)
+- Resolution: 1080x1920
+- FPS: 30
+- Music: Upbeat, subtle (royalty-free from CapCut library)
+
+Text Overlay Style:
+- Font: Bold, sans-serif (Montserrat or similar)
+- Color: White with dark outline
+- Size: Large (readable on mobile)
+- Position: Center or lower third
+- Animation: Pop-in or slide-in
+
+Pacing:
+- Quick cuts (3-5 seconds per scene)
+- Match voiceover timing
+- Sync text with key words
+
+CTA:
+- End screen: "CleverDogMethod.com"
+- Duration: 3-5 seconds
+- Logo + website URL
+
+============================================================
+
+Ready to create in CapCut:
+1. Open CapCut
+2. New Project → Vertical (9:16)
+3. Paste script (if using text-to-video)
+4. OR paste CapCut AI prompt
+5. Generate
+6. Review & tweak
+7. Export 1080p
+8. Upload to YouTube Shorts
+

@@ -1,0 +1,20 @@
+{
+  "product_name": "Cooling Relief Cap",
+  "description": "Beat the heat and find your cool.\n\nThe Cooling Relief Cap is engineered for ultimate comfort and rapid cooling. Whether you're battling a migraine, recovering from a workout, or simply seeking respite on a sweltering day, this cap is your personal oasis of chill.\n\n**Key Features:**\n\n*   **Advanced Cooling Technology:** Utilizes a proprietary gel-pack system that stays colder for longer, providing sustained relief.\n*   **Ergonomic, Comfortable Fit:** Designed with adjustable straps and premium materials for a secure, pressure-free fit. One size truly fits all.\n*   **Versatile Application:** Perfect for headache relief, post-exercise recovery, fever reduction, or general summer comfort.\n*   **Durable & Reusable:** Easily rechargeable in the freezer, ready whenever you need it. Made with high-quality, non-toxic materials.\n*   **Sleek, Discreet Design:** Wear it at home, during travel, or even discreetly under a hat for on-the-go relief.\n\n**How it Works:**\nSimply freeze the internal gel pack for 2-3 hours. Once chilled, insert it into the cap and wear it. The cap's design ensures even distribution of cool therapy to key pressure points, promoting fast relief and relaxation.\n\n**Stay cool. Feel better. Live cooler.**\n\n*Care Instructions: Hand wash cap. Remove gel pack before washing. Ensure gel pack is dry before refreezing.*",
+  "price": "29.99",
+  "currency": "USD",
+  "variants": [
+    {"option_name": "Color", "option_value": "Blue", "sku": "CRC-BLU-01"},
+    {"option_name": "Color", "option_value": "Grey", "sku": "CRC-GRY-01"},
+    {"option_name": "Color", "option_value": "Black", "sku": "CRC-BLK-01"}
+  ],
+  "images": [
+    {"src": "/uploaded_images/cooling-relief-cap/main.jpg", "alt_text": "Cooling Relief Cap - Main Product Image"},
+    {"src": "/uploaded_images/cooling-relief-cap/lifestyle1.jpg", "alt_text": "Cooling Relief Cap - Lifestyle Image 1"},
+    {"src": "/uploaded_images/cooling-relief-cap/lifestyle2.jpg", "alt_text": "Cooling Relief Cap - Lifestyle Image 2"},
+    {"src": "/uploaded_images/cooling-relief-cap/feature.jpg", "alt_text": "Cooling Relief Cap - Feature Highlight"},
+    {"src": "/uploaded_images/cooling-relief-cap/packaging.jpg", "alt_text": "Cooling Relief Cap - Packaging"}
+  ],
+  "seo_title": "Cooling Relief Cap - Instant Headache & Migraine Relief",
+  "seo_description": "Beat the heat with the Cooling Relief Cap. Advanced cooling technology for headache relief, workout recovery, and all-day comfort. Reusable, comfortable, and discreet."
+}

@@ -1,0 +1,196 @@
+{
+  "name": "Video Distribution System",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute",
+              "minute": 5
+            }
+          ]
+        },
+        "resource": "file",
+        "event": "fileCreated",
+        "path": "",
+        "recursive": true,
+        "simple": true
+      },
+      "name": "Dropbox Trigger",
+      "type": "n8n-nodes-base.dropboxTrigger",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "auto"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract channel from Dropbox path\nconst file = $input.item.json;\nconst path = file.path_display;\n\n// Determine channel\nlet channel = \"UNKNOWN\";\nif (path.includes(\"/Health-Hacks/\") || path.includes(\"/health-hacks/\")) {\n  channel = \"HEALTH_HACKS\";\n} else if (path.includes(\"/MONEYSTACK/\") || path.includes(\"/moneystack/\")) {\n  channel = \"MONEYSTACK\";\n}\n\n// Only process files in /queue/\nif (!path.includes(\"/queue/\")) {\n  throw new Error(\"File not in queue folder - skipping\");\n}\n\n// Only process video files\nconst ext = path.split('.').pop().toLowerCase();\nif (!['mp4', 'mov', 'avi'].includes(ext)) {\n  throw new Error(\"Not a video file - skipping\");\n}\n\n// Generate video ID\nconst timestamp = new Date().toISOString().split('T')[0].replace(/-/g, '');\nconst randomId = Math.random().toString(36).substring(2, 6);\nconst videoId = `${channel.toLowerCase()}-${timestamp}-${randomId}`;\n\nconst channelContexts = {\n  \"HEALTH_HACKS\": {\n    \"niche\": \"Pain relief, energy, sleep, stress, gut health\",\n    \"audience\": \"Office workers, health-conscious 25-45\",\n    \"tone\": \"Science-backed, practical, no BS\",\n    \"products\": [\"calmorarelief.com\"]\n  },\n  \"MONEYSTACK\": {\n    \"niche\": \"Money psychology, savings, financial health\",\n    \"audience\": \"Young professionals 18-35\",\n    \"tone\": \"Real talk, relatable, honest\",\n    \"products\": []\n  }\n};\n\nreturn {\n  videoId: videoId,\n  channel: channel,\n  channelContext: channelContexts[channel],\n  originalFilename: file.name,\n  dropboxPath: path,\n  fileSize: file.size,\n  dropboxFileId: file.id,\n  detectedAt: new Date().toISOString()\n};"
+      },
+      "name": "Extract Channel",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "path": "={{ $json.dropboxPath }}",
+        "options": {
+          "binaryProperty": "videoData"
+        }
+      },
+      "name": "Download Video",
+      "type": "n8n-nodes-base.dropbox",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "import subprocess\nimport json\n\nvideo_path = \"/tmp/video_temp.mp4\"\n\n# Save binary to file\nbinary_data = items[0].binary[\"videoData\"]\nwith open(video_path, \"wb\") as f:\n    f.write(binary_data)\n\n# Get duration\nresult = subprocess.run([\n    \"ffprobe\", \"-v\", \"error\",\n    \"-show_entries\", \"format=duration\",\n    \"-of\", \"default=noprint_wrappers=1:nokey=1\",\n    video_path\n], capture_output=True, text=True)\n\nduration = float(result.stdout.strip())\n\n# Get resolution\nresult = subprocess.run([\n    \"ffprobe\", \"-v\", \"error\",\n    \"-select_streams\", \"v:0\",\n    \"-show_entries\", \"stream=width,height\",\n    \"-of\", \"json\",\n    video_path\n], capture_output=True, text=True)\n\nmetadata = json.loads(result.stdout)\nwidth = metadata[\"streams\"][0][\"width\"]\nheight = metadata[\"streams\"][0][\"height\"]\n\nreturn [{\n    \"json\": {\n        \"videoPath\": video_path,\n        \"duration\": round(duration, 1),\n        \"resolution\": f\"{width}x{height}\",\n        \"width\": width,\n        \"height\": height,\n        \"aspectRatio\": \"vertical\" if height > width else \"horizontal\"\n    }\n}]"
+      },
+      "name": "Get Video Metadata",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "import sys\nsys.path.append('/workspace/scripts/video-distribution')\nfrom transcribe import transcribe_video\n\nvideo_path = items[0].json[\"videoPath\"]\ntranscript = transcribe_video(video_path)\n\nreturn [{\"json\": {\"transcription\": transcript}}]"
+      },
+      "name": "Transcribe Audio",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "import sys\nimport json\nsys.path.append('/workspace/scripts/video-distribution')\nfrom generate_content import generate_content\n\nchannel = items[0].json[\"channel\"]\ntranscript = items[0].json[\"transcription\"]\nduration = items[0].json[\"duration\"]\n\ncontent = generate_content(channel, transcript, duration)\n\nreturn [{\n    \"json\": {\n        \"tiktokTitle\": content[\"tiktok\"][\"title\"],\n        \"tiktokCaption\": content[\"tiktok\"][\"caption\"],\n        \"tiktokHashtags\": content[\"tiktok\"][\"hashtags\"],\n        \"instagramTitle\": content[\"instagram\"][\"title\"],\n        \"instagramCaption\": content[\"instagram\"][\"caption\"],\n        \"instagramHashtags\": content[\"instagram\"][\"hashtags\"],\n        \"youtubeTitle\": content[\"youtube\"][\"title\"],\n        \"youtubeDescription\": content[\"youtube\"][\"description\"],\n        \"youtubeTags\": content[\"youtube\"][\"tags\"]\n    }\n}]"
+      },
+      "name": "Generate Content",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 300]
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "import sys\nsys.path.append('/workspace/scripts/video-distribution')\nfrom humanize import humanize\n\ntitle = items[0].json[\"tiktokTitle\"]\ncaption = items[0].json[\"tiktokCaption\"]\n\nhumanized_title = humanize(title)\nhumanized_caption = humanize(caption)\n\nreturn [{\n    \"json\": {\n        \"tiktokTitle\": humanized_title,\n        \"tiktokCaption\": humanized_caption,\n        \"tiktokHashtags\": items[0].json[\"tiktokHashtags\"]\n    }\n}]"
+      },
+      "name": "Humanize TikTok",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1450, 200]
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "import sys\nsys.path.append('/workspace/scripts/video-distribution')\nfrom humanize import humanize\n\ntitle = items[0].json[\"instagramTitle\"]\ncaption = items[0].json[\"instagramCaption\"]\n\nhumanized_title = humanize(title)\nhumanized_caption = humanize(caption)\n\nreturn [{\n    \"json\": {\n        \"instagramTitle\": humanized_title,\n        \"instagramCaption\": humanized_caption,\n        \"instagramHashtags\": items[0].json[\"instagramHashtags\"]\n    }\n}]"
+      },
+      "name": "Humanize Instagram",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1450, 300]
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "import sys\nsys.path.append('/workspace/scripts/video-distribution')\nfrom humanize import humanize\n\ntitle = items[0].json[\"youtubeTitle\"]\ndescription = items[0].json[\"youtubeDescription\"]\n\nhumanized_title = humanize(title)\nhumanized_description = humanize(description)\n\nreturn [{\n    \"json\": {\n        \"youtubeTitle\": humanized_title,\n        \"youtubeDescription\": humanized_description,\n        \"youtubeTags\": items[0].json[\"youtubeTags\"]\n    }\n}]"
+      },
+      "name": "Humanize YouTube",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1450, 400]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "multiplex"
+      },
+      "name": "Merge Humanized",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [1650, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build complete metadata JSON\nconst videoId = $node[\"Extract Channel\"].json.videoId;\nconst channel = $node[\"Extract Channel\"].json.channel;\nconst transcript = $node[\"Transcribe Audio\"].json.transcription;\nconst duration = $node[\"Get Video Metadata\"].json.duration;\nconst resolution = $node[\"Get Video Metadata\"].json.resolution;\nconst fileSize = $node[\"Extract Channel\"].json.fileSize;\n\n// Get humanized content\nconst tiktok = $node[\"Humanize TikTok\"].json;\nconst instagram = $node[\"Humanize Instagram\"].json;\nconst youtube = $node[\"Humanize YouTube\"].json;\n\nconst metadata = {\n  video_id: videoId,\n  channel: channel,\n  original_filename: $node[\"Extract Channel\"].json.originalFilename,\n  dropbox_path: $node[\"Extract Channel\"].json.dropboxPath,\n  \n  video_info: {\n    duration: duration,\n    resolution: resolution,\n    file_size_mb: Math.round(fileSize / 1048576 * 10) / 10\n  },\n  \n  transcription: transcript,\n  \n  content: {\n    tiktok: {\n      title: tiktok.tiktokTitle,\n      caption: tiktok.tiktokCaption,\n      hashtags: tiktok.tiktokHashtags\n    },\n    instagram: {\n      title: instagram.instagramTitle,\n      caption: instagram.instagramCaption,\n      hashtags: instagram.instagramHashtags\n    },\n    youtube: {\n      title: youtube.youtubeTitle,\n      description: youtube.youtubeDescription,\n      tags: youtube.youtubeTags\n    }\n  },\n  \n  status: \"ready_to_upload\",\n  created_at: new Date().toISOString()\n};\n\nreturn { json: metadata };"
+      },
+      "name": "Build Metadata",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1850, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Save metadata to file\nconst fs = require('fs');\nconst path = require('path');\n\nconst metadata = $input.item.json;\nconst videoId = metadata.video_id;\nconst outputDir = '/workspace/.state/videos';\n\n// Create directory if needed\nif (!fs.existsSync(outputDir)) {\n  fs.mkdirSync(outputDir, { recursive: true });\n}\n\nconst outputPath = path.join(outputDir, `${videoId}.json`);\nfs.writeFileSync(outputPath, JSON.stringify(metadata, null, 2));\n\nreturn {\n  json: {\n    ...metadata,\n    metadata_saved: outputPath\n  }\n};"
+      },
+      "name": "Save Metadata",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2050, 300]
+    },
+    {
+      "parameters": {
+        "url": "=https://api.telegram.org/bot{{ $env.TELEGRAM_BOT_TOKEN }}/sendMessage",
+        "method": "POST",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"chat_id\": \"8116230130\",\n  \"text\": `🎬 Video Content Generated!\\n\\n📹 \\`${$json.video_id}\\`\\n\\n📱 **TikTok:**\\n${$json.content.tiktok.title}\\n${$json.content.tiktok.caption}\\n\\n📸 **Instagram:**\\n${$json.content.instagram.title}\\n${$json.content.instagram.caption}\\n\\n🎥 **YouTube:**\\n${$json.content.youtube.title}\\n${$json.content.youtube.description}\\n\\n⏱ Duration: ${$json.video_info.duration}s\\n📊 Channel: ${$json.channel}\\n\\n✅ Ready to upload (add API keys to enable auto-upload)\\n💾 Metadata: .state/videos/${$json.video_id}.json`,\n  \"parse_mode\": \"Markdown\"\n} }}"
+      },
+      "name": "Telegram Notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [2250, 300]
+    }
+  ],
+  "connections": {
+    "Dropbox Trigger": {
+      "main": [[{ "node": "Extract Channel", "type": "main", "index": 0 }]]
+    },
+    "Extract Channel": {
+      "main": [[{ "node": "Download Video", "type": "main", "index": 0 }]]
+    },
+    "Download Video": {
+      "main": [[{ "node": "Get Video Metadata", "type": "main", "index": 0 }]]
+    },
+    "Get Video Metadata": {
+      "main": [[{ "node": "Transcribe Audio", "type": "main", "index": 0 }]]
+    },
+    "Transcribe Audio": {
+      "main": [[{ "node": "Generate Content", "type": "main", "index": 0 }]]
+    },
+    "Generate Content": {
+      "main": [
+        [
+          { "node": "Humanize TikTok", "type": "main", "index": 0 },
+          { "node": "Humanize Instagram", "type": "main", "index": 0 },
+          { "node": "Humanize YouTube", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Humanize TikTok": {
+      "main": [[{ "node": "Merge Humanized", "type": "main", "index": 0 }]]
+    },
+    "Humanize Instagram": {
+      "main": [[{ "node": "Merge Humanized", "type": "main", "index": 1 }]]
+    },
+    "Humanize YouTube": {
+      "main": [[{ "node": "Merge Humanized", "type": "main", "index": 2 }]]
+    },
+    "Merge Humanized": {
+      "main": [[{ "node": "Build Metadata", "type": "main", "index": 0 }]]
+    },
+    "Build Metadata": {
+      "main": [[{ "node": "Save Metadata", "type": "main", "index": 0 }]]
+    },
+    "Save Metadata": {
+      "main": [[{ "node": "Telegram Notification", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

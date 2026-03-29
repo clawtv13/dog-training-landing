@@ -1,0 +1,111 @@
+{
+  "name": "Email Capture CleverDog",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "signup",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "new-webhook-001",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "8116230130",
+        "text": "=🎉 NUEVO EMAIL\n\n📧 {{ $json.body.email }}\n📁 {{ $json.body.resource }}\n📍 {{ $json.body.page }}\n━━━━━━━━━━━━━━━",
+        "additionalFields": {}
+      },
+      "id": "new-telegram-001",
+      "name": "Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        450,
+        250
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "1",
+          "name": "Telegram Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://172.17.0.1:9999/save-email",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $json.body.email }}"
+            },
+            {
+              "name": "resource",
+              "value": "={{ $json.body.resource }}"
+            },
+            {
+              "name": "page",
+              "value": "={{ $json.body.page }}"
+            },
+            {
+              "name": "source",
+              "value": "={{ $json.body.source }}"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ $now.toISO() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "new-http-001",
+      "name": "Save",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        450,
+        350
+      ],
+      "continueOnFail": true
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Save",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2026-03-26T15:33:00.000Z",
+  "versionId": "1"
+}

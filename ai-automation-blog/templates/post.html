@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{EXCERPT}}">
+    <meta name="keywords" content="{{KEYWORDS}}">
+    <title>{{TITLE}} | AI Automation Builder</title>
+    <link rel="canonical" href="{{URL}}">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{EXCERPT}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{URL}}">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITLE}}">
+    <meta name="twitter:description" content="{{EXCERPT}}">
+    
+    <!-- Author metadata -->
+    <meta name="author" content="AI Automation Builder">
+    <meta name="article:published_time" content="{{PUBLISHED_ISO}}">
+    <meta name="article:modified_time" content="{{MODIFIED_ISO}}">
+    <meta name="article:section" content="AI Automation">
+    <meta name="article:tag" content="{{KEYWORDS}}">
+    
+    <!-- JSON-LD Structured Data for Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{TITLE}}",
+      "description": "{{EXCERPT}}",
+      "image": "{{IMAGE_URL}}",
+      "datePublished": "{{PUBLISHED_ISO}}",
+      "dateModified": "{{MODIFIED_ISO}}",
+      "author": {
+        "@type": "Organization",
+        "name": "AI Automation Builder"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "AI Automation Builder",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aiautomationbuilder.com/logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{URL}}"
+      },
+      "keywords": "{{KEYWORDS}}",
+      "articleSection": "AI Automation",
+      "wordCount": "{{WORD_COUNT}}"
+    }
+    </script>
+    
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aiautomationbuilder.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Posts",
+          "item": "https://aiautomationbuilder.com/#posts"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{TITLE}}",
+          "item": "{{URL}}"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- FAQ Schema (if applicable) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": {{FAQ_SCHEMA}}
+    }
+    </script>
+    
+    <!-- Alternate RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="AI Automation Builder RSS Feed" href="https://aiautomationbuilder.com/rss.xml">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.8;
+            color: #1f2937;
+            background: #fff;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .article-meta {
+            color: #6b7280;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f9fafb;
+            border-left: 3px solid #667eea;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+        
+        .author-avatar {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+        
+        .author-info {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            color: #1f2937;
+            font-size: 1rem;
+        }
+        
+        .author-title {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+        
+        article h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #111827;
+            line-height: 1.2;
+        }
+        
+        article h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: #1f2937;
+        }
+        
+        article h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.5rem;
+            color: #374151;
+        }
+        
+        article p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #374151;
+        }
+        
+        article ul, article ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+        
+        article li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        article code {
+            background: #f3f4f6;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.95em;
+            font-family: 'Courier New', monospace;
+        }
+        
+        article pre {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        article pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        article a {
+            color: #667eea;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+        
+        article a:hover {
+            border-bottom-color: #667eea;
+        }
+        
+        .post-footer {
+            margin: 3rem 0 2rem 0;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+            color: #6b7280;
+        }
+        
+        .post-footer small {
+            font-size: 0.9rem;
+        }
+        
+        .newsletter-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .newsletter-cta h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .newsletter-cta form {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 500px;
+            margin: 1.5rem auto 0;
+        }
+        
+        .newsletter-cta input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-cta button {
+            padding: 1rem 2rem;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+        
+        .newsletter-cta button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .related-posts {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e5e7eb;
+        }
+        
+        .related-posts h3 {
+            margin-bottom: 1.5rem;
+            color: #111827;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .related-card {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .related-card h4 {
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+        
+        .related-card a {
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            article h1 {
+                font-size: 2rem;
+            }
+            
+            .newsletter-cta form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/">🤖 AI Automation Builder</a>
+    </header>
+    
+    <nav style="max-width: 800px; margin: 0 auto; padding: 2rem 2rem 0 2rem;">
+        <ol style="display: flex; list-style: none; gap: 0.5rem; font-size: 0.9rem; color: #6b7280;">
+            <li><a href="/" style="color: #667eea; text-decoration: none;">Home</a></li>
+            <li>→</li>
+            <li><a href="/#posts" style="color: #667eea; text-decoration: none;">Posts</a></li>
+            <li>→</li>
+            <li style="color: #1f2937;">{{TITLE_SHORT}}</li>
+        </ol>
+    </nav>
+    
+    <article>
+        <div class="article-meta">
+            {{DATE}} • {{READ_TIME}} min read • {{HN_SCORE}} HN points
+        </div>
+        
+        <h1>{{TITLE}}</h1>
+        
+        <div class="author-card">
+            <div class="author-avatar">{{AUTHOR_AVATAR}}</div>
+            <div class="author-info">
+                <div class="author-name">{{AUTHOR_NAME}}</div>
+                <div class="author-title">{{AUTHOR_TITLE}}</div>
+            </div>
+        </div>
+        
+        {{CONTENT}}
+        
+        <div class="post-footer">
+            <p><small><strong>Last updated:</strong> {{DATE}} • Originally spotted on Hacker News with {{HN_SCORE}} points</small></p>
+        </div>
+        
+        <div class="newsletter-cta">
+            <h3>📬 Get More Like This</h3>
+            <p>Weekly AI automation tools, workflows, and breaking news.<br>Curated for solopreneurs who build.</p>
+            <form action="https://aiautomationbuilder.beehiiv.com/subscribe" method="post">
+                <input type="email" name="email" placeholder="your@email.com" required>
+                <button type="submit">Subscribe Free</button>
+            </form>
+        </div>
+        
+        <div class="related-posts" id="related-posts">
+            <!-- Related posts loaded dynamically -->
+        </div>
+    </article>
+    
+    <footer>
+        <p><strong>AI Automation Builder</strong></p>
+        <p style="margin: 1rem 0; opacity: 0.8;">Tools and workflows for solopreneurs</p>
+        <p>
+            <a href="/">Home</a> •
+            <a href="https://aiautomationbuilder.beehiiv.com">Newsletter</a> •
+            <a href="https://github.com/yourusername">GitHub</a> •
+            <a href="https://twitter.com/yourusername">Twitter</a>
+        </p>
+    </footer>
+    
+    <script>
+        // Load related posts
+        fetch('/posts/index.json')
+            .then(res => res.json())
+            .then(posts => {
+                const currentUrl = window.location.pathname;
+                const related = posts
+                    .filter(p => p.url !== currentUrl)
+                    .slice(0, 3);
+                
+                if (related.length > 0) {
+                    const container = document.getElementById('related-posts');
+                    const html = `
+                        <h3>Related Articles</h3>
+                        <div class="related-grid">
+                            ${related.map(post => `
+                                <div class="related-card">
+                                    <h4><a href="${post.url}">${post.title}</a></h4>
+                                    <p style="font-size: 0.9rem; color: #6b7280;">${post.excerpt.substring(0, 100)}...</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    container.innerHTML = html;
+                }
+            });
+    </script>
+</body>
+</html>

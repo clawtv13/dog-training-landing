@@ -1,0 +1,67 @@
+# CleverDogMethod Short - Why Your Dog Jumps on Guests (And How to Fix It)
+Generated: 2026-03-29 01:22 UTC
+
+============================================================
+SCRIPT (Copy to CapCut script input)
+============================================================
+
+HOOK: "Your dog jumps on every single guest and you're embarrassed every time someone comes over, right?"
+
+WHY: "Here's the thing - your dog isn't being rude, they're just super excited and wants attention. But guests accidentally reward this by giving them exactly what they want."
+
+STEP 1: "Before your guest walks in, put your dog on a leash and hold it short so they can't jump."
+
+STEP 2: "Tell your guest to completely ignore your dog - no eye contact, no talking, no petting - until all four paws are on the ground."
+
+STEP 3: "The moment your dog sits or stands calmly, then your guest can give attention and treats."
+
+RESULT: "Your dog learns that calm behavior gets them what they want, not jumping. It usually takes just 3-4 practice sessions and you'll have a polite pup who actually impresses your guests instead of embarrassing you."
+
+CTA: "Follow for more dog training hacks that actually work!"
+
+============================================================
+CAPCUT AI PROMPT (Copy to CapCut AI generator)
+============================================================
+
+Create a 60-second vertical video (9:16) for dog training content. Open with close-up of embarrassed dog owner as large dog jumps on arriving guest at front door, shaky handheld camera to show chaos, bold white text overlay Your Dog Jumps on EVERY Guest? 😳 with black outline. Quick cut to medium shot of friendly dog trainer speaking directly to camera with slight zoom-in, text overlay Here's Why (+ How to Fix It). Transition to split-screen showing excited dog vs. guest accidentally rewarding behavior with attention. Cut to step-by-step demonstration: Step 1 - close-up of hands holding short leash as guest approaches, STEP 1: Short Leash overlay. Step 2 - wide shot showing guest completely ignoring jumping dog with arms crossed, STEP 2: No Attention Until Calm text. Step 3 - low-angle shot of dog sitting calmly as guest rewards with treat, STEP 3: Reward Calm Behavior overlay. Before/after comparison split-screen: chaotic jumping vs. polite sitting dog greeting guest. End with trainer giving thumbs up, text overlay 3-4 Sessions = Polite Pup! Quick cuts between scenes, smooth transitions. Upbeat but professional background music. Confident, helpful tone throughout. Final frame: Follow for More Training Hacks! 🐕 in yellow text with arrow pointing to follow button.
+
+============================================================
+PRODUCTION NOTES
+============================================================
+
+Video Specs:
+- Duration: 30-45 seconds
+- Format: 9:16 (vertical)
+- Resolution: 1080x1920
+- FPS: 30
+- Music: Upbeat, subtle (royalty-free from CapCut library)
+
+Text Overlay Style:
+- Font: Bold, sans-serif (Montserrat or similar)
+- Color: White with dark outline
+- Size: Large (readable on mobile)
+- Position: Center or lower third
+- Animation: Pop-in or slide-in
+
+Pacing:
+- Quick cuts (3-5 seconds per scene)
+- Match voiceover timing
+- Sync text with key words
+
+CTA:
+- End screen: "CleverDogMethod.com"
+- Duration: 3-5 seconds
+- Logo + website URL
+
+============================================================
+
+Ready to create in CapCut:
+1. Open CapCut
+2. New Project → Vertical (9:16)
+3. Paste script (if using text-to-video)
+4. OR paste CapCut AI prompt
+5. Generate
+6. Review & tweak
+7. Export 1080p
+8. Upload to YouTube Shorts
+

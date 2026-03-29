@@ -1,0 +1,25 @@
+{
+  "product_id": 16031302386013,
+  "handle": "cooling-relief-cap",
+  "admin_url": "https://nmd84u-pc.myshopify.com/admin/products/16031302386013",
+  "created_at": "2026-03-26T10:31:06+01:00",
+  "variants": [
+    {
+      "id": 63987678970205,
+      "sku": "CRC-BLU-01",
+      "option1": "Blue"
+    },
+    {
+      "id": 63987679002973,
+      "sku": "CRC-GRY-01",
+      "option1": "Grey"
+    },
+    {
+      "id": 63987679035741,
+      "sku": "CRC-BLK-01",
+      "option1": "Black"
+    }
+  ],
+  "images": [],
+  "collected_in": 703486394717
+}

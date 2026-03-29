@@ -13,8 +13,8 @@ import subprocess
 from pathlib import Path
 from datetime import datetime
 
-BLOG_DIR = Path("/root/.openclaw/workspace/dog-training-landing/blog")
-SITE_DIR = Path("/root/.openclaw/workspace/dog-training-landing")
+BLOG_DIR = Path("/root/.openclaw/workspace/dog-training-landing-clean/blog")
+SITE_DIR = Path("/root/.openclaw/workspace/dog-training-landing-clean")
 SITEMAP = SITE_DIR / "sitemap.xml"
 STATE_FILE = Path("/root/.openclaw/workspace/.state/cleverdogmethod-published.json")
 

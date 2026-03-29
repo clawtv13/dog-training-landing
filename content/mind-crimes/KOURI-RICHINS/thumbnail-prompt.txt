@@ -1,0 +1,88 @@
+# KOURI RICHINS - YOUTUBE THUMBNAIL PROMPT
+
+## PROMPT (Leonardo/Midjourney/DALL-E):
+
+YouTube thumbnail 16:9 format (1920x1080), dramatic true crime aesthetic. Split composition: left side shows children's grief book "Are You with Me?" glowing ominously under single spotlight, right side shows courtroom gavel striking down with dramatic motion blur. Center overlay: large bold text "GRIEF BOOK KILLER" in impact font with yellow outline and red glow effect. Bottom text strip: "GUILTY 2026" in white bold letters on black bar. Dark moody background with crime scene tape texture, high contrast lighting, professional true crime YouTube thumbnail style, attention-grabbing colors (yellow, red, white on dark), film noir aesthetic, 8K ultra sharp detail, clickbait-worthy but tasteful
+
+Negative prompt: cartoon, anime, low quality, blurry, faces, people
+
+---
+
+## ALTERNATIVE PROMPT (Simpler):
+
+YouTube true crime thumbnail 16:9. Dark background with crime scene aesthetic. Center: children's book glowing ominously + courtroom gavel. Bold yellow text "GRIEF BOOK KILLER" with red outline. Bottom banner "CONVICTED 2026" in white. High contrast, dramatic lighting, professional thumbnail design
+
+---
+
+## TEXT OVERLAY OPTIONS (add in Photoshop/Canva):
+
+**Main text (large):**
+- "GRIEF BOOK KILLER"
+- "SHE WROTE A BOOK ABOUT IT"
+- "POISONED HER HUSBAND"
+
+**Sub-text (bottom):**
+- "CONVICTED MARCH 2026"
+- "5X LETHAL DOSE"
+- "LIFE IN PRISON"
+- "GUILTY ON ALL COUNTS"
+
+**Font recommendations:**
+- Main: Impact, Anton, Bebas Neue (bold, high contrast)
+- Sub: Arial Black, Roboto Bold
+- Colors: Yellow/white text, red/black outline, high contrast
+
+---
+
+## DESIGN PRINCIPLES (YouTube Thumbnails):
+
+1. **Text size:** Large enough to read on mobile (40% of screen)
+2. **Colors:** High contrast (yellow on black, white on red)
+3. **Faces:** Avoid showing real faces (legal issues)
+4. **Symbols:** Use evidence, objects, courtroom elements
+5. **Emotion:** Dark, ominous, intriguing
+6. **Clutter:** Minimal - 1-2 elements max + text
+7. **Brand:** Consistent style across all Mind Crimes videos
+
+---
+
+## TEMPLATE STRUCTURE:
+
+```
+[DARK BACKGROUND]
+  ├─ Left: Key evidence item (book, weapon, document)
+  ├─ Right: Justice symbol (gavel, scales, prison bars)
+  ├─ Center: BOLD TITLE TEXT (yellow/white)
+  └─ Bottom: Status banner (CONVICTED / GUILTY / ARRESTED)
+```
+
+---
+
+## CANVA QUICK SETUP:
+
+1. Canvas: 1920x1080 px
+2. Background: Dark gradient (black to dark blue)
+3. Element 1: Book icon (left)
+4. Element 2: Gavel icon (right)
+5. Text 1: "GRIEF BOOK KILLER" (Impact, 120pt, yellow, black outline 8px)
+6. Text 2: "CONVICTED 2026" (Arial Black, 60pt, white on black bar)
+7. Effects: Drop shadow, glow, vignette
+8. Export: PNG, high quality
+
+---
+
+## A/B TESTING VARIATIONS:
+
+**Version A: Evidence Focus**
+- Large book image + "SHE WROTE A BOOK"
+
+**Version B: Verdict Focus**
+- Gavel + "GUILTY VERDICT 2026"
+
+**Version C: Shock Value**
+- Pills + mug + "5X LETHAL DOSE"
+
+**Version D: Mysterious**
+- Silhouette + "THE TRUTH BEHIND THE BOOK"
+
+Test all 4 versions and use YouTube's thumbnail A/B testing feature.

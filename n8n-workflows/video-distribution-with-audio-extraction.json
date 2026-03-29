@@ -1,0 +1,231 @@
+{
+  "name": "Video Distribution with Audio Extraction",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [{"mode": "everyMinute", "minute": 5}]
+        },
+        "triggerOn": "specificFolder",
+        "event": "fileCreated",
+        "options": {"fileTypes": ["videos"]}
+      },
+      "name": "Google Drive Trigger",
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 3,
+      "position": [240, 300],
+      "id": "gdrive-trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "const file = $input.item.json;\nif (!file || !file.name) throw new Error('No file data');\nconst name = file.name.trim().toLowerCase();\nlet channel = \"UNKNOWN\";\nif (name.includes(\"health\")) channel = \"HEALTH_HACKS\";\nelse if (name.includes(\"money\")) channel = \"MONEYSTACK\";\nconst ts = new Date().toISOString().split('T')[0].replace(/-/g,'');\nconst id = Math.random().toString(36).substring(2, 8);\nreturn {videoId: `${channel.toLowerCase()}-${ts}-${id}`, channel, filename: file.name, driveId: file.id, detectedAt: new Date().toISOString()};"
+      },
+      "name": "Extract Channel Info",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300],
+      "id": "extract-channel"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {"__rl": true, "value": "={{ $json.driveId }}", "mode": "id"},
+        "options": {"binaryProperty": "data"}
+      },
+      "name": "Download Video",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [680, 300],
+      "id": "download-video"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.cloudconvert.com/v2/jobs",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization", "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjY2MTg5NDA5ZjBiYjAwYWJlOTM4OWM4ZDJkMDhkNjkyNzliNTVhYjcwZGVkY2JkNDhiMTlmOGU4MDBlYzUyMTEwZmI4MDFlMjBkOWYyZWIiLCJpYXQiOjE3NzQ0NjA1MTguNDI5NjA3LCJuYmYiOjE3NzQ0NjA1MTguNDI5NjA4LCJleHAiOjQ5MzAxMzQxMTguNDIyOTY3LCJzdWIiOiI3NDg1MzkxNCIsInNjb3BlcyI6WyJ1c2VyLnJlYWQiLCJ1c2VyLndyaXRlIiwidGFzay5yZWFkIiwidGFzay53cml0ZSIsIndlYmhvb2sucmVhZCIsIndlYmhvb2sud3JpdGUiLCJwcmVzZXQucmVhZCIsInByZXNldC53cml0ZSJdfQ.frPdYzeO83R31dSky3vWwJzS0CXBpYopBBP16qbHk9RKuGEnMExV2De_ZTx3BzF4e4Pp02madNmhPvIQHIYcBlpX7dG7ua_sPY6Npxhw4ERaPA-fPvhsrfa7qKcKkFH6kfJQ4ErzZ9uJcjMp-n4QfcQN5I5gofqupMXA0JQTChK06-dA_g0BWzgYU9-pGR9Eig7bQebqR2DBGlhk4jlQAvjwtSPPwtDzL4km6SuY7OWsbz4QS87pQNXbd2ZR33qSjGEScn0scQH85rP_mIVGbo40fqr0v7bl7WbK4ekjYE_qhjrfBrkIMrL-MdOuYnG6UpCTQMMsoOOSXnjp9vbX4h8jsGawtRGstZWsALBPZv39L6F0bitLE-lVablwZcD6MNxPWcikKwDI9g3l3J2D6bLI0J_fqMH58JjjkZxiQaD5Gt-mq3HpPtIQ0YxlizUqf6VL9Q_SR_mkn96gPSgPdSUvTZdb61gpFkGPRrOlQYirf2adTx0aQMJjrnPmm5YWFfbGS5zGfZLSpWZBi-Q2951K0YTX5ScQIjW91sJh-I7qs5YnrEH76EeN2RDjqH6PKKP-xLp4PkJ6CYX_vJyfn7NcuxkEt6Ex8d1lvxRnt2YcBS7RBeKix7dC65C-HP32UCC-pENL6uP3qG8cvZFolbJOax77_FdtSbdl0y5GnXQ"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "bodyParametersJson": "={{ {\"tasks\": {\"upload-video\": {\"operation\": \"import/upload\"}, \"convert-audio\": {\"operation\": \"convert\", \"input\": [\"upload-video\"], \"output_format\": \"mp3\", \"audio_codec\": \"mp3\", \"audio_bitrate\": 64, \"audio_channels\": 1, \"audio_frequency\": 16000}, \"export-audio\": {\"operation\": \"export/url\", \"input\": [\"convert-audio\"]}}} }}"
+      },
+      "name": "Create CloudConvert Job",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [900, 300],
+      "id": "cloudconvert-job"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.data.tasks[0].result.form.url }}",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {"parameterType": "formBinaryData", "name": "file", "inputDataFieldName": "data"}
+          ]
+        }
+      },
+      "name": "Upload Video to CloudConvert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1120, 300],
+      "id": "upload-video"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $node['Create CloudConvert Job'].json.data.id ? 'https://api.cloudconvert.com/v2/jobs/' + $node['Create CloudConvert Job'].json.data.id : '' }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization", "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjY2MTg5NDA5ZjBiYjAwYWJlOTM4OWM4ZDJkMDhkNjkyNzliNTVhYjcwZGVkY2JkNDhiMTlmOGU4MDBlYzUyMTEwZmI4MDFlMjBkOWYyZWIiLCJpYXQiOjE3NzQ0NjA1MTguNDI5NjA3LCJuYmYiOjE3NzQ0NjA1MTguNDI5NjA4LCJleHAiOjQ5MzAxMzQxMTguNDIyOTY3LCJzdWIiOiI3NDg1MzkxNCIsInNjb3BlcyI6WyJ1c2VyLnJlYWQiLCJ1c2VyLndyaXRlIiwidGFzay5yZWFkIiwidGFzay53cml0ZSIsIndlYmhvb2sucmVhZCIsIndlYmhvb2sud3JpdGUiLCJwcmVzZXQucmVhZCIsInByZXNldC53cml0ZSJdfQ.frPdYzeO83R31dSky3vWwJzS0CXBpYopBBP16qbHk9RKuGEnMExV2De_ZTx3BzF4e4Pp02madNmhPvIQHIYcBlpX7dG7ua_sPY6Npxhw4ERaPA-fPvhsrfa7qKcKkFH6kfJQ4ErzZ9uJcjMp-n4QfcQN5I5gofqupMXA0JQTChK06-dA_g0BWzgYU9-pGR9Eig7bQebqR2DBGlhk4jlQAvjwtSPPwtDzL4km6SuY7OWsbz4QS87pQNXbd2ZR33qSjGEScn0scQH85rP_mIVGbo40fqr0v7bl7WbK4ekjYE_qhjrfBrkIMrL-MdOuYnG6UpCTQMMsoOOSXnjp9vbX4h8jsGawtRGstZWsALBPZv39L6F0bitLE-lVablwZcD6MNxPWcikKwDI9g3l3J2D6bLI0J_fqMH58JjjkZxiQaD5Gt-mq3HpPtIQ0YxlizUqf6VL9Q_SR_mkn96gPSgPdSUvTZdb61gpFkGPRrOlQYirf2adTx0aQMJjrnPmm5YWFfbGS5zGfZLSpWZBi-Q2951K0YTX5ScQIjW91sJh-I7qs5YnrEH76EeN2RDjqH6PKKP-xLp4PkJ6CYX_vJyfn7NcuxkEt6Ex8d1lvxRnt2YcBS7RBeKix7dC65C-HP32UCC-pENL6uP3qG8cvZFolbJOax77_FdtSbdl0y5GnXQ"}
+          ]
+        },
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "name": "Wait for Conversion",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1340, 300],
+      "id": "wait-conversion"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Wait loop until job is finished\nconst maxAttempts = 30;\nconst waitTime = 3000; // 3 seconds\n\nfor (let i = 0; i < maxAttempts; i++) {\n  const response = await this.helpers.httpRequest({\n    method: 'GET',\n    url: `https://api.cloudconvert.com/v2/jobs/${$node['Create CloudConvert Job'].json.data.id}`,\n    headers: {\n      'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjY2MTg5NDA5ZjBiYjAwYWJlOTM4OWM4ZDJkMDhkNjkyNzliNTVhYjcwZGVkY2JkNDhiMTlmOGU4MDBlYzUyMTEwZmI4MDFlMjBkOWYyZWIiLCJpYXQiOjE3NzQ0NjA1MTguNDI5NjA3LCJuYmYiOjE3NzQ0NjA1MTguNDI5NjA4LCJleHAiOjQ5MzAxMzQxMTguNDIyOTY3LCJzdWIiOiI3NDg1MzkxNCIsInNjb3BlcyI6WyJ1c2VyLnJlYWQiLCJ1c2VyLndyaXRlIiwidGFzay5yZWFkIiwidGFzay53cml0ZSIsIndlYmhvb2sucmVhZCIsIndlYmhvb2sud3JpdGUiLCJwcmVzZXQucmVhZCIsInByZXNldC53cml0ZSJdfQ.frPdYzeO83R31dSky3vWwJzS0CXBpYopBBP16qbHk9RKuGEnMExV2De_ZTx3BzF4e4Pp02madNmhPvIQHIYcBlpX7dG7ua_sPY6Npxhw4ERaPA-fPvhsrfa7qKcKkFH6kfJQ4ErzZ9uJcjMp-n4QfcQN5I5gofqupMXA0JQTChK06-dA_g0BWzgYU9-pGR9Eig7bQebqR2DBGlhk4jlQAvjwtSPPwtDzL4km6SuY7OWsbz4QS87pQNXbd2ZR33qSjGEScn0scQH85rP_mIVGbo40fqr0v7bl7WbK4ekjYE_qhjrfBrkIMrL-MdOuYnG6UpCTQMMsoOOSXnjp9vbX4h8jsGawtRGstZWsALBPZv39L6F0bitLE-lVablwZcD6MNxPWcikKwDI9g3l3J2D6bLI0J_fqMH58JjjkZxiQaD5Gt-mq3HpPtIQ0YxlizUqf6VL9Q_SR_mkn96gPSgPdSUvTZdb61gpFkGPRrOlQYirf2adTx0aQMJjrnPmm5YWFfbGS5zGfZLSpWZBi-Q2951K0YTX5ScQIjW91sJh-I7qs5YnrEH76EeN2RDjqH6PKKP-xLp4PkJ6CYX_vJyfn7NcuxkEt6Ex8d1lvxRnt2YcBS7RBeKix7dC65C-HP32UCC-pENL6uP3qG8cvZFolbJOax77_FdtSbdl0y5GnXQ'\n    }\n  });\n  \n  if (response.data.status === 'finished') {\n    // Find export task\n    const exportTask = response.data.tasks.find(t => t.name === 'export-audio');\n    if (exportTask && exportTask.result) {\n      return { audioUrl: exportTask.result.files[0].url };\n    }\n  }\n  \n  if (response.data.status === 'error') {\n    throw new Error('CloudConvert job failed: ' + JSON.stringify(response.data));\n  }\n  \n  // Wait before next check\n  await new Promise(resolve => setTimeout(resolve, waitTime));\n}\n\nthrow new Error('CloudConvert job timeout after 90 seconds');"
+      },
+      "name": "Poll Until Complete",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1560, 300],
+      "id": "poll-complete"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $json.audioUrl }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "name": "Download Audio",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1780, 300],
+      "id": "download-audio"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/audio/transcriptions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {"parameterType": "formBinaryData", "name": "file", "inputDataFieldName": "data"},
+            {"name": "model", "value": "whisper-1"},
+            {"name": "response_format", "value": "json"}
+          ]
+        },
+        "options": {"timeout": 120000}
+      },
+      "name": "Whisper Transcribe",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2000, 300],
+      "credentials": {"httpHeaderAuth": {"id": "IOM5aJbZXVSocHRK", "name": "OpenAI API"}},
+      "id": "whisper-transcribe"
+    },
+    {
+      "parameters": {
+        "jsCode": "const channel = $node['Extract Channel Info'].json.channel;\nconst transcript = $json.text;\nconst prompt = `You are a social media strategist. Generate unique titles/descriptions for this video.\\n\\nCHANNEL: ${channel}\\nTRANSCRIPT: ${transcript}\\n\\nGenerate platform-specific content:\\n\\nTIKTOK: Viral hook, casual tone, emoji-rich\\nINSTAGRAM: Aspirational story, relatable\\nYOUTUBE: SEO-optimized, educational\\n\\nOutput ONLY valid JSON: {\"tiktok\":{\"title\":\"\",\"caption\":\"\",\"hashtags\":[]},\"instagram\":{\"title\":\"\",\"caption\":\"\",\"hashtags\":[]},\"youtube\":{\"title\":\"\",\"description\":\"\",\"tags\":[]}}`;\nreturn {prompt, channel, videoId: $node['Extract Channel Info'].json.videoId};"
+      },
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2220, 300],
+      "id": "build-prompt"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Content-Type", "value": "application/json"}]},
+        "sendBody": true,
+        "bodyParametersJson": "={{ {\"model\": \"anthropic/claude-3.5-sonnet\", \"messages\": [{\"role\": \"user\", \"content\": $json.prompt}], \"max_tokens\": 2000, \"temperature\": 0.7} }}",
+        "options": {"timeout": 60000}
+      },
+      "name": "Claude Generate",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2440, 300],
+      "credentials": {"httpHeaderAuth": {"id": "3gSZJR3pD1a9Obmb", "name": "OpenRouter API"}},
+      "id": "claude-generate"
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $json.choices[0].message.content;\nlet content;\ntry {content = JSON.parse(response);} catch {content = JSON.parse(response.replace(/```json\\n?/g,'').replace(/```/g,'').trim());}\nreturn {tiktok: content.tiktok, instagram: content.instagram, youtube: content.youtube};"
+      },
+      "name": "Parse Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2660, 300],
+      "id": "parse-response"
+    },
+    {
+      "parameters": {
+        "jsCode": "const m = {video_id: $node['Extract Channel Info'].json.videoId, channel: $node['Extract Channel Info'].json.channel, filename: $node['Extract Channel Info'].json.filename, transcription: $node['Whisper Transcribe'].json.text, content: {tiktok: $json.tiktok, instagram: $json.instagram, youtube: $json.youtube}, created_at: new Date().toISOString()}; const fs = require('fs'), d = '/workspace/.state/videos'; if (!fs.existsSync(d)) fs.mkdirSync(d, {recursive: true}); fs.writeFileSync(`${d}/${m.video_id}.json`, JSON.stringify(m, null, 2)); return {json: m};"
+      },
+      "name": "Save Metadata",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2880, 300],
+      "id": "save-metadata"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.telegram.org/bot8318289285:AAGFvnbGoLh0uXO9Rcz9N23iW25DEYh-BBU/sendMessage",
+        "sendBody": true,
+        "bodyParametersJson": "={{ {\"chat_id\": \"8116230130\", \"text\": `🎬 VIDEO PROCESSED\\n\\n📹 ${$json.video_id}\\n📂 ${$json.channel}\\n\\n📱 TikTok: ${$json.content.tiktok.title}\\n📸 Instagram: ${$json.content.instagram.title}\\n🎥 YouTube: ${$json.content.youtube.title}\\n\\n✅ Saved to .state/videos/`} }}"
+      },
+      "name": "Telegram Notify",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3100, 300],
+      "id": "telegram-notify"
+    }
+  ],
+  "connections": {
+    "Google Drive Trigger": {"main": [[{"node": "Extract Channel Info"}]]},
+    "Extract Channel Info": {"main": [[{"node": "Download Video"}]]},
+    "Download Video": {"main": [[{"node": "Create CloudConvert Job"}]]},
+    "Create CloudConvert Job": {"main": [[{"node": "Upload Video to CloudConvert"}]]},
+    "Upload Video to CloudConvert": {"main": [[{"node": "Poll Until Complete"}]]},
+    "Poll Until Complete": {"main": [[{"node": "Download Audio"}]]},
+    "Download Audio": {"main": [[{"node": "Whisper Transcribe"}]]},
+    "Whisper Transcribe": {"main": [[{"node": "Build Prompt"}]]},
+    "Build Prompt": {"main": [[{"node": "Claude Generate"}]]},
+    "Claude Generate": {"main": [[{"node": "Parse Response"}]]},
+    "Parse Response": {"main": [[{"node": "Save Metadata"}]]},
+    "Save Metadata": {"main": [[{"node": "Telegram Notify"}]]}
+  },
+  "settings": {"executionOrder": "v1"}
+}

@@ -1,0 +1,67 @@
+# CleverDogMethod Short - The Recall Training Trick That Actually Works
+Generated: 2026-03-29 01:22 UTC
+
+============================================================
+SCRIPT (Copy to CapCut script input)
+============================================================
+
+HOOK: "Your dog ignores you when you call them, but runs to literally everyone else, right?"
+
+WHY: "Here's why - you've accidentally trained them that coming to you ends the fun."
+
+STEP 1: "Start calling your dog's name only when you're about to give them something amazing - treats, toys, or praise."
+
+STEP 2: "Never call them to end playtime or leave the park. Instead, walk over and gently leash them up."
+
+STEP 3: "Practice the 'jackpot recall' - call them during play, reward like crazy with multiple treats, then immediately release them back to play."
+
+RESULT: "In just one week, your dog will sprint to you because they know good things happen when they come to you, not that the fun stops."
+
+CTA: "Try this today and follow me for more dog training hacks that actually work!"
+
+============================================================
+CAPCUT AI PROMPT (Copy to CapCut AI generator)
+============================================================
+
+Create a 60-second vertical video (9:16) for dog training. Open with close-up shot of frustrated dog owner calling their dog while the dog runs toward strangers in a park, ignore the owner completely. Text overlay Your Dog Ignores You But Runs to Everyone Else? in bold yellow font with black shadow. Quick zoom-in on owner's disappointed face. Cut to medium shot of professional dog trainer speaking directly to camera with confident body language. Text overlay Here's Why This Happens ⬇️ in white bold font. Transition to split-screen showing wrong vs right approach - left side shows owner calling dog to leave park (dog reluctant), right side shows owner walking calmly to leash dog. Text overlay STEP 1 in bright blue with number animation. Cut to close-up of hands offering high-value treats while calling dog's name, dog eagerly approaching. Text overlay STEP 2 with same styling. Show medium shot of owner practicing jackpot recall - calling dog during play, showering with multiple treats, then releasing back to play. Dog's tail wagging enthusiastically. Text overlay STEP 3 - Jackpot Recall! Cut to time-lapse style montage showing one week of practice sessions. Final shot shows dramatic before/after comparison - dog now sprinting happily toward owner when called. Text overlay Results in Just 1 Week! ✨ in gold font with sparkle effects. End with call-to-action screen Try This Today! Follow for More Tips over freeze frame of successful recall. Use upbeat, motivational background music. Professional yet approachable tone with smooth slide transitions between steps.
+
+============================================================
+PRODUCTION NOTES
+============================================================
+
+Video Specs:
+- Duration: 30-45 seconds
+- Format: 9:16 (vertical)
+- Resolution: 1080x1920
+- FPS: 30
+- Music: Upbeat, subtle (royalty-free from CapCut library)
+
+Text Overlay Style:
+- Font: Bold, sans-serif (Montserrat or similar)
+- Color: White with dark outline
+- Size: Large (readable on mobile)
+- Position: Center or lower third
+- Animation: Pop-in or slide-in
+
+Pacing:
+- Quick cuts (3-5 seconds per scene)
+- Match voiceover timing
+- Sync text with key words
+
+CTA:
+- End screen: "CleverDogMethod.com"
+- Duration: 3-5 seconds
+- Logo + website URL
+
+============================================================
+
+Ready to create in CapCut:
+1. Open CapCut
+2. New Project → Vertical (9:16)
+3. Paste script (if using text-to-video)
+4. OR paste CapCut AI prompt
+5. Generate
+6. Review & tweak
+7. Export 1080p
+8. Upload to YouTube Shorts
+

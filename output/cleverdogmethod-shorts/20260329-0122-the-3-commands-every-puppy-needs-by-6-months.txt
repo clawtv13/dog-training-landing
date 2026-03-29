@@ -1,0 +1,71 @@
+# CleverDogMethod Short - The 3 Commands Every Puppy Needs by 6 Months
+Generated: 2026-03-29 01:22 UTC
+
+============================================================
+SCRIPT (Copy to CapCut script input)
+============================================================
+
+HOOK: "Your 6-month-old puppy is still chaos with four legs? Here's what you're missing."
+
+WHY: "Most people try teaching 20 tricks at once. But there are only 3 commands that actually matter for a well-behaved dog."
+
+STEP 1: "First - 'Sit.' Start with treats at nose level, slowly lift up and back. Their butt will automatically hit the ground. Say 'sit' and reward immediately."
+
+STEP 2: "Second - 'Stay.' From sit position, hold your hand up like a stop sign, take one step back. If they stay for 2 seconds, reward and gradually increase time."
+
+STEP 3: "Third - 'Come.' In a safe area, get low, pat your legs excitedly and say 'come.' When they run to you, massive praise and treats. Make it the best thing ever."
+
+RESULT: "Master these three and you'll have a puppy who listens, stays safe, and actually enjoys training sessions."
+
+CTA: "Follow for more puppy training hacks that actually work - your future self will thank you!"
+
+============================================================
+CAPCUT AI PROMPT (Copy to CapCut AI generator)
+============================================================
+
+Create a 60-second vertical video (9:16) for puppy training. Open with close-up of chaotic 6-month-old puppy jumping and misbehaving, quick cuts of frustrated owner, text overlay Your 6-month-old puppy is still chaos with four legs? Here's what you're missing. in bold white font with black outline. Cut to medium shot of calm professional trainer with well-behaved puppy, text Most people try teaching 20 tricks - but only 3 commands actually matter with animated number 3 emphasis. 
+
+Show Step 1: Close-up hands holding treat at puppy's nose level, slow-motion lift upward, cut to side angle showing puppy's butt hitting ground naturally, text overlay STEP 1: SIT with animated arrows showing treat movement. Step 2: Medium shot of trainer's stop-sign hand gesture, cut to low angle showing puppy staying in position, text STEP 2: STAY with timer graphic counting 2-3 seconds. Step 3: Wide shot of trainer getting low and excited, quick cut to puppy's perspective running toward camera, text STEP 3: COME with motion lines and excitement effects.
+
+End with before/after split screen - chaotic puppy vs. calm obedient puppy performing all three commands smoothly. Final text Follow for more training hacks that actually work! with subscribe animation. Use upbeat, encouraging background music. Professional yet approachable tone with quick cuts every 2-3 seconds. Warm lighting throughout, focus on positive reinforcement moments.
+
+============================================================
+PRODUCTION NOTES
+============================================================
+
+Video Specs:
+- Duration: 30-45 seconds
+- Format: 9:16 (vertical)
+- Resolution: 1080x1920
+- FPS: 30
+- Music: Upbeat, subtle (royalty-free from CapCut library)
+
+Text Overlay Style:
+- Font: Bold, sans-serif (Montserrat or similar)
+- Color: White with dark outline
+- Size: Large (readable on mobile)
+- Position: Center or lower third
+- Animation: Pop-in or slide-in
+
+Pacing:
+- Quick cuts (3-5 seconds per scene)
+- Match voiceover timing
+- Sync text with key words
+
+CTA:
+- End screen: "CleverDogMethod.com"
+- Duration: 3-5 seconds
+- Logo + website URL
+
+============================================================
+
+Ready to create in CapCut:
+1. Open CapCut
+2. New Project → Vertical (9:16)
+3. Paste script (if using text-to-video)
+4. OR paste CapCut AI prompt
+5. Generate
+6. Review & tweak
+7. Export 1080p
+8. Upload to YouTube Shorts
+
