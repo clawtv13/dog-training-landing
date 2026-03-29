@@ -576,6 +576,38 @@ def create_blog_post(item: Dict, content: str) -> Optional[str]:
             'word_count': word_count
         })
         
+        # Generate AI-optimized versions (.txt and .md)
+        try:
+            logger.info("🤖 Generating AI-optimized versions...")
+            import subprocess
+            result = subprocess.run(
+                ['python3', 'scripts/generate-ai-versions.py'],
+                capture_output=True,
+                text=True,
+                timeout=60,
+                cwd=str(BLOG_DIR.parent)
+            )
+            if result.returncode == 0:
+                logger.info("✅ AI versions generated (.txt + .md)")
+                
+                # Update sitemap to include new formats
+                try:
+                    sitemap_result = subprocess.run(
+                        ['python3', 'scripts/update-sitemap.py'],
+                        capture_output=True,
+                        text=True,
+                        timeout=30,
+                        cwd=str(BLOG_DIR.parent)
+                    )
+                    if sitemap_result.returncode == 0:
+                        logger.info("✅ Sitemap updated with AI versions")
+                except Exception as se:
+                    logger.warning(f"⚠️  Sitemap update failed: {se}")
+            else:
+                logger.warning(f"⚠️  AI version generation failed: {result.stderr[:200]}")
+        except Exception as e:
+            logger.warning(f"⚠️  Could not generate AI versions: {e}")
+        
         return post_slug
         
     except Exception as e:
