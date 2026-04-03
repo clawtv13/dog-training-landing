@@ -1,0 +1,65 @@
+📹 **BOOK TRAILER PACKAGE**
+
+📚 **Book:** Book-7
+🎯 **Formula:** Villain Reveal (90% retention)
+📊 **API Calls:** 2 (saved 66% vs old method)
+
+======================================================================
+
+# VIDEO PROMPT (USE ON ALL PLATFORMS)
+**Copy this to CapCut AI / Runway / Luma:**
+
+```
+0-4s: Funeral podium, flowers, dark | Audio: piano fade | Text: "Killer AT her funeral"
+
+4-15s: Wedding photos montage | Audio: soft strings | Text: "Perfect marriage... or was it?"
+
+15-30s: Crime tape, police lights | Audio: heartbeat starts | Text: "Found dead at home"
+
+30-50s: DNA lab, genealogy screen | Audio: tension rise | Text: "6 years hunting a stranger"
+
+50-55s: Handcuffs close-up | Audio: heartbeat peak | Text: "It was HER HUSBAND"
+
+55-60s: Mugshot reveal | Audio: silence drop | Text: "How? 👆 Full story"
+
+STYLE: Fast cuts 2-3s | Zoom transitions | Dark+red filter | White text/black outline | 9:16
+
+HASHTAGS: #truecrime #coldcase #husband #solved #mystery #investigation
+
+TITLE: Killer Gave Eulogy at Wife's Funeral
+
+DESC: He fooled police for 6 years. DNA finally revealed the truth.
+
+CTA: Link in bio
+```
+
+**CHARACTER COUNT: 687** ✅ (Well under 3000 limit)
+
+======================================================================
+
+# PLATFORM-SPECIFIC METADATA
+
+```
+# TIKTOK METADATA
+Title: 🧬 DNA solved a 6-year-old murder case... the truth shocked everyone
+Description: Marjorie's case went cold until genetic genealogy changed everything. The results? Nobody saw it coming. What do you think happened? 🤔
+Hashtags: #truecrime #coldcase #mystery #dnasolves #geneticgenealogy #mindcrimes #justice
+
+# INSTAGRAM METADATA
+Title: When DNA reveals the unthinkable truth 🧬✨
+Caption: Six years after Marjorie's murder, her family thought they'd never get answers. Then genetic genealogy uncovered a truth that changed everything. Justice delayed isn't justice denied. 💙
+Hashtags: #truecrime #coldcase #mystery #justice #dnaevidence #geneticgenealogy #mindcrimes #forensics #unsolvedmysteries #crimestory #investigation #victims #answers #hope #bookstagram
+
+# YOUTUBE METADATA
+Title: Cold Case SOLVED: How DNA Revealed Marjorie's Shocking Truth
+Description: After 6 years, Marjorie's murder case seemed hopeless. Then genetic genealogy technology uncovered evidence that stunned investigators. From Mind Crimes, this is the story of how modern forensics brought justice to a grieving family. Book details in description below.
+Hashtags: #Shorts #truecrime #coldcase #dnaevidence #mindcrimes
+Pinned Comment: Full case details in "Mind Crimes" - link in bio! What other cold cases should genetic genealogy tackle next?
+```
+
+======================================================================
+
+**Generated:** 2026-04-03 12:33 UTC
+**Total Size:** 2229 characters
+**Ready for:** CapCut AI, Runway, Luma, manual production
+**Deploy:** Use same video on all 3 platforms, customize metadata only

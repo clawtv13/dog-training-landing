@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Barking",
+    "slug": "barking",
+    "difficulty": "medium",
+    "description": "excessive barking, nuisance barking, alert barking",
+    "common_triggers": ["boredom", "attention-seeking", "alerting", "anxiety", "excitement"],
+    "general_solutions": ["desensitization", "counter-conditioning", "quiet command training", "mental stimulation", "exercise"]
+  },
+  {
+    "name": "Jumping",
+    "slug": "jumping",
+    "difficulty": "easy",
+    "description": "jumping on people, jumping on guests, over-excited greetings",
+    "common_triggers": ["excitement", "attention-seeking", "greeting behavior", "lack of impulse control"],
+    "general_solutions": ["ignore jumping", "reward four-on-floor", "teach alternative greeting", "calm greetings", "impulse control exercises"]
+  },
+  {
+    "name": "Separation Anxiety",
+    "slug": "separation-anxiety",
+    "difficulty": "hard",
+    "description": "destructive behavior when alone, excessive whining, house soiling",
+    "common_triggers": ["lack of independence training", "over-attachment", "previous trauma", "sudden routine changes"],
+    "general_solutions": ["gradual desensitization", "crate training", "independence exercises", "calming aids", "predictable routines"]
+  },
+  {
+    "name": "Leash Pulling",
+    "slug": "leash-pulling",
+    "difficulty": "medium",
+    "description": "pulling on leash, leash reactivity, dragging on walks",
+    "common_triggers": ["excitement", "lack of leash training", "high energy", "distractions", "reinforcement history"],
+    "general_solutions": ["loose leash training", "stop-and-go method", "direction changes", "reward-based training", "pre-walk exercise"]
+  },
+  {
+    "name": "Chewing",
+    "slug": "chewing",
+    "difficulty": "medium",
+    "description": "destructive chewing, chewing furniture, inappropriate chewing",
+    "common_triggers": ["teething", "boredom", "anxiety", "lack of appropriate outlets", "exploration"],
+    "general_solutions": ["appropriate chew toys", "exercise", "mental stimulation", "supervision", "bitter spray deterrents"]
+  },
+  {
+    "name": "Digging",
+    "slug": "digging",
+    "difficulty": "medium",
+    "description": "yard digging, escape attempts, destructive digging",
+    "common_triggers": ["boredom", "prey drive", "denning instinct", "temperature regulation", "escape attempts"],
+    "general_solutions": ["designated dig zone", "increased exercise", "mental stimulation", "supervision", "environmental enrichment"]
+  },
+  {
+    "name": "Aggression",
+    "slug": "aggression",
+    "difficulty": "hard",
+    "description": "dog aggression, stranger aggression, resource guarding",
+    "common_triggers": ["fear", "territorial behavior", "resource guarding", "poor socialization", "pain"],
+    "general_solutions": ["professional trainer", "behavior modification", "counter-conditioning", "management", "socialization"]
+  },
+  {
+    "name": "House Training Issues",
+    "slug": "house-training",
+    "difficulty": "easy",
+    "description": "accidents indoors, not fully potty trained, regression",
+    "common_triggers": ["incomplete training", "medical issues", "marking behavior", "routine changes", "anxiety"],
+    "general_solutions": ["consistent schedule", "frequent potty breaks", "positive reinforcement", "crate training", "clean accidents thoroughly"]
+  },
+  {
+    "name": "Fear and Anxiety",
+    "slug": "fear-anxiety",
+    "difficulty": "hard",
+    "description": "noise phobia, stranger fear, general anxiety",
+    "common_triggers": ["lack of socialization", "traumatic experience", "genetics", "sudden changes", "negative associations"],
+    "general_solutions": ["gradual exposure", "counter-conditioning", "safe spaces", "calming aids", "professional help"]
+  },
+  {
+    "name": "Counter Surfing",
+    "slug": "counter-surfing",
+    "difficulty": "easy",
+    "description": "stealing food from counter, begging, scavenging",
+    "common_triggers": ["food motivation", "opportunity", "previous success", "hunger", "boredom"],
+    "general_solutions": ["management", "leave it command", "place training", "remove temptation", "impulse control exercises"]
+  }
+]

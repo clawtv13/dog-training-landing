@@ -1,0 +1,64 @@
+📹 **BOOK TRAILER PACKAGE**
+
+📚 **Book:** Book-6
+🎯 **Formula:** Villain Reveal (90% retention)
+📊 **API Calls:** 2 (saved 66% vs old method)
+
+======================================================================
+
+# VIDEO PROMPT (USE ON ALL PLATFORMS)
+**Copy this to CapCut AI / Runway / Luma:**
+
+# CAPCUT ULTRA-COMPACT PROMPT
+
+```
+0-4s: Funeral, crying man closeup | Audio: somber piano | Text: "He cried at her funeral"
+4-15s: Wedding photos, happy couple | Audio: soft strings | Text: "She thought she had the perfect marriage"
+15-30s: Crime tape, missing posters | Audio: tension rise | Text: "Then she vanished" → "Body found weeks later"
+30-50s: Police files, DNA lab | Audio: suspense build | Text: "Searched 6 years for stranger" → "DNA revealed the truth"
+50-60s: Arrest footage, handcuffs | Audio: dramatic hit | Text: "Killer was the husband" → "How many hide in plain sight? 👆"
+
+STYLE: Fast cuts 2-3s, red grade, dark ambient → dramatic
+TRANS: Flash black, photo burn, glitch, DNA helix
+```
+
+**HASHTAGS:** #truecrime #solved #coldcase #mystery #husband #dna
+
+**TITLE:** The Husband Who Cried at Her Funeral Was the Killer
+
+**DESC:** He gave a heartbreaking eulogy. 6 years later, DNA proved he murdered her. Follow for solved mysteries.
+
+**CTA:** Follow for more cases
+
+---
+
+**TOTAL:** 847 characters | CapCut-ready | All essentials preserved
+
+======================================================================
+
+# PLATFORM-SPECIFIC METADATA
+
+```
+# TIKTOK METADATA
+Title: 🧬 DNA solved a 6-year-old mystery that shocked everyone
+Description: A case went cold for 6 years until genetic genealogy revealed the truth. The results were NOT what investigators expected 👀
+Hashtags: #truecrime #coldcase #mystery #dna #genealogy #justice #mindcrimes
+
+# INSTAGRAM METADATA
+Title: When DNA reveals the unthinkable truth 🧬
+Caption: Six years of silence. One family searching for answers. Then genetic genealogy changed everything. Some truths are harder to accept than others. 💔
+Hashtags: #truecrime #coldcase #mystery #dna #geneticgenealogy #justice #forensics #investigation #crimestory #unsolved #mindcrimes #truecrimeaddict #crimejunkie #podcast #documentary
+
+# YOUTUBE METADATA
+Title: Cold Case SOLVED: How DNA Revealed the Shocking Truth After 6 Years
+Description: After 6 years, genetic genealogy finally solved this forgotten case - but the truth was more shocking than anyone imagined. Discover how modern forensic science is revolutionizing cold case investigations. Link in bio for full story.
+Hashtags: #Shorts #truecrime #coldcase #dna #forensics
+Pinned Comment: Get the full story in "Mind Crimes" - link in bio! 📖
+```
+
+======================================================================
+
+**Generated:** 2026-04-03 12:32 UTC
+**Total Size:** 2235 characters
+**Ready for:** CapCut AI, Runway, Luma, manual production
+**Deploy:** Use same video on all 3 platforms, customize metadata only

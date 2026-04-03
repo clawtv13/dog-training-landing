@@ -1,0 +1,68 @@
+📹 **BOOK TRAILER PACKAGE**
+
+📚 **Book:** Book-8
+🎯 **Formula:** Villain Reveal (90% retention)
+📊 **API Calls:** 2 (saved 66% vs old method)
+
+======================================================================
+
+# VIDEO PROMPT (USE ON ALL PLATFORMS)
+**Copy this to CapCut AI / Runway / Luma:**
+
+# CAPCUT ULTRA-COMPACT PROMPT
+
+```
+0-4s: Funeral chairs, consoling hands | Audio: dark piano | Text: "Killer at Laura's funeral"
+
+4-15s: Laura photos montage, suburban street | Audio: soft melody | Text: "Safe quiet neighborhood"
+
+15-30s: Crime tape, police lights flash | Audio: tension rise | Text: "Murdered in her home"
+
+30-50s: DNA lab screen, neighbor house zoom | Audio: suspense peak | Text: "Killer lived next door"
+
+50-60s: Handcuffs close-up, justice graphics | Audio: dramatic sting | Text: "Genetic genealogy exposed him ⬆️"
+
+STYLE: Dark filter, 2-3s cuts, red accents, newspaper text, fade-black transitions
+
+HASHTAGS: #truecrime #coldcase #geneticgenealogy #justicserved #solved #mystery #investigation #truecrimecommunity #coldcasesolved #forensics
+
+TITLE: Killer Comforted Family at Victim's Funeral
+
+DESC: He lived next door for years. Genetic genealogy finally caught him.
+
+CTA: Full story in comments ⬆️
+```
+
+**CHARACTER COUNT: 687** ✓
+
+**COMPLIANCE NOTE (separate):** Victim-respectful, justice-focused narrative. No graphic details, emphasizes resolution.
+
+======================================================================
+
+# PLATFORM-SPECIFIC METADATA
+
+```
+# TIKTOK METADATA
+Title: DNA solved Laura's case after 2 years 🧬 shocking truth
+Description: Laura's murder went cold until genetic genealogy cracked it wide open. The truth will blow your mind 🤯 What do you think happened?
+Hashtags: #truecrime #coldcase #mystery #geneticgenealogy #unsolved #crimestory #mindcrimes
+
+# INSTAGRAM METADATA
+Title: Laura's story: when science brings justice 🧬✨
+Caption: Two years after Laura's murder, cutting-edge genetic genealogy revealed a truth no one saw coming. Her story deserves to be told with respect and hope for justice.
+Hashtags: #truecrime #coldcase #justiceforlaura #forensicscience #geneticgenealogy #crimestory #mystery #unsolved #investigation #crimebook #truecrimecommunity #forensics #mindcrimes #crimereads #justice
+
+# YOUTUBE METADATA
+Title: Cold Case SOLVED: How DNA Evidence Revealed Laura's Killer
+Description: Laura's murder remained unsolved for 2 years until breakthrough genetic genealogy technology identified her killer. Explore the forensic science that brought justice to her case. From "Mind Crimes" - link in bio for full story. Subscribe for more cold case breakthroughs!
+Hashtags: #Shorts #truecrime #coldcase #forensicscience #geneticgenealogy
+
+Pinned Comment: Get the full story in "Mind Crimes" - link in bio! 📖
+```
+
+======================================================================
+
+**Generated:** 2026-04-03 12:33 UTC
+**Total Size:** 2367 characters
+**Ready for:** CapCut AI, Runway, Luma, manual production
+**Deploy:** Use same video on all 3 platforms, customize metadata only

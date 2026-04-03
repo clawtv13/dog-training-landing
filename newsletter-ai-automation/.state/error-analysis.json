@@ -1,18 +1,802 @@
 [
   {
-    "timestamp": "2026-03-29T12:00:08.478243",
+    "timestamp": "2026-04-01T18:00:14.262646",
     "error": {
       "file": "research.log",
       "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
-      "context": "\ud83d\udcca Total items collected: 29\n\n\ud83e\udd16 Curating 29 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 29 items\n\n",
-      "timestamp": "2026-03-29T12:00:01.509989"
+      "context": "\ud83d\udcca Total items collected: 28\n\n\ud83e\udd16 Curating 28 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 28 items\n\n",
+      "timestamp": "2026-04-01T18:00:02.134701"
     },
     "analysis": {
-      "root_cause": "JSON parsing error when processing Claude API response - the response is either empty, malformed, or contains non-JSON content at the beginning",
+      "root_cause": "JSON parsing error when processing Claude API response. The API returned empty content or non-JSON format, causing the JSON decoder to fail at the first character position.",
       "impact": "Medium",
       "auto_fixable": true,
-      "fix_strategy": "Add robust error handling and response validation for Claude API calls. Implement fallback parsing that strips non-JSON content, validates response format, and gracefully degrades to the simple scoring algorithm when API responses are malformed.",
-      "code_fix": "try:\n    response = claude_api.call()\n    # Strip whitespace and non-JSON prefix\n    clean_response = response.strip()\n    if clean_response.startswith('```json'):\n        clean_response = clean_response.split('```json')[1].split('```')[0].strip()\n    elif clean_response.startswith('```'):\n        clean_response = clean_response.split('```')[1].split('```')[0].strip()\n    \n    curated_items = json.loads(clean_response)\nexcept (json.JSONDecodeError, IndexError, AttributeError) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    curated_items = simple_scoring_fallback(items)"
+      "fix_strategy": "Add robust error handling and response validation for the Claude API integration. Implement fallback to simple scoring when API response is invalid or empty. Add response content validation before JSON parsing.",
+      "code_fix": "try:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, ConnectionError) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    curated_data = None\n    # Continue with simple scoring algorithm"
+    }
+  },
+  {
+    "timestamp": "2026-04-01T18:00:20.057157",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-01T18:00:02.134778"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error - the system is trying to parse an empty string or invalid JSON when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the JSON parser received an empty response or null value instead of valid JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add JSON validation and fallback handling. Check if the response is empty before parsing, implement try-catch blocks around JSON operations, and provide default subject line values when parsing fails.",
+      "code_fix": "try:\n    if response_data and response_data.strip():\n        subject_data = json.loads(response_data)\n    else:\n        subject_data = {'subject': f'Newsletter Edition #{edition_number}'}\nexcept json.JSONDecodeError:\n    subject_data = {'subject': f'AI tools & automation tips (Edition #{edition_number})'}\n    logger.warning('JSON parse error, using fallback subject line')"
+    }
+  },
+  {
+    "timestamp": "2026-04-01T21:00:08.975590",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 23\n\n\ud83e\udd16 Curating 23 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 23 items\n\n",
+      "timestamp": "2026-04-01T21:00:01.566997"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The system received an empty or malformed response (likely empty string or non-JSON content) when attempting to parse the curation results from Claude.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling and response validation for Claude API calls. Implement fallback mechanisms including response validation, retry logic with exponential backoff, and graceful degradation to the simple scoring algorithm when Claude API fails.",
+      "code_fix": "# Add this error handling wrapper around Claude API call\ntry:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        raise ValueError(\"Empty response from Claude API\")\n    \n    curated_data = json.loads(response)\n    if not isinstance(curated_data, (dict, list)):\n        raise ValueError(\"Invalid JSON structure\")\n        \nexcept (json.JSONDecodeError, ValueError, requests.RequestException) as e:\n    logger.warning(f\"Claude curation failed: {e}. Falling back to simple scoring.\")\n    # System already has fallback - just ensure clean transition\n    curated_data = None"
+    }
+  },
+  {
+    "timestamp": "2026-04-01T21:00:15.208343",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 28\n\n\ud83e\udd16 Curating 28 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 28 items\n\n",
+      "timestamp": "2026-04-01T21:00:01.567016"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The API returned empty/invalid JSON (likely empty string or non-JSON content) when attempting to curate the 28 collected items. This suggests either API connectivity issues, malformed request, or API rate limiting/authentication failure.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling and response validation for the Claude API call. Implement retry logic with exponential backoff, validate response content before JSON parsing, and ensure graceful fallback to the simple scoring algorithm (which is already working as evidenced by the successful fallback).",
+      "code_fix": "try:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}, falling back to simple scoring')\n    curated_data = simple_scoring_fallback(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-01T21:00:20.692733",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-01T21:00:01.567075"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error - the system is trying to parse an empty string or malformed JSON when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the JSON parser received an empty response or null value instead of valid JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add JSON validation and error handling with fallback mechanisms. Implement try-catch blocks around JSON parsing operations and provide default subject line templates when parsing fails. Also add input validation to ensure non-empty responses before JSON parsing.",
+      "code_fix": "try:\n    subject_data = json.loads(response)\nexcept json.JSONDecodeError:\n    # Fallback to default subject line\n    subject_data = {'subject': f'AI tools & automation tips (Edition #{edition_number})'}\nexcept Exception as e:\n    logging.error(f'Subject line generation failed: {e}')\n    subject_data = {'subject': 'Weekly AI & Automation Newsletter'}"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T00:00:09.052066",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 23\n\n\ud83e\udd16 Curating 23 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 23 items\n\n",
+      "timestamp": "2026-04-02T00:00:01.133883"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error in Claude API response - the response is either empty, contains non-JSON content, or has malformed JSON structure. The error 'Expecting value: line 1 column 1 (char 0)' indicates the parser received an empty string or unexpected content when trying to parse JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling around the Claude API call with response validation, fallback mechanisms, and proper JSON parsing with try-catch blocks. Implement response content checking before attempting JSON parsing.",
+      "code_fix": "try:\n    response = claude_api.call(items)\n    if not response or not response.strip():\n        raise ValueError(\"Empty response from Claude API\")\n    \n    # Validate response starts with JSON\n    response = response.strip()\n    if not (response.startswith('{') or response.startswith('[')):\n        # Extract JSON from response if wrapped in other content\n        import re\n        json_match = re.search(r'[{\\[].*[}\\]]', response, re.DOTALL)\n        if json_match:\n            response = json_match.group()\n        else:\n            raise ValueError(\"No valid JSON found in response\")\n    \n    curated_items = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, Exception) as e:\n    logger.warning(f\"Claude curation failed: {e}\")\n    # Fallback already implemented - using simple scoring"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T00:00:14.314333",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 28\n\n\ud83e\udd16 Curating 28 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 28 items\n\n",
+      "timestamp": "2026-04-02T00:00:01.133925"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The response is either empty, contains invalid JSON, or the API call failed entirely, resulting in an empty string being passed to JSON parser.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add proper error handling and response validation before JSON parsing. Implement retry logic for API failures and fallback to simple scoring when Claude API is unavailable.",
+      "code_fix": "try:\n    response = claude_api_call(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    curated_data = None\n    # Continue with simple scoring algorithm"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T00:00:18.902109",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-02T00:00:01.134010"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing subject line data. The system is trying to parse an empty string or malformed JSON response, likely from an API call or file read operation that returned no content or invalid JSON format.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add JSON validation and error handling with fallback subject lines. Implement try-catch blocks around JSON parsing operations and provide default subject line templates when parsing fails.",
+      "code_fix": "try:\n    subject_data = json.loads(response_text)\nexcept json.JSONDecodeError:\n    # Fallback to default subject line\n    subject_data = {'subject': f'AI tools & automation tips (Edition #{edition_number})'}\n    logger.warning('JSON parse failed, using fallback subject line')"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T03:00:08.849043",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 23\n\n\ud83e\udd16 Curating 23 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 23 items\n\n",
+      "timestamp": "2026-04-02T03:00:01.336352"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error in Claude API response handling. The system received an empty or malformed response from Claude's curation service, likely due to API timeout, rate limiting, or network connectivity issues. The error 'Expecting value: line 1 column 1 (char 0)' indicates the JSON parser received an empty string or null response.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Implement robust error handling for API responses with retry logic, response validation, and graceful fallback. Add timeout handling, check response status codes, and validate JSON before parsing. The system already has a fallback mechanism (simple scoring algorithm) which activated correctly.",
+      "code_fix": "try:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        raise ValueError(\"Empty response from Claude API\")\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.exceptions.RequestException) as e:\n    logger.warning(f\"Claude curation failed: {e}, falling back to simple scoring\")\n    curated_data = simple_scoring_fallback(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T03:00:14.319280",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 28\n\n\ud83e\udd16 Curating 28 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 28 items\n\n",
+      "timestamp": "2026-04-02T03:00:01.336382"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The API returned an empty response or non-JSON content (likely empty string, HTTP error page, or malformed JSON), causing the JSON decoder to fail at the first character.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add proper error handling and response validation before JSON parsing. Include retry logic for API failures and fallback to the simple scoring algorithm (which already worked as backup).",
+      "code_fix": "try:\n    response = claude_api_call(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    result = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    result = simple_scoring_fallback(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T03:00:19.889982",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-02T03:00:01.336489"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error - the system is trying to parse an empty string or invalid JSON when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the JSON parser received an empty response or null value instead of valid JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add error handling and fallback mechanisms: 1) Validate JSON response before parsing, 2) Implement retry logic for failed API calls, 3) Use fallback subject lines when generation fails, 4) Add proper null/empty checks before JSON parsing",
+      "code_fix": "try:\n    if response and response.strip():\n        subject_data = json.loads(response)\n    else:\n        raise ValueError('Empty response')\nexcept (json.JSONDecodeError, ValueError) as e:\n    logger.warning(f'Subject generation failed: {e}')\n    subject_data = {'subject': f'Newsletter Edition #{edition_number}'}\n    # Or retry the API call with exponential backoff"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T06:00:06.765195",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 23\n\n\ud83e\udd16 Curating 23 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 23 items\n\n",
+      "timestamp": "2026-04-02T06:00:01.361689"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The error 'Expecting value: line 1 column 1 (char 0)' indicates the response is empty or contains non-JSON content at the start.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling and response validation before JSON parsing. Implement retry logic for API calls and fallback to simple scoring when Claude curation fails.",
+      "code_fix": "try:\n    response = claude_api.curate(items)\n    if response and response.strip():\n        curated_data = json.loads(response)\n    else:\n        raise ValueError('Empty response from Claude API')\nexcept (json.JSONDecodeError, ValueError, requests.exceptions.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    curated_data = simple_scoring_fallback(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T06:00:13.186055",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 28\n\n\ud83e\udd16 Curating 28 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 28 items\n\n",
+      "timestamp": "2026-04-02T06:00:01.361708"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error in Claude API response - the response is empty or contains invalid JSON format. The error 'Expecting value: line 1 column 1 (char 0)' indicates the parser received an empty string or non-JSON content when trying to parse what should be a JSON response from Claude's curation service.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling around the Claude API call with response validation, fallback mechanisms, and retry logic. Implement checks for empty responses, network timeouts, and malformed JSON before attempting to parse.",
+      "code_fix": "try:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    \n    # Validate JSON before parsing\n    curated_data = json.loads(response)\n    if not curated_data:\n        raise ValueError('Invalid curation data received')\n        \nexcept (json.JSONDecodeError, ValueError, requests.exceptions.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    # Fallback is already implemented and working\n    curated_data = simple_scoring_algorithm(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T06:00:20.185369",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-02T06:00:01.361772"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing subject line data. The system is trying to parse an empty string or malformed JSON response at the beginning of the subject line generation process. The error 'Expecting value: line 1 column 1 (char 0)' indicates the parser received empty content or whitespace when expecting valid JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add JSON validation and error handling with fallback mechanisms. Implement input sanitization, empty response detection, and retry logic. Use a default subject line template when JSON parsing fails.",
+      "code_fix": "try:\n    subject_data = json.loads(response_text.strip())\nexcept json.JSONDecodeError:\n    logger.warning('JSON parse failed, using fallback subject line')\n    subject_data = {'subject': f'AI tools & automation tips (Edition #{edition_number})'}\nexcept Exception as e:\n    logger.error(f'Subject generation failed: {e}')\n    subject_data = {'subject': 'Weekly AI Newsletter'}"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T09:00:08.812655",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 23\n\n\ud83e\udd16 Curating 23 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 23 items\n\n",
+      "timestamp": "2026-04-02T09:00:02.136463"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error in Claude API response - the response is empty or contains invalid JSON format. The error 'Expecting value: line 1 column 1 (char 0)' indicates the parser received an empty string or non-JSON content when trying to parse Claude's curation response.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling around the Claude API call with response validation, fallback mechanisms, and retry logic. Implement JSON response validation before parsing and graceful degradation to the simple scoring algorithm (which already worked as backup).",
+      "code_fix": "try:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, APIError) as e:\n    logger.warning(f'Claude curation failed: {e}, falling back to simple scoring')\n    curated_data = simple_scoring_fallback(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T09:00:14.237774",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 28\n\n\ud83e\udd16 Curating 28 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 28 items\n\n",
+      "timestamp": "2026-04-02T09:00:02.136483"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The API returned an empty response or non-JSON content, causing json.loads() to fail at the first character position.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add response validation and error handling around the Claude API call. Check if response is empty or invalid JSON before parsing. Implement graceful fallback to the simple scoring algorithm that's already working.",
+      "code_fix": "try:\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    # Fallback to simple scoring (already implemented)\n    return use_simple_scoring(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T09:00:20.510623",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-02T09:00:02.136544"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error - the system is trying to parse an empty string or invalid JSON when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the parser encountered an empty response or malformed JSON at the very beginning of the string.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add error handling around JSON parsing operations with fallback mechanisms. Implement input validation to check for empty responses before parsing, and provide default subject lines as backup when API calls fail or return invalid data.",
+      "code_fix": "try:\n    subject_data = json.loads(response)\nexcept json.JSONDecodeError as e:\n    logger.warning(f'JSON parse error: {e}. Using fallback subject line.')\n    subject_data = {'subject': f'AI tools & automation tips (Edition #{edition_number})'}\nexcept Exception as e:\n    logger.error(f'Unexpected error: {e}')\n    subject_data = {'subject': 'Weekly AI Newsletter'}"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T12:00:08.676149",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 28\n\n\ud83e\udd16 Curating 28 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 28 items\n\n",
+      "timestamp": "2026-04-02T12:00:01.568779"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The API returned an empty response or non-JSON content, causing the JSON decoder to fail at the first character when trying to parse an empty string or invalid JSON format.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling around the Claude API call with response validation, retry logic, and graceful fallback to the simple scoring algorithm (which already worked as backup). Implement response content checking before JSON parsing.",
+      "code_fix": "try:\n    response = claude_api.call(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    \n    # Validate JSON before parsing\n    if not response.strip().startswith(('{', '[')):\n        raise json.JSONDecodeError('Invalid JSON format', response, 0)\n    \n    curated_items = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    curated_items = simple_scoring_algorithm(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T12:00:14.277185",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 31\n\n\ud83e\udd16 Curating 31 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 31 items\n\n",
+      "timestamp": "2026-04-02T12:00:01.568797"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error in Claude API response handling. The error 'Expecting value: line 1 column 1 (char 0)' indicates the system received an empty response or non-JSON content when trying to parse Claude's curation output.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling around the Claude API call with response validation, retry logic, and graceful fallback to the simple scoring algorithm (which already worked as backup).",
+      "code_fix": "# Add response validation in the Claude curation function\ntry:\n    response = claude_api_call(items)\n    if not response or not response.strip():\n        raise ValueError(\"Empty response from Claude API\")\n    result = json.loads(response)\nexcept (json.JSONDecodeError, ValueError) as e:\n    logger.warning(f\"Claude curation failed: {e}. Falling back to simple scoring.\")\n    result = None\n    # Continue with existing fallback logic"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T12:00:19.619099",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-02T12:00:01.569702"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error - the system is trying to parse an empty string or malformed JSON when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the JSON parser received an empty response or null value instead of valid JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add error handling and fallback mechanisms around JSON parsing operations. Implement validation to check if the response is empty before attempting to parse, and provide default subject line generation if the primary method fails.",
+      "code_fix": "try:\n    if response and response.strip():\n        subject_data = json.loads(response)\n    else:\n        raise ValueError('Empty response')\nexcept (json.JSONDecodeError, ValueError) as e:\n    logger.warning(f'Subject generation failed: {e}, using fallback')\n    subject_data = {'subject': f'AI tools & automation tips (Edition #{edition_number})'}"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T15:00:09.116507",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 28\n\n\ud83e\udd16 Curating 28 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 28 items\n\n",
+      "timestamp": "2026-04-02T15:00:02.221523"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response - the response is empty or malformed, causing the JSON decoder to fail at the first character. This indicates either an API communication failure, empty response body, or non-JSON content being returned.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling and response validation before JSON parsing. Implement fallback mechanisms: 1) Validate response is not empty, 2) Check content-type headers, 3) Add try-catch around JSON parsing with detailed logging, 4) Gracefully fallback to simple scoring when Claude API fails (which already happened successfully).",
+      "code_fix": "# Add before JSON parsing:\nif not response or not response.strip():\n    logger.warning('Empty response from Claude API, falling back to simple scoring')\n    return None\n\ntry:\n    result = json.loads(response)\nexcept json.JSONDecodeError as e:\n    logger.error(f'Invalid JSON from Claude API: {e}, falling back to simple scoring')\n    return None\n\n# Also add response validation:\nif response.status_code != 200:\n    logger.error(f'Claude API returned status {response.status_code}')\n    return None"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T15:00:15.412144",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 31\n\n\ud83e\udd16 Curating 31 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 31 items\n\n",
+      "timestamp": "2026-04-02T15:00:02.221565"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error in Claude API response - the API returned empty content or malformed JSON instead of expected structured data. This is indicated by 'Expecting value: line 1 column 1 (char 0)' which means the parser found nothing at the start of the response.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling around Claude API calls with retry logic, response validation, and graceful fallback to the simple scoring algorithm. Implement empty response detection and structured error logging.",
+      "code_fix": "try:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}, falling back to simple scoring')\n    curated_data = simple_scoring_fallback(items)\nexcept Exception as e:\n    logger.error(f'Unexpected error in curation: {e}')\n    curated_data = simple_scoring_fallback(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T15:00:20.973128",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-02T15:00:02.222027"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error - the system is trying to parse an empty string or invalid JSON when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the JSON parser encountered an empty response or malformed JSON structure at the beginning of the input.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add error handling and validation around JSON parsing operations. Implement fallback mechanisms to handle empty responses from subject line generation APIs or services. Add input validation before attempting JSON parsing and provide default values when parsing fails.",
+      "code_fix": "try:\n    subject_data = json.loads(response)\nexcept json.JSONDecodeError as e:\n    print(f\"JSON parsing error: {e}\")\n    # Use fallback subject line or retry logic\n    subject_data = {'subject': 'AI tools & automation tips (Edition #2)'}\nexcept Exception as e:\n    print(f\"Unexpected error: {e}\")\n    subject_data = {'subject': 'Newsletter Update'}"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T18:00:07.603597",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 28\n\n\ud83e\udd16 Curating 28 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 28 items\n\n",
+      "timestamp": "2026-04-02T18:00:02.126897"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The API returned an empty response, invalid JSON, or non-JSON content that the curation system attempted to parse as JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add proper error handling and response validation for Claude API calls. Implement fallback to simple scoring when API response is invalid. Add response content validation before JSON parsing.",
+      "code_fix": "try:\n    response = claude_api_call(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.exceptions.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    curated_data = None\n    # Continue with simple scoring algorithm"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T18:00:13.712941",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 31\n\n\ud83e\udd16 Curating 31 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 31 items\n\n",
+      "timestamp": "2026-04-02T18:00:02.126917"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response - the response is empty or contains invalid JSON format. The error 'Expecting value: line 1 column 1 (char 0)' indicates the parser received an empty string or non-JSON content when trying to parse Claude's curation response.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add error handling and response validation for Claude API calls. Implement fallback to simple scoring when Claude API fails. Add response content validation before JSON parsing and proper exception handling with logging.",
+      "code_fix": "try:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}, falling back to simple scoring')\n    curated_data = None\n\nif curated_data is None:\n    # Use simple scoring algorithm as fallback\n    curated_data = simple_scoring_algorithm(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T18:00:18.484345",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-02T18:00:02.127287"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the system is trying to parse an empty string or null value as JSON, likely from an API response or configuration file that returned empty content.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add JSON validation and fallback handling before parsing. Check for empty responses and provide default subject line generation when JSON parsing fails.",
+      "code_fix": "try:\n    subject_data = json.loads(response_text)\nexcept json.JSONDecodeError:\n    # Fallback to default subject line generation\n    subject_data = {'subject': f'AI tools & automation tips (Edition #{edition_number})'}\n    logging.warning('JSON parse failed, using fallback subject line')"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T21:00:08.807232",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 28\n\n\ud83e\udd16 Curating 28 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 28 items\n\n",
+      "timestamp": "2026-04-02T21:00:01.799609"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The API likely returned an empty response, non-JSON content, or an HTTP error page instead of valid JSON. This could be due to API rate limiting, authentication issues, network timeout, or malformed request.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling and response validation before JSON parsing. Implement retry logic with exponential backoff, validate response content type, and add fallback mechanisms when Claude API fails.",
+      "code_fix": "try:\n    response = claude_api.call()\n    if response.status_code != 200:\n        raise APIError(f\"API returned {response.status_code}\")\n    \n    if not response.text.strip():\n        raise ValueError(\"Empty response from API\")\n    \n    if 'application/json' not in response.headers.get('content-type', ''):\n        raise ValueError(\"Response is not JSON\")\n    \n    data = json.loads(response.text)\nexcept (json.JSONDecodeError, ValueError, APIError) as e:\n    logger.warning(f\"Claude API failed: {e}, falling back to simple scoring\")\n    # Continue with fallback algorithm"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T21:00:14.970518",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 31\n\n\ud83e\udd16 Curating 31 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 31 items\n\n",
+      "timestamp": "2026-04-02T21:00:01.799629"
+    },
+    "analysis": {
+      "root_cause": "Claude API returned an empty or malformed JSON response. The error 'Expecting value: line 1 column 1 (char 0)' indicates the JSON parser received an empty string or non-JSON content when trying to parse Claude's curation response.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add proper error handling and response validation for the Claude API call. Implement retry logic with exponential backoff, validate response content before JSON parsing, and ensure graceful fallback to the simple scoring algorithm when Claude API fails.",
+      "code_fix": "try:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        raise ValueError(\"Empty response from Claude API\")\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.exceptions.RequestException) as e:\n    logger.warning(f\"Claude curation failed: {e}. Falling back to simple scoring.\")\n    curated_data = None\n\nif curated_data is None:\n    # Fallback to simple scoring algorithm\n    curated_data = simple_scoring_algorithm(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-02T21:00:20.301081",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-02T21:00:01.799705"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error - the system is trying to parse an empty string or invalid JSON format when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the parser received an empty response or null value instead of valid JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add JSON validation and fallback handling. Check if the response is empty before parsing, implement try-catch blocks around JSON parsing operations, and provide default subject lines as fallback when parsing fails.",
+      "code_fix": "try:\n    if response_data and response_data.strip():\n        subject_data = json.loads(response_data)\n    else:\n        subject_data = {'subject': f'AI tools & automation tips (Edition #{edition_number})'}\nexcept json.JSONDecodeError as e:\n    print(f'JSON parsing failed: {e}, using fallback subject')\n    subject_data = {'subject': f'AI tools & automation tips (Edition #{edition_number})'}"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T00:00:07.974764",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 28\n\n\ud83e\udd16 Curating 28 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 28 items\n\n",
+      "timestamp": "2026-04-03T00:00:01.756548"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error in Claude API response handling. The system received an empty or malformed response from Claude's curation service, causing JSON.parse() to fail when trying to parse an empty string or invalid JSON at the first character.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling and response validation for the Claude API integration. Implement retry logic with exponential backoff, validate response content before parsing, and ensure graceful fallback to the simple scoring algorithm when Claude API fails.",
+      "code_fix": "try {\n  const response = await claudeAPI.curate(items);\n  if (!response || !response.trim()) {\n    console.warn('Empty response from Claude API, falling back to simple scoring');\n    return fallbackToSimpleScoring(items);\n  }\n  const curatedData = JSON.parse(response);\n  return curatedData;\n} catch (error) {\n  if (error instanceof SyntaxError) {\n    console.warn('JSON parse error from Claude API:', error.message);\n  } else {\n    console.warn('Claude API error:', error.message);\n  }\n  return fallbackToSimpleScoring(items);\n}"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T00:00:13.953034",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 31\n\n\ud83e\udd16 Curating 31 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 31 items\n\n",
+      "timestamp": "2026-04-03T00:00:01.756570"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The API returned an empty response or non-JSON content, causing the JSON parser to fail at the first character when expecting valid JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling and response validation for the Claude API integration. Implement fallback to simple scoring algorithm (which already exists and worked). Add retry logic with exponential backoff for API failures.",
+      "code_fix": "try:\n    response = claude_api_call(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    curated_data = simple_scoring_fallback(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T00:00:19.282091",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-03T00:00:01.756622"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error - the system is trying to parse an empty string or invalid JSON when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the parser encountered an empty response or non-JSON content where valid JSON was expected.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add JSON validation and error handling with fallback mechanisms. Implement try-catch blocks around JSON parsing operations, validate response content before parsing, and provide default subject lines when parsing fails.",
+      "code_fix": "try:\n    subject_data = json.loads(response_text)\nexcept json.JSONDecodeError as e:\n    logger.warning(f'JSON parse error: {e}. Using fallback subject line.')\n    subject_data = {'subject': f'AI tools & automation tips (Edition #{edition_number})'}\nexcept Exception as e:\n    logger.error(f'Unexpected error: {e}')\n    subject_data = {'subject': 'Weekly AI Newsletter'}"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T03:00:07.434585",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 28\n\n\ud83e\udd16 Curating 28 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 28 items\n\n",
+      "timestamp": "2026-04-03T03:00:01.278224"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error in Claude API response handling. The curation system received an empty or malformed response from Claude API (likely empty string or non-JSON content) when trying to parse the response as JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling and response validation before JSON parsing. Implement fallback mechanism to gracefully handle API failures. Add response content validation and retry logic for transient API issues.",
+      "code_fix": "try:\n    response = claude_api_call(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, APIError) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    curated_data = None\n# Continue with fallback scoring algorithm if curated_data is None"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T03:00:14.257763",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 31\n\n\ud83e\udd16 Curating 31 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 31 items\n\n",
+      "timestamp": "2026-04-03T03:00:01.278250"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The system received an empty response or malformed JSON from Claude's curation service, causing the JSON decoder to fail at the first character position.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Implement proper error handling and fallback mechanisms: 1) Add JSON response validation before parsing, 2) Add retry logic for failed API calls, 3) Ensure graceful degradation to simple scoring when Claude API fails, 4) Add logging for API response content to debug future issues.",
+      "code_fix": "try:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    curated_data = None\n\nif curated_data is None:\n    # Fallback to simple scoring algorithm\n    scored_items = simple_scoring_algorithm(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T03:00:19.679342",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-03T03:00:01.278309"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error - the system is trying to parse an empty string or invalid JSON when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the JSON parser received an empty response or null value instead of valid JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add proper error handling and fallback mechanisms: 1) Validate JSON response before parsing, 2) Implement retry logic for API calls, 3) Add fallback subject line generation, 4) Include null/empty response checks",
+      "code_fix": "try:\n    if response and response.strip():\n        subject_data = json.loads(response)\n    else:\n        raise ValueError('Empty response')\nexcept (json.JSONDecodeError, ValueError) as e:\n    logger.warning(f'Subject generation failed: {e}, using fallback')\n    subject_data = {'subject': f'AI tools & automation tips (Edition #{edition_number})'}"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T06:00:07.735272",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 28\n\n\ud83e\udd16 Curating 28 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 28 items\n\n",
+      "timestamp": "2026-04-03T06:00:02.067149"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The curation service received an empty response or invalid JSON format from Claude, causing the JSON decoder to fail at the first character position.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling for API responses: validate response before JSON parsing, implement retry mechanism for failed API calls, and gracefully fallback to the simple scoring algorithm (which is already working as shown in the logs).",
+      "code_fix": "try:\n    response = claude_api_call(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.exceptions.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    curated_data = simple_scoring_fallback(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T06:00:16.666657",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 31\n\n\ud83e\udd16 Curating 31 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 31 items\n\n",
+      "timestamp": "2026-04-03T06:00:02.067168"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The API likely returned an empty response, invalid JSON, or an error message in non-JSON format. The error 'Expecting value: line 1 column 1 (char 0)' indicates the parser received an empty string or whitespace when expecting valid JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling and response validation before JSON parsing. Implement fallback mechanisms: 1) Validate API response is not empty, 2) Check if response starts with valid JSON characters, 3) Add try-catch with specific error handling for different failure modes, 4) Log the actual response content for debugging, 5) Gracefully fallback to simple scoring when Claude API fails.",
+      "code_fix": "# Add this error handling wrapper around Claude API call:\n\ntry:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        print('\u26a0\ufe0f Empty response from Claude API, using fallback')\n        raise ValueError('Empty API response')\n    \n    if not response.strip().startswith(('{', '[')):\n        print(f'\u26a0\ufe0f Invalid JSON response: {response[:100]}...')\n        raise ValueError('Non-JSON response')\n    \n    curated_data = json.loads(response)\n    \nexcept (json.JSONDecodeError, ValueError, ConnectionError) as e:\n    print(f'\u2717 Curation error: {e}')\n    print('\ud83d\udcca Using simple scoring algorithm...')\n    curated_data = simple_scoring_fallback(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T06:00:22.317704",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-03T06:00:02.067224"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error - the system is trying to parse an empty string or invalid JSON when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the JSON parser received an empty response or null value instead of valid JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add JSON validation and fallback handling. Check if the response is empty before parsing, implement try-catch blocks around JSON.parse operations, and provide default subject lines as fallback when parsing fails.",
+      "code_fix": "try:\n    if response and response.strip():\n        subject_data = json.loads(response)\n    else:\n        subject_data = {'subject': 'AI tools & automation tips (Edition #{})'.format(edition_number)}\nexcept json.JSONDecodeError as e:\n    logger.warning(f'JSON parse error: {e}, using fallback subject')\n    subject_data = {'subject': 'AI tools & automation tips (Edition #{})'.format(edition_number)}"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T09:00:07.109600",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 31\n\n\ud83e\udd16 Curating 31 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 31 items\n\n",
+      "timestamp": "2026-04-03T09:00:01.270266"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing Claude API response. The response body is empty or contains invalid JSON, likely due to API authentication failure, network timeout, or malformed request payload.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling and response validation before JSON parsing. Implement fallback mechanism to gracefully handle API failures. Add request/response logging for debugging.",
+      "code_fix": "try:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    curated_data = None\n\nif curated_data is None:\n    # Fallback to simple scoring algorithm\n    scored_items = simple_scoring_algorithm(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T09:00:13.529830",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-03T09:00:01.270318"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error - the system is trying to parse an empty string or malformed JSON when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the JSON parser received empty content or whitespace instead of valid JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add JSON validation and error handling before parsing. Implement fallback mechanisms to use default subject lines when JSON parsing fails. Add input sanitization to ensure non-empty content before JSON operations.",
+      "code_fix": "try:\n    if not subject_data or subject_data.strip() == '':\n        subject_data = '{\"subject\": \"AI tools & automation tips\"}'\n    parsed_data = json.loads(subject_data)\nexcept json.JSONDecodeError as e:\n    logger.warning(f'JSON parse error: {e}, using fallback subject')\n    parsed_data = {'subject': 'AI tools & automation tips (Edition #{edition_num})'}"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T09:00:19.542192",
+    "error": {
+      "file": "realtime.log",
+      "line": "\u2717 Error with https://api.github.com/search/repositories?q=topic:artificial-intelligence+stars:>100&sort=updated&order=desc&per_page=10: 'NoneType' object is not subscriptable",
+      "context": "\u2705 Found 6 AI stories on HN\n\n\u2b50 Monitoring GitHub Trending...\n  \u2717 Error with https://api.github.com/search/repositories?q=topic:artificial-intelligence+stars:>100&sort=updated&order=desc&per_page=10: 'NoneType' object is not subscriptable\n\u2705 Found 10 trending AI repos\n\n\ud83d\ude80 Monitoring Product Hunt today's launches...\n",
+      "timestamp": "2026-04-03T09:00:01.270569"
+    },
+    "analysis": {
+      "root_cause": "The GitHub API response is returning None instead of expected JSON data, likely due to rate limiting, authentication failure, or API endpoint changes. The code is trying to access/subscript a None object without null checking.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add proper null/None checking before accessing response data, implement retry logic with exponential backoff, and add fallback handling for API failures. Also verify API authentication and rate limits.",
+      "code_fix": "# Add null checking before subscripting response\nif response and response.status_code == 200:\n    data = response.json()\n    if data and 'items' in data:\n        # Process data['items']\n        pass\n    else:\n        print(f\"\u26a0\ufe0f GitHub API returned empty data\")\nelse:\n    print(f\"\u26a0\ufe0f GitHub API request failed: {response.status_code if response else 'No response'}\")\n    # Implement retry logic or use cached data"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T12:00:08.553709",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 33\n\n\ud83e\udd16 Curating 33 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 33 items\n\n",
+      "timestamp": "2026-04-03T12:00:02.042915"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error in Claude API response handling. The curation system received an empty or malformed response from Claude API (likely empty string, HTTP error page, or non-JSON content) when trying to parse the response as JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add proper error handling and response validation before JSON parsing. Implement fallback mechanism with retry logic and content validation. The system already has a fallback (simple scoring algorithm) which activated successfully.",
+      "code_fix": "try:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    if not response.strip().startswith(('{', '[')):\n        raise ValueError('Response is not valid JSON')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.exceptions.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}, falling back to simple scoring')\n    curated_data = simple_scoring_fallback(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T12:00:13.625356",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-03T12:00:02.043770"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error when processing subject line data. The system is trying to parse an empty string or malformed JSON input at the beginning of the subject line generation process.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add JSON validation and error handling with fallback mechanisms. Implement input sanitization before JSON parsing and provide default subject line templates when parsing fails.",
+      "code_fix": "try:\n    subject_data = json.loads(input_string)\nexcept json.JSONDecodeError:\n    # Fallback to default subject line template\n    subject_data = {'template': 'AI tools & automation tips (Edition #{edition})', 'edition': get_current_edition()}\nexcept Exception as e:\n    logger.warning(f'Subject line generation failed, using fallback: {e}')\n    subject_data = get_default_subject_template()"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T12:00:18.636369",
+    "error": {
+      "file": "realtime.log",
+      "line": "\u2717 Error with https://api.github.com/search/repositories?q=topic:artificial-intelligence+stars:>100&sort=updated&order=desc&per_page=10: 'NoneType' object is not subscriptable",
+      "context": "\u2705 Found 6 AI stories on HN\n\n\u2b50 Monitoring GitHub Trending...\n  \u2717 Error with https://api.github.com/search/repositories?q=topic:artificial-intelligence+stars:>100&sort=updated&order=desc&per_page=10: 'NoneType' object is not subscriptable\n\u2705 Found 10 trending AI repos\n\n\ud83d\ude80 Monitoring Product Hunt today's launches...\n",
+      "timestamp": "2026-04-03T12:00:02.044802"
+    },
+    "analysis": {
+      "root_cause": "The GitHub API response is returning None instead of expected JSON data, likely due to API rate limiting, authentication failure, or temporary API unavailability. The code is trying to access a dictionary key or array index on a None object.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add null/None checking before accessing response data, implement retry logic with exponential backoff, and add proper error handling to gracefully degrade when GitHub API is unavailable.",
+      "code_fix": "# Add null checking before processing response\nif response and response.json():\n    data = response.json()\n    if 'items' in data and data['items']:\n        # Process repositories\n        for repo in data['items']:\n            # existing processing logic\nelse:\n    print('\u26a0\ufe0f GitHub API temporarily unavailable, skipping trending repos')\n    # Continue with other data sources"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T15:00:07.852559",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 33\n\n\ud83e\udd16 Curating 33 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 33 items\n\n",
+      "timestamp": "2026-04-03T15:00:02.076136"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error in Claude API response handling. The curation system received an empty or malformed response from Claude API (likely empty string or non-JSON content) when trying to parse the response as JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add error handling and validation for Claude API responses. Implement response validation, retry logic for failed API calls, and graceful fallback to the simple scoring algorithm when Claude curation fails.",
+      "code_fix": "# Add before JSON parsing:\nif not response or not response.strip():\n    logger.warning('Empty response from Claude API, falling back to simple scoring')\n    return None\n\ntry:\n    result = json.loads(response)\nexcept json.JSONDecodeError as e:\n    logger.error(f'Claude API response parsing failed: {e}')\n    logger.debug(f'Raw response: {response[:200]}...')\n    return None"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T15:00:13.620172",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-03T15:00:02.076188"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error - the system is trying to parse an empty string or invalid JSON when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the JSON parser received empty input or a string that doesn't start with valid JSON.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add input validation and error handling before JSON parsing. Check if the input is empty/null and provide fallback subject line generation. Wrap JSON parsing in try-catch blocks with graceful degradation.",
+      "code_fix": "try:\n    if not subject_data or subject_data.strip() == '':\n        subject_data = '{\"subject\": \"AI tools & automation tips (Edition #2)\"}'\n    parsed_subject = json.loads(subject_data)\nexcept json.JSONDecodeError:\n    # Fallback to default subject line\n    parsed_subject = {\"subject\": \"AI tools & automation tips (Edition #2)\"}\n    logger.warning(\"JSON parsing failed, using fallback subject line\")"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T15:00:20.783293",
+    "error": {
+      "file": "realtime.log",
+      "line": "\u2717 Error with https://api.github.com/search/repositories?q=topic:artificial-intelligence+stars:>100&sort=updated&order=desc&per_page=10: 'NoneType' object is not subscriptable",
+      "context": "\u2705 Found 6 AI stories on HN\n\n\u2b50 Monitoring GitHub Trending...\n  \u2717 Error with https://api.github.com/search/repositories?q=topic:artificial-intelligence+stars:>100&sort=updated&order=desc&per_page=10: 'NoneType' object is not subscriptable\n\u2705 Found 10 trending AI repos\n\n\ud83d\ude80 Monitoring Product Hunt today's launches...\n",
+      "timestamp": "2026-04-03T15:00:02.076392"
+    },
+    "analysis": {
+      "root_cause": "The GitHub API call is returning a successful response, but the JSON parsing or field access is failing because a required field in the response is None/null. This typically occurs when trying to access nested dictionary keys or list indices on a None value, suggesting the API response structure is different than expected or a field that should contain data is empty.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add null checking and defensive programming around the GitHub API response parsing. Wrap the data access in try-catch blocks and validate that required fields exist and are not None before attempting to access their properties or indices.",
+      "code_fix": "# Add defensive parsing around GitHub API response\ntry:\n    if response and response.get('items'):\n        for repo in response['items']:\n            if repo and repo.get('name') and repo.get('html_url'):\n                # Process repo data\n                pass\nexcept (TypeError, KeyError, AttributeError) as e:\n    logger.warning(f'GitHub API parsing error: {e}')\n    # Continue with empty results or fallback data"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T18:00:07.336046",
+    "error": {
+      "file": "research.log",
+      "line": "\u2717 Curation error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\ud83d\udcca Total items collected: 33\n\n\ud83e\udd16 Curating 33 items with Claude...\n\u2717 Curation error: Expecting value: line 1 column 1 (char 0)\n\ud83d\udcca Using simple scoring algorithm...\n\u2705 Scored 33 items\n\n",
+      "timestamp": "2026-04-03T18:00:01.189222"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error in Claude API response - the response is empty or contains invalid JSON format. The error 'Expecting value: line 1 column 1 (char 0)' indicates the parser received an empty string or non-JSON content when trying to parse Claude's curation response.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add robust error handling around the Claude API call with response validation, fallback mechanisms, and retry logic. Implement checks for empty responses, network timeouts, and invalid JSON before parsing.",
+      "code_fix": "try:\n    response = claude_api.curate(items)\n    if not response or not response.strip():\n        raise ValueError('Empty response from Claude API')\n    curated_data = json.loads(response)\nexcept (json.JSONDecodeError, ValueError, requests.exceptions.RequestException) as e:\n    logger.warning(f'Claude curation failed: {e}. Falling back to simple scoring.')\n    curated_data = None\n\nif curated_data is None:\n    # Fallback to simple scoring algorithm\n    curated_data = simple_scoring_algorithm(items)"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T18:00:12.348665",
+    "error": {
+      "file": "generate.log",
+      "line": "\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)",
+      "context": "\n\ud83d\udce7 Generating subject lines...\n\n\u2717 Subject line error: Expecting value: line 1 column 1 (char 0)\n\n\ud83d\udce7 Best subject line: AI tools & automation tips (Edition #2)\n\n",
+      "timestamp": "2026-04-03T18:00:01.189275"
+    },
+    "analysis": {
+      "root_cause": "JSON parsing error - the system is trying to parse an empty string or invalid JSON when processing subject line data. The error 'Expecting value: line 1 column 1 (char 0)' indicates the JSON parser encountered an empty response or malformed JSON at the beginning of the input.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add JSON validation and error handling with fallback mechanisms. Implement try-catch blocks around JSON parsing operations, validate API responses before parsing, and provide default subject lines when parsing fails.",
+      "code_fix": "try:\n    subject_data = json.loads(response)\nexcept json.JSONDecodeError:\n    # Fallback to default subject line\n    subject_data = {'subject': f'AI tools & automation tips (Edition #{edition_number})'}\n    logger.warning('JSON parse failed, using fallback subject line')"
+    }
+  },
+  {
+    "timestamp": "2026-04-03T18:00:18.520330",
+    "error": {
+      "file": "realtime.log",
+      "line": "\u2717 Error with https://api.github.com/search/repositories?q=topic:artificial-intelligence+stars:>100&sort=updated&order=desc&per_page=10: 'NoneType' object is not subscriptable",
+      "context": "\u2705 Found 6 AI stories on HN\n\n\u2b50 Monitoring GitHub Trending...\n  \u2717 Error with https://api.github.com/search/repositories?q=topic:artificial-intelligence+stars:>100&sort=updated&order=desc&per_page=10: 'NoneType' object is not subscriptable\n\u2705 Found 10 trending AI repos\n\n\ud83d\ude80 Monitoring Product Hunt today's launches...\n",
+      "timestamp": "2026-04-03T18:00:01.189494"
+    },
+    "analysis": {
+      "root_cause": "The GitHub API request is returning a None response, likely due to rate limiting, authentication failure, or API endpoint changes. The code is attempting to access properties/indices on a None object without proper null checking.",
+      "impact": "Medium",
+      "auto_fixable": true,
+      "fix_strategy": "Add proper null checking and error handling for API responses. Implement retry logic with exponential backoff for transient failures. Add fallback behavior when GitHub API is unavailable.",
+      "code_fix": "# Add before accessing response data\nif response is None or response.status_code != 200:\n    logger.warning(f'GitHub API request failed: {response}')\n    return []  # or appropriate fallback\n\n# Add null check for JSON parsing\ntry:\n    data = response.json() if response else None\n    if data is None or 'items' not in data:\n        return []\n    # Continue with normal processing\nexcept (ValueError, KeyError) as e:\n    logger.error(f'Failed to parse GitHub API response: {e}')\n    return []"
     }
   }
 ]

@@ -1,0 +1,142 @@
+{
+  "chatgpt-vs-claude-coding": {
+    "intro": "ChatGPT and Claude are the two most popular AI assistants for coding. After using both extensively, here's my honest comparison.",
+    "quick_verdict": "Claude wins for serious coding work. Its 200K context window and superior reasoning make it better for complex refactoring and multi-file projects. ChatGPT is better for quick scripts and has more integrations.",
+    "comparison_table": {
+      "Coding Quality": {"chatgpt": "Good", "claude": "Excellent"},
+      "Context Window": {"chatgpt": "8K-32K", "claude": "200K"},
+      "Debugging": {"chatgpt": "Good", "claude": "Excellent"},
+      "Code Completion": {"chatgpt": "Basic", "claude": "Advanced"},
+      "Documentation": {"chatgpt": "Good", "claude": "Excellent"},
+      "Pricing": {"chatgpt": "$20/mo", "claude": "$20/mo"}
+    },
+    "winner": "Claude for professional development",
+    "recommendation": "Use Claude for serious coding work, ChatGPT for quick scripts and when you need plugins or image generation integrated."
+  },
+  "cursor-vs-windsurf": {
+    "intro": "Cursor and Windsurf are both AI-powered code editors. Cursor is the established player, while Windsurf is the newer, cheaper alternative.",
+    "quick_verdict": "Cursor is worth the extra $10/mo for serious developers. Its Composer mode, multi-file editing, and maturity make it superior. Windsurf is fine for hobbyists or side projects.",
+    "comparison_table": {
+      "Price": {"cursor": "$20/mo", "windsurf": "$10/mo"},
+      "Code Generation": {"cursor": "Excellent", "windsurf": "Good"},
+      "Multi-file Editing": {"cursor": "Yes (Composer)", "windsurf": "Limited"},
+      "Context Awareness": {"cursor": "Excellent", "windsurf": "Good"},
+      "Community": {"cursor": "Large", "windsurf": "Growing"},
+      "Stability": {"cursor": "Very stable", "windsurf": "Some bugs"}
+    },
+    "winner": "Cursor for professionals, Windsurf for budget-conscious",
+    "recommendation": "If coding is your main income source, pay for Cursor. If you're just prototyping side projects, Windsurf is fine."
+  },
+  "make-vs-zapier-automation": {
+    "intro": "Make and Zapier are the two biggest no-code automation platforms. I've built workflows on both - here's what you need to know.",
+    "quick_verdict": "Zapier is easier to start with and has way more integrations. Make is more powerful and cheaper for complex workflows. Start with Zapier, graduate to Make if you need more control.",
+    "comparison_table": {
+      "Ease of Use": {"make": "Moderate", "zapier": "Easy"},
+      "App Integrations": {"make": "1000+", "zapier": "5000+"},
+      "Pricing": {"make": "$9/mo+", "zapier": "$20/mo+"},
+      "Complexity": {"make": "High capability", "zapier": "Moderate"},
+      "Documentation": {"make": "Good", "zapier": "Excellent"},
+      "Best For": {"make": "Complex logic", "zapier": "Simple connections"}
+    },
+    "winner": "Depends on use case",
+    "recommendation": "Use Zapier if you're new to automation or need a specific app integration. Use Make if you need complex logic or want to save money at scale."
+  },
+  "notion-vs-obsidian": {
+    "intro": "Notion and Obsidian are both powerful note-taking tools with very different philosophies. Notion is cloud-based and collaborative; Obsidian is local-first and markdown-based.",
+    "quick_verdict": "Notion wins for teams and visual organization. Obsidian wins for privacy, speed, and long-term knowledge management. I use both for different purposes.",
+    "comparison_table": {
+      "Storage": {"notion": "Cloud-based", "obsidian": "Local files"},
+      "Pricing": {"notion": "$8/mo+", "obsidian": "Free (sync $8/mo)"},
+      "Collaboration": {"notion": "Excellent", "obsidian": "Limited"},
+      "Speed": {"notion": "Can be slow", "obsidian": "Very fast"},
+      "Offline": {"notion": "Limited", "obsidian": "Full"},
+      "Learning Curve": {"notion": "Moderate", "obsidian": "Steep"}
+    },
+    "winner": "Different use cases",
+    "recommendation": "Use Notion for projects, collaboration, and databases. Use Obsidian for personal knowledge management and writing."
+  },
+  "midjourney-vs-dalle": {
+    "intro": "Midjourney and DALL-E are the two most popular AI image generators. Midjourney dominates for artistic quality, while DALL-E integrates with ChatGPT.",
+    "quick_verdict": "Midjourney produces better images. DALL-E is more convenient if you're already using ChatGPT. For serious design work, pay for Midjourney.",
+    "comparison_table": {
+      "Quality": {"midjourney": "Excellent", "dalle": "Good"},
+      "Price Model": {"midjourney": "$10/mo subscription", "dalle": "Pay per image"},
+      "Interface": {"midjourney": "Discord", "dalle": "ChatGPT/API"},
+      "Speed": {"midjourney": "Fast", "dalle": "Very fast"},
+      "Style Control": {"midjourney": "Excellent", "dalle": "Good"},
+      "Community": {"midjourney": "Large, active", "dalle": "Smaller"}
+    },
+    "winner": "Midjourney for quality",
+    "recommendation": "Use Midjourney if image generation is a core part of your workflow. Use DALL-E for occasional one-off images when already using ChatGPT."
+  },
+  "v0-vs-bolt": {
+    "intro": "v0 and Bolt are both AI tools for generating UI code. v0 (by Vercel) generates React components; Bolt builds entire fullstack apps in the browser.",
+    "quick_verdict": "v0 for production-ready components, Bolt for rapid prototyping and demos. v0 integrates better with real projects; Bolt is better for exploring ideas quickly.",
+    "comparison_table": {
+      "Output": {"v0": "React components", "bolt": "Full apps"},
+      "Code Quality": {"v0": "Production-ready", "bolt": "Prototype quality"},
+      "Customization": {"v0": "Extensive", "bolt": "Limited"},
+      "Speed": {"v0": "Fast iterations", "bolt": "Instant apps"},
+      "Export": {"v0": "Clean code", "bolt": "Limited export"},
+      "Pricing": {"v0": "Free tier + paid", "bolt": "Free tier"}
+    },
+    "winner": "Different purposes",
+    "recommendation": "Use v0 when building real products with React. Use Bolt for quick prototypes, demos, or exploring ideas before committing to code."
+  },
+  "perplexity-vs-chatgpt-research": {
+    "intro": "Perplexity and ChatGPT both do research, but with different approaches. Perplexity is search-first with citations; ChatGPT is conversation-first with broader knowledge.",
+    "quick_verdict": "Perplexity wins for fact-based research where citations matter. ChatGPT wins for brainstorming, synthesis, and creative research projects.",
+    "comparison_table": {
+      "Web Search": {"perplexity": "Built-in, real-time", "chatgpt": "Via plugins (Plus only)"},
+      "Citations": {"perplexity": "Always included", "chatgpt": "Sometimes"},
+      "Accuracy": {"perplexity": "High (cited sources)", "chatgpt": "Good (can hallucinate)"},
+      "Conversation": {"perplexity": "Focused", "chatgpt": "Extensive"},
+      "Follow-up": {"perplexity": "Good", "chatgpt": "Excellent"},
+      "Pricing": {"perplexity": "$20/mo Pro", "chatgpt": "$20/mo Plus"}
+    },
+    "winner": "Perplexity for factual research",
+    "recommendation": "Use Perplexity when you need cited sources (market research, fact-checking). Use ChatGPT for brainstorming and synthesis work."
+  },
+  "claude-vs-chatgpt-writing": {
+    "intro": "Both Claude and ChatGPT are excellent for writing, but they have different styles. Claude is more concise and direct; ChatGPT is more elaborate.",
+    "quick_verdict": "Claude for professional writing that needs to be concise. ChatGPT for creative writing and content that benefits from elaboration. I use both depending on the project.",
+    "comparison_table": {
+      "Writing Style": {"claude": "Concise, direct", "chatgpt": "Elaborate, conversational"},
+      "Tone": {"claude": "Professional", "chatgpt": "Friendly"},
+      "Length": {"claude": "Shorter responses", "chatgpt": "Longer responses"},
+      "Editing": {"claude": "Excellent", "chatgpt": "Good"},
+      "Context": {"claude": "200K tokens", "chatgpt": "8K-32K tokens"},
+      "Pricing": {"claude": "$20/mo", "chatgpt": "$20/mo"}
+    },
+    "winner": "Depends on writing type",
+    "recommendation": "Use Claude for business writing, technical docs, and anything that should be concise. Use ChatGPT for blog posts, creative writing, and content where elaboration helps."
+  },
+  "airtable-vs-notion-database": {
+    "intro": "Airtable and Notion both offer database functionality, but with different strengths. Airtable is database-first; Notion is docs-first with database features.",
+    "quick_verdict": "Airtable for serious data work and automations. Notion for lightweight databases integrated with docs and wikis. Most solo founders start with Notion and graduate to Airtable.",
+    "comparison_table": {
+      "Database Power": {"airtable": "Excellent", "notion": "Good"},
+      "Automations": {"airtable": "Powerful", "notion": "Basic"},
+      "Formulas": {"airtable": "Advanced", "notion": "Good"},
+      "Views": {"airtable": "Many options", "notion": "Good options"},
+      "API": {"airtable": "Excellent", "notion": "Good"},
+      "Pricing": {"airtable": "$10/mo+", "notion": "$8/mo+"}
+    },
+    "winner": "Airtable for data-heavy work",
+    "recommendation": "Use Notion if databases are secondary to docs. Use Airtable if data management and automation are core to your workflow."
+  },
+  "canva-vs-figma": {
+    "intro": "Canva and Figma are both design tools, but aimed at different users. Canva is for non-designers; Figma is professional design software.",
+    "quick_verdict": "Canva for quick social media graphics and marketing materials. Figma for serious product design and UI/UX work. Don't use Canva for professional projects.",
+    "comparison_table": {
+      "Target User": {"canva": "Non-designers", "figma": "Designers"},
+      "Ease of Use": {"canva": "Extremely easy", "figma": "Moderate learning curve"},
+      "Templates": {"canva": "Huge library", "figma": "Community resources"},
+      "Precision": {"canva": "Limited", "figma": "Pixel-perfect"},
+      "Collaboration": {"canva": "Good", "figma": "Excellent"},
+      "Pricing": {"canva": "$13/mo", "figma": "Free + $12/mo+"}
+    },
+    "winner": "Different audiences",
+    "recommendation": "Use Canva for social media, presentations, and quick marketing materials. Use Figma for product design, UI/UX, and anything that requires precision."
+  }
+}

@@ -1,0 +1,17 @@
+2026-04-02 15:31:34,125 [INFO] ======================================================================
+2026-04-02 15:31:34,125 [INFO] 🧠 PROMPT OPTIMIZER - Learning Loop for Blog Generation
+2026-04-02 15:31:34,125 [INFO] ======================================================================
+2026-04-02 15:31:34,128 [INFO] ✅ Database initialized
+2026-04-02 15:31:34,128 [INFO] 📊 Querying top 10 posts from last 30 days...
+2026-04-02 15:31:34,128 [WARNING] ⚠️  Not enough posts in database, scanning markdown files...
+2026-04-02 15:31:34,133 [INFO] ✅ Scanned 10 markdown files
+2026-04-02 15:31:34,133 [INFO] ✅ Found 10 posts for analysis
+2026-04-02 15:31:34,133 [INFO] 🔍 Extracting patterns from top posts...
+2026-04-02 15:31:34,137 [INFO] ✅ Pattern extraction complete:
+2026-04-02 15:31:34,137 [INFO]    • Avg word count: 1744
+2026-04-02 15:31:34,137 [INFO]    • Avg sections: 13
+2026-04-02 15:31:34,137 [INFO]    • Tone: casual and conversational
+2026-04-02 15:31:34,137 [INFO]    • Tech/Casual ratio: 0.07
+2026-04-02 15:31:34,137 [INFO] 🤖 Generating prompt candidates via OpenRouter...
+2026-04-02 15:31:34,137 [ERROR] ❌ OPENROUTER_API_KEY not set
+2026-04-02 15:31:34,137 [ERROR] ❌ Failed to generate candidates

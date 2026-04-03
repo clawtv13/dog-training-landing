@@ -1,0 +1,396 @@
+[2026-04-02 15:31:46] ======================================================================
+[2026-04-02 15:31:46] 🔍 PERFORMANCE TRACKER - Starting analysis
+[2026-04-02 15:31:46] ======================================================================
+[2026-04-02 15:31:46] Found 28 posts
+[2026-04-02 15:31:46] 
+📝 Phase 1: Indexing posts...
+[2026-04-02 15:31:47] 
+📊 Phase 2: Scoring 28 unscored posts...
+[2026-04-02 15:31:47] 
+Processing: 2026-03-29-ai-overly-affirms-users-asking-for-personal-advice
+[2026-04-02 15:31:47]   Readability: 35.8/100
+[2026-04-02 15:31:47]   SEO: 55/100
+[2026-04-02 15:31:47]   Quality: 45.4/100
+[2026-04-02 15:31:47] 
+Processing: 2026-03-29-cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering
+[2026-04-02 15:31:47]   Readability: 29.6/100
+[2026-04-02 15:31:47]   SEO: 55/100
+[2026-04-02 15:31:47]   Quality: 42.3/100
+[2026-04-02 15:31:47] 
+Processing: 2026-03-29-claude-folder-anatomy-control-center-for-ai-coding
+[2026-04-02 15:31:47]   Readability: 58.2/100
+[2026-04-02 15:31:47]   SEO: 70/100
+[2026-04-02 15:31:47]   Quality: 64.1/100
+[2026-04-02 15:31:47] 
+Processing: 2026-03-29-folk-are-getting-dangerously-attached-to-ai-that-always-tells-them-theyre-right
+[2026-04-02 15:31:47]   Readability: 32.1/100
+[2026-04-02 15:31:47]   SEO: 55/100
+[2026-04-02 15:31:47]   Quality: 43.5/100
+[2026-04-02 15:31:47] 
+Processing: 2026-03-29-go-hard-on-agents-not-on-your-filesystem
+[2026-04-02 15:31:47]   Readability: 25.1/100
+[2026-04-02 15:31:47]   SEO: 85/100
+[2026-04-02 15:31:47]   Quality: 55.0/100
+[2026-04-02 15:31:47] 
+Processing: 2026-03-29-how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026
+[2026-04-02 15:31:47]   Readability: 28.7/100
+[2026-04-02 15:31:47]   SEO: 85/100
+[2026-04-02 15:31:47]   Quality: 56.9/100
+[2026-04-02 15:31:47] 
+Processing: 2026-03-29-sandbox-ai-agents-before-they-delete-your-files
+[2026-04-02 15:31:47]   Readability: 62.5/100
+[2026-04-02 15:31:47]   SEO: 55/100
+[2026-04-02 15:31:47]   Quality: 58.8/100
+[2026-04-02 15:31:47] 
+Processing: 2026-03-29-the-first-40-months-of-the-ai-era
+[2026-04-02 15:31:48]   Readability: 32.0/100
+[2026-04-02 15:31:48]   SEO: 55/100
+[2026-04-02 15:31:48]   Quality: 43.5/100
+[2026-04-02 15:31:48] 
+Processing: 2026-03-29-why-sycophantic-ai-is-dangerous-for-solo-builders
+[2026-04-02 15:31:48]   Readability: 60.1/100
+[2026-04-02 15:31:48]   SEO: 55/100
+[2026-04-02 15:31:48]   Quality: 57.6/100
+[2026-04-02 15:31:48] 
+Processing: 2026-03-30-chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state
+[2026-04-02 15:31:48]   Readability: 38.4/100
+[2026-04-02 15:31:48]   SEO: 85/100
+[2026-04-02 15:31:48]   Quality: 61.7/100
+[2026-04-02 15:31:48] 
+Processing: 2026-03-30-claude-code-runs-git-reset-hard-originmain-against-project-repo-every-10-mins
+[2026-04-02 15:31:48]   Readability: 30.3/100
+[2026-04-02 15:31:48]   SEO: 85/100
+[2026-04-02 15:31:48]   Quality: 57.6/100
+[2026-04-02 15:31:48] 
+Processing: 2026-03-30-coding-agents-could-make-free-software-matter-again
+[2026-04-02 15:31:48]   Readability: 46.5/100
+[2026-04-02 15:31:48]   SEO: 85/100
+[2026-04-02 15:31:48]   Quality: 65.8/100
+[2026-04-02 15:31:48] 
+Processing: 2026-03-30-midnight-train-from-ga-a-view-of-america-from-the-tracks-as-airports-struggle
+[2026-04-02 15:31:48]   Readability: 38.3/100
+[2026-04-02 15:31:48]   SEO: 85/100
+[2026-04-02 15:31:48]   Quality: 61.7/100
+[2026-04-02 15:31:48] 
+Processing: 2026-03-31-claude-codes-source-code-has-been-leaked-via-a-map-file-in-their-npm-registry
+[2026-04-02 15:31:48]   Readability: 51.9/100
+[2026-04-02 15:31:48]   SEO: 85/100
+[2026-04-02 15:31:48]   Quality: 68.5/100
+[2026-04-02 15:31:48] 
+Processing: 2026-03-31-clojure-the-documentary-official-trailer-video
+[2026-04-02 15:31:48]   Readability: 25.8/100
+[2026-04-02 15:31:48]   SEO: 85/100
+[2026-04-02 15:31:48]   Quality: 55.4/100
+[2026-04-02 15:31:48] 
+Processing: 2026-03-31-how-i-automated-my-180k-content-business-with-openclaw
+[2026-04-02 15:31:48]   Readability: 52.2/100
+[2026-04-02 15:31:48]   SEO: 70/100
+[2026-04-02 15:31:48]   Quality: 61.1/100
+[2026-04-02 15:31:48] 
+Processing: 2026-03-31-how-to-automate-email-followups-without-expensive-crm
+[2026-04-02 15:31:48]   Readability: 54.5/100
+[2026-04-02 15:31:48]   SEO: 75/100
+[2026-04-02 15:31:48]   Quality: 64.7/100
+[2026-04-02 15:31:48] 
+Processing: 2026-03-31-learn-claude-code-by-doing-not-reading
+[2026-04-02 15:31:48]   Readability: 33.7/100
+[2026-04-02 15:31:48]   SEO: 90/100
+[2026-04-02 15:31:48]   Quality: 61.9/100
+[2026-04-02 15:31:48] 
+Processing: 2026-03-31-my-50-month-tech-stack-that-replaces-your-500-saas-bill
+[2026-04-02 15:31:48]   Readability: 48.1/100
+[2026-04-02 15:31:48]   SEO: 80/100
+[2026-04-02 15:31:48]   Quality: 64.0/100
+[2026-04-02 15:31:48] 
+Processing: 2026-03-31-the-51-chatgpt-prompts-that-save-solopreneurs-15-hours-every-week
+[2026-04-02 15:31:48]   Readability: 50.4/100
+[2026-04-02 15:31:48]   SEO: 90/100
+[2026-04-02 15:31:48]   Quality: 70.2/100
+[2026-04-02 15:31:48] 
+Processing: 2026-03-31-universal-claudemd-cut-claude-output-tokens
+[2026-04-02 15:31:48]   Readability: 46.6/100
+[2026-04-02 15:31:48]   SEO: 90/100
+[2026-04-02 15:31:48]   Quality: 68.3/100
+[2026-04-02 15:31:48] 
+Processing: 2026-04-01-i-am-definitely-missing-the-preai-writing-era
+[2026-04-02 15:31:48]   Readability: 45.3/100
+[2026-04-02 15:31:48]   SEO: 85/100
+[2026-04-02 15:31:48]   Quality: 65.2/100
+[2026-04-02 15:31:48] 
+Processing: 2026-04-01-openai-closes-funding-round-at-an-852b-valuation
+[2026-04-02 15:31:48]   Readability: 46.5/100
+[2026-04-02 15:31:48]   SEO: 85/100
+[2026-04-02 15:31:48]   Quality: 65.7/100
+[2026-04-02 15:31:48] 
+Processing: 2026-04-01-police-used-ai-facial-recognition-to-wrongly-arrest-tn-woman-for-crimes-in-nd
+[2026-04-02 15:31:48]   Readability: 37.2/100
+[2026-04-02 15:31:48]   SEO: 85/100
+[2026-04-02 15:31:48]   Quality: 61.1/100
+[2026-04-02 15:31:48] 
+Processing: 2026-04-01-why-the-us-navy-wont-blast-the-iranians-and-open-strait-of-hormuz
+[2026-04-02 15:31:48]   Readability: 49.4/100
+[2026-04-02 15:31:48]   SEO: 85/100
+[2026-04-02 15:31:48]   Quality: 67.2/100
+[2026-04-02 15:31:48] 
+Processing: 2026-04-02-how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026
+[2026-04-02 15:31:48]   Readability: 39.2/100
+[2026-04-02 15:31:48]   SEO: 85/100
+[2026-04-02 15:31:48]   Quality: 62.1/100
+[2026-04-02 15:31:48] 
+Processing: 2026-04-02-windows-95-defenses-against-installers-that-overwrite-a-file-with-an-older-one
+[2026-04-02 15:31:48]   Readability: 39.8/100
+[2026-04-02 15:31:48]   SEO: 90/100
+[2026-04-02 15:31:48]   Quality: 64.9/100
+[2026-04-02 15:31:48] 
+Processing: EXAMPLE-real-content
+[2026-04-02 15:31:48]   Readability: 52.1/100
+[2026-04-02 15:31:48]   SEO: 55/100
+[2026-04-02 15:31:48]   Quality: 53.5/100
+[2026-04-02 15:31:48] 
+🏷️  Phase 3: Topic clustering...
+[2026-04-02 15:31:48] 
+💾 Phase 4: Updating database...
+[2026-04-02 15:31:48] Scored post 2026-03-29-ai-overly-affirms-users-asking-for-personal-advice: readability=35.8, seo=55, cluster=Business
+[2026-04-02 15:31:48] Scored post 2026-03-29-cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering: readability=29.6, seo=55, cluster=Business
+[2026-04-02 15:31:48] Scored post 2026-03-29-claude-folder-anatomy-control-center-for-ai-coding: readability=58.2, seo=70, cluster=AI Tools
+[2026-04-02 15:31:48] Scored post 2026-03-29-folk-are-getting-dangerously-attached-to-ai-that-always-tells-them-theyre-right: readability=32.1, seo=55, cluster=Business
+[2026-04-02 15:31:48] Scored post 2026-03-29-go-hard-on-agents-not-on-your-filesystem: readability=25.1, seo=85, cluster=Business
+[2026-04-02 15:31:48] Scored post 2026-03-29-how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026: readability=28.7, seo=85, cluster=Business
+[2026-04-02 15:31:48] Scored post 2026-03-29-sandbox-ai-agents-before-they-delete-your-files: readability=62.5, seo=55, cluster=Business
+[2026-04-02 15:31:48] Scored post 2026-03-29-the-first-40-months-of-the-ai-era: readability=32.0, seo=55, cluster=Business
+[2026-04-02 15:31:48] Scored post 2026-03-29-why-sycophantic-ai-is-dangerous-for-solo-builders: readability=60.1, seo=55, cluster=Business
+[2026-04-02 15:31:48] Scored post 2026-03-30-chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state: readability=38.4, seo=85, cluster=Random
+[2026-04-02 15:31:48] Scored post 2026-03-30-claude-code-runs-git-reset-hard-originmain-against-project-repo-every-10-mins: readability=30.3, seo=85, cluster=Random
+[2026-04-02 15:31:48] Scored post 2026-03-30-coding-agents-could-make-free-software-matter-again: readability=46.5, seo=85, cluster=Random
+[2026-04-02 15:31:48] Scored post 2026-03-30-midnight-train-from-ga-a-view-of-america-from-the-tracks-as-airports-struggle: readability=38.3, seo=85, cluster=Random
+[2026-04-02 15:31:48] Scored post 2026-03-31-claude-codes-source-code-has-been-leaked-via-a-map-file-in-their-npm-registry: readability=51.9, seo=85, cluster=Business
+[2026-04-02 15:31:48] Scored post 2026-03-31-clojure-the-documentary-official-trailer-video: readability=25.8, seo=85, cluster=Random
+[2026-04-02 15:31:48] Scored post 2026-03-31-how-i-automated-my-180k-content-business-with-openclaw: readability=52.2, seo=70, cluster=Random
+[2026-04-02 15:31:48] Scored post 2026-03-31-how-to-automate-email-followups-without-expensive-crm: readability=54.5, seo=75, cluster=Random
+[2026-04-02 15:31:48] Scored post 2026-03-31-learn-claude-code-by-doing-not-reading: readability=33.7, seo=90, cluster=Random
+[2026-04-02 15:31:48] Scored post 2026-03-31-my-50-month-tech-stack-that-replaces-your-500-saas-bill: readability=48.1, seo=80, cluster=Random
+[2026-04-02 15:31:48] Scored post 2026-03-31-the-51-chatgpt-prompts-that-save-solopreneurs-15-hours-every-week: readability=50.4, seo=90, cluster=Random
+[2026-04-02 15:31:48] Scored post 2026-03-31-universal-claudemd-cut-claude-output-tokens: readability=46.6, seo=90, cluster=AI Tools
+[2026-04-02 15:31:48] Scored post 2026-04-01-i-am-definitely-missing-the-preai-writing-era: readability=45.3, seo=85, cluster=Business
+[2026-04-02 15:31:48] Scored post 2026-04-01-openai-closes-funding-round-at-an-852b-valuation: readability=46.5, seo=85, cluster=Random
+[2026-04-02 15:31:48] Scored post 2026-04-01-police-used-ai-facial-recognition-to-wrongly-arrest-tn-woman-for-crimes-in-nd: readability=37.2, seo=85, cluster=Business
+[2026-04-02 15:31:48] Scored post 2026-04-01-why-the-us-navy-wont-blast-the-iranians-and-open-strait-of-hormuz: readability=49.4, seo=85, cluster=Random
+[2026-04-02 15:31:48] Scored post 2026-04-02-how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026: readability=39.2, seo=85, cluster=Random
+[2026-04-02 15:31:48] Scored post 2026-04-02-windows-95-defenses-against-installers-that-overwrite-a-file-with-an-older-one: readability=39.8, seo=90, cluster=Random
+[2026-04-02 15:31:48] Scored post EXAMPLE-real-content: readability=52.1, seo=55, cluster=Random
+[2026-04-02 15:31:48] 
+======================================================================
+[2026-04-02 15:31:48] ✅ PERFORMANCE TRACKER - Complete!
+[2026-04-02 15:31:48] ======================================================================
+[2026-04-02 15:31:48] 
+📈 Summary:
+[2026-04-02 15:31:48]   Posts scored: 28
+[2026-04-02 15:31:48]   Avg Readability: 42.5/100
+[2026-04-02 15:31:48]   Avg SEO: 76.6/100
+[2026-04-02 15:31:48]   Avg Quality: 59.6/100
+[2026-04-02 15:31:48] 
+🏷️  Topic Distribution:
+[2026-04-02 15:31:48]   Random: 15 posts
+[2026-04-02 15:31:48]   Business: 11 posts
+[2026-04-02 15:31:48]   AI Tools: 2 posts
+[2026-04-02 15:31:48] 
+📝 Log saved to: /root/.openclaw/workspace/ai-automation-blog/logs/performance-tracker.log
+[2026-04-02 15:31:48] 
+[2026-04-02 15:32:06] ======================================================================
+[2026-04-02 15:32:06] 🔍 PERFORMANCE TRACKER - Starting analysis
+[2026-04-02 15:32:06] ======================================================================
+[2026-04-02 15:32:06] Found 28 posts
+[2026-04-02 15:32:06] 
+📝 Phase 1: Indexing posts...
+[2026-04-02 15:32:06] 
+📊 Phase 2: Scoring 1 unscored posts...
+[2026-04-02 15:32:06] 
+Processing: EXAMPLE-real-content
+[2026-04-02 15:32:06]   Readability: 52.1/100
+[2026-04-02 15:32:06]   SEO: 55/100
+[2026-04-02 15:32:06]   Quality: 53.5/100
+[2026-04-02 15:32:06] 
+🏷️  Phase 3: Topic clustering...
+[2026-04-02 15:32:07] 
+💾 Phase 4: Updating database...
+[2026-04-02 15:32:07] Scored post EXAMPLE-real-content: readability=52.1, seo=55, cluster=Random
+[2026-04-02 15:32:07] 
+======================================================================
+[2026-04-02 15:32:07] ✅ PERFORMANCE TRACKER - Complete!
+[2026-04-02 15:32:07] ======================================================================
+[2026-04-02 15:32:07] 
+📈 Summary:
+[2026-04-02 15:32:07]   Posts scored: 1
+[2026-04-02 15:32:07]   Avg Readability: 52.1/100
+[2026-04-02 15:32:07]   Avg SEO: 55.0/100
+[2026-04-02 15:32:07]   Avg Quality: 53.5/100
+[2026-04-02 15:32:07] 
+🏷️  Topic Distribution:
+[2026-04-02 15:32:07]   Random: 1 posts
+[2026-04-02 15:32:07] 
+📝 Log saved to: /root/.openclaw/workspace/ai-automation-blog/logs/performance-tracker.log
+[2026-04-02 15:32:07] 
+[2026-04-02 15:38:43] ======================================================================
+[2026-04-02 15:38:43] 🔍 PERFORMANCE TRACKER - Starting analysis
+[2026-04-02 15:38:43] ======================================================================
+[2026-04-02 15:38:43] Found 28 posts
+[2026-04-02 15:38:43] 
+📝 Phase 1: Indexing posts...
+[2026-04-02 15:38:44] 
+📊 Phase 2: Scoring 1 unscored posts...
+[2026-04-02 15:38:44] 
+Processing: EXAMPLE-real-content
+[2026-04-02 15:38:44]   Readability: 52.1/100
+[2026-04-02 15:38:44]   SEO: 55/100
+[2026-04-02 15:38:44]   Quality: 53.5/100
+[2026-04-02 15:38:44] 
+🏷️  Phase 3: Topic clustering...
+[2026-04-02 15:38:44] 
+💾 Phase 4: Updating database...
+[2026-04-02 15:38:44] Scored post EXAMPLE-real-content: readability=52.1, seo=55, cluster=Random
+[2026-04-02 15:38:44] 
+======================================================================
+[2026-04-02 15:38:44] ✅ PERFORMANCE TRACKER - Complete!
+[2026-04-02 15:38:44] ======================================================================
+[2026-04-02 15:38:44] 
+📈 Summary:
+[2026-04-02 15:38:44]   Posts scored: 1
+[2026-04-02 15:38:44]   Avg Readability: 52.1/100
+[2026-04-02 15:38:44]   Avg SEO: 55.0/100
+[2026-04-02 15:38:44]   Avg Quality: 53.5/100
+[2026-04-02 15:38:44] 
+🏷️  Topic Distribution:
+[2026-04-02 15:38:44]   Random: 1 posts
+[2026-04-02 15:38:44] 
+📝 Log saved to: /root/.openclaw/workspace/ai-automation-blog/logs/performance-tracker.log
+[2026-04-02 15:38:44] 
+[2026-04-02 16:10:03] ======================================================================
+[2026-04-02 16:10:03] 🔍 PERFORMANCE TRACKER - Starting analysis
+[2026-04-02 16:10:03] ======================================================================
+[2026-04-02 16:10:03] Found 29 posts
+[2026-04-02 16:10:03] 
+📝 Phase 1: Indexing posts...
+[2026-04-02 16:10:03] 
+📊 Phase 2: Scoring 1 unscored posts...
+[2026-04-02 16:10:03] 
+Processing: 2026-04-02-anatomy-of-the-claude-folder
+[2026-04-02 16:10:04]   Readability: 47.9/100
+[2026-04-02 16:10:04]   SEO: 95/100
+[2026-04-02 16:10:04]   Quality: 71.5/100
+[2026-04-02 16:10:04] 
+🏷️  Phase 3: Topic clustering...
+[2026-04-02 16:10:04] 
+💾 Phase 4: Updating database...
+[2026-04-02 16:10:04] Scored post 2026-04-02-anatomy-of-the-claude-folder: readability=47.9, seo=95, cluster=Random
+[2026-04-02 16:10:04] 
+======================================================================
+[2026-04-02 16:10:04] ✅ PERFORMANCE TRACKER - Complete!
+[2026-04-02 16:10:04] ======================================================================
+[2026-04-02 16:10:04] 
+📈 Summary:
+[2026-04-02 16:10:04]   Posts scored: 1
+[2026-04-02 16:10:04]   Avg Readability: 47.9/100
+[2026-04-02 16:10:04]   Avg SEO: 95.0/100
+[2026-04-02 16:10:04]   Avg Quality: 71.5/100
+[2026-04-02 16:10:04] 
+🏷️  Topic Distribution:
+[2026-04-02 16:10:04]   Random: 1 posts
+[2026-04-02 16:10:04] 
+📝 Log saved to: /root/.openclaw/workspace/ai-automation-blog/logs/performance-tracker.log
+[2026-04-02 16:10:04] 
+[2026-04-03 02:00:03] ======================================================================
+[2026-04-03 02:00:03] ======================================================================
+[2026-04-03 02:00:03] 🔍 PERFORMANCE TRACKER - Starting analysis
+[2026-04-03 02:00:03] 🔍 PERFORMANCE TRACKER - Starting analysis
+[2026-04-03 02:00:03] ======================================================================
+[2026-04-03 02:00:03] ======================================================================
+[2026-04-03 02:00:03] Found 29 posts
+[2026-04-03 02:00:03] Found 29 posts
+[2026-04-03 02:00:03] 
+📝 Phase 1: Indexing posts...
+[2026-04-03 02:00:03] 
+📝 Phase 1: Indexing posts...
+[2026-04-03 02:00:03] 
+✅ All posts already scored!
+[2026-04-03 02:00:03] 
+✅ All posts already scored!
+[2026-04-03 10:10:04] ======================================================================
+[2026-04-03 10:10:04] 🔍 PERFORMANCE TRACKER - Starting analysis
+[2026-04-03 10:10:04] ======================================================================
+[2026-04-03 10:10:04] Found 31 posts
+[2026-04-03 10:10:04] 
+📝 Phase 1: Indexing posts...
+[2026-04-03 10:10:04] 
+📊 Phase 2: Scoring 2 unscored posts...
+[2026-04-03 10:10:04] 
+Processing: 2026-04-03-tailscales-new-macos-home
+[2026-04-03 10:10:05]   Readability: 67.2/100
+[2026-04-03 10:10:05]   SEO: 90/100
+[2026-04-03 10:10:05]   Quality: 78.6/100
+[2026-04-03 10:10:05] 
+Processing: 2026-04-03-good-ideas-do-not-need-lots-of-lies-in-order-to-gain-public-acceptance-2008
+[2026-04-03 10:10:05]   Readability: 62.8/100
+[2026-04-03 10:10:05]   SEO: 85/100
+[2026-04-03 10:10:05]   Quality: 73.9/100
+[2026-04-03 10:10:05] 
+🏷️  Phase 3: Topic clustering...
+[2026-04-03 10:10:05] 
+💾 Phase 4: Updating database...
+[2026-04-03 10:10:05] Scored post 2026-04-03-tailscales-new-macos-home: readability=67.2, seo=90, cluster=Random
+[2026-04-03 10:10:05] Scored post 2026-04-03-good-ideas-do-not-need-lots-of-lies-in-order-to-gain-public-acceptance-2008: readability=62.8, seo=85, cluster=Random
+[2026-04-03 10:10:05] 
+======================================================================
+[2026-04-03 10:10:05] ✅ PERFORMANCE TRACKER - Complete!
+[2026-04-03 10:10:05] ======================================================================
+[2026-04-03 10:10:05] 
+📈 Summary:
+[2026-04-03 10:10:05]   Posts scored: 2
+[2026-04-03 10:10:05]   Avg Readability: 65.0/100
+[2026-04-03 10:10:05]   Avg SEO: 87.5/100
+[2026-04-03 10:10:05]   Avg Quality: 76.2/100
+[2026-04-03 10:10:05] 
+🏷️  Topic Distribution:
+[2026-04-03 10:10:05]   Random: 2 posts
+[2026-04-03 10:10:05] 
+📝 Log saved to: /root/.openclaw/workspace/ai-automation-blog/logs/performance-tracker.log
+[2026-04-03 10:10:05] 
+[2026-04-03 16:10:04] ======================================================================
+[2026-04-03 16:10:04] 🔍 PERFORMANCE TRACKER - Starting analysis
+[2026-04-03 16:10:04] ======================================================================
+[2026-04-03 16:10:04] Found 33 posts
+[2026-04-03 16:10:04] 
+📝 Phase 1: Indexing posts...
+[2026-04-03 16:10:04] 
+📊 Phase 2: Scoring 2 unscored posts...
+[2026-04-03 16:10:04] 
+Processing: 2026-04-03-show-hn-apfel-the-free-ai-already-on-your-mac
+[2026-04-03 16:10:05]   Readability: 65.5/100
+[2026-04-03 16:10:05]   SEO: 85/100
+[2026-04-03 16:10:05]   Quality: 75.2/100
+[2026-04-03 16:10:05] 
+Processing: 2026-04-03-qwen36plus-towards-real-world-agents
+[2026-04-03 16:10:05]   Readability: 64.4/100
+[2026-04-03 16:10:05]   SEO: 85/100
+[2026-04-03 16:10:05]   Quality: 74.7/100
+[2026-04-03 16:10:05] 
+🏷️  Phase 3: Topic clustering...
+[2026-04-03 16:10:05] 
+💾 Phase 4: Updating database...
+[2026-04-03 16:10:05] Scored post 2026-04-03-show-hn-apfel-the-free-ai-already-on-your-mac: readability=65.5, seo=85, cluster=Random
+[2026-04-03 16:10:05] Scored post 2026-04-03-qwen36plus-towards-real-world-agents: readability=64.4, seo=85, cluster=Random
+[2026-04-03 16:10:05] 
+======================================================================
+[2026-04-03 16:10:05] ✅ PERFORMANCE TRACKER - Complete!
+[2026-04-03 16:10:05] ======================================================================
+[2026-04-03 16:10:05] 
+📈 Summary:
+[2026-04-03 16:10:05]   Posts scored: 2
+[2026-04-03 16:10:05]   Avg Readability: 64.9/100
+[2026-04-03 16:10:05]   Avg SEO: 85.0/100
+[2026-04-03 16:10:05]   Avg Quality: 75.0/100
+[2026-04-03 16:10:05] 
+🏷️  Topic Distribution:
+[2026-04-03 16:10:05]   Random: 2 posts
+[2026-04-03 16:10:05] 
+📝 Log saved to: /root/.openclaw/workspace/ai-automation-blog/logs/performance-tracker.log
+[2026-04-03 16:10:05] 

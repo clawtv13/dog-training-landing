@@ -1,0 +1,167 @@
+[
+  {
+    "name": "ChatGPT",
+    "slug": "chatgpt",
+    "category": "llms",
+    "use_cases": ["content-writing", "customer-support", "brainstorming", "coding"],
+    "pricing": "Free + $20/mo Plus",
+    "best_for": "General purpose, plugins, image generation",
+    "pros": ["Largest user base", "Plugin ecosystem", "DALL-E integration", "Voice mode"],
+    "cons": ["Context window smaller than Claude", "Can be verbose", "Rate limits on free tier"],
+    "affiliate": null
+  },
+  {
+    "name": "Claude",
+    "slug": "claude",
+    "category": "llms",
+    "use_cases": ["coding", "writing", "analysis", "research"],
+    "pricing": "Free + $20/mo Pro",
+    "best_for": "Deep reasoning, long context, coding",
+    "pros": ["200K context window", "Superior coding ability", "More concise responses", "Ethical AI focus"],
+    "cons": ["No plugins", "No image generation", "Slower rollout of features"],
+    "affiliate": null
+  },
+  {
+    "name": "Cursor",
+    "slug": "cursor",
+    "category": "coding",
+    "use_cases": ["coding", "debugging", "refactoring"],
+    "pricing": "$20/mo",
+    "best_for": "AI-first code editor for serious developers",
+    "pros": ["Native VS Code fork", "Excellent code completion", "Multi-file editing", "Composer mode"],
+    "cons": ["Paid only", "Can be expensive for hobbyists", "Learning curve"],
+    "affiliate": null
+  },
+  {
+    "name": "Windsurf",
+    "slug": "windsurf",
+    "category": "coding",
+    "use_cases": ["coding", "prototyping"],
+    "pricing": "$10/mo",
+    "best_for": "Lightweight AI coding for solopreneurs",
+    "pros": ["Cheaper than Cursor", "Clean interface", "Good for rapid prototyping"],
+    "cons": ["Fewer features than Cursor", "Smaller community", "Less mature product"],
+    "affiliate": null
+  },
+  {
+    "name": "Make",
+    "slug": "make",
+    "category": "automation",
+    "use_cases": ["workflow-automation", "data-sync", "notifications"],
+    "pricing": "Free + $9/mo+",
+    "best_for": "Visual automation builder with complex logic",
+    "pros": ["Visual workflow builder", "Great for complex automations", "Lower cost than Zapier", "More flexibility"],
+    "cons": ["Steeper learning curve", "Smaller app library", "Less documentation"],
+    "affiliate": null
+  },
+  {
+    "name": "Zapier",
+    "slug": "zapier",
+    "category": "automation",
+    "use_cases": ["workflow-automation", "integrations", "data-sync"],
+    "pricing": "Free + $20/mo+",
+    "best_for": "Largest app library, beginner-friendly",
+    "pros": ["5000+ app integrations", "Very beginner-friendly", "Excellent documentation", "Large community"],
+    "cons": ["More expensive", "Less flexible for complex logic", "Can get pricey as you scale"],
+    "affiliate": null
+  },
+  {
+    "name": "Midjourney",
+    "slug": "midjourney",
+    "category": "image-generation",
+    "use_cases": ["design", "marketing-visuals", "product-mockups"],
+    "pricing": "$10/mo+",
+    "best_for": "Highest quality AI art and illustrations",
+    "pros": ["Best aesthetic quality", "Strong community", "Rapid updates", "Consistent style"],
+    "cons": ["Discord-based (clunky)", "No free tier", "Less control than Stable Diffusion"],
+    "affiliate": null
+  },
+  {
+    "name": "DALL-E",
+    "slug": "dalle",
+    "category": "image-generation",
+    "use_cases": ["illustrations", "product-photos", "social-media"],
+    "pricing": "Pay per image",
+    "best_for": "Integration with ChatGPT, on-demand generation",
+    "pros": ["Integrated with ChatGPT", "Good for text rendering", "No subscription needed"],
+    "cons": ["Quality below Midjourney", "Pay-per-use can get expensive", "Less control"],
+    "affiliate": null
+  },
+  {
+    "name": "Notion",
+    "slug": "notion",
+    "category": "productivity",
+    "use_cases": ["note-taking", "project-management", "knowledge-base"],
+    "pricing": "Free + $8/mo+",
+    "best_for": "All-in-one workspace for solopreneurs",
+    "pros": ["Extremely flexible", "Beautiful UI", "Great for collaboration", "Databases and relations"],
+    "cons": ["Can become cluttered", "Steeper learning curve", "Offline mode limited"],
+    "affiliate": null
+  },
+  {
+    "name": "Obsidian",
+    "slug": "obsidian",
+    "category": "productivity",
+    "use_cases": ["note-taking", "knowledge-management", "writing"],
+    "pricing": "Free",
+    "best_for": "Local-first, markdown-based knowledge management",
+    "pros": ["Completely local", "Markdown-based", "Graph view", "Extensive plugin ecosystem"],
+    "cons": ["Steeper learning curve", "Less visual than Notion", "Sync requires paid plugin"],
+    "affiliate": null
+  },
+  {
+    "name": "v0",
+    "slug": "v0",
+    "category": "coding",
+    "use_cases": ["ui-design", "rapid-prototyping", "frontend"],
+    "pricing": "Free tier + paid",
+    "best_for": "AI UI generation from Vercel",
+    "pros": ["Generates production-ready React code", "Uses shadcn/ui components", "Fast iteration"],
+    "cons": ["Limited to React/Next.js", "Can generate verbose code", "Still in beta"],
+    "affiliate": null
+  },
+  {
+    "name": "Bolt",
+    "slug": "bolt",
+    "category": "coding",
+    "use_cases": ["rapid-prototyping", "fullstack-apps"],
+    "pricing": "Free tier",
+    "best_for": "Instant fullstack apps in browser",
+    "pros": ["Builds entire apps instantly", "No setup needed", "Live preview"],
+    "cons": ["Limited control", "Can be buggy", "Export limitations"],
+    "affiliate": null
+  },
+  {
+    "name": "Perplexity",
+    "slug": "perplexity",
+    "category": "research",
+    "use_cases": ["research", "fact-checking", "learning"],
+    "pricing": "Free + $20/mo Pro",
+    "best_for": "AI search with citations",
+    "pros": ["Real-time web search", "Source citations", "Clean interface", "Good for research"],
+    "cons": ["Not as conversational as ChatGPT", "Pro features expensive", "Occasional outdated sources"],
+    "affiliate": null
+  },
+  {
+    "name": "Airtable",
+    "slug": "airtable",
+    "category": "productivity",
+    "use_cases": ["database", "project-management", "crm"],
+    "pricing": "Free + $10/mo+",
+    "best_for": "Flexible database with automations",
+    "pros": ["Spreadsheet + database hybrid", "Great automations", "Beautiful interfaces", "API access"],
+    "cons": ["Can get expensive", "Learning curve for complex use", "Limited on free tier"],
+    "affiliate": null
+  },
+  {
+    "name": "Canva",
+    "slug": "canva",
+    "category": "design",
+    "use_cases": ["social-media", "presentations", "marketing"],
+    "pricing": "Free + $13/mo Pro",
+    "best_for": "Easy drag-and-drop design for non-designers",
+    "pros": ["Extremely beginner-friendly", "Huge template library", "AI features", "Brand kit"],
+    "cons": ["Less professional than Adobe", "Templates can look generic", "Limited customization"],
+    "affiliate": null
+  }
+]

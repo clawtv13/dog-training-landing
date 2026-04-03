@@ -289,31 +289,85 @@ def detect_breaking_news(items):
                 'url': item['url']
             })
         
-        prompt = f"""You are monitoring AI news for a newsletter.
-        
-Identify BREAKING NEWS - stories that:
-1. Just happened (last few hours)
-2. Are significant for AI builders/solopreneurs
-3. Actionable or impactful
-4. NOT just announcements or hype
+        prompt = f"""# Research Breaking News Detection
 
-Items to analyze:
-{json.dumps(items_summary, indent=2)}
+## ROLE
+AI news analyst specializing in actionable intelligence for AI builders, solopreneurs, and technical implementers.
 
-CRITICAL: Respond ONLY with valid JSON. No markdown, no explanation, just JSON.
+## INPUT
+{json.dumps(items_summary, indent=2)} - timestamped news items from last 24h
 
-Format:
+## TASK
+Identify 1-3 breaking news stories that require immediate attention from AI practitioners building products or businesses.
+
+## REQUIREMENTS
+
+### MUST:
+- Return valid JSON matching exact schema below
+- Flag only stories published <6 hours ago
+- Select max 3 items (prefer 1-2 high-impact over 3 marginal)
+- Include specific business/technical impact in reason
+
+### SHOULD:
+- Prioritize stories affecting product development, API changes, new capabilities
+- Focus on actionable intelligence over industry commentary
+- Consider urgency 7+ only for stories requiring action within 48h
+- Weight toward cost changes, feature launches, policy updates
+
+### AVOID:
+- Funding announcements without product implications
+- Vague "AI advancement" stories without specifics
+- Repackaged existing news with new headlines
+- Pure research papers without implementation path
+- Marketing announcements disguised as news
+
+## BREAKING NEWS CRITERIA
+Score stories on:
+- **Recency**: <2h = high priority, 2-6h = medium priority
+- **Impact**: API breaking changes, pricing shifts, new model releases
+- **Actionability**: Can readers act on this within 1 week?
+- **Relevance**: Affects AI builders, not just enterprise/research
+
+## OUTPUT FORMAT
+
+VALID:
 {{
   "breaking_news": [
     {{
-      "id": 0,
-      "reason": "Why this is breaking",
-      "urgency": 9
+      "id": 2,
+      "reason": "OpenAI GPT-4 API price dropped 60% - immediate cost savings for production apps",
+      "urgency": 8
     }}
   ]
 }}
 
-Only flag 1-3 truly breaking stories max. If none are breaking, return empty array."""
+INVALID:
+```json
+{{
+  "breaking_news": [...]
+}}
+```
+(Reason: markdown formatting)
+
+{{
+  "stories": [...]
+}}
+(Reason: wrong key name)
+
+VALIDATION:
+- JSON parses without errors
+- "breaking_news" array with 0-3 objects
+- Each object has: id (number), reason (string), urgency (1-10)
+- Reason explains specific impact, not generic importance
+
+## EDGE CASES
+IF no stories <6h old: THEN return empty array
+IF >3 high-impact stories: THEN select 3 highest urgency scores
+IF uncertain about timing: THEN exclude (prefer false negative)
+ELSE: Return empty array
+
+## RETURN
+Return ONLY valid JSON. No markdown blocks, explanations, or additional text."""
 
         headers = {
             "Authorization": f"Bearer {OPENROUTER_API_KEY}",

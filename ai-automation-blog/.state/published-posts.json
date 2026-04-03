@@ -46,5 +46,203 @@
     "word_count": 915,
     "published_at": "2026-03-29T10:01:25.256270",
     "fingerprint": "12fc00117a2e26e9336ef40302950a12"
+  },
+  {
+    "url": "/posts/2026-03-29-how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026.html",
+    "title": "How Solo Founders Are Building Million-Dollar Businesses With AI Tools in 2026",
+    "source_id": 134,
+    "excerpt": "Solo-founded startups surged from 23.7% (2019) to 36.3% (2025). Anthropic CEO predicted 70-80% odds of first billion-dollar one-person company by 2026. Case study: Maor Shlomo built Base44 alone and s...",
+    "word_count": 935,
+    "published_at": "2026-03-29T16:00:41.256318",
+    "fingerprint": "93d02d8f3866e406dec61ccbe756875b"
+  },
+  {
+    "url": "/posts/2026-03-29-go-hard-on-agents-not-on-your-filesystem.html",
+    "title": "Go hard on agents, not on your filesystem",
+    "source_id": 42,
+    "excerpt": "HN Score: 530 points, 296 comments...",
+    "word_count": 955,
+    "published_at": "2026-03-29T16:01:22.892489",
+    "fingerprint": "a88456f4e9639857dd62968f61814f47"
+  },
+  {
+    "url": "/posts/2026-03-30-claude-code-runs-git-reset-hard-originmain-against-project-repo-every-10-mins.html",
+    "title": "Claude Code runs Git reset \u2013hard origin/main against project repo every 10 mins",
+    "source_id": 169,
+    "excerpt": "HN Score: 75 points, 9 comments...",
+    "word_count": 1007,
+    "published_at": "2026-03-30T10:00:51.705346",
+    "fingerprint": "8045b092d9e0bcb564c39425e25b86a2"
+  },
+  {
+    "url": "/posts/2026-03-30-chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state.html",
+    "title": "ChatGPT won't let you type until Cloudflare reads your React state",
+    "source_id": 170,
+    "excerpt": "HN Score: 282 points, 210 comments...",
+    "word_count": 869,
+    "published_at": "2026-03-30T10:01:40.651255",
+    "fingerprint": "0e13423a6e52ea2637cbe0d6a13db57e"
+  },
+  {
+    "url": "/posts/2026-03-30-midnight-train-from-ga-a-view-of-america-from-the-tracks-as-airports-struggle.html",
+    "title": "Midnight train from GA: A view of America from the tracks as airports struggle",
+    "source_id": 189,
+    "excerpt": "HN Score: 107 points, 90 comments...",
+    "word_count": 906,
+    "published_at": "2026-03-30T16:00:47.248130",
+    "fingerprint": "01a4061382b30fbd002465aedfed71ed"
+  },
+  {
+    "url": "/posts/2026-03-30-coding-agents-could-make-free-software-matter-again.html",
+    "title": "Coding Agents Could Make Free Software Matter Again",
+    "source_id": 171,
+    "excerpt": "HN Score: 72 points, 53 comments...",
+    "word_count": 954,
+    "published_at": "2026-03-30T16:01:35.380949",
+    "fingerprint": "4369e7e5d70730e2a702d2851ecbb06c"
+  },
+  {
+    "url": "/posts/2026-03-31-universal-claudemd-cut-claude-output-tokens.html",
+    "title": "Universal Claude.md \u2013 cut Claude output tokens",
+    "source_id": 222,
+    "excerpt": "HN Score: 231 points, 88 comments...",
+    "word_count": 932,
+    "published_at": "2026-03-31T10:00:46.459539",
+    "fingerprint": "42aff7abfc87e2b61c469bb77e957308"
+  },
+  {
+    "url": "/posts/2026-03-31-clojure-the-documentary-official-trailer-video.html",
+    "title": "Clojure: The Documentary, official trailer [video]",
+    "source_id": 223,
+    "excerpt": "HN Score: 114 points, 5 comments...",
+    "word_count": 908,
+    "published_at": "2026-03-31T10:01:32.073760",
+    "fingerprint": "b5d7e95a326f55cf5d16073d8cb2a471"
+  },
+  {
+    "url": "/posts/2026-03-31-claude-codes-source-code-has-been-leaked-via-a-map-file-in-their-npm-registry.html",
+    "title": "Claude Code's source code has been leaked via a map file in their NPM registry",
+    "source_id": 250,
+    "excerpt": "HN Score: 356 points, 176 comments...",
+    "word_count": 862,
+    "published_at": "2026-03-31T16:02:47.220370",
+    "fingerprint": "5957aada16cb436ce7dbeea04c47b332"
+  },
+  {
+    "url": "/posts/2026-03-31-learn-claude-code-by-doing-not-reading.html",
+    "title": "Learn Claude Code by doing, not reading",
+    "source_id": 212,
+    "excerpt": "HN Score: 109 points, 55 comments...",
+    "word_count": 793,
+    "published_at": "2026-03-31T16:03:31.833883",
+    "fingerprint": "2e881317870de2085537ce25eed93dfd"
+  },
+  {
+    "url": "/posts/2026-04-01-openai-closes-funding-round-at-an-852b-valuation.html",
+    "title": "OpenAI closes funding round at an $852B valuation",
+    "source_id": 272,
+    "excerpt": "HN Score: 269 points, 254 comments...",
+    "word_count": 842,
+    "published_at": "2026-04-01T10:00:45.335077",
+    "fingerprint": "419f805e11e26d425693b43fb9903696"
+  },
+  {
+    "url": "/posts/2026-04-01-why-the-us-navy-wont-blast-the-iranians-and-open-strait-of-hormuz.html",
+    "title": "Why the US Navy won't blast the Iranians and 'open' Strait of Hormuz",
+    "source_id": 276,
+    "excerpt": "HN Score: 140 points, 366 comments...",
+    "word_count": 840,
+    "published_at": "2026-04-01T10:01:29.152334",
+    "fingerprint": "f3a5701e291192ca8f050e747110e318"
+  },
+  {
+    "url": "/posts/2026-04-01-i-am-definitely-missing-the-preai-writing-era.html",
+    "title": "I am definitely missing the pre-AI writing era",
+    "source_id": 200,
+    "excerpt": "HN Score: 132 points, 122 comments...",
+    "word_count": 884,
+    "published_at": "2026-04-01T16:00:47.257330",
+    "fingerprint": "bbcb86465776e5677a93dca39bb3d107"
+  },
+  {
+    "url": "/posts/2026-04-01-police-used-ai-facial-recognition-to-wrongly-arrest-tn-woman-for-crimes-in-nd.html",
+    "title": "Police used AI facial recognition to wrongly arrest TN woman for crimes in ND",
+    "source_id": 161,
+    "excerpt": "HN Score: 155 points, 64 comments...",
+    "word_count": 838,
+    "published_at": "2026-04-01T16:01:29.206794",
+    "fingerprint": "f50161b55e7bcbdc9094069ee7324f03"
+  },
+  {
+    "url": "/posts/2026-04-02-windows-95-defenses-against-installers-that-overwrite-a-file-with-an-older-one.html",
+    "title": "Windows 95 defenses against installers that overwrite a file with an older one",
+    "source_id": 330,
+    "excerpt": "HN Score: 102 points, 53 comments...",
+    "word_count": 954,
+    "published_at": "2026-04-02T10:00:50.313157",
+    "fingerprint": "fdddfe2f5579712708ac067317384947"
+  },
+  {
+    "url": "/posts/2026-04-02-how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026.html",
+    "title": "How Solo Founders Are Building Million-Dollar Businesses With AI Tools in 2026",
+    "source_id": 134,
+    "excerpt": "Solo-founded startups surged from 23.7% (2019) to 36.3% (2025). Anthropic CEO predicted 70-80% odds of first billion-dollar one-person company by 2026. Case study: Maor Shlomo built Base44 alone and s...",
+    "word_count": 961,
+    "published_at": "2026-04-02T10:01:37.086945",
+    "fingerprint": "93d02d8f3866e406dec61ccbe756875b"
+  },
+  {
+    "url": "/posts/2026-04-02-how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026.html",
+    "title": "How Solo Founders Are Building Million-Dollar Businesses With AI Tools in 2026",
+    "source_id": 134,
+    "excerpt": "Solo-founded startups surged from 23.7% (2019) to 36.3% (2025). Anthropic CEO predicted 70-80% odds of first billion-dollar one-person company by 2026. Case study: Maor Shlomo built Base44 alone and s...",
+    "word_count": 870,
+    "published_at": "2026-04-02T16:00:45.596368",
+    "fingerprint": "93d02d8f3866e406dec61ccbe756875b"
+  },
+  {
+    "url": "/posts/2026-04-02-anatomy-of-the-claude-folder.html",
+    "title": "Anatomy of the .claude/ folder",
+    "source_id": 46,
+    "excerpt": "HN Score: 569 points, 245 comments...",
+    "word_count": 853,
+    "published_at": "2026-04-02T16:01:30.346045",
+    "fingerprint": "2fff210be73e5d88a83cf20c2ae28f93"
+  },
+  {
+    "url": "/posts/2026-04-03-tailscales-new-macos-home.html",
+    "title": "Tailscale's new macOS home",
+    "source_id": 371,
+    "excerpt": "HN Score: 272 points, 136 comments...",
+    "word_count": 677,
+    "published_at": "2026-04-03T10:00:38.321099",
+    "fingerprint": "9c7693f703bee2d88d8d3320f0854c0f"
+  },
+  {
+    "url": "/posts/2026-04-03-good-ideas-do-not-need-lots-of-lies-in-order-to-gain-public-acceptance-2008.html",
+    "title": "Good ideas do not need lots of lies in order to gain public acceptance (2008)",
+    "source_id": 372,
+    "excerpt": "HN Score: 127 points, 56 comments...",
+    "word_count": 637,
+    "published_at": "2026-04-03T10:01:17.726863",
+    "fingerprint": "74b82727eeced0db06b633cdc3f06b9d"
+  },
+  {
+    "url": "/posts/2026-04-03-show-hn-apfel-the-free-ai-already-on-your-mac.html",
+    "title": "Show HN: Apfel \u2013 The free AI already on your Mac",
+    "source_id": 388,
+    "excerpt": "HN Score: 132 points, 20 comments...",
+    "word_count": 775,
+    "published_at": "2026-04-03T16:00:42.787709",
+    "fingerprint": "9e088020c752d28b4dab399a245861a3"
+  },
+  {
+    "url": "/posts/2026-04-03-qwen36plus-towards-real-world-agents.html",
+    "title": "Qwen3.6-Plus: Towards real world agents",
+    "source_id": 366,
+    "excerpt": "HN Score: 236 points, 84 comments...",
+    "word_count": 729,
+    "published_at": "2026-04-03T16:01:24.936451",
+    "fingerprint": "0cdf36f6220e8aa442661c78c79e04ab"
   }
 ]

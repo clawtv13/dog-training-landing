@@ -1,0 +1,192 @@
+{
+  "short_1_towel_hack": {
+    "metadata": {
+      "title": "The $5 Dog Enrichment Hack Going Viral",
+      "duration": "45 seconds",
+      "aspect_ratio": "9:16",
+      "resolution": "1080x1920",
+      "style": "tutorial_viral_short",
+      "trending_topics": ["dog enrichment", "budget hacks", "viral dog training"]
+    },
+    "full_video_prompt": "Create a 45-second vertical dog training video showing the $5 towel enrichment hack. Open with expensive dog puzzle toys zooming in with '$50' text overlay. Cut to golden retriever walking away from toy looking bored with '2 minutes' text. Show overhead hands-on-counter demonstration placing treats on blue towel, rolling tightly, tying three knots with '$5' text and arrow. Border collie intensely working on towel on floor, pulling and biting knots for 15-20 minutes. Split screen: left shows tired dog sleeping peacefully, right shows intact pristine living room with 'Tired dog = Happy owner' text. Close-up of towel entering freezer with ice crystals and 'Freeze = 2x engagement' text. End with happy lab holding towel in mouth outdoors at golden hour with 'CleverDogMethod.com' and 'Link in bio' overlay. Professional 4K quality, natural lighting throughout, upbeat background music, text overlays in bold sans-serif font, smooth transitions between scenes.",
+    "scenes": [
+      {
+        "scene_number": 1,
+        "timestamp": "0-3s",
+        "type": "hook",
+        "visual": "Close-up shot of expensive colorful dog puzzle toys on white background, camera zooms in revealing $50-80 price tags, professional product photography lighting",
+        "text_overlay": "Stop wasting $50 on dog toys",
+        "narration": null,
+        "transition": "quick_zoom"
+      },
+      {
+        "scene_number": 2,
+        "timestamp": "3-8s",
+        "type": "pain_point",
+        "visual": "Golden retriever walking away from expensive puzzle toy on floor, looking bored, owner's hand reaching for ignored toy, indoor home setting",
+        "text_overlay": "$50 = 2 minutes of fun",
+        "narration": "Your dog ignores that $50 puzzle toy after 2 minutes, right? Here's what actually works.",
+        "transition": "fade"
+      },
+      {
+        "scene_number": 3,
+        "timestamp": "8-15s",
+        "type": "demonstration",
+        "visual": "Overhead view of hands on kitchen counter placing treats on blue towel, rolling tightly, tying three knots, tutorial style, bright natural lighting",
+        "text_overlay": "Total cost: $5 →",
+        "narration": "A $5 towel. That's it. Roll treats inside, tie three knots.",
+        "transition": "continuous"
+      },
+      {
+        "scene_number": 4,
+        "timestamp": "15-25s",
+        "type": "action",
+        "visual": "Border collie on living room floor intensely focused, pulling and biting knotted towel, determined expression, dynamic movement, shallow depth of field",
+        "text_overlay": "15-20 min mental workout",
+        "narration": "This triggers your dog's natural foraging instinct. They'll work 15-20 minutes to untie each knot.",
+        "transition": "quick_cut"
+      },
+      {
+        "scene_number": 5,
+        "timestamp": "25-35s",
+        "type": "results_split_screen",
+        "visual": "Split screen - LEFT: tired dog sleeping peacefully on dog bed with soft lighting, RIGHT: pristine living room, intact couch, no damage",
+        "text_overlay": "Tired dog = Happy owner",
+        "narration": "Result? A tired brain. No destroyed furniture. And you saved $45.",
+        "transition": "split_reveal"
+      },
+      {
+        "scene_number": 6,
+        "timestamp": "35-40s",
+        "type": "pro_tip",
+        "visual": "Close-up of rolled towel entering modern freezer, ice crystals visible, kitchen LED lighting",
+        "text_overlay": "🧊 Freeze = 2x engagement",
+        "narration": "Pro tip: Freeze it with wet food inside for an extra 30 minutes.",
+        "transition": "zoom_out"
+      },
+      {
+        "scene_number": 7,
+        "timestamp": "40-45s",
+        "type": "cta",
+        "visual": "Happy labrador holding knotted towel in mouth, tail wagging, looking at camera, outdoor sunny park, golden hour lighting",
+        "text_overlay": "CleverDogMethod.com - Free 7-Day Guide 👆\nLink in bio",
+        "narration": "Follow for more brain training hacks that actually work.",
+        "transition": "fade_to_logo"
+      }
+    ],
+    "audio": {
+      "background_music": "upbeat_trending_short_music",
+      "music_volume": "30%",
+      "narration_voice": "enthusiastic_friendly_male",
+      "sound_effects": ["dog_panting", "knot_tying", "freezer_door"]
+    },
+    "text_styling": {
+      "font": "bold_sans_serif",
+      "primary_color": "#FFFFFF",
+      "accent_color": "#FFD700",
+      "animation": "pop_in",
+      "position": "top_third"
+    },
+    "hashtags": "#DogTraining #DogEnrichment #DogTips #PuppyTraining #DogTrainer #CleverDogMethod #DogLife #PetHacks #BudgetDogTips",
+    "cta_link": "https://cleverdogmethod.com"
+  },
+  "short_2_brain_science": {
+    "metadata": {
+      "title": "Why Your Dog Ignores You (Brain Science)",
+      "duration": "50 seconds",
+      "aspect_ratio": "9:16",
+      "resolution": "1080x1920",
+      "style": "educational_viral_short",
+      "trending_topics": ["dog behavior", "brain training", "viral dog science"]
+    },
+    "full_video_prompt": "Create a 50-second vertical educational dog training video about brain science and attention. Open with text 'Your dog isn't stubborn. You're just boring.' showing frustrated owner calling dog who completely ignores her on couch. Split screen comparing owner saying 'sit' to uninterested golden retriever vs same dog fixated on squirrel through window with '🐿️ Squirrel: 100% attention' text. Show 3D animated dog brain with glowing dopamine pathways and bar graphs comparing dopamine levels with 'Dopamine spike: 10x difference' text. Cut to energetic trainer with Border Collie using treats and toys, dog jumping excitedly with '🎰 Unpredictable = High Dopamine' overlay. Fast-paced montage of dog doing commands with random treat rewards, 'Random Rewards = Gambling Effect' text. Happy lab performing perfect obedience sequence with owner celebrating, 'Trained in 7 days' text. Close-up of attentive German Shepherd looking at camera with 'CleverDogMethod.com - Free Guide' and '67,000+ dogs trained ⭐⭐⭐⭐⭐' overlay. Professional 4K quality, mix of documentary and educational animation style, scientific yet accessible tone, smooth transitions, upbeat documentary music.",
+    "scenes": [
+      {
+        "scene_number": 1,
+        "timestamp": "0-4s",
+        "type": "hook_controversial",
+        "visual": "Frustrated woman calling her dog, medium brown dog on gray couch completely ignoring her, realistic home setting, natural lighting",
+        "text_overlay": "Your dog isn't stubborn.\nYou're just boring.",
+        "narration": null,
+        "transition": "quick_fade"
+      },
+      {
+        "scene_number": 2,
+        "timestamp": "4-10s",
+        "type": "problem_comparison",
+        "visual": "Split screen - LEFT: owner saying 'sit' to uninterested golden retriever looking away, RIGHT: same dog with intense focus staring at squirrel through window, ears forward",
+        "text_overlay": "🐿️ Squirrel: 100% attention",
+        "narration": "You say 'sit' 47 times. Nothing. But the moment a squirrel appears? Instant laser focus.",
+        "transition": "slide_reveal"
+      },
+      {
+        "scene_number": 3,
+        "timestamp": "10-18s",
+        "type": "science_animation",
+        "visual": "3D animated dog brain profile with glowing neon dopamine pathways, two vertical bar graphs showing 10% vs 100% dopamine levels, blue and purple glow, black background",
+        "text_overlay": "Dopamine spike: 10x difference",
+        "narration": "Here's why: Your dog's brain releases 10 times more dopamine for a squirrel than for your 'sit' command.",
+        "transition": "morph_from_real"
+      },
+      {
+        "scene_number": 4,
+        "timestamp": "18-28s",
+        "type": "solution_demo",
+        "visual": "Energetic female trainer with Border Collie in outdoor training area, using treats and rope toy enthusiastically, dog jumping and super focused, bright natural light, dynamic action",
+        "text_overlay": "🎰 Unpredictable = High Dopamine",
+        "narration": "Solution? Make training as exciting as that squirrel. Use unpredictable rewards. High-value treats. Toy jackpots.",
+        "transition": "dynamic_cut"
+      },
+      {
+        "scene_number": 5,
+        "timestamp": "28-35s",
+        "type": "technique_montage",
+        "visual": "Fast-paced montage with 0.5s cuts: German Shepherd doing 'sit' getting treat, 'down' no treat, 'stay' getting treat, dog engaged but slightly confused",
+        "text_overlay": "Random Rewards = Gambling Effect",
+        "narration": "Don't reward every command. Reward randomly. 3rd try? 1st try? 7th try? Keep them guessing.",
+        "transition": "quick_cuts",
+        "playback_speed": "1.2x"
+      },
+      {
+        "scene_number": 6,
+        "timestamp": "35-42s",
+        "type": "success_proof",
+        "visual": "Happy chocolate Lab performing perfect sit-down-stay sequence, owner clapping and celebrating with raised arms, outdoor park at golden hour, warm lighting",
+        "text_overlay": "Trained in 7 days with this method",
+        "narration": "This is how casinos work. How video games work. And now, how your dog training works.",
+        "transition": "smooth_zoom_out"
+      },
+      {
+        "scene_number": 7,
+        "timestamp": "42-50s",
+        "type": "cta_with_social_proof",
+        "visual": "Close-up of attentive German Shepherd looking at camera with intelligent expression, slight head tilt, professional studio lighting, shallow depth of field",
+        "text_overlay": "CleverDogMethod.com - Free Guide 👆\n67,000+ dogs trained ⭐⭐⭐⭐⭐\nGet Free Guide",
+        "narration": "Want the full protocol? Download our free 7-day brain training guide.",
+        "transition": "fade_to_logo"
+      }
+    ],
+    "audio": {
+      "background_music": "science_documentary_upbeat",
+      "music_volume": "25%",
+      "narration_voice": "authoritative_friendly_male",
+      "sound_effects": ["dog_bark", "click_training", "celebration_cheer"]
+    },
+    "text_styling": {
+      "font": "modern_bold_sans_serif",
+      "primary_color": "#FFFFFF",
+      "accent_color": "#00FF88",
+      "animation": "slide_up",
+      "position": "center_top"
+    },
+    "hashtags": "#DogTraining #DogBehavior #DogScience #BrainTraining #DogTrainer #CleverDogMethod #DogTips #PuppyTraining #DogPsychology",
+    "cta_link": "https://cleverdogmethod.com",
+    "viral_hooks": [
+      "controversial_statement",
+      "relatable_problem", 
+      "scientific_explanation",
+      "counterintuitive_solution",
+      "strong_social_proof"
+    ]
+  }
+}

@@ -1,0 +1,221 @@
+# Book-to-Formula Matching Rules
+# Automated formula selection based on case characteristics
+
+# Priority order (by retention potential)
+formula_priority:
+  - villain_reveal      # 90% retention
+  - news_hook          # 88%
+  - comparison_hook    # 86%
+  - evidence_reveal    # 85%
+  - science_angle      # 82%
+  - victim_story       # 78%
+
+# Matching algorithm decision tree
+matching_rules:
+  villain_reveal:
+    priority: 1
+    trigger_keywords:
+      killer_relationship:
+        - "spouse"
+        - "partner"
+        - "affair"
+        - "husband"
+        - "wife"
+        - "boyfriend"
+        - "girlfriend"
+        - "family member"
+        - "friend"
+        - "trusted"
+        - "neighbor"
+        - "coworker"
+        - "married victim's"
+      case_type:
+        - "betrayal"
+        - "domestic"
+        - "trust violation"
+        - "hiding in plain sight"
+    confidence_threshold: 0.8
+    description: "Use when killer had personal relationship with victim"
+  
+  news_hook:
+    priority: 2
+    trigger_conditions:
+      resolution_year: ">= 2015"
+      years_unsolved: ">= 10"
+      news_coverage: "recent"
+    trigger_keywords:
+      - "arrested"
+      - "breakthrough"
+      - "solved"
+      - "finally caught"
+      - "DNA genealogy"
+      - "recent arrest"
+    confidence_threshold: 0.7
+    description: "Use for recently solved cold cases with news angle"
+  
+  comparison_hook:
+    priority: 3
+    trigger_keywords:
+      famous_comparison:
+        - "like [famous killer]"
+        - "similar to"
+        - "reminiscent of"
+        - "copycat"
+        - "same methods as"
+      case_type:
+        - "regional serial killer"
+        - "lesser-known"
+        - "forgotten case"
+    confidence_threshold: 0.75
+    description: "Use when case parallels famous case but is less known"
+  
+  evidence_reveal:
+    priority: 4
+    trigger_keywords:
+      forensic_method:
+        - "unique evidence"
+        - "unusual"
+        - "wig"
+        - "fiber"
+        - "bite mark"
+        - "tool mark"
+        - "digital forensics"
+        - "phone records"
+        - "surveillance"
+        - "fingerprint"
+        - "DNA (non-genealogy)"
+      case_type:
+        - "forensic breakthrough"
+        - "evidence-based solve"
+    confidence_threshold: 0.7
+    description: "Use for cases with unique forensic evidence"
+  
+  science_angle:
+    priority: 5
+    trigger_keywords:
+      forensic_method:
+        - "DNA genealogy"
+        - "familial DNA"
+        - "genetic"
+        - "gedmatch"
+        - "23andme"
+        - "ancestry.com"
+        - "family tree"
+        - "genetic genealogy"
+      case_type:
+        - "scientific breakthrough"
+        - "technology solved"
+    confidence_threshold: 0.8
+    description: "Use for heavy DNA genealogy/scientific cases"
+  
+  victim_story:
+    priority: 6
+    trigger_keywords:
+      case_type:
+        - "victim-focused"
+        - "emotional"
+        - "family advocacy"
+        - "community impact"
+      victim_details:
+        - "compelling victim story"
+        - "community leader"
+        - "family fought for justice"
+    confidence_threshold: 0.5
+    description: "Default formula when others don't match strongly"
+
+# Metadata extraction patterns
+extraction_patterns:
+  killer_relationship:
+    patterns:
+      - regex: "(spouse|husband|wife|partner|affair|lover|mistress)"
+        weight: 1.0
+      - regex: "(neighbor|friend|coworker|roommate)"
+        weight: 0.8
+      - regex: "(family|brother|sister|parent|child)"
+        weight: 0.9
+      - regex: "(stranger|unknown|random)"
+        weight: 0.3
+    default: "unknown"
+  
+  resolution_year:
+    patterns:
+      - regex: "(?:arrest|solve|convict|caught).*?(\\d{4})"
+        capture_group: 1
+      - regex: "(\\d{4}).*?(?:arrest|solve|convict)"
+        capture_group: 1
+    default: null
+  
+  crime_year:
+    patterns:
+      - regex: "(\\d{4}).*?(?:murder|death|killed|crime)"
+        capture_group: 1
+    default: null
+  
+  forensic_method:
+    patterns:
+      - regex: "(DNA genealogy|familial DNA|genetic genealogy)"
+        weight: 1.0
+      - regex: "(DNA|fingerprint|fiber|hair)"
+        weight: 0.8
+      - regex: "(surveillance|phone records|digital)"
+        weight: 0.7
+    default: "investigation"
+  
+  famous_comparison:
+    patterns:
+      - regex: "(?:like|similar to|reminiscent of)\\s+([A-Z][a-z]+\\s+[A-Z][a-z]+)"
+        capture_group: 1
+      - regex: "(Ted Bundy|Jeffrey Dahmer|BTK|Golden State Killer)"
+        capture_group: 1
+    default: ""
+
+# Case type classification
+case_types:
+  cold_case:
+    keywords: ["cold case", "unsolved", "years later", "finally solved"]
+  
+  betrayal:
+    keywords: ["affair", "spouse", "trusted", "hiding in plain sight"]
+  
+  serial:
+    keywords: ["serial killer", "multiple victims", "pattern"]
+  
+  forensic_breakthrough:
+    keywords: ["DNA", "evidence", "forensic", "science"]
+  
+  victim_focused:
+    keywords: ["victim story", "family", "community", "advocacy"]
+
+# Confidence scoring
+confidence_calculation:
+  method: "Keyword match count × pattern weight"
+  threshold_action:
+    high: ">= 0.8 → Use matched formula"
+    medium: "0.5-0.79 → Use matched formula with caution"
+    low: "< 0.5 → Fall back to victim_story default"
+
+# Formula override rules (manual configuration)
+overrides:
+  # Format: book_name: forced_formula
+  # Example:
+  # "killer-clown": "villain_reveal"
+  # Add manual overrides here as needed
+
+# Multi-match resolution
+conflict_resolution:
+  strategy: "Highest retention potential wins"
+  rule: "If multiple formulas match with similar confidence, use highest priority (retention %)"
+  
+  example:
+    scenario: "Case matches both 'villain_reveal' and 'evidence_reveal'"
+    decision: "Use 'villain_reveal' (90% > 85% retention)"
+
+# Fallback handling
+fallback:
+  default_formula: "victim_story"
+  reason: "Safe, victim-centered default for unclear matches"
+  when_to_use:
+    - "No strong keyword matches"
+    - "Confidence below threshold"
+    - "Case doesn't fit other formulas"
+    - "Error in metadata extraction"

@@ -1,0 +1,114 @@
+2026-04-02 16:10:01,452 [INFO] 🔍 Starting Bug Reviewer...
+2026-04-02 16:10:01,452 [INFO] 📝 Checking Python syntax...
+2026-04-02 16:10:02,439 [INFO] ✅ Syntax check complete: 31 files validated
+2026-04-02 16:10:02,439 [INFO] 🗄️ Checking database...
+2026-04-02 16:10:02,440 [INFO]   ✅ Table 'posts': 29 rows
+2026-04-02 16:10:02,440 [INFO]   ✅ Table 'prompt_versions': 0 rows
+2026-04-02 16:10:02,440 [INFO]   ✅ Table 'weekly_reports': 0 rows
+2026-04-02 16:10:02,440 [WARNING] ⚠️ 1 posts with NULL quality_score (will be scored by performance-tracker)
+2026-04-02 16:10:02,440 [INFO] ✅ Database integrity OK
+2026-04-02 16:10:02,440 [INFO] 🔐 Checking file permissions...
+2026-04-02 16:10:02,441 [INFO] ✅ Permissions check complete
+2026-04-02 16:10:02,441 [INFO] ⏰ Checking cron jobs...
+2026-04-02 16:10:02,443 [INFO]   ✅ Cron job for performance-tracker.py configured
+2026-04-02 16:10:02,443 [INFO]   ✅ Cron job for analytics-dashboard configured
+2026-04-02 16:10:02,443 [INFO]   ✅ Cron job for prompt-optimizer.py configured
+2026-04-02 16:10:02,443 [INFO] 🔑 Checking environment variables...
+2026-04-02 16:10:02,443 [WARNING] ⚠️ Missing OPENROUTER_API_KEY (OpenRouter API (prompt optimizer))
+2026-04-02 16:10:02,443 [WARNING] ⚠️ Missing TELEGRAM_BOT_TOKEN (Telegram Bot (dashboard))
+2026-04-02 16:10:02,443 [WARNING] ⚠️ Missing TELEGRAM_CHAT_ID (Telegram Chat (dashboard))
+2026-04-02 16:10:02,443 [INFO] 🧪 Testing critical scripts...
+2026-04-02 16:10:04,807 [INFO]   ✅ performance-tracker.py loads OK
+2026-04-02 16:10:04,807 [INFO] 📄 Report saved: /root/.openclaw/workspace/ai-automation-blog/reports/bug-review-2026-04-02-1610.json
+
+============================================================
+🔍 BUG REVIEW SUMMARY
+============================================================
+Issues found:   4
+Fixes applied:  0
+Status:         ISSUES_DETECTED
+
+⚠️ ISSUES:
+  1. 1 posts with NULL quality_score
+  2. Missing OPENROUTER_API_KEY (OpenRouter API (prompt optimizer))
+  3. Missing TELEGRAM_BOT_TOKEN (Telegram Bot (dashboard))
+  4. Missing TELEGRAM_CHAT_ID (Telegram Chat (dashboard))
+============================================================
+
+2026-04-02 16:10:04,807 [INFO] ✅ Bug Review Complete: 4 issues found, 0 fixed
+2026-04-03 10:10:01,547 [INFO] 🔍 Starting Bug Reviewer...
+2026-04-03 10:10:01,547 [INFO] 📝 Checking Python syntax...
+2026-04-03 10:10:02,525 [INFO] ✅ Syntax check complete: 31 files validated
+2026-04-03 10:10:02,525 [INFO] 🗄️ Checking database...
+2026-04-03 10:10:02,529 [INFO]   ✅ Table 'posts': 31 rows
+2026-04-03 10:10:02,529 [INFO]   ✅ Table 'prompt_versions': 0 rows
+2026-04-03 10:10:02,530 [INFO]   ✅ Table 'weekly_reports': 0 rows
+2026-04-03 10:10:02,530 [WARNING] ⚠️ 2 posts with NULL quality_score (will be scored by performance-tracker)
+2026-04-03 10:10:02,530 [INFO] ✅ Database integrity OK
+2026-04-03 10:10:02,530 [INFO] 🔐 Checking file permissions...
+2026-04-03 10:10:02,530 [INFO] ✅ Permissions check complete
+2026-04-03 10:10:02,530 [INFO] ⏰ Checking cron jobs...
+2026-04-03 10:10:02,533 [INFO]   ✅ Cron job for performance-tracker.py configured
+2026-04-03 10:10:02,533 [INFO]   ✅ Cron job for analytics-dashboard configured
+2026-04-03 10:10:02,533 [INFO]   ✅ Cron job for prompt-optimizer.py configured
+2026-04-03 10:10:02,533 [INFO] 🔑 Checking environment variables...
+2026-04-03 10:10:02,533 [WARNING] ⚠️ Missing OPENROUTER_API_KEY (OpenRouter API (prompt optimizer))
+2026-04-03 10:10:02,533 [WARNING] ⚠️ Missing TELEGRAM_BOT_TOKEN (Telegram Bot (dashboard))
+2026-04-03 10:10:02,533 [WARNING] ⚠️ Missing TELEGRAM_CHAT_ID (Telegram Chat (dashboard))
+2026-04-03 10:10:02,533 [INFO] 🧪 Testing critical scripts...
+2026-04-03 10:10:05,715 [INFO]   ✅ performance-tracker.py loads OK
+2026-04-03 10:10:05,715 [INFO] 📄 Report saved: /root/.openclaw/workspace/ai-automation-blog/reports/bug-review-2026-04-03-1010.json
+
+============================================================
+🔍 BUG REVIEW SUMMARY
+============================================================
+Issues found:   4
+Fixes applied:  0
+Status:         ISSUES_DETECTED
+
+⚠️ ISSUES:
+  1. 2 posts with NULL quality_score
+  2. Missing OPENROUTER_API_KEY (OpenRouter API (prompt optimizer))
+  3. Missing TELEGRAM_BOT_TOKEN (Telegram Bot (dashboard))
+  4. Missing TELEGRAM_CHAT_ID (Telegram Chat (dashboard))
+============================================================
+
+2026-04-03 10:10:05,715 [INFO] ✅ Bug Review Complete: 4 issues found, 0 fixed
+2026-04-03 16:10:01,761 [INFO] 🔍 Starting Bug Reviewer...
+2026-04-03 16:10:01,762 [INFO] 📝 Checking Python syntax...
+2026-04-03 16:10:02,766 [INFO] ✅ Syntax check complete: 31 files validated
+2026-04-03 16:10:02,767 [INFO] 🗄️ Checking database...
+2026-04-03 16:10:02,768 [INFO]   ✅ Table 'posts': 33 rows
+2026-04-03 16:10:02,768 [INFO]   ✅ Table 'prompt_versions': 0 rows
+2026-04-03 16:10:02,768 [INFO]   ✅ Table 'weekly_reports': 0 rows
+2026-04-03 16:10:02,768 [WARNING] ⚠️ 2 posts with NULL quality_score (will be scored by performance-tracker)
+2026-04-03 16:10:02,769 [INFO] ✅ Database integrity OK
+2026-04-03 16:10:02,769 [INFO] 🔐 Checking file permissions...
+2026-04-03 16:10:02,769 [INFO] ✅ Permissions check complete
+2026-04-03 16:10:02,769 [INFO] ⏰ Checking cron jobs...
+2026-04-03 16:10:02,771 [INFO]   ✅ Cron job for performance-tracker.py configured
+2026-04-03 16:10:02,772 [INFO]   ✅ Cron job for analytics-dashboard configured
+2026-04-03 16:10:02,772 [INFO]   ✅ Cron job for prompt-optimizer.py configured
+2026-04-03 16:10:02,772 [INFO] 🔑 Checking environment variables...
+2026-04-03 16:10:02,772 [WARNING] ⚠️ Missing OPENROUTER_API_KEY (OpenRouter API (prompt optimizer))
+2026-04-03 16:10:02,772 [WARNING] ⚠️ Missing TELEGRAM_BOT_TOKEN (Telegram Bot (dashboard))
+2026-04-03 16:10:02,772 [WARNING] ⚠️ Missing TELEGRAM_CHAT_ID (Telegram Chat (dashboard))
+2026-04-03 16:10:02,772 [INFO] 🧪 Testing critical scripts...
+2026-04-03 16:10:05,878 [INFO]   ✅ performance-tracker.py loads OK
+2026-04-03 16:10:05,879 [INFO] 📄 Report saved: /root/.openclaw/workspace/ai-automation-blog/reports/bug-review-2026-04-03-1610.json
+
+============================================================
+🔍 BUG REVIEW SUMMARY
+============================================================
+Issues found:   4
+Fixes applied:  0
+Status:         ISSUES_DETECTED
+
+⚠️ ISSUES:
+  1. 2 posts with NULL quality_score
+  2. Missing OPENROUTER_API_KEY (OpenRouter API (prompt optimizer))
+  3. Missing TELEGRAM_BOT_TOKEN (Telegram Bot (dashboard))
+  4. Missing TELEGRAM_CHAT_ID (Telegram Chat (dashboard))
+============================================================
+
+2026-04-03 16:10:05,879 [INFO] ✅ Bug Review Complete: 4 issues found, 0 fixed

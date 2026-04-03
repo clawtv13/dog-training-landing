@@ -1,0 +1,236 @@
+{
+  "golden-retriever-barking": {
+    "intro": "Golden Retrievers are naturally vocal dogs bred to communicate with hunters in the field. While they're not the most barky breed, their friendly and alert nature means they'll vocalize to get attention or alert you to something interesting.",
+    "common_causes": ["boredom from lack of activity", "attention-seeking behavior", "alerting to visitors or animals", "excitement during play", "separation distress"],
+    "training_tips": [
+      "Start with 'quiet' command training using high-value treats",
+      "Provide 60+ minutes of daily exercise to burn excess energy",
+      "Use puzzle toys and training sessions for mental stimulation",
+      "Reward calm behavior consistently throughout the day",
+      "Teach an alternative behavior like 'go to your bed' when doorbell rings"
+    ],
+    "timeline": "2-4 weeks with consistent training",
+    "prevention": "Golden Retrievers need significant physical and mental stimulation. Daily fetch sessions, swimming, or retrieving games satisfy their working dog heritage and reduce boredom barking."
+  },
+  "golden-retriever-jumping": {
+    "intro": "Golden Retrievers are enthusiastic greeters who love people. Their friendly, outgoing temperament combined with their large size makes jumping a common issue that needs addressing early.",
+    "common_causes": ["excitement during greetings", "attention-seeking behavior", "lack of impulse control training", "reinforcement from visitors", "high energy levels"],
+    "training_tips": [
+      "Implement strict 'four on the floor' rule with all visitors",
+      "Turn away and ignore jumping completely - no eye contact or touch",
+      "Reward calm sitting behavior during greetings with treats and attention",
+      "Practice greetings with helpers to build impulse control",
+      "Tire them out before visitors arrive with exercise or play"
+    ],
+    "timeline": "1-3 weeks with consistent practice",
+    "prevention": "Start training early as puppies. Golden Retrievers are highly trainable and respond well to positive reinforcement. Never reward jumping behavior, even when it's cute in puppyhood."
+  },
+  "golden-retriever-separation-anxiety": {
+    "intro": "Golden Retrievers were bred to work closely with humans and form incredibly strong bonds with their families. This people-oriented nature makes them more prone to separation anxiety than independent breeds.",
+    "common_causes": ["over-attachment to owners", "lack of alone time training", "sudden routine changes", "family member leaving home", "rescue dog background"],
+    "training_tips": [
+      "Start with very short absences (30 seconds) and gradually increase",
+      "Create positive associations with alone time using special treats or toys",
+      "Avoid dramatic departures - keep comings and goings low-key",
+      "Provide a safe space like a crate with comfort items",
+      "Consider hiring a dog walker for mid-day visits if working long hours"
+    ],
+    "timeline": "4-8 weeks of gradual desensitization",
+    "prevention": "Build independence from puppyhood. Practice leaving the room regularly, use baby gates to create separation, and avoid following your Golden everywhere they go."
+  },
+  "german-shepherd-barking": {
+    "intro": "German Shepherds are guardian breeds with strong protective instincts. They're naturally alert and vocal, using barking as a primary way to communicate threats or changes in their environment.",
+    "common_causes": ["territorial behavior protecting home", "alerting to perceived threats", "boredom from insufficient mental stimulation", "herding instinct triggering at movement", "anxiety or stress"],
+    "training_tips": [
+      "Teach 'speak' and 'quiet' commands for controlled barking",
+      "Desensitize to common triggers like people passing the window",
+      "Provide job-like activities to satisfy working dog needs",
+      "Use counter-conditioning with treats when triggers appear",
+      "Ensure 90+ minutes of daily physical and mental exercise"
+    ],
+    "timeline": "3-6 weeks with consistent training",
+    "prevention": "German Shepherds need a job. Channel their protective instincts through training, nose work, or protection sports. A mentally fulfilled German Shepherd barks less unnecessarily."
+  },
+  "german-shepherd-separation-anxiety": {
+    "intro": "German Shepherds form intense bonds with their families and thrive on companionship and purpose. Their working dog heritage means they struggle more than average when left without their 'pack' or job to do.",
+    "common_causes": ["lack of independence training", "over-bonding with one person", "insufficient mental stimulation", "change in family routine", "rescue background"],
+    "training_tips": [
+      "Gradually build alone time starting with different rooms in the house",
+      "Leave them with challenging puzzle toys or frozen Kongs",
+      "Tire them out before leaving with training or exercise",
+      "Create a predictable routine for departures and returns",
+      "Consider professional help if severe - medication may be needed"
+    ],
+    "timeline": "6-12 weeks for moderate cases",
+    "prevention": "Practice alone time from puppyhood. German Shepherds should learn that being alone is normal and not scary. Avoid reinforcing clingy behavior by creating healthy boundaries."
+  },
+  "german-shepherd-aggression": {
+    "intro": "German Shepherds are protective guardian breeds. While properly bred and trained GSDs are stable and confident, poor breeding, socialization, or training can lead to fear-based or territorial aggression.",
+    "common_causes": ["inadequate socialization during critical period", "fear or anxiety", "territorial or protective behavior", "resource guarding", "pain or medical issues"],
+    "training_tips": [
+      "Seek immediate professional help from a certified behaviorist",
+      "Manage environment to prevent rehearsal of aggressive behavior",
+      "Use counter-conditioning and desensitization protocols",
+      "Never punish aggression - it increases fear and makes it worse",
+      "Rule out medical causes with veterinary checkup"
+    ],
+    "timeline": "3-6+ months with professional guidance",
+    "prevention": "Extensive socialization before 16 weeks. German Shepherds need positive exposure to diverse people, dogs, and environments during puppyhood. Choose reputable breeders with stable temperament lines."
+  },
+  "labrador-retriever-barking": {
+    "intro": "Labrador Retrievers are generally quieter than many breeds, but their friendly and social nature means they'll bark when excited, bored, or seeking attention. Labs bred for hunting are especially vocal.",
+    "common_causes": ["excitement and enthusiasm", "attention-seeking behavior", "boredom from lack of activity", "alerting behavior", "play behavior"],
+    "training_tips": [
+      "Teach 'quiet' command during low-excitement moments first",
+      "Provide 60+ minutes of daily exercise including swimming if possible",
+      "Use food puzzle toys to occupy them productively",
+      "Ignore attention-seeking barks completely",
+      "Reward calm behavior proactively throughout the day"
+    ],
+    "timeline": "2-4 weeks with consistency",
+    "prevention": "Labs need physical and mental outlets. Daily fetch, swimming, or retrieving games satisfy their working dog instincts. A tired Lab is a quiet Lab."
+  },
+  "labrador-retriever-jumping": {
+    "intro": "Labradors are famously friendly dogs who love everyone they meet. Combined with their size and enthusiasm, jumping on people becomes a significant issue if not addressed early.",
+    "common_causes": ["excitement during greetings", "attention-seeking", "lack of impulse control", "reinforcement history", "high energy"],
+    "training_tips": [
+      "Enforce 'four paws on floor' rule with zero exceptions",
+      "Completely ignore jumping - turn away, cross arms, no interaction",
+      "Heavily reward sitting during greetings with treats and attention",
+      "Practice with confederates to build impulse control",
+      "Use doorbell desensitization training"
+    ],
+    "timeline": "2-4 weeks with consistent practice",
+    "prevention": "Start early! Lab puppies are cute when jumping, but 70-pound Labs are not. Never reward jumping even once, as Labs have excellent memories for what gets reinforced."
+  },
+  "labrador-retriever-leash-pulling": {
+    "intro": "Labradors are strong, enthusiastic dogs with high energy and curiosity. Their excitement about the world makes leash pulling extremely common, especially in young Labs.",
+    "common_causes": ["excitement and curiosity", "high energy levels", "lack of leash training", "strong prey drive", "reinforcement history"],
+    "training_tips": [
+      "Use stop-and-go method - stop moving when leash tightens",
+      "Practice 'check-ins' where dog looks back at you for treats",
+      "Use direction changes to keep dog focused on you",
+      "Exercise before walks to reduce pulling from excess energy",
+      "Consider front-clip harness temporarily for management"
+    ],
+    "timeline": "3-6 weeks with daily practice",
+    "prevention": "Start leash training early in puppyhood. Labs are eager to please and highly food-motivated, making them excellent candidates for positive reinforcement leash training."
+  },
+  "beagle-barking": {
+    "intro": "Beagles are scent hounds bred to bay and bark while tracking prey. This means vocalization is deeply ingrained in their DNA. They're one of the barkiest breeds and will vocalize frequently if not managed.",
+    "common_causes": ["scent-driven excitement from tracking smells", "boredom and lack of mental stimulation", "separation distress", "attention-seeking behavior", "alerting to interesting scents or sounds"],
+    "training_tips": [
+      "Teach 'quiet' command but accept you'll never eliminate all barking",
+      "Provide scent work and nose games to fulfill hound instincts",
+      "Ensure 45+ minutes daily exercise minimum",
+      "Use white noise or radio when leaving to mask outdoor sounds",
+      "Tire them out mentally with puzzle feeders"
+    ],
+    "timeline": "Ongoing management - barking is breed-typical",
+    "prevention": "Beagles are vocal dogs. If you want a quiet dog, a Beagle isn't the right choice. Management and fulfilling their scenting needs reduces excessive barking."
+  },
+  "beagle-leash-pulling": {
+    "intro": "Beagles were bred to track scents with their nose to the ground, following trails independently. This instinct makes leash walking challenging - their nose leads, not their brain!",
+    "common_causes": ["powerful scent-drive overriding training", "excitement about outdoor smells", "lack of impulse control", "strong prey drive", "nose-to-ground tracking behavior"],
+    "training_tips": [
+      "Accept that Beagles will always be somewhat distracted by scents",
+      "Use extremely high-value treats to compete with environmental scents",
+      "Practice in low-distraction areas first before increasing difficulty",
+      "Use sniff walks separately from training walks",
+      "Consider long-line training for controlled sniffing opportunities"
+    ],
+    "timeline": "2-3 months for noticeable improvement",
+    "prevention": "Start young and use food motivation heavily. Beagles are stubborn and scent-driven, so consistency is critical. Accept that perfect loose-leash walking may never happen."
+  },
+  "french-bulldog-separation-anxiety": {
+    "intro": "French Bulldogs were bred solely as companion dogs - they have no job except being with their people. This makes them especially prone to separation anxiety when left alone.",
+    "common_causes": ["bred specifically for companionship", "brachycephalic breeds often have anxiety", "small size leads to over-coddling", "lack of independence training", "previous abandonment"],
+    "training_tips": [
+      "Start with room separation before leaving the house",
+      "Leave special treats only available when alone (frozen Kong)",
+      "Keep departures and arrivals completely low-key",
+      "Use white noise or calming music",
+      "Consider doggy daycare or pet sitter for long absences"
+    ],
+    "timeline": "4-8 weeks of gradual training",
+    "prevention": "Teach independence early. Frenchies are velcro dogs by nature, but they need to learn being alone is safe. Use baby gates to practice separation while you're home."
+  },
+  "siberian-husky-leash-pulling": {
+    "intro": "Siberian Huskies were literally bred to pull sleds for hours. Pulling on leash is their job, their purpose, and their instinct. This makes loose-leash walking one of the biggest challenges for Husky owners.",
+    "common_causes": ["bred specifically to pull heavy loads", "extremely high energy levels", "independent nature", "strong prey drive", "excitement about running"],
+    "training_tips": [
+      "Provide appropriate pulling outlets like bikejoring or dog scootering",
+      "Use front-clip harness for better control during training",
+      "Practice loose-leash walking after vigorous exercise",
+      "Reward heavily for any attention to you during walks",
+      "Accept that Huskies will always want to pull - management is key"
+    ],
+    "timeline": "Ongoing - pulling is instinctive for this breed",
+    "prevention": "Provide appropriate outlets for pulling behavior. A Husky with a pulling job (canicross, bikejoring) is more likely to walk nicely when asked. Never expect perfect loose-leash walking."
+  },
+  "siberian-husky-digging": {
+    "intro": "Siberian Huskies dig instinctively to create cool resting spots in hot weather, a behavior inherited from surviving Arctic conditions. They also dig out of boredom or to escape.",
+    "common_causes": ["temperature regulation in hot weather", "boredom from insufficient exercise", "denning instinct", "escape attempts due to roaming instinct", "prey drive chasing underground sounds"],
+    "training_tips": [
+      "Provide a designated dig pit with sand and bury toys to find",
+      "Ensure 90+ minutes of vigorous daily exercise minimum",
+      "Never leave unsupervised in yard for extended periods",
+      "Bury chicken wire or rocks at fence line to prevent escape digging",
+      "Provide cooling mats or kiddie pools in summer"
+    ],
+    "timeline": "Ongoing management - digging is instinctive",
+    "prevention": "Huskies dig. Period. The solution is management and redirection, not elimination. A designated dig area and plenty of exercise reduces unwanted digging."
+  },
+  "border-collie-barking": {
+    "intro": "Border Collies are intense, intelligent herding dogs who use barking to move and control livestock. Without appropriate outlets, this barking instinct gets directed at inappropriate targets.",
+    "common_causes": ["herding instinct toward moving objects", "boredom from insufficient mental stimulation", "frustration from lack of job", "alerting to environmental changes", "demand barking for attention or play"],
+    "training_tips": [
+      "Provide 2+ hours daily of physical and mental exercise",
+      "Teach 'quiet' command using differentiation training",
+      "Engage in dog sports like agility, herding, or disc dog",
+      "Use impulse control exercises to build self-regulation",
+      "Channel herding drive into appropriate activities"
+    ],
+    "timeline": "4-8 weeks with intensive exercise and training",
+    "prevention": "Border Collies need a job. Without appropriate mental and physical work, they create their own jobs - usually ones you won't like. Barking is often a symptom of an under-fulfilled dog."
+  },
+  "australian-shepherd-separation-anxiety": {
+    "intro": "Australian Shepherds are velcro dogs bred to work alongside humans all day. Their intense bond with their owner and high need for companionship makes separation anxiety extremely common.",
+    "common_causes": ["working breed bonded to their person", "insufficient alone time training", "high intelligence causing anxiety", "sudden routine changes", "lack of mental stimulation"],
+    "training_tips": [
+      "Build alone time gradually starting with seconds, not minutes",
+      "Provide extremely engaging mental enrichment like puzzle feeders",
+      "Tire them out with 90+ minutes exercise before leaving",
+      "Create calm departure routines without fanfare",
+      "Consider professional help early - Aussies can develop severe anxiety quickly"
+    ],
+    "timeline": "6-12 weeks with dedicated training",
+    "prevention": "Teach independence from day one. Aussies want to be with you 24/7, but they need to learn being alone is normal. Practice leaving the room frequently throughout the day."
+  },
+  "rottweiler-aggression": {
+    "intro": "Rottweilers are guardian breeds with strong protective instincts. Properly bred and trained Rotties are confident and stable, but poor socialization or training can lead to territorial or defensive aggression.",
+    "common_causes": ["inadequate socialization during critical period", "genetic temperament issues from poor breeding", "territorial behavior around home", "fear-based reactions", "improper guarding training"],
+    "training_tips": [
+      "Seek immediate professional help from certified behaviorist",
+      "Prioritize management to prevent rehearsal of aggression",
+      "Never use punishment or dominance training methods",
+      "Implement careful counter-conditioning protocols",
+      "Rule out pain or medical causes with vet exam"
+    ],
+    "timeline": "6+ months with professional guidance",
+    "prevention": "Extensive socialization before 16 weeks is critical. Rottweilers need positive exposure to diverse people and situations. Choose reputable breeders with stable, confident temperament lines."
+  },
+  "dachshund-barking": {
+    "intro": "Dachshunds were bred to hunt badgers underground - a job requiring courage, tenacity, and lots of barking. They're one of the most vocal small breeds and will alert bark at nearly everything.",
+    "common_causes": ["alerting to sounds and movement - bred for this", "attention-seeking behavior", "small dog syndrome from being coddled", "boredom and lack of activity", "territorial behavior"],
+    "training_tips": [
+      "Teach 'quiet' command but accept some barking is breed-typical",
+      "Desensitize to common triggers like doorbell, car sounds",
+      "Provide 30+ minutes daily exercise despite small size",
+      "Use mental enrichment like snuffle mats and puzzle toys",
+      "Avoid rewarding alert barking with attention"
+    ],
+    "timeline": "Ongoing management - barking is instinctive",
+    "prevention": "Dachshunds bark. If you want a quiet dog, choose a different breed. Management, training, and mental stimulation reduce excessive barking but won't eliminate it."
+  }
+}

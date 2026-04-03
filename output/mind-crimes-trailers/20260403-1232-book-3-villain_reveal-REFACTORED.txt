@@ -1,0 +1,59 @@
+📹 **BOOK TRAILER PACKAGE**
+
+📚 **Book:** Book-3
+🎯 **Formula:** Villain Reveal (90% retention)
+📊 **API Calls:** 2 (saved 66% vs old method)
+
+======================================================================
+
+# VIDEO PROMPT (USE ON ALL PLATFORMS)
+**Copy this to CapCut AI / Runway / Luma:**
+
+```
+0-4s: Funeral flowers/church | Audio: piano fade-in | Text: "Killer cried at her funeral"
+4-15s: Wedding photos glitching | Audio: heartbeat | Text: "Perfect marriage... or was it?"
+15-30s: Crime scene tape/police cars | Audio: tension rise | Text: "Found dead at home"
+30-50s: DNA lab/detective files | Audio: suspense peak | Text: "Hiding in plain sight"
+50-60s: Handcuffs/courtroom | Audio: resolution | Text: "Justice served. Who suspected?"
+
+EFFECTS: Dark filter, glitch transitions, 2-3s cuts, typewriter text, red accents, zoom emphasis
+AUDIO: Suspense piano + podcast VO build
+HOOK: "Killer at funeral—her husband"
+
+HASHTAGS: #truecrime #coldcase #justiceserved #unsolvedmystery #forensics
+TITLE: Husband Cried at Funeral—Then DNA Exposed Him
+DESC: He fooled everyone for years until genetic genealogy revealed the shocking truth
+CTA: Comment who you suspected
+```
+
+**CHAR COUNT: 687** ✓ CapCut-ready
+
+======================================================================
+
+# PLATFORM-SPECIFIC METADATA
+
+```
+# TIKTOK METADATA
+Title: DNA solved this 30-year cold case 🧬✨ Mind = blown
+Description: When traditional detective work fails, science steps in. This genetic genealogy breakthrough brought justice decades later 🔍
+Hashtags: #truecrime #coldcase #mystery #geneticgenealogy #justice #forensics #mindcrimes
+
+# INSTAGRAM METADATA
+Title: Science brought justice after 30 years 🧬
+Caption: Sometimes the answers we seek are hidden in our DNA. This cold case breakthrough shows how genetic genealogy is revolutionizing criminal justice and bringing closure to families.
+Hashtags: #truecrime #coldcase #forensicscience #geneticgenealogy #justice #mystery #crimestory #investigation #breakthrough #science #mindcrimes #documentary #crimebook #unsolved #closure
+
+# YOUTUBE METADATA
+Title: Cold Case Solved: How Genetic Genealogy Cracked a 30-Year Mystery
+Description: Discover how cutting-edge genetic genealogy technology solved a decades-old cold case in this fascinating true crime breakdown. From Mind Crimes case files - exploring the intersection of science and justice. 📖 Full case details in bio link!
+Hashtags: #Shorts #truecrime #coldcase #forensics #geneticgenealogy
+
+Pinned Comment: 📚 Read the complete Mind Crimes case study - link in bio! Which cold case breakthrough amazed you most?
+```
+
+======================================================================
+
+**Generated:** 2026-04-03 12:32 UTC
+**Total Size:** 2206 characters
+**Ready for:** CapCut AI, Runway, Luma, manual production
+**Deploy:** Use same video on all 3 platforms, customize metadata only

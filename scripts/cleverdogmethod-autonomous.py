@@ -19,11 +19,16 @@ from datetime import datetime
 import sys
 import re
 
+# Add lib path for image generation and SEO
+sys.path.insert(0, str(Path("/root/.openclaw/workspace/lib")))
+from image_generator import generate_dog_training_image
+from seo_enhancements import categorize_dog_training_post
+
 # Config
 WORKSPACE = Path("/root/.openclaw/workspace")
 REPO_PATH = WORKSPACE / "dog-training-landing-clean"
 STATE_FILE = WORKSPACE / ".state/cleverdogmethod-published.json"
-KEYWORDS_FILE = WORKSPACE / "content/cleverdogmethod/KEYWORDS-EXPANSION.md"
+KEYWORDS_FILE = WORKSPACE / "content/cleverdogmethod/KEYWORDS-V2-EXPANSION.md"
 LOG_FILE = WORKSPACE / "logs/cleverdogmethod-autonomous.log"
 
 TELEGRAM_BOT = "8318289285:AAGFvnbGoLh0uXO9Rcz9N23iW25DEYh-BBU"
@@ -88,13 +93,32 @@ def load_keywords_expansion():
     
     keywords = []
     for line in content.split('\n'):
-        if '|' in line and '⭐' in line:
+        # Support both V1 format (with ⭐) and V2 format (Tier headers)
+        if '|' in line:
             parts = [p.strip() for p in line.split('|')]
-            if len(parts) >= 5 and parts[1] and parts[1] != 'Keyword':
+            
+            # V1 format: | keyword | volume | competition | priority (⭐⭐⭐) |
+            if len(parts) >= 5 and parts[1] and parts[1] != 'Keyword' and '⭐' in line:
                 keywords.append({
                     'keyword': parts[1],
                     'volume': parts[2],
                     'priority': parts[4].count('⭐')
+                })
+            
+            # V2 format: | keyword | volume | competition | intent/notes |
+            elif len(parts) >= 4 and parts[1] and parts[1] != 'Keyword' and not parts[1].startswith('-'):
+                # Priority based on volume (rough estimate)
+                vol_str = parts[2].replace(',', '').replace('K', '000').replace('M', '000000')
+                try:
+                    volume = int(''.join(filter(str.isdigit, vol_str))) if vol_str else 1000
+                    priority = 5 if volume > 5000 else 4 if volume > 2000 else 3
+                except:
+                    priority = 3
+                
+                keywords.append({
+                    'keyword': parts[1],
+                    'volume': parts[2],
+                    'priority': priority
                 })
     
     # Sort by priority
@@ -226,6 +250,35 @@ def create_html_post(keyword, content):
     slug = keyword.lower().replace(' ', '-')
     title = f"Complete Guide to {keyword.title()}"
     
+    # Generate featured image
+    featured_image_html = ""
+    try:
+        log("🎨 Generating featured image...")
+        image_url = generate_dog_training_image(keyword, model='p-image')
+        
+        if image_url:
+            # Try to download and save locally
+            try:
+                images_dir = REPO_PATH / "images"
+                images_dir.mkdir(exist_ok=True)
+                local_image_path = images_dir / f"{slug}.jpg"
+                
+                img_response = requests.get(image_url, timeout=60)
+                img_response.raise_for_status()
+                with open(local_image_path, 'wb') as img_file:
+                    img_file.write(img_response.content)
+                
+                featured_image_html = f'<img src="../images/{slug}.jpg" alt="{title}" class="featured-image" style="width:100%;max-width:800px;height:auto;border-radius:8px;margin:20px 0;">'
+                log(f"✅ Featured image saved: {slug}.jpg")
+            except Exception as download_err:
+                log(f"⚠️  Image download failed: {download_err}", "WARN")
+                # Use external URL as fallback
+                featured_image_html = f'<img src="{image_url}" alt="{title}" class="featured-image" style="width:100%;max-width:800px;height:auto;border-radius:8px;margin:20px 0;">'
+        else:
+            log("⚠️  Image generation failed, continuing without image", "WARN")
+    except Exception as img_err:
+        log(f"⚠️  Image generation error: {img_err}", "WARN")
+    
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -257,6 +310,8 @@ def create_html_post(keyword, content):
                 <span>Published: {datetime.now().strftime('%B %d, %Y')}</span>
                 <span>Reading time: 5 min</span>
             </div>
+            
+            {featured_image_html}
             
             {content}
             

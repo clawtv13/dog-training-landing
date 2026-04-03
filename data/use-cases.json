@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Coding",
+    "slug": "coding",
+    "description": "Building software, debugging, code review, refactoring",
+    "relevant_tools": ["Claude", "ChatGPT", "Cursor", "Windsurf", "v0", "Bolt"],
+    "difficulty": "intermediate"
+  },
+  {
+    "name": "Content Writing",
+    "slug": "content-writing",
+    "description": "Blog posts, social media, marketing copy, scripts",
+    "relevant_tools": ["ChatGPT", "Claude"],
+    "difficulty": "beginner"
+  },
+  {
+    "name": "Workflow Automation",
+    "slug": "workflow-automation",
+    "description": "Connecting apps, automating repetitive tasks, data sync",
+    "relevant_tools": ["Make", "Zapier"],
+    "difficulty": "intermediate"
+  },
+  {
+    "name": "Product Mockups",
+    "slug": "product-mockups",
+    "description": "Visual prototypes, design concepts, marketing images",
+    "relevant_tools": ["Midjourney", "DALL-E", "Canva"],
+    "difficulty": "beginner"
+  },
+  {
+    "name": "Customer Support",
+    "slug": "customer-support",
+    "description": "Chatbots, help docs, ticket automation, FAQ generation",
+    "relevant_tools": ["ChatGPT"],
+    "difficulty": "beginner"
+  },
+  {
+    "name": "Research & Analysis",
+    "slug": "research",
+    "description": "Market research, competitive analysis, fact-checking, data analysis",
+    "relevant_tools": ["Perplexity", "Claude", "ChatGPT"],
+    "difficulty": "beginner"
+  },
+  {
+    "name": "Social Media Content",
+    "slug": "social-media",
+    "description": "Posts, graphics, captions, scheduling, engagement",
+    "relevant_tools": ["Canva", "ChatGPT", "Midjourney"],
+    "difficulty": "beginner"
+  },
+  {
+    "name": "Project Management",
+    "slug": "project-management",
+    "description": "Task tracking, team collaboration, roadmaps, sprint planning",
+    "relevant_tools": ["Notion", "Airtable"],
+    "difficulty": "beginner"
+  },
+  {
+    "name": "Email Marketing",
+    "slug": "email-marketing",
+    "description": "Campaigns, sequences, automation, copywriting",
+    "relevant_tools": ["ChatGPT", "Claude"],
+    "difficulty": "intermediate"
+  },
+  {
+    "name": "UI Design",
+    "slug": "ui-design",
+    "description": "Interface design, prototyping, wireframes, component libraries",
+    "relevant_tools": ["v0", "Bolt", "Cursor"],
+    "difficulty": "intermediate"
+  }
+]

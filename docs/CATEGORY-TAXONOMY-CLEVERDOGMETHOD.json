@@ -1,0 +1,188 @@
+{
+  "site": "CleverDogMethod.com",
+  "baseUrl": "https://cleverdogmethod.com",
+  "categories": [
+    {
+      "slug": "training-basics",
+      "name": "Training Basics",
+      "description": "Essential dog training fundamentals for all ages and experience levels. Learn proven methods that build a strong foundation.",
+      "subcategories": [
+        {
+          "slug": "puppy-training",
+          "name": "Puppy Training",
+          "description": "Start your puppy right with essential training techniques for the critical first months."
+        },
+        {
+          "slug": "adult-dog-training",
+          "name": "Adult Dog Training",
+          "description": "Effective training methods for mature dogs, including rescues and new family members."
+        },
+        {
+          "slug": "senior-dog-care",
+          "name": "Senior Dog Care",
+          "description": "Specialized training and care considerations for older dogs."
+        }
+      ]
+    },
+    {
+      "slug": "behavior-problems",
+      "name": "Behavior Problems",
+      "description": "Solve common and challenging behavior issues with proven techniques backed by canine psychology.",
+      "subcategories": [
+        {
+          "slug": "barking",
+          "name": "Barking Problems",
+          "description": "Why dogs bark excessively and how to stop it without harsh methods."
+        },
+        {
+          "slug": "jumping",
+          "name": "Jumping & Leash Pulling",
+          "description": "Stop jumping on guests and pulling on the leash with positive reinforcement."
+        },
+        {
+          "slug": "chewing",
+          "name": "Chewing & Destructive Behavior",
+          "description": "Redirect destructive chewing and save your furniture and belongings."
+        },
+        {
+          "slug": "separation-anxiety",
+          "name": "Separation Anxiety",
+          "description": "Help anxious dogs feel secure when home alone."
+        },
+        {
+          "slug": "aggression",
+          "name": "Aggression & Reactivity",
+          "description": "Address aggressive behavior and reactivity safely and effectively."
+        }
+      ]
+    },
+    {
+      "slug": "advanced-training",
+      "name": "Advanced Training",
+      "description": "Take your dog's skills to the next level with advanced techniques and specialized training.",
+      "subcategories": [
+        {
+          "slug": "tricks",
+          "name": "Tricks & Fun Commands",
+          "description": "Teach impressive tricks that strengthen your bond and mental stimulation."
+        },
+        {
+          "slug": "agility",
+          "name": "Agility & Sports",
+          "description": "Competitive dog sports and agility training for active dogs."
+        },
+        {
+          "slug": "service-dogs",
+          "name": "Service & Therapy Dogs",
+          "description": "Specialized training for working dogs and therapy animals."
+        }
+      ]
+    },
+    {
+      "slug": "breed-guides",
+      "name": "Breed-Specific Guides",
+      "description": "Training advice tailored to your dog's breed characteristics and instincts.",
+      "subcategories": []
+    }
+  ],
+  "postAssignments": [
+    {
+      "filename": "5-signs-your-dog-is-bored.html",
+      "title": "5 Signs Your Dog is Bored",
+      "category": "behavior-problems",
+      "subcategory": null,
+      "tags": ["boredom", "mental-stimulation", "enrichment"]
+    },
+    {
+      "filename": "biggest-dog-training-mistake.html",
+      "title": "The Biggest Dog Training Mistake",
+      "category": "training-basics",
+      "subcategory": "adult-dog-training",
+      "tags": ["common-mistakes", "training-fundamentals"]
+    },
+    {
+      "filename": "brain-games-that-tire-your-dog.html",
+      "title": "Brain Games That Tire Your Dog",
+      "category": "behavior-problems",
+      "subcategory": null,
+      "tags": ["mental-stimulation", "enrichment", "boredom"]
+    },
+    {
+      "filename": "crate-training-puppy-crying.html",
+      "title": "Crate Training: Puppy Crying",
+      "category": "training-basics",
+      "subcategory": "puppy-training",
+      "tags": ["crate-training", "crying", "nighttime"]
+    },
+    {
+      "filename": "dog-enrichment-ideas.html",
+      "title": "Dog Enrichment Ideas",
+      "category": "behavior-problems",
+      "subcategory": null,
+      "tags": ["enrichment", "mental-stimulation", "boredom"]
+    },
+    {
+      "filename": "dog-pulling-on-leash.html",
+      "title": "Dog Pulling on Leash",
+      "category": "behavior-problems",
+      "subcategory": "jumping",
+      "tags": ["leash-training", "pulling", "walking"]
+    },
+    {
+      "filename": "dog-reactivity-training.html",
+      "title": "Dog Reactivity Training",
+      "category": "behavior-problems",
+      "subcategory": "aggression",
+      "tags": ["reactivity", "aggression", "fear"]
+    },
+    {
+      "filename": "dog-resource-guarding.html",
+      "title": "Dog Resource Guarding",
+      "category": "behavior-problems",
+      "subcategory": "aggression",
+      "tags": ["resource-guarding", "aggression", "possessiveness"]
+    },
+    {
+      "filename": "how-to-calm-anxious-dog.html",
+      "title": "How to Calm an Anxious Dog",
+      "category": "behavior-problems",
+      "subcategory": "separation-anxiety",
+      "tags": ["anxiety", "calming", "stress"]
+    },
+    {
+      "filename": "how-to-stop-dog-barking-at-night.html",
+      "title": "How to Stop Dog Barking at Night",
+      "category": "behavior-problems",
+      "subcategory": "barking",
+      "tags": ["barking", "nighttime", "sleep"]
+    },
+    {
+      "filename": "separation-anxiety-in-dogs.html",
+      "title": "Separation Anxiety in Dogs",
+      "category": "behavior-problems",
+      "subcategory": "separation-anxiety",
+      "tags": ["separation-anxiety", "alone-time", "stress"]
+    },
+    {
+      "filename": "teach-dog-recall.html",
+      "title": "Teach Your Dog Recall",
+      "category": "training-basics",
+      "subcategory": "adult-dog-training",
+      "tags": ["recall", "come-command", "off-leash"]
+    },
+    {
+      "filename": "why-dog-follows-everywhere.html",
+      "title": "Why Your Dog Follows You Everywhere",
+      "category": "behavior-problems",
+      "subcategory": "separation-anxiety",
+      "tags": ["velcro-dog", "attachment", "following"]
+    },
+    {
+      "filename": "why-dogs-chew-everything.html",
+      "title": "Why Dogs Chew Everything",
+      "category": "behavior-problems",
+      "subcategory": "chewing",
+      "tags": ["chewing", "destructive-behavior", "teething"]
+    }
+  ]
+}

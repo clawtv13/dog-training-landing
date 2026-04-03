@@ -1,0 +1,57 @@
+📹 **BOOK TRAILER PACKAGE**
+
+📚 **Book:** Book-10
+🎯 **Formula:** Villain Reveal (90% retention)
+📊 **API Calls:** 2 (saved 66% vs old method)
+
+======================================================================
+
+# VIDEO PROMPT (USE ON ALL PLATFORMS)
+**Copy this to CapCut AI / Runway / Luma:**
+
+```
+0-4s: Funeral crowd, empty chair zoom | Audio: dark piano | Text: "Killer gave her eulogy"
+
+4-15s: Couple photos, happy Rebecca | Audio: soft strings | Text: "Perfect marriage... secret affair"
+
+15-30s: Crime scene, police cars, evidence | Audio: tension rise | Text: "Found dead. Stranger suspected"
+
+30-50s: Courtroom, DNA graphics, cuffs | Audio: dramatic build | Text: "11 years later: HUSBAND guilty. Killed for mistress"
+
+50-60s: Verdict gavel, justice served | Audio: resolution | Text: "How'd he hide 11 years? 👆 Follow for more"
+
+HASHTAGS: #truecrime #coldcase #solved #justice #dna
+TITLE: Husband Gave Eulogy After Murdering Wife
+DESC: DNA genealogy solved 11-year-old cold case murder
+CTA: Follow for solved cases
+STYLE: 2-3s cuts, fade transitions, respectful
+```
+
+*Character count: 647*
+
+======================================================================
+
+# PLATFORM-SPECIFIC METADATA
+
+# TIKTOK METADATA
+Title: 11 years later, DNA solved Rebecca's case 🧬💔
+Description: Rebecca's family waited over a decade for answers. Then genetic genealogy changed everything. The truth was shocking 😳 What do you think happened?
+Hashtags: #truecrime #coldcase #mystery #dna #geneticgenealogy #justice #unsolved
+
+# INSTAGRAM METADATA
+Title: Rebecca's story: When science brings justice 🔬⚖️
+Caption: For 11 years, Rebecca's case went cold. Her family never gave up hope. Then genetic genealogy revealed a truth no one saw coming. Justice delayed, but not denied 💙
+Hashtags: #truecrime #coldcase #justice #forensics #dna #geneticgenealogy #mystery #solved #investigation #crimestory #science #breakthrough #hope #family #rebecca
+
+# YOUTUBE METADATA
+Title: Cold Case SOLVED: How DNA Found Rebecca's Killer After 11 Years
+Description: Rebecca's murder remained unsolved for over a decade until genetic genealogy cracked the case wide open. Discover how cutting-edge forensic science brought justice to her family. Full story in our book "Mind Crimes" - link in bio for more incredible solved cases.
+Hashtags: #Shorts #TrueCrime #ColdCase #DNA #GeneticGenealogy
+Pinned Comment: Get the full Rebecca case story + more solved mysteries! Book link in bio 📚
+
+======================================================================
+
+**Generated:** 2026-04-03 12:34 UTC
+**Total Size:** 2051 characters
+**Ready for:** CapCut AI, Runway, Luma, manual production
+**Deploy:** Use same video on all 3 platforms, customize metadata only

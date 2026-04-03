@@ -1,0 +1,17 @@
+# AI Automation Blog SEO Restructure - 2026-04-03
+# Old URLs → New categorized URLs
+
+/blog/posts/2026-04-02-how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026.html /blog/case-studies/success-stories/how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026/ 301
+/blog/posts/2026-03-29-claude-folder-anatomy-control-center-for-ai-coding.html /blog/tutorials/claude-folder-anatomy-control-center-for-ai-coding/ 301
+/blog/posts/2026-03-31-learn-claude-code-by-doing-not-reading.html /blog/tutorials/learn-claude-code-by-doing-not-reading/ 301
+/blog/posts/2026-03-29-go-hard-on-agents-not-on-your-filesystem.html /blog/solo-founder-strategies/productivity/go-hard-on-agents-not-on-your-filesystem/ 301
+/blog/posts/2026-03-29-why-sycophantic-ai-is-dangerous-for-solo-builders.html /blog/solo-founder-strategies/productivity/why-sycophantic-ai-is-dangerous-for-solo-builders/ 301
+/blog/posts/2026-03-29-ai-overly-affirms-users-asking-for-personal-advice.html /blog/ai-tools/llms/ai-overly-affirms-users-asking-for-personal-advice/ 301
+/blog/posts/2026-03-31-claude-codes-source-code-has-been-leaked-via-a-map-file-in-their-npm-registry.html /blog/ai-tools/llms/claude-codes-source-code-has-been-leaked-via-a-map-file-in-their-npm-registry/ 301
+/blog/posts/2026-04-03-qwen36plus-towards-real-world-agents.html /blog/ai-tools/llms/qwen36plus-towards-real-world-agents/ 301
+/blog/posts/2026-04-03-show-hn-apfel-the-free-ai-already-on-your-mac.html /blog/ai-tools/no-code-ai/show-hn-apfel-the-free-ai-already-on-your-mac/ 301
+/blog/posts/2026-03-30-chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state.html /blog/ai-tools/llms/chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state/ 301
+/blog/posts/2026-04-01-openai-closes-funding-round-at-an-852b-valuation.html /blog/ai-tools/llms/openai-closes-funding-round-at-an-852b-valuation/ 301
+/blog/posts/2026-03-29-the-first-40-months-of-the-ai-era.html /blog/ai-tools/the-first-40-months-of-the-ai-era/ 301
+/blog/posts/2026-03-29-cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering.html /blog/ai-tools/cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering/ 301
+/blog/posts/2026-04-01-police-used-ai-facial-recognition-to-wrongly-arrest-tn-woman-for-crimes-in-nd.html /blog/ai-tools/police-used-ai-facial-recognition-to-wrongly-arrest-tn-woman-for-crimes-in-nd/ 301

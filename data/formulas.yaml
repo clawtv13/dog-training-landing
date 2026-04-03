@@ -1,0 +1,260 @@
+# True Crime Video Formulas
+# 6 proven structures optimized for retention and viral potential
+
+news_hook:
+  name: "News Hook"
+  retention: 88
+  scene_count: 5
+  duration: 60
+  best_for: "Recently solved cold cases, current arrests, DNA breakthroughs"
+  
+  structure:
+    scene_1:
+      timing: "0-3s"
+      hook_type: "Breaking news pattern interrupt"
+      text_template: "🚨 After {years} YEARS, police finally arrested..."
+      visual: "Urgent graphic, red/black color scheme, news ticker aesthetic"
+      audio: "News sting sound, then silence"
+      
+    scene_2:
+      timing: "3-15s"
+      purpose: "The original crime"
+      text_template: "In {year}, {victim} was found {detail}"
+      visual: "Aged photo texture, newspaper clippings, slow zoom"
+      pacing: "Slow, ominous"
+      
+    scene_3:
+      timing: "15-35s"
+      purpose: "Years of mystery"
+      text_template: "For {years} years, the killer walked free..."
+      visual: "Timeline montage, calendar pages, seasons changing"
+      build: "Frustration, injustice"
+      
+    scene_4:
+      timing: "35-52s"
+      purpose: "The breakthrough"
+      text_template: "Until {breakthrough} revealed..."
+      visual: "DNA helix, evidence closeup, courtroom"
+      pacing: "Accelerating, revelation"
+      
+    scene_5:
+      timing: "52-60s"
+      purpose: "CTA"
+      text_template: "The full story 👆 link in bio"
+      visual: "Book cover reveal, Amazon branding"
+      audio: "Suspenseful resolve"
+
+evidence_reveal:
+  name: "Evidence Reveal"
+  retention: 85
+  scene_count: 5
+  duration: 60
+  best_for: "Unique forensic methods, unusual evidence, scientific angles"
+  
+  structure:
+    scene_1:
+      timing: "0-3s"
+      hook_type: "Mystery object"
+      text_template: "This {evidence} solved a murder {years} years later"
+      visual: "Closeup of mysterious evidence"
+      audio: "Suspense sting"
+      
+    scene_2:
+      timing: "3-12s"
+      purpose: "The crime"
+      text_template: "{year}. {location}. A brutal murder with no witnesses."
+      visual: "Crime scene tape, forensic photography aesthetic"
+      pacing: "Slow, procedural"
+      
+    scene_3:
+      timing: "12-25s"
+      purpose: "Why it went cold"
+      text_template: "Detectives found {evidence} but couldn't connect it to anyone."
+      visual: "Evidence bag, frustrated detective, cold case files"
+      
+    scene_4:
+      timing: "25-50s"
+      purpose: "The science"
+      text_template: "Then {technique} did what detectives couldn't..."
+      visual: "Lab equipment, DNA visualization, computer analysis"
+      pacing: "Educational but fast"
+      
+    scene_5:
+      timing: "50-60s"
+      purpose: "CTA"
+      text_template: "The full investigation 👆"
+      visual: "Book cover, forensic overlay"
+
+villain_reveal:
+  name: "Villain Reveal"
+  retention: 90
+  scene_count: 5
+  duration: 60
+  best_for: "Betrayal cases, partner murders, hiding in plain sight"
+  
+  structure:
+    scene_1:
+      timing: "0-4s"
+      hook_type: "Shocking reveal teaser"
+      text_template: "The killer attended the victim's funeral... and {betrayal}."
+      visual: "Dark silhouette, overlay imagery"
+      audio: "Dark ambient, heartbeat"
+      
+    scene_2:
+      timing: "4-15s"
+      purpose: "Happy before"
+      text_template: "{victim} thought they had the perfect life..."
+      visual: "Family photos, warm lighting (contrast)"
+      tone: "Nostalgic, warm"
+      
+    scene_3:
+      timing: "15-30s"
+      purpose: "The murder"
+      text_template: "Then on {date}, {attack_method}."
+      visual: "Door opening, shadow, symbolic imagery"
+      pacing: "Sudden shift to dark"
+      
+    scene_4:
+      timing: "30-50s"
+      purpose: "The betrayal"
+      text_template: "While police searched for a stranger... the killer was {relationship}."
+      visual: "Split screen: investigation vs. killer's normal life"
+      reveal: "Gradual unmasking"
+      
+    scene_5:
+      timing: "50-60s"
+      purpose: "CTA + hook"
+      text_template: "How did they hide for {years} years? 👆"
+      visual: "Book cover, question overlay"
+
+victim_story:
+  name: "Victim Story"
+  retention: 78
+  scene_count: 5
+  duration: 60
+  best_for: "Emotional impact, humanizing victims, justice angle"
+  
+  structure:
+    scene_1:
+      timing: "0-5s"
+      hook_type: "Humanizing moment"
+      text_template: "{victim} had just {normal_moment} when..."
+      visual: "Warm photo of victim in happier times"
+      audio: "Soft piano, then shift"
+      
+    scene_2:
+      timing: "5-20s"
+      purpose: "Who they were"
+      text_template: "She was a {role}, a {role}, who {quality}..."
+      visual: "Photo montage, family quotes"
+      tone: "Respectful, humanizing"
+      
+    scene_3:
+      timing: "20-35s"
+      purpose: "The crime (tasteful)"
+      text_template: "On {date}, someone took her future."
+      visual: "Candles, memorial imagery, NOT crime scene"
+      pacing: "Slow, reverent"
+      
+    scene_4:
+      timing: "35-52s"
+      purpose: "The fight for justice"
+      text_template: "Her family never stopped fighting..."
+      visual: "Advocacy, court proceedings, persistence"
+      
+    scene_5:
+      timing: "52-60s"
+      purpose: "CTA"
+      text_template: "Her story deserves to be told 👆"
+      visual: "Book cover, victim-centered framing"
+  
+  compliance_critical:
+    - "No victim photos without consent context"
+    - "Focus on life, not death"
+    - "No graphic crime details"
+    - "Family-approval framing test"
+
+science_angle:
+  name: "Science Angle"
+  retention: 82
+  scene_count: 5
+  duration: 60
+  best_for: "DNA genealogy, forensic technology, how science caught them"
+  
+  structure:
+    scene_1:
+      timing: "0-3s"
+      hook_type: "Science fact"
+      text_template: "{technology} caught a killer."
+      visual: "DNA helix, tech interface"
+      audio: "Tech/science sound design"
+      
+    scene_2:
+      timing: "3-15s"
+      purpose: "The unsolvable case"
+      text_template: "{year}: A perfect crime. No witnesses. No DNA match."
+      visual: "Cold case file aesthetic, frustrated investigators"
+      
+    scene_3:
+      timing: "15-30s"
+      purpose: "The technology gap"
+      text_template: "For {years} years, science couldn't help."
+      visual: "Old lab equipment → modern lab transition"
+      
+    scene_4:
+      timing: "30-50s"
+      purpose: "The breakthrough"
+      text_template: "Then {technology} did what humans couldn't..."
+      visual: "Computer screens, family tree visualization, match highlight"
+      pacing: "Educational but exciting"
+      
+    scene_5:
+      timing: "50-60s"
+      purpose: "CTA"
+      text_template: "The science that solved it 👆"
+      visual: "Book cover with DNA/science overlay"
+
+comparison_hook:
+  name: "Comparison Hook"
+  retention: 86
+  scene_count: 5
+  duration: 60
+  best_for: "Lesser-known cases with famous parallels"
+  
+  structure:
+    scene_1:
+      timing: "0-3s"
+      hook_type: "Famous comparison"
+      text_template: "Everyone knows {famous}. Nobody knows {lesser_known}."
+      visual: "Split screen: famous → lesser known"
+      audio: "Dramatic sting"
+      
+    scene_2:
+      timing: "3-15s"
+      purpose: "The famous case (brief)"
+      text_template: "{famous} killed {count} people and became infamous."
+      visual: "News clips, documentary aesthetic"
+      pacing: "Fast, familiar territory"
+      
+    scene_3:
+      timing: "15-35s"
+      purpose: "The unknown case"
+      text_template: "But in {location}, someone else used the SAME methods..."
+      visual: "Map transition, new location, parallels shown"
+      
+    scene_4:
+      timing: "35-52s"
+      purpose: "Why this case matters"
+      text_template: "And nobody talks about it."
+      visual: "Victim photos, case details, urgency"
+      
+    scene_5:
+      timing: "52-60s"
+      purpose: "CTA"
+      text_template: "The case you've never heard 👆"
+      visual: "Book cover, comparison overlay"
+  
+  compliance_notes:
+    - "Don't glorify either killer"
+    - "Frame as understanding evil, not celebrating"
+    - "Victim-centered when possible"

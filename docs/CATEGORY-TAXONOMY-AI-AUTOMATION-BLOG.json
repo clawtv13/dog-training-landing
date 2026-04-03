@@ -1,0 +1,222 @@
+{
+  "site": "AI Automation Blog (Work Less, Build)",
+  "baseUrl": "https://workless.build",
+  "categories": [
+    {
+      "slug": "ai-tools",
+      "name": "AI Tools & Platforms",
+      "description": "In-depth reviews and comparisons of AI tools that help solo founders build faster and smarter.",
+      "subcategories": [
+        {
+          "slug": "llms",
+          "name": "Large Language Models",
+          "description": "ChatGPT, Claude, Gemini, and other AI assistants for coding, writing, and automation."
+        },
+        {
+          "slug": "no-code-ai",
+          "name": "No-Code AI Tools",
+          "description": "AI platforms that don't require coding—perfect for non-technical founders."
+        },
+        {
+          "slug": "image-generation",
+          "name": "AI Image Generation",
+          "description": "Midjourney, DALL-E, Stable Diffusion, and tools for creating visual content with AI."
+        },
+        {
+          "slug": "automation-platforms",
+          "name": "Automation Platforms",
+          "description": "Zapier, Make.com, n8n—workflow automation tools that connect your stack."
+        }
+      ]
+    },
+    {
+      "slug": "solo-founder-strategies",
+      "name": "Solo Founder Strategies",
+      "description": "Proven strategies for building, launching, and scaling as a one-person company.",
+      "subcategories": [
+        {
+          "slug": "time-management",
+          "name": "Time Management",
+          "description": "Systems and tactics to maximize productivity without burning out."
+        },
+        {
+          "slug": "productivity",
+          "name": "Productivity Systems",
+          "description": "Frameworks, tools, and workflows that help solo founders get more done."
+        },
+        {
+          "slug": "business-systems",
+          "name": "Business Systems",
+          "description": "Operating systems and processes for running a one-person business."
+        }
+      ]
+    },
+    {
+      "slug": "case-studies",
+      "name": "Case Studies",
+      "description": "Real stories from solo founders—successes, failures, and lessons learned.",
+      "subcategories": [
+        {
+          "slug": "success-stories",
+          "name": "Success Stories",
+          "description": "How solo founders built profitable businesses with AI and automation."
+        },
+        {
+          "slug": "failed-experiments",
+          "name": "Failed Experiments",
+          "description": "What didn't work and why—learn from mistakes without making them yourself."
+        }
+      ]
+    },
+    {
+      "slug": "tutorials",
+      "name": "Tutorials & Guides",
+      "description": "Step-by-step guides for building with AI tools, automating workflows, and shipping faster.",
+      "subcategories": []
+    }
+  ],
+  "postAssignments": [
+    {
+      "filename": "2026-04-02-how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026.html",
+      "title": "How Solo Founders Are Building Million-Dollar Businesses With AI Tools in 2026",
+      "category": "case-studies",
+      "subcategory": "success-stories",
+      "tags": ["solo-founder", "AI-tools", "case-study", "million-dollar"]
+    },
+    {
+      "filename": "2026-03-29-how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026.html",
+      "title": "How Solo Founders Are Building Million-Dollar Businesses (duplicate)",
+      "category": "case-studies",
+      "subcategory": "success-stories",
+      "tags": ["solo-founder", "AI-tools", "case-study"],
+      "note": "Duplicate - consider removing or redirecting"
+    },
+    {
+      "filename": "2026-03-29-claude-folder-anatomy-control-center-for-ai-coding.html",
+      "title": "Claude Folder Anatomy: Control Center for AI Coding",
+      "category": "tutorials",
+      "subcategory": null,
+      "tags": ["claude", "coding", "AI-assistant", "tutorial"]
+    },
+    {
+      "filename": "2026-03-31-learn-claude-code-by-doing-not-reading.html",
+      "title": "Learn Claude Code By Doing, Not Reading",
+      "category": "tutorials",
+      "subcategory": null,
+      "tags": ["claude", "learning", "coding", "tutorial"]
+    },
+    {
+      "filename": "2026-03-29-go-hard-on-agents-not-on-your-filesystem.html",
+      "title": "Go Hard on Agents, Not on Your Filesystem",
+      "category": "solo-founder-strategies",
+      "subcategory": "productivity",
+      "tags": ["AI-agents", "organization", "productivity"]
+    },
+    {
+      "filename": "2026-03-29-why-sycophantic-ai-is-dangerous-for-solo-builders.html",
+      "title": "Why Sycophantic AI is Dangerous for Solo Builders",
+      "category": "solo-founder-strategies",
+      "subcategory": "productivity",
+      "tags": ["AI-tools", "critical-thinking", "pitfalls"]
+    },
+    {
+      "filename": "2026-03-29-ai-overly-affirms-users-asking-for-personal-advice.html",
+      "title": "AI Overly Affirms Users Asking for Personal Advice",
+      "category": "ai-tools",
+      "subcategory": "llms",
+      "tags": ["AI-behavior", "bias", "UX"]
+    },
+    {
+      "filename": "2026-03-31-claude-codes-source-code-has-been-leaked-via-a-map-file-in-their-npm-registry.html",
+      "title": "Claude Code's Source Code Has Been Leaked",
+      "category": "ai-tools",
+      "subcategory": "llms",
+      "tags": ["claude", "security", "news"]
+    },
+    {
+      "filename": "2026-04-03-qwen36plus-towards-real-world-agents.html",
+      "title": "Qwen 3.6+: Towards Real-World Agents",
+      "category": "ai-tools",
+      "subcategory": "llms",
+      "tags": ["qwen", "AI-agents", "news"]
+    },
+    {
+      "filename": "2026-04-03-show-hn-apfel-the-free-ai-already-on-your-mac.html",
+      "title": "Show HN: Apfel - The Free AI Already on Your Mac",
+      "category": "ai-tools",
+      "subcategory": "no-code-ai",
+      "tags": ["mac", "free-tools", "local-AI"]
+    },
+    {
+      "filename": "2026-03-30-chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state.html",
+      "title": "ChatGPT Won't Let You Type Until Cloudflare Reads Your React State",
+      "category": "ai-tools",
+      "subcategory": "llms",
+      "tags": ["chatgpt", "privacy", "UX"]
+    },
+    {
+      "filename": "2026-04-01-openai-closes-funding-round-at-an-852b-valuation.html",
+      "title": "OpenAI Closes Funding Round at $852B Valuation",
+      "category": "ai-tools",
+      "subcategory": "llms",
+      "tags": ["openai", "funding", "news"]
+    },
+    {
+      "filename": "2026-03-29-the-first-40-months-of-the-ai-era.html",
+      "title": "The First 40 Months of the AI Era",
+      "category": "ai-tools",
+      "subcategory": null,
+      "tags": ["AI-history", "analysis", "trends"]
+    },
+    {
+      "filename": "2026-03-29-cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering.html",
+      "title": "CERN Uses Ultra-Compact AI Models on FPGAs",
+      "category": "ai-tools",
+      "subcategory": null,
+      "tags": ["CERN", "AI-research", "technical"]
+    },
+    {
+      "filename": "2026-04-01-why-the-us-navy-wont-blast-the-iranians-and-open-strait-of-hormuz.html",
+      "title": "Why the US Navy Won't Blast the Iranians",
+      "category": "case-studies",
+      "subcategory": "failed-experiments",
+      "tags": ["geopolitics", "analysis"],
+      "note": "Off-topic - consider removing or relocating"
+    },
+    {
+      "filename": "2026-04-01-police-used-ai-facial-recognition-to-wrongly-arrest-tn-woman-for-crimes-in-nd.html",
+      "title": "Police Used AI Facial Recognition to Wrongly Arrest Woman",
+      "category": "ai-tools",
+      "subcategory": null,
+      "tags": ["AI-ethics", "facial-recognition", "news"]
+    },
+    {
+      "filename": "2026-04-02-windows-95-defenses-against-installers-that-overwrite-a-file-with-an-older-one.html",
+      "title": "Windows 95 Defenses Against Installers",
+      "category": "tutorials",
+      "subcategory": null,
+      "tags": ["legacy", "technical"],
+      "note": "Off-topic - consider removing"
+    },
+    {
+      "filename": "2026-03-31-clojure-the-documentary-official-trailer-video.html",
+      "title": "Clojure The Documentary - Official Trailer",
+      "category": "tutorials",
+      "subcategory": null,
+      "tags": ["clojure", "programming", "video"],
+      "note": "Off-topic - consider removing"
+    }
+  ],
+  "recommendations": {
+    "duplicates": [
+      "2026-04-02-how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026.html",
+      "2026-03-29-how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026.html"
+    ],
+    "offTopic": [
+      "2026-04-01-why-the-us-navy-wont-blast-the-iranians-and-open-strait-of-hormuz.html",
+      "2026-04-02-windows-95-defenses-against-installers-that-overwrite-a-file-with-an-older-one.html",
+      "2026-03-31-clojure-the-documentary-official-trailer-video.html"
+    ],
+    "notes": "Consider removing off-topic posts or moving to a 'Curated News' section. Focus on AI automation + solo founder content for better topical authority."
+  }
+}

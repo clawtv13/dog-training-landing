@@ -1,0 +1,193 @@
+# Platform-Specific Hashtag Strategies
+# True Crime Book Marketing
+
+tiktok:
+  max_count: 7
+  strategy: "30% viral + 50% niche + 20% branded"
+  
+  viral_tags:
+    - "#fyp"
+    - "#foryou"
+    - "#viral"
+    - "#storytime"
+    - "#foryoupage"
+  
+  niche_general:
+    - "#truecrime"
+    - "#truecrimecommunity"
+    - "#crimejunkie"
+    - "#murderino"
+    - "#truecrimepodcast"
+    - "#crimetok"
+    - "#truecrimestories"
+    - "#crimestory"
+    - "#truecrimeanytime"
+    - "#truecrimestory"
+  
+  niche_cold_case:
+    - "#coldcase"
+    - "#unsolvedmysteries"
+    - "#coldcasefiles"
+    - "#coldcasesolved"
+    - "#coldcasetiktok"
+  
+  niche_dna:
+    - "#dna"
+    - "#forensics"
+    - "#geneticgenealogy"
+    - "#forensicscience"
+    - "#dnasolved"
+  
+  niche_serial:
+    - "#serialkiller"
+    - "#serialkillers"
+    - "#criminalminds"
+    - "#serialkillerfiles"
+  
+  brand_tags:
+    - "#mindcrimes"
+    - "#mindcrimesbooks"
+    - "#truecrimebooks"
+  
+  guidelines:
+    - "Always include at least 1 viral tag"
+    - "Mix 3-4 niche tags based on case type"
+    - "Always include #mindcrimes"
+    - "Check TikTok trending page before posting"
+    - "Rotate tags to avoid spam detection"
+
+instagram:
+  max_count: 15
+  strategy: "20% viral + 60% niche + 20% branded"
+  placement: "First comment, not caption"
+  
+  viral_tags:
+    - "#reels"
+    - "#explore"
+    - "#trending"
+    - "#viral"
+    - "#explorepage"
+  
+  niche_general:
+    - "#truecrime"
+    - "#truecrimecommunity"
+    - "#truecrimejunkie"
+    - "#murderino"
+    - "#truecrimepodcast"
+    - "#truecrimedocumentary"
+    - "#truecrimestories"
+    - "#crimestories"
+    - "#truecrimestory"
+    - "#truecrimebooks"
+    - "#truecrimeauthor"
+    - "#truecrimereads"
+  
+  niche_cold_case:
+    - "#coldcase"
+    - "#coldcasefiles"
+    - "#unsolvedmystery"
+    - "#coldcasemystery"
+    - "#coldcasesolved"
+  
+  niche_forensics:
+    - "#forensics"
+    - "#forensicscience"
+    - "#dna"
+    - "#forensicfiles"
+    - "#criminalinvestigation"
+  
+  brand_tags:
+    - "#mindcrimes"
+    - "#mindcrimesbooks"
+    - "#truecrimebook"
+  
+  guidelines:
+    - "Place all hashtags in FIRST comment, not caption"
+    - "Use 12-15 hashtags (full count boosts reach)"
+    - "Mix high-volume and niche tags"
+    - "Update monthly based on analytics"
+
+youtube:
+  max_count: 5
+  strategy: "Minimal, SEO-focused"
+  placement: "Video description only"
+  mandatory: "#shorts"
+  
+  core_tags:
+    - "#shorts"
+    - "#truecrime"
+    - "#coldcase"
+    - "#murdermystery"
+    - "#forensics"
+  
+  optional_tags:
+    - "#investigation"
+    - "#detective"
+    - "#truecrimestories"
+    - "#coldcasefiles"
+    - "#dna"
+  
+  brand_tags:
+    - "#mindcrimes"
+  
+  guidelines:
+    - "#shorts is MANDATORY (enables Shorts feed)"
+    - "Keep to 5 tags max (YT favors description text over hashtags)"
+    - "Focus on SEO keywords in description instead"
+    - "Tags mostly for category signals"
+
+# Hashtag rotation strategy (avoid spam detection)
+rotation_schedule:
+  strategy: "Rotate 30% of hashtags every 3 videos"
+  keep_constant:
+    - "#mindcrimes"
+    - "#truecrime"
+    - Platform viral tags
+  rotate:
+    - Niche tags (pick different from pool)
+    - Trending tags (update weekly)
+
+# Case-type specific hashtag sets
+case_types:
+  cold_case:
+    primary: ["#coldcase", "#coldcasefiles", "#coldcasesolved"]
+    secondary: ["#unsolvedmystery", "#justice", "#coldasice"]
+  
+  dna_breakthrough:
+    primary: ["#dna", "#forensics", "#geneticgenealogy"]
+    secondary: ["#sciencesolves", "#forensicscience", "#dnasolved"]
+  
+  serial_killer:
+    primary: ["#serialkiller", "#serialkillers", "#serialkillerfiles"]
+    secondary: ["#criminalminds", "#truecrimecommunity"]
+  
+  betrayal_murder:
+    primary: ["#betrayal", "#truecrime", "#murdermystery"]
+    secondary: ["#shockingcrime", "#unexpected", "#trustnobody"]
+  
+  famous_case:
+    primary: ["#famouscase", "#truecrime", "#documentary"]
+    secondary: ["#netflix", "#investigation", "#crimestory"]
+
+# Trending hashtag tracker (update weekly)
+trending_watch:
+  tiktok:
+    update_frequency: "Daily check TikTok Creative Center"
+    sources:
+      - "TikTok trending page"
+      - "True crime creator hashtags"
+      - "Viral sound hashtags"
+  
+  instagram:
+    update_frequency: "Weekly check IG Insights"
+    sources:
+      - "Instagram Explore page"
+      - "Related hashtag suggestions"
+      - "Competitor analysis"
+  
+  youtube:
+    update_frequency: "Monthly"
+    sources:
+      - "YouTube Trending (Shorts)"
+      - "Related videos suggestions"
+      - "YouTube Studio analytics"

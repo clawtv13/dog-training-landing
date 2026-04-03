@@ -1,0 +1,102 @@
+{
+  "blog": "cleverdogmethod",
+  "analyzed_at": "2026-04-03T20:40:12.753183",
+  "summary": {
+    "total_posts": 106,
+    "total_internal_links": 524,
+    "avg_links_per_post": 4.94,
+    "orphan_pages_count": 106,
+    "weak_pages_count": 50
+  },
+  "most_linked_pages": [
+    {
+      "url": "/",
+      "incoming_links": 58
+    },
+    {
+      "url": "../index.html",
+      "incoming_links": 56
+    },
+    {
+      "url": "../blog.html",
+      "incoming_links": 56
+    },
+    {
+      "url": "/blog/",
+      "incoming_links": 48
+    },
+    {
+      "url": "/#pricing",
+      "incoming_links": 30
+    },
+    {
+      "url": "/#free-guide",
+      "incoming_links": 20
+    },
+    {
+      "url": "/privacy.html",
+      "incoming_links": 20
+    },
+    {
+      "url": "/contact.html",
+      "incoming_links": 20
+    },
+    {
+      "url": "/blog/index.html",
+      "incoming_links": 16
+    },
+    {
+      "url": "/blog/puppy-first-week-home.html",
+      "incoming_links": 14
+    }
+  ],
+  "orphan_pages": [
+    "/dog-pulling-on-leash.html",
+    "/puppy-socialization-7-day-plan.html",
+    "/emotional-support-dog-training.html",
+    "/puppy-socialization.html",
+    "/how-to-stop-dog-digging.html",
+    "/dog-training-for-barking.html",
+    "/how-to-stop-aggression.html",
+    "/belgian-malinois-training.html",
+    "/off-leash-dog-training.html",
+    "/how-to-stop-dog-barking-at-night.html",
+    "/dog-socialization-training.html",
+    "/border-collie-training-guide.html",
+    "/clicker-training-for-dogs.html",
+    "/dog-car-anxiety-training.html",
+    "/dog-reactivity-training.html",
+    "/why-dog-follows-everywhere.html",
+    "/how-to-calm-anxious-dog.html",
+    "/brain-games-that-tire-your-dog.html",
+    "/biggest-dog-training-mistake.html",
+    "/puppy-potty-training-regression.html"
+  ],
+  "weak_pages": [
+    "/puppy-socialization-7-day-plan.html",
+    "/puppy-socialization.html",
+    "/how-to-stop-dog-digging.html",
+    "/how-to-stop-aggression.html",
+    "/border-collie-training-guide.html",
+    "/dog-car-anxiety-training.html",
+    "/adolescent-dog-training.html",
+    "/husky-training-tips.html",
+    "/labrador-retriever-training.html",
+    "/how-to-stop-reactive-behavior.html",
+    "/dog-training-for-separation-anxiety.html",
+    "/crate-training-for-puppies-7-day-plan.html",
+    "/how-to-stop-separation-anxiety.html",
+    "/prong-collar-training-guide.html",
+    "/dog-training-for-aggression.html",
+    "/how-to-stop-anxiety.html",
+    "/how-to-stop-dog-jumping-on-people.html",
+    "/dog-chewing-furniture-solutions.html",
+    "/posts-backup-20260329-2257/dog-pulling-on-leash.html",
+    "/posts-backup-20260329-2257/puppy-socialization-7-day-plan.html"
+  ],
+  "recommendations": [
+    "\u26a0\ufe0f  Average links per post (4.9) is below target (5+). Add more contextual internal links.",
+    "\u26a0\ufe0f  106 orphan pages (no incoming links). Link to these pages from related content.",
+    "\u26a0\ufe0f  50 pages have <3 internal links. Strengthen internal linking structure."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "active": false,
+  "created_at": "2026-04-02T15:30:00Z",
+  "description": "A/B test for blog post generation prompts",
+  "variants": {
+    "A": {
+      "name": "Control - Original Prompt",
+      "description": "Baseline prompt for content generation"
+    },
+    "B": {
+      "name": "Enhanced - Quality Focus",
+      "description": "Prompt emphasizing quality, depth, and unique insights"
+    }
+  },
+  "notes": "To activate: set 'active': true and tag posts with 'prompt_variant' field"
+}

@@ -1,0 +1,217 @@
+# Content Compliance & Safety Filters
+# True Crime Book Marketing - Victim-Centered, Platform-Safe
+
+# CRITICAL: All content must pass these filters before generation/posting
+
+prohibited_content:
+  graphic_violence:
+    description: "No blood, wounds, or explicit gore"
+    keywords:
+      - "blood splatter"
+      - "gore"
+      - "mutilated"
+      - "dismembered"
+      - "graphic wound"
+      - "autopsy detail"
+      - "torture method"
+      - "explicit violence"
+    action: "REJECT - Rewrite without graphic detail"
+  
+  crime_scene_photos:
+    description: "Never use actual crime scene images"
+    keywords:
+      - "crime scene photo"
+      - "actual photo"
+      - "real crime scene"
+      - "leaked image"
+    action: "REJECT - Use symbolic/artistic representation only"
+  
+  autopsy_medical:
+    description: "No medical examiner or autopsy content"
+    keywords:
+      - "autopsy"
+      - "medical examiner"
+      - "morgue"
+      - "cause of death detail"
+      - "body examination"
+    action: "REJECT - Use general terms like 'forensic analysis'"
+  
+  killer_glorification:
+    description: "No celebrating or humanizing killers"
+    keywords:
+      - "genius killer"
+      - "mastermind"
+      - "brilliant"
+      - "legend"
+      - "icon"
+      - "misunderstood"
+      - "tragic backstory"
+    context_check: true  # Allow if negated ("not a genius")
+    action: "REJECT - Reframe as villain, not antihero"
+  
+  victim_mockery:
+    description: "Always respectful victim framing"
+    keywords:
+      - "stupid victim"
+      - "deserved"
+      - "asked for it"
+      - "should have known"
+    action: "REJECT - Victim-blaming is never acceptable"
+  
+  minor_victims:
+    description: "Extra caution with child victims"
+    guidelines:
+      - "Use only first name or 'a child'"
+      - "No photos unless family-approved memorial"
+      - "Frame through parental/family grief"
+      - "Age-restrict content"
+    action: "REVIEW - Apply extra sensitivity filter"
+  
+  ongoing_cases:
+    description: "No speculation on active investigations"
+    keywords:
+      - "I think the killer is"
+      - "probably guilty"
+      - "seems suspicious"
+      - "my theory"
+    action: "REJECT - Stick to facts, avoid speculation"
+  
+  sexual_assault_detail:
+    description: "No explicit sexual violence detail"
+    guidelines:
+      - "Use general term: 'sexual assault occurred'"
+      - "No explicit methods or descriptions"
+      - "Focus on justice, not attack details"
+    action: "REJECT - Generalize and move on"
+
+required_elements:
+  victim_respect:
+    description: "Victim-centered framing required"
+    checklist:
+      - "Victim referred to by name (not 'the victim')"
+      - "Humanizing detail included (job, hobby, family)"
+      - "Photo shows life, not death"
+      - "Family-approval test: Would family object?"
+    failure_action: "Rewrite to include victim humanity"
+  
+  killer_villain_framing:
+    description: "Killer must be framed as villain"
+    checklist:
+      - "No sympathetic backstory focus"
+      - "Actions described as choices, not inevitabilities"
+      - "Consequences shown (arrest, conviction, prison)"
+      - "Victim impact emphasized over killer psychology"
+    failure_action: "Reframe focus from killer to victim/justice"
+  
+  justice_angle:
+    description: "Story must include resolution/justice"
+    checklist:
+      - "Arrest mentioned"
+      - "Conviction or trial referenced"
+      - "Family/community response included"
+      - "System worked (or is still working)"
+    failure_action: "Add justice context to ending"
+
+platform_specific:
+  tiktok:
+    guidelines:
+      - "Age-restrict any borderline content"
+      - "No detailed crime methods"
+      - "No celebration of violence"
+      - "No harassment of families or defendants"
+      - "Comply with Community Guidelines on Violence/Graphic Content"
+    trigger_review:
+      - "Violence keywords"
+      - "Crime method details"
+      - "Real names of living defendants"
+  
+  instagram:
+    guidelines:
+      - "No graphic violence imagery"
+      - "No self-harm or suicide detail"
+      - "Use sensitive content warnings"
+      - "No shocking imagery in thumbnail"
+    trigger_review:
+      - "Visual content descriptions"
+      - "Thumbnail imagery"
+  
+  youtube:
+    guidelines:
+      - "Age-restrict violent content"
+      - "No monetization on graphic content"
+      - "No misleading thumbnails"
+      - "Comply with Violent Criminal Organizations policy"
+    trigger_review:
+      - "True crime + violence"
+      - "Thumbnail imagery"
+      - "Title sensationalism"
+
+compliance_validation:
+  pre_generation:
+    step: "Before OpenRouter prompt"
+    checks:
+      - "Book case type = allowed category"
+      - "No ongoing/active investigation"
+      - "Victim details available (not anonymous John/Jane Doe)"
+      - "Case resolved or justice in progress"
+    failure: "Skip this book, select different"
+  
+  post_generation:
+    step: "After prompt generated, before delivery"
+    checks:
+      - "Scan for prohibited keywords"
+      - "Verify victim-respectful framing"
+      - "Check killer not glorified"
+      - "Platform guidelines met"
+    failure: "Flag for manual review or regenerate"
+
+victim_sensitivity_tiers:
+  tier_1_standard:
+    description: "Adult victims, resolved cases, no graphic violence"
+    restrictions: "Standard compliance filters"
+  
+  tier_2_sensitive:
+    description: "Child victims, sexual assault, or recent cases"
+    restrictions:
+      - "Age-restrict all platforms"
+      - "No photos of minors"
+      - "Generalize assault details"
+      - "Extra family-approval test"
+  
+  tier_3_prohibited:
+    description: "Cases we do not cover"
+    examples:
+      - "Unresolved cases with living suspects"
+      - "Cases with no justice/resolution"
+      - "Cases where family publicly objects to coverage"
+      - "Exploitation-framed cases"
+    action: "Do not generate content"
+
+ethical_guidelines:
+  always:
+    - "Victim humanity first"
+    - "Justice-focused narrative"
+    - "Respectful tone throughout"
+    - "Educational, not exploitative"
+    - "No clickbait suffering"
+  
+  never:
+    - "Graphic violence for shock value"
+    - "Victim-blaming language"
+    - "Killer as protagonist/antihero"
+    - "Sensationalize suffering"
+    - "Profit from pain without purpose"
+
+manual_review_triggers:
+  auto_flag:
+    - "Child victim"
+    - "Sexual assault case"
+    - "Recent case (< 2 years)"
+    - "High-profile with living family"
+    - "Controversial case with public debate"
+  
+  review_process:
+    - "Human review required before posting"
+    - "Extra sensitivity check"
+    - "Platform compliance double-check"
+    - "Family impact consideration"

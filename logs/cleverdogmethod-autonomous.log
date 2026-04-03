@@ -232,3 +232,550 @@ error: failed to push some refs to 'https://github.com/clawtv13/dog-training-lan
 [2026-03-29 08:02:19] [INFO] ============================================================
 [2026-03-29 08:02:19] [INFO] 📊 SUMMARY: 3/3 posts published
 [2026-03-29 08:02:19] [INFO] ============================================================
+[2026-03-29 20:00:01] [INFO] ============================================================
+[2026-03-29 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-29 20:00:01] [INFO] ============================================================
+[2026-03-29 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-29 20:00:01] [INFO] ✅ Selected 5 candidate keywords
+[2026-03-29 20:00:01] [INFO] 📝 Processing: rottweiler training
+[2026-03-29 20:00:51] [INFO] ✅ Generated 1219 words for: rottweiler training
+[2026-03-29 20:00:51] [INFO] 💾 Saved: rottweiler-training.html
+[2026-03-29 20:00:52] [INFO] ✅ Deployed: rottweiler-training
+[2026-03-29 20:00:52] [INFO] ✅ Published: Complete Guide to Rottweiler Training
+[2026-03-29 20:01:02] [INFO] 📝 Processing: beagle training
+[2026-03-29 20:01:52] [INFO] ✅ Generated 1285 words for: beagle training
+[2026-03-29 20:01:52] [INFO] 💾 Saved: beagle-training.html
+[2026-03-29 20:01:53] [INFO] ✅ Deployed: beagle-training
+[2026-03-29 20:01:53] [INFO] ✅ Published: Complete Guide to Beagle Training
+[2026-03-29 20:02:03] [INFO] 📝 Processing: dog trick training
+[2026-03-29 20:02:57] [INFO] ✅ Generated 1351 words for: dog trick training
+[2026-03-29 20:02:57] [INFO] 💾 Saved: dog-trick-training.html
+[2026-03-29 20:02:57] [INFO] ✅ Deployed: dog-trick-training
+[2026-03-29 20:02:57] [INFO] ✅ Published: Complete Guide to Dog Trick Training
+[2026-03-29 20:02:57] [INFO] ============================================================
+[2026-03-29 20:02:57] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-29 20:02:57] [INFO] ============================================================
+[2026-03-29 20:00:01] [INFO] ============================================================
+[2026-03-29 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-29 20:00:01] [INFO] ============================================================
+[2026-03-29 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-29 20:00:01] [INFO] ✅ Selected 5 candidate keywords
+[2026-03-29 20:00:01] [INFO] 📝 Processing: rottweiler training
+[2026-03-29 20:00:51] [INFO] ✅ Generated 1219 words for: rottweiler training
+[2026-03-29 20:00:51] [INFO] 💾 Saved: rottweiler-training.html
+[2026-03-29 20:00:52] [INFO] ✅ Deployed: rottweiler-training
+[2026-03-29 20:00:52] [INFO] ✅ Published: Complete Guide to Rottweiler Training
+[2026-03-29 20:01:02] [INFO] 📝 Processing: beagle training
+[2026-03-29 20:01:52] [INFO] ✅ Generated 1285 words for: beagle training
+[2026-03-29 20:01:52] [INFO] 💾 Saved: beagle-training.html
+[2026-03-29 20:01:53] [INFO] ✅ Deployed: beagle-training
+[2026-03-29 20:01:53] [INFO] ✅ Published: Complete Guide to Beagle Training
+[2026-03-29 20:02:03] [INFO] 📝 Processing: dog trick training
+[2026-03-29 20:02:57] [INFO] ✅ Generated 1351 words for: dog trick training
+[2026-03-29 20:02:57] [INFO] 💾 Saved: dog-trick-training.html
+[2026-03-29 20:02:57] [INFO] ✅ Deployed: dog-trick-training
+[2026-03-29 20:02:57] [INFO] ✅ Published: Complete Guide to Dog Trick Training
+[2026-03-29 20:02:57] [INFO] ============================================================
+[2026-03-29 20:02:57] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-29 20:02:57] [INFO] ============================================================
+[2026-03-30 08:00:02] [INFO] ============================================================
+[2026-03-30 08:00:02] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-30 08:00:02] [INFO] ============================================================
+[2026-03-30 08:00:02] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-30 08:00:02] [INFO] ✅ Selected 2 candidate keywords
+[2026-03-30 08:00:02] [INFO] 📝 Processing: dog training books
+[2026-03-30 08:01:14] [INFO] ✅ Generated 1542 words for: dog training books
+[2026-03-30 08:01:14] [INFO] 💾 Saved: dog-training-books.html
+[2026-03-30 08:01:15] [INFO] ✅ Deployed: dog-training-books
+[2026-03-30 08:01:15] [INFO] ✅ Published: Complete Guide to Dog Training Books
+[2026-03-30 08:01:25] [INFO] 📝 Processing: great dane training
+[2026-03-30 08:02:37] [INFO] ✅ Generated 1631 words for: great dane training
+[2026-03-30 08:02:37] [INFO] 💾 Saved: great-dane-training.html
+[2026-03-30 08:02:38] [INFO] ✅ Deployed: great-dane-training
+[2026-03-30 08:02:38] [INFO] ✅ Published: Complete Guide to Great Dane Training
+[2026-03-30 08:02:48] [INFO] ============================================================
+[2026-03-30 08:02:48] [INFO] 📊 SUMMARY: 2/3 posts published
+[2026-03-30 08:02:48] [INFO] ============================================================
+[2026-03-30 08:02:48] [WARN] ⚠️ Only 2/3 published
+[2026-03-30 08:00:02] [INFO] ============================================================
+[2026-03-30 08:00:02] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-30 08:00:02] [INFO] ============================================================
+[2026-03-30 08:00:02] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-30 08:00:02] [INFO] ✅ Selected 2 candidate keywords
+[2026-03-30 08:00:02] [INFO] 📝 Processing: dog training books
+[2026-03-30 08:01:14] [INFO] ✅ Generated 1542 words for: dog training books
+[2026-03-30 08:01:14] [INFO] 💾 Saved: dog-training-books.html
+[2026-03-30 08:01:15] [INFO] ✅ Deployed: dog-training-books
+[2026-03-30 08:01:15] [INFO] ✅ Published: Complete Guide to Dog Training Books
+[2026-03-30 08:01:25] [INFO] 📝 Processing: great dane training
+[2026-03-30 08:02:37] [INFO] ✅ Generated 1631 words for: great dane training
+[2026-03-30 08:02:37] [INFO] 💾 Saved: great-dane-training.html
+[2026-03-30 08:02:38] [INFO] ✅ Deployed: great-dane-training
+[2026-03-30 08:02:38] [INFO] ✅ Published: Complete Guide to Great Dane Training
+[2026-03-30 08:02:48] [INFO] ============================================================
+[2026-03-30 08:02:48] [INFO] 📊 SUMMARY: 2/3 posts published
+[2026-03-30 08:02:48] [INFO] ============================================================
+[2026-03-30 08:02:48] [WARN] ⚠️ Only 2/3 published
+[2026-03-30 20:00:01] [INFO] ============================================================
+[2026-03-30 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-30 20:00:01] [INFO] ============================================================
+[2026-03-30 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-30 20:00:01] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-03-30 20:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-03-30 20:00:01] [INFO] 📝 Processing: dog training for aggression
+[2026-03-30 20:01:00] [INFO] ✅ Generated 1246 words for: dog training for aggression
+[2026-03-30 20:01:00] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-03-30 20:01:00] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-03-30 20:01:00] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-03-30 20:01:10] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-03-30 20:02:23] [INFO] ✅ Generated 1609 words for: dog training for separation anxiety
+[2026-03-30 20:02:23] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-03-30 20:02:24] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-03-30 20:02:24] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-03-30 20:02:34] [INFO] 📝 Processing: puppy socialization
+[2026-03-30 20:04:11] [INFO] ✅ Generated 2140 words for: puppy socialization
+[2026-03-30 20:04:11] [INFO] 💾 Saved: puppy-socialization.html
+[2026-03-30 20:04:11] [INFO] ✅ Deployed: puppy-socialization
+[2026-03-30 20:04:11] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-03-30 20:04:11] [INFO] ============================================================
+[2026-03-30 20:04:11] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-30 20:04:11] [INFO] ============================================================
+[2026-03-30 20:00:01] [INFO] ============================================================
+[2026-03-30 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-30 20:00:01] [INFO] ============================================================
+[2026-03-30 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-30 20:00:01] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-03-30 20:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-03-30 20:00:01] [INFO] 📝 Processing: dog training for aggression
+[2026-03-30 20:01:00] [INFO] ✅ Generated 1246 words for: dog training for aggression
+[2026-03-30 20:01:00] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-03-30 20:01:00] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-03-30 20:01:00] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-03-30 20:01:10] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-03-30 20:02:23] [INFO] ✅ Generated 1609 words for: dog training for separation anxiety
+[2026-03-30 20:02:23] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-03-30 20:02:24] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-03-30 20:02:24] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-03-30 20:02:34] [INFO] 📝 Processing: puppy socialization
+[2026-03-30 20:04:11] [INFO] ✅ Generated 2140 words for: puppy socialization
+[2026-03-30 20:04:11] [INFO] 💾 Saved: puppy-socialization.html
+[2026-03-30 20:04:11] [INFO] ✅ Deployed: puppy-socialization
+[2026-03-30 20:04:11] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-03-30 20:04:11] [INFO] ============================================================
+[2026-03-30 20:04:11] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-30 20:04:11] [INFO] ============================================================
+[2026-03-31 08:00:01] [INFO] ============================================================
+[2026-03-31 08:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-31 08:00:01] [INFO] ============================================================
+[2026-03-31 08:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-31 08:00:01] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-03-31 08:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-03-31 08:00:01] [INFO] 📝 Processing: dog training for aggression
+[2026-03-31 08:00:55] [INFO] ✅ Generated 1171 words for: dog training for aggression
+[2026-03-31 08:00:55] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-03-31 08:00:56] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-03-31 08:00:56] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-03-31 08:01:06] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-03-31 08:02:04] [INFO] ✅ Generated 1220 words for: dog training for separation anxiety
+[2026-03-31 08:02:04] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-03-31 08:02:05] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-03-31 08:02:05] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-03-31 08:02:15] [INFO] 📝 Processing: puppy socialization
+[2026-03-31 08:03:19] [INFO] ✅ Generated 1512 words for: puppy socialization
+[2026-03-31 08:03:19] [INFO] 💾 Saved: puppy-socialization.html
+[2026-03-31 08:03:20] [INFO] ✅ Deployed: puppy-socialization
+[2026-03-31 08:03:20] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-03-31 08:03:20] [INFO] ============================================================
+[2026-03-31 08:03:20] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-31 08:03:20] [INFO] ============================================================
+[2026-03-31 08:00:01] [INFO] ============================================================
+[2026-03-31 08:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-31 08:00:01] [INFO] ============================================================
+[2026-03-31 08:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-31 08:00:01] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-03-31 08:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-03-31 08:00:01] [INFO] 📝 Processing: dog training for aggression
+[2026-03-31 08:00:55] [INFO] ✅ Generated 1171 words for: dog training for aggression
+[2026-03-31 08:00:55] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-03-31 08:00:56] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-03-31 08:00:56] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-03-31 08:01:06] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-03-31 08:02:04] [INFO] ✅ Generated 1220 words for: dog training for separation anxiety
+[2026-03-31 08:02:04] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-03-31 08:02:05] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-03-31 08:02:05] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-03-31 08:02:15] [INFO] 📝 Processing: puppy socialization
+[2026-03-31 08:03:19] [INFO] ✅ Generated 1512 words for: puppy socialization
+[2026-03-31 08:03:19] [INFO] 💾 Saved: puppy-socialization.html
+[2026-03-31 08:03:20] [INFO] ✅ Deployed: puppy-socialization
+[2026-03-31 08:03:20] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-03-31 08:03:20] [INFO] ============================================================
+[2026-03-31 08:03:20] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-31 08:03:20] [INFO] ============================================================
+[2026-03-31 20:00:02] [INFO] ============================================================
+[2026-03-31 20:00:02] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-31 20:00:02] [INFO] ============================================================
+[2026-03-31 20:00:02] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-31 20:00:02] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-03-31 20:00:02] [INFO] ✅ Selected 6 candidate keywords
+[2026-03-31 20:00:02] [INFO] 📝 Processing: dog training for aggression
+[2026-03-31 20:00:56] [INFO] ✅ Generated 1224 words for: dog training for aggression
+[2026-03-31 20:00:56] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-03-31 20:00:56] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-03-31 20:00:56] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-03-31 20:01:06] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-03-31 20:02:02] [INFO] ✅ Generated 1253 words for: dog training for separation anxiety
+[2026-03-31 20:02:02] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-03-31 20:02:03] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-03-31 20:02:03] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-03-31 20:02:13] [INFO] 📝 Processing: puppy socialization
+[2026-03-31 20:03:17] [INFO] ✅ Generated 1459 words for: puppy socialization
+[2026-03-31 20:03:17] [INFO] 💾 Saved: puppy-socialization.html
+[2026-03-31 20:03:18] [INFO] ✅ Deployed: puppy-socialization
+[2026-03-31 20:03:18] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-03-31 20:03:18] [INFO] ============================================================
+[2026-03-31 20:03:18] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-31 20:03:18] [INFO] ============================================================
+[2026-03-31 20:00:02] [INFO] ============================================================
+[2026-03-31 20:00:02] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-03-31 20:00:02] [INFO] ============================================================
+[2026-03-31 20:00:02] [INFO] 🔍 Selecting 3 keywords...
+[2026-03-31 20:00:02] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-03-31 20:00:02] [INFO] ✅ Selected 6 candidate keywords
+[2026-03-31 20:00:02] [INFO] 📝 Processing: dog training for aggression
+[2026-03-31 20:00:56] [INFO] ✅ Generated 1224 words for: dog training for aggression
+[2026-03-31 20:00:56] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-03-31 20:00:56] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-03-31 20:00:56] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-03-31 20:01:06] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-03-31 20:02:02] [INFO] ✅ Generated 1253 words for: dog training for separation anxiety
+[2026-03-31 20:02:02] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-03-31 20:02:03] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-03-31 20:02:03] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-03-31 20:02:13] [INFO] 📝 Processing: puppy socialization
+[2026-03-31 20:03:17] [INFO] ✅ Generated 1459 words for: puppy socialization
+[2026-03-31 20:03:17] [INFO] 💾 Saved: puppy-socialization.html
+[2026-03-31 20:03:18] [INFO] ✅ Deployed: puppy-socialization
+[2026-03-31 20:03:18] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-03-31 20:03:18] [INFO] ============================================================
+[2026-03-31 20:03:18] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-03-31 20:03:18] [INFO] ============================================================
+[2026-04-01 08:00:02] [INFO] ============================================================
+[2026-04-01 08:00:02] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-04-01 08:00:02] [INFO] ============================================================
+[2026-04-01 08:00:02] [INFO] 🔍 Selecting 3 keywords...
+[2026-04-01 08:00:02] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-04-01 08:00:02] [INFO] ✅ Selected 6 candidate keywords
+[2026-04-01 08:00:02] [INFO] 📝 Processing: dog training for aggression
+[2026-04-01 08:01:00] [INFO] ✅ Generated 1317 words for: dog training for aggression
+[2026-04-01 08:01:00] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-04-01 08:01:01] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-04-01 08:01:01] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-04-01 08:01:11] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-04-01 08:02:15] [INFO] ✅ Generated 1382 words for: dog training for separation anxiety
+[2026-04-01 08:02:15] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-04-01 08:02:16] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-04-01 08:02:16] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-04-01 08:02:26] [INFO] 📝 Processing: puppy socialization
+[2026-04-01 08:03:31] [INFO] ✅ Generated 1480 words for: puppy socialization
+[2026-04-01 08:03:31] [INFO] 💾 Saved: puppy-socialization.html
+[2026-04-01 08:03:32] [INFO] ✅ Deployed: puppy-socialization
+[2026-04-01 08:03:32] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-04-01 08:03:32] [INFO] ============================================================
+[2026-04-01 08:03:32] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-04-01 08:03:32] [INFO] ============================================================
+[2026-04-01 08:00:02] [INFO] ============================================================
+[2026-04-01 08:00:02] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-04-01 08:00:02] [INFO] ============================================================
+[2026-04-01 08:00:02] [INFO] 🔍 Selecting 3 keywords...
+[2026-04-01 08:00:02] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-04-01 08:00:02] [INFO] ✅ Selected 6 candidate keywords
+[2026-04-01 08:00:02] [INFO] 📝 Processing: dog training for aggression
+[2026-04-01 08:01:00] [INFO] ✅ Generated 1317 words for: dog training for aggression
+[2026-04-01 08:01:00] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-04-01 08:01:01] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-04-01 08:01:01] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-04-01 08:01:11] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-04-01 08:02:15] [INFO] ✅ Generated 1382 words for: dog training for separation anxiety
+[2026-04-01 08:02:15] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-04-01 08:02:16] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-04-01 08:02:16] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-04-01 08:02:26] [INFO] 📝 Processing: puppy socialization
+[2026-04-01 08:03:31] [INFO] ✅ Generated 1480 words for: puppy socialization
+[2026-04-01 08:03:31] [INFO] 💾 Saved: puppy-socialization.html
+[2026-04-01 08:03:32] [INFO] ✅ Deployed: puppy-socialization
+[2026-04-01 08:03:32] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-04-01 08:03:32] [INFO] ============================================================
+[2026-04-01 08:03:32] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-04-01 08:03:32] [INFO] ============================================================
+[2026-04-01 20:00:01] [INFO] ============================================================
+[2026-04-01 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-04-01 20:00:01] [INFO] ============================================================
+[2026-04-01 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-04-01 20:00:01] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-04-01 20:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-04-01 20:00:01] [INFO] 📝 Processing: dog training for aggression
+[2026-04-01 20:00:58] [INFO] ✅ Generated 1264 words for: dog training for aggression
+[2026-04-01 20:00:58] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-04-01 20:00:59] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-04-01 20:00:59] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-04-01 20:01:09] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-04-01 20:02:02] [INFO] ✅ Generated 1227 words for: dog training for separation anxiety
+[2026-04-01 20:02:02] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-04-01 20:02:03] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-04-01 20:02:03] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-04-01 20:02:13] [INFO] 📝 Processing: puppy socialization
+[2026-04-01 20:03:42] [INFO] ✅ Generated 2003 words for: puppy socialization
+[2026-04-01 20:03:42] [INFO] 💾 Saved: puppy-socialization.html
+[2026-04-01 20:03:43] [INFO] ✅ Deployed: puppy-socialization
+[2026-04-01 20:03:43] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-04-01 20:03:43] [INFO] ============================================================
+[2026-04-01 20:03:43] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-04-01 20:03:43] [INFO] ============================================================
+[2026-04-01 20:00:01] [INFO] ============================================================
+[2026-04-01 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-04-01 20:00:01] [INFO] ============================================================
+[2026-04-01 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-04-01 20:00:01] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-04-01 20:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-04-01 20:00:01] [INFO] 📝 Processing: dog training for aggression
+[2026-04-01 20:00:58] [INFO] ✅ Generated 1264 words for: dog training for aggression
+[2026-04-01 20:00:58] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-04-01 20:00:59] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-04-01 20:00:59] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-04-01 20:01:09] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-04-01 20:02:02] [INFO] ✅ Generated 1227 words for: dog training for separation anxiety
+[2026-04-01 20:02:02] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-04-01 20:02:03] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-04-01 20:02:03] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-04-01 20:02:13] [INFO] 📝 Processing: puppy socialization
+[2026-04-01 20:03:42] [INFO] ✅ Generated 2003 words for: puppy socialization
+[2026-04-01 20:03:42] [INFO] 💾 Saved: puppy-socialization.html
+[2026-04-01 20:03:43] [INFO] ✅ Deployed: puppy-socialization
+[2026-04-01 20:03:43] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-04-01 20:03:43] [INFO] ============================================================
+[2026-04-01 20:03:43] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-04-01 20:03:43] [INFO] ============================================================
+[2026-04-02 08:00:01] [INFO] ============================================================
+[2026-04-02 08:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-04-02 08:00:01] [INFO] ============================================================
+[2026-04-02 08:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-04-02 08:00:01] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-04-02 08:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-04-02 08:00:01] [INFO] 📝 Processing: dog training for aggression
+[2026-04-02 08:00:59] [INFO] ✅ Generated 1247 words for: dog training for aggression
+[2026-04-02 08:00:59] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-04-02 08:01:00] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-04-02 08:01:00] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-04-02 08:01:10] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-04-02 08:02:16] [INFO] ✅ Generated 1428 words for: dog training for separation anxiety
+[2026-04-02 08:02:16] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-04-02 08:02:16] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-04-02 08:02:16] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-04-02 08:02:26] [INFO] 📝 Processing: puppy socialization
+[2026-04-02 08:03:52] [INFO] ✅ Generated 1801 words for: puppy socialization
+[2026-04-02 08:03:52] [INFO] 💾 Saved: puppy-socialization.html
+[2026-04-02 08:03:52] [INFO] ✅ Deployed: puppy-socialization
+[2026-04-02 08:03:52] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-04-02 08:03:52] [INFO] ============================================================
+[2026-04-02 08:03:52] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-04-02 08:03:52] [INFO] ============================================================
+[2026-04-02 08:00:01] [INFO] ============================================================
+[2026-04-02 08:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-04-02 08:00:01] [INFO] ============================================================
+[2026-04-02 08:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-04-02 08:00:01] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-04-02 08:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-04-02 08:00:01] [INFO] 📝 Processing: dog training for aggression
+[2026-04-02 08:00:59] [INFO] ✅ Generated 1247 words for: dog training for aggression
+[2026-04-02 08:00:59] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-04-02 08:01:00] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-04-02 08:01:00] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-04-02 08:01:10] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-04-02 08:02:16] [INFO] ✅ Generated 1428 words for: dog training for separation anxiety
+[2026-04-02 08:02:16] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-04-02 08:02:16] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-04-02 08:02:16] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-04-02 08:02:26] [INFO] 📝 Processing: puppy socialization
+[2026-04-02 08:03:52] [INFO] ✅ Generated 1801 words for: puppy socialization
+[2026-04-02 08:03:52] [INFO] 💾 Saved: puppy-socialization.html
+[2026-04-02 08:03:52] [INFO] ✅ Deployed: puppy-socialization
+[2026-04-02 08:03:52] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-04-02 08:03:52] [INFO] ============================================================
+[2026-04-02 08:03:52] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-04-02 08:03:52] [INFO] ============================================================
+[2026-04-02 20:00:01] [INFO] ============================================================
+[2026-04-02 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-04-02 20:00:01] [INFO] ============================================================
+[2026-04-02 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-04-02 20:00:01] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-04-02 20:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-04-02 20:00:01] [INFO] 📝 Processing: dog training for aggression
+[2026-04-02 20:00:56] [INFO] ✅ Generated 1307 words for: dog training for aggression
+[2026-04-02 20:00:56] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-04-02 20:00:57] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-04-02 20:00:57] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-04-02 20:01:07] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-04-02 20:02:01] [INFO] ✅ Generated 1266 words for: dog training for separation anxiety
+[2026-04-02 20:02:01] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-04-02 20:02:02] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-04-02 20:02:02] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-04-02 20:02:12] [INFO] 📝 Processing: puppy socialization
+[2026-04-02 20:03:28] [INFO] ✅ Generated 1718 words for: puppy socialization
+[2026-04-02 20:03:28] [INFO] 💾 Saved: puppy-socialization.html
+[2026-04-02 20:03:29] [INFO] ✅ Deployed: puppy-socialization
+[2026-04-02 20:03:29] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-04-02 20:03:29] [INFO] ============================================================
+[2026-04-02 20:03:29] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-04-02 20:03:29] [INFO] ============================================================
+[2026-04-02 20:00:01] [INFO] ============================================================
+[2026-04-02 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-04-02 20:00:01] [INFO] ============================================================
+[2026-04-02 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-04-02 20:00:01] [WARN] ⚠️ All keywords exhausted, cycling back
+[2026-04-02 20:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-04-02 20:00:01] [INFO] 📝 Processing: dog training for aggression
+[2026-04-02 20:00:56] [INFO] ✅ Generated 1307 words for: dog training for aggression
+[2026-04-02 20:00:56] [INFO] 💾 Saved: dog-training-for-aggression.html
+[2026-04-02 20:00:57] [INFO] ✅ Deployed: dog-training-for-aggression
+[2026-04-02 20:00:57] [INFO] ✅ Published: Complete Guide to Dog Training For Aggression
+[2026-04-02 20:01:07] [INFO] 📝 Processing: dog training for separation anxiety
+[2026-04-02 20:02:01] [INFO] ✅ Generated 1266 words for: dog training for separation anxiety
+[2026-04-02 20:02:01] [INFO] 💾 Saved: dog-training-for-separation-anxiety.html
+[2026-04-02 20:02:02] [INFO] ✅ Deployed: dog-training-for-separation-anxiety
+[2026-04-02 20:02:02] [INFO] ✅ Published: Complete Guide to Dog Training For Separation Anxiety
+[2026-04-02 20:02:12] [INFO] 📝 Processing: puppy socialization
+[2026-04-02 20:03:28] [INFO] ✅ Generated 1718 words for: puppy socialization
+[2026-04-02 20:03:28] [INFO] 💾 Saved: puppy-socialization.html
+[2026-04-02 20:03:29] [INFO] ✅ Deployed: puppy-socialization
+[2026-04-02 20:03:29] [INFO] ✅ Published: Complete Guide to Puppy Socialization
+[2026-04-02 20:03:29] [INFO] ============================================================
+[2026-04-02 20:03:29] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-04-02 20:03:29] [INFO] ============================================================
+[2026-04-02 23:19:19] [INFO] ============================================================
+[2026-04-02 23:19:19] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-04-02 23:19:19] [INFO] ============================================================
+[2026-04-02 23:19:19] [INFO] 🔍 Selecting 3 keywords...
+[2026-04-02 23:19:19] [INFO] ✅ Selected 6 candidate keywords
+[2026-04-02 23:19:19] [INFO] 📝 Processing: how to stop dog jumping on people
+[2026-04-02 23:20:21] [INFO] ✅ Generated 1480 words for: how to stop dog jumping on people
+[2026-04-02 23:20:21] [INFO] 💾 Saved: how-to-stop-dog-jumping-on-people.html
+[2026-04-02 23:20:22] [INFO] ✅ Deployed: how-to-stop-dog-jumping-on-people
+[2026-04-02 23:20:22] [INFO] ✅ Published: Complete Guide to How To Stop Dog Jumping On People
+[2026-04-02 23:20:32] [INFO] 📝 Processing: labrador retriever training
+[2026-04-02 23:21:44] [INFO] ✅ Generated 1533 words for: labrador retriever training
+[2026-04-02 23:21:44] [INFO] 💾 Saved: labrador-retriever-training.html
+[2026-04-02 23:21:45] [INFO] ✅ Deployed: labrador-retriever-training
+[2026-04-02 23:21:45] [INFO] ✅ Published: Complete Guide to Labrador Retriever Training
+[2026-04-02 23:21:55] [INFO] 📝 Processing: husky training tips
+[2026-04-02 23:22:47] [INFO] ✅ Generated 1302 words for: husky training tips
+[2026-04-02 23:22:47] [INFO] 💾 Saved: husky-training-tips.html
+[2026-04-02 23:22:48] [INFO] ✅ Deployed: husky-training-tips
+[2026-04-02 23:22:48] [INFO] ✅ Published: Complete Guide to Husky Training Tips
+[2026-04-02 23:22:48] [INFO] ============================================================
+[2026-04-02 23:22:48] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-04-02 23:22:48] [INFO] ============================================================
+[2026-04-03 08:00:01] [INFO] ============================================================
+[2026-04-03 08:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-04-03 08:00:01] [INFO] ============================================================
+[2026-04-03 08:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-04-03 08:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-04-03 08:00:01] [INFO] 📝 Processing: dog chewing furniture solutions
+[2026-04-03 08:01:24] [INFO] ✅ Generated 1829 words for: dog chewing furniture solutions
+[2026-04-03 08:01:24] [INFO] 💾 Saved: dog-chewing-furniture-solutions.html
+[2026-04-03 08:01:25] [INFO] ✅ Deployed: dog-chewing-furniture-solutions
+[2026-04-03 08:01:25] [INFO] ✅ Published: Complete Guide to Dog Chewing Furniture Solutions
+[2026-04-03 08:01:35] [INFO] 📝 Processing: how to stop dog digging
+[2026-04-03 08:03:34] [INFO] ✅ Generated 2065 words for: how to stop dog digging
+[2026-04-03 08:03:34] [INFO] 💾 Saved: how-to-stop-dog-digging.html
+[2026-04-03 08:03:35] [INFO] ✅ Deployed: how-to-stop-dog-digging
+[2026-04-03 08:03:35] [INFO] ✅ Published: Complete Guide to How To Stop Dog Digging
+[2026-04-03 08:03:45] [INFO] 📝 Processing: border collie training guide
+[2026-04-03 08:05:07] [INFO] ✅ Generated 1691 words for: border collie training guide
+[2026-04-03 08:05:07] [INFO] 💾 Saved: border-collie-training-guide.html
+[2026-04-03 08:05:08] [INFO] ✅ Deployed: border-collie-training-guide
+[2026-04-03 08:05:08] [INFO] ✅ Published: Complete Guide to Border Collie Training Guide
+[2026-04-03 08:05:08] [INFO] ============================================================
+[2026-04-03 08:05:08] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-04-03 08:05:08] [INFO] ============================================================
+[2026-04-03 08:00:01] [INFO] ============================================================
+[2026-04-03 08:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-04-03 08:00:01] [INFO] ============================================================
+[2026-04-03 08:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-04-03 08:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-04-03 08:00:01] [INFO] 📝 Processing: dog chewing furniture solutions
+[2026-04-03 08:01:24] [INFO] ✅ Generated 1829 words for: dog chewing furniture solutions
+[2026-04-03 08:01:24] [INFO] 💾 Saved: dog-chewing-furniture-solutions.html
+[2026-04-03 08:01:25] [INFO] ✅ Deployed: dog-chewing-furniture-solutions
+[2026-04-03 08:01:25] [INFO] ✅ Published: Complete Guide to Dog Chewing Furniture Solutions
+[2026-04-03 08:01:35] [INFO] 📝 Processing: how to stop dog digging
+[2026-04-03 08:03:34] [INFO] ✅ Generated 2065 words for: how to stop dog digging
+[2026-04-03 08:03:34] [INFO] 💾 Saved: how-to-stop-dog-digging.html
+[2026-04-03 08:03:35] [INFO] ✅ Deployed: how-to-stop-dog-digging
+[2026-04-03 08:03:35] [INFO] ✅ Published: Complete Guide to How To Stop Dog Digging
+[2026-04-03 08:03:45] [INFO] 📝 Processing: border collie training guide
+[2026-04-03 08:05:07] [INFO] ✅ Generated 1691 words for: border collie training guide
+[2026-04-03 08:05:07] [INFO] 💾 Saved: border-collie-training-guide.html
+[2026-04-03 08:05:08] [INFO] ✅ Deployed: border-collie-training-guide
+[2026-04-03 08:05:08] [INFO] ✅ Published: Complete Guide to Border Collie Training Guide
+[2026-04-03 08:05:08] [INFO] ============================================================
+[2026-04-03 08:05:08] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-04-03 08:05:08] [INFO] ============================================================
+[2026-04-03 20:00:01] [INFO] ============================================================
+[2026-04-03 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-04-03 20:00:01] [INFO] ============================================================
+[2026-04-03 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-04-03 20:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-04-03 20:00:01] [INFO] 📝 Processing: adolescent dog training
+[2026-04-03 20:01:22] [INFO] ✅ Generated 2014 words for: adolescent dog training
+[2026-04-03 20:01:22] [INFO] 🎨 Generating featured image...
+[2026-04-03 20:01:30] [INFO] ✅ Featured image saved: adolescent-dog-training.jpg
+[2026-04-03 20:01:30] [INFO] 💾 Saved: adolescent-dog-training.html
+[2026-04-03 20:01:31] [INFO] ✅ Deployed: adolescent-dog-training
+[2026-04-03 20:01:31] [INFO] ✅ Published: Complete Guide to Adolescent Dog Training
+[2026-04-03 20:01:41] [INFO] 📝 Processing: dog car anxiety training
+[2026-04-03 20:02:54] [INFO] ✅ Generated 1557 words for: dog car anxiety training
+[2026-04-03 20:02:54] [INFO] 🎨 Generating featured image...
+[2026-04-03 20:03:02] [INFO] ✅ Featured image saved: dog-car-anxiety-training.jpg
+[2026-04-03 20:03:02] [INFO] 💾 Saved: dog-car-anxiety-training.html
+[2026-04-03 20:03:03] [INFO] ✅ Deployed: dog-car-anxiety-training
+[2026-04-03 20:03:03] [INFO] ✅ Published: Complete Guide to Dog Car Anxiety Training
+[2026-04-03 20:03:13] [INFO] 📝 Processing: prong collar training guide
+[2026-04-03 20:04:09] [INFO] ✅ Generated 1355 words for: prong collar training guide
+[2026-04-03 20:04:09] [INFO] 🎨 Generating featured image...
+[2026-04-03 20:04:15] [INFO] ✅ Featured image saved: prong-collar-training-guide.jpg
+[2026-04-03 20:04:15] [INFO] 💾 Saved: prong-collar-training-guide.html
+[2026-04-03 20:04:16] [INFO] ✅ Deployed: prong-collar-training-guide
+[2026-04-03 20:04:16] [INFO] ✅ Published: Complete Guide to Prong Collar Training Guide
+[2026-04-03 20:04:16] [INFO] ============================================================
+[2026-04-03 20:04:16] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-04-03 20:04:16] [INFO] ============================================================
+[2026-04-03 20:00:01] [INFO] ============================================================
+[2026-04-03 20:00:01] [INFO] 🚀 CLEVERDOG AUTONOMOUS WORKER STARTING
+[2026-04-03 20:00:01] [INFO] ============================================================
+[2026-04-03 20:00:01] [INFO] 🔍 Selecting 3 keywords...
+[2026-04-03 20:00:01] [INFO] ✅ Selected 6 candidate keywords
+[2026-04-03 20:00:01] [INFO] 📝 Processing: adolescent dog training
+[2026-04-03 20:01:22] [INFO] ✅ Generated 2014 words for: adolescent dog training
+[2026-04-03 20:01:22] [INFO] 🎨 Generating featured image...
+[2026-04-03 20:01:30] [INFO] ✅ Featured image saved: adolescent-dog-training.jpg
+[2026-04-03 20:01:30] [INFO] 💾 Saved: adolescent-dog-training.html
+[2026-04-03 20:01:31] [INFO] ✅ Deployed: adolescent-dog-training
+[2026-04-03 20:01:31] [INFO] ✅ Published: Complete Guide to Adolescent Dog Training
+[2026-04-03 20:01:41] [INFO] 📝 Processing: dog car anxiety training
+[2026-04-03 20:02:54] [INFO] ✅ Generated 1557 words for: dog car anxiety training
+[2026-04-03 20:02:54] [INFO] 🎨 Generating featured image...
+[2026-04-03 20:03:02] [INFO] ✅ Featured image saved: dog-car-anxiety-training.jpg
+[2026-04-03 20:03:02] [INFO] 💾 Saved: dog-car-anxiety-training.html
+[2026-04-03 20:03:03] [INFO] ✅ Deployed: dog-car-anxiety-training
+[2026-04-03 20:03:03] [INFO] ✅ Published: Complete Guide to Dog Car Anxiety Training
+[2026-04-03 20:03:13] [INFO] 📝 Processing: prong collar training guide
+[2026-04-03 20:04:09] [INFO] ✅ Generated 1355 words for: prong collar training guide
+[2026-04-03 20:04:09] [INFO] 🎨 Generating featured image...
+[2026-04-03 20:04:15] [INFO] ✅ Featured image saved: prong-collar-training-guide.jpg
+[2026-04-03 20:04:15] [INFO] 💾 Saved: prong-collar-training-guide.html
+[2026-04-03 20:04:16] [INFO] ✅ Deployed: prong-collar-training-guide
+[2026-04-03 20:04:16] [INFO] ✅ Published: Complete Guide to Prong Collar Training Guide
+[2026-04-03 20:04:16] [INFO] ============================================================
+[2026-04-03 20:04:16] [INFO] 📊 SUMMARY: 3/3 posts published
+[2026-04-03 20:04:16] [INFO] ============================================================

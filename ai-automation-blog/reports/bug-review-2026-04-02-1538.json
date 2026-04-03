@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-02T15:38:45.164678",
+  "issues_found": 3,
+  "fixes_applied": 0,
+  "issues": [
+    "Missing OPENROUTER_API_KEY (OpenRouter API (prompt optimizer))",
+    "Missing TELEGRAM_BOT_TOKEN (Telegram Bot (dashboard))",
+    "Missing TELEGRAM_CHAT_ID (Telegram Chat (dashboard))"
+  ],
+  "fixes": [],
+  "status": "issues_detected"
+}

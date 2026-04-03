@@ -1,0 +1,70 @@
+<!-- Subject: AI tools & automation tips (Edition #2) -->
+
+<h2>AI Automation Builder #2</h2>
+
+<p>OpenAI just hit an $852B valuation this week. Wild numbers, but here's what actually matters for us: the AI infrastructure wars are heating up, which means better tools and lower prices for indie builders. Speaking of which, Claude Code users are already hitting usage limits "way faster than expected" – classic growing pains that remind us why diversification in our AI stack isn't just smart, it's survival.</p>
+
+<h2>🔧 Tool of the Week: Universal Claude.md</h2>
+
+<p>This week's gem is a GitHub repo that cuts Claude's output tokens significantly. If you're burning through Claude credits faster than your runway allows, this is your lifeline.</p>
+
+<p><strong>What it does:</strong> Universal Claude.md provides a standardized markdown format that makes Claude's responses way more token-efficient. Instead of verbose explanations, you get structured, concise outputs that preserve all the important information.</p>
+
+<p><strong>Why it matters:</strong> Token costs add up fast when you're automating content creation, code reviews, or customer support. One solopreneur I know was spending $400/month on Claude for blog post generation. After implementing this approach, they're down to $150/month for the same output volume.</p>
+
+<p><strong>Practical use case:</strong> Perfect for automated content workflows where you need consistent formatting. Drop the claude.md template into your prompts, and suddenly your blog post generation workflow becomes 60% more cost-effective while maintaining quality.</p>
+
+<p><strong>Pricing:</strong> Free, open source. Just implement the markdown structure in your existing prompts.</p>
+
+<p><a href="https://github.com/drona23/claude-token-efficient">Check out Universal Claude.md</a></p>
+
+<h2>⚡ Automation Workflow: Smart Customer Support Triage</h2>
+
+<p><strong>Problem:</strong> Manually sorting customer emails into urgent/normal/spam buckets eats 2+ hours daily.</p>
+
+<p><strong>Tools needed:</strong> Gmail API, Claude API, Zapier/Make.com</p>
+
+<p><strong>The flow:</strong></p>
+<ul>
+<li>New Gmail received → trigger automation</li>
+<li>Extract email content via Gmail API</li>
+<li>Send to Claude with classification prompt (urgent/normal/spam/refund)</li>
+<li>Auto-label in Gmail based on classification</li>
+<li>Route urgent issues to Slack notification</li>
+<li>Auto-respond to common questions with templated replies</li>
+</ul>
+
+<p><strong>Result:</strong> 85% accuracy on classification, saves 10+ hours/week. Urgent issues get immediate attention, routine stuff gets batched for efficient processing.</p>
+
+<h2>📰 This Week in AI</h2>
+
+<p><strong>OpenAI closes funding at $852B valuation</strong> – Massive round signals continued AI investment despite market jitters. More capital means faster model improvements and potentially better pricing for developers. <a href="https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html">Read more</a></p>
+
+<p><strong>Microsoft: Copilot is for entertainment purposes only</strong> – Buried in the terms of service, Microsoft now disclaims Copilot for serious work. Important for compliance-sensitive automations. <a href="https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/termsofuse">Check the terms</a></p>
+
+<p><strong>Claude Code source leaked via NPM map file</strong> – Security mishap reveals internal architecture. Reminder to audit your own API integrations and never expose sensitive configs in client-side code. <a href="https://twitter.com/Fried_rice/status/2038894956459290963">See the thread</a></p>
+
+<p><strong>Claude Code runs git reset --hard every 10 minutes</strong> – Users discovered their repos getting reset automatically. Always backup before using AI coding tools in production environments. <a href="https://github.com/anthropics/claude-code/issues/40710">View the issue</a></p>
+
+<p><strong>ChatGPT's Cloudflare integration reads React state</strong> – Deep dive into how OpenAI monitors client-side behavior. Fascinating for understanding AI service architecture and privacy implications. <a href="https://www.buchodi.com/chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state-i-decrypted-the-program-that-does-it/">Technical breakdown</a></p>
+
+<p><strong>Learn Claude Code by doing interactive tutorial</strong> – Hands-on training platform for Anthropic's new coding assistant. Worth exploring if you're building development workflows. <a href="https://claude.nagdy.me/">Try the tutorial</a></p>
+
+<p><strong>Coding agents could revive free software</strong> – Thoughtful piece on how AI might shift the economics of open source development. Relevant for anyone building on open source AI tools. <a href="https://www.gjlondon.com/blog/ai-agents-could-make-free-software-matter-again/">Read the analysis</a></p>
+
+<h2>💡 Case Study: AI-Powered Newsletter Curation</h2>
+
+<p>A solo marketer built an automated newsletter that curates industry news using Claude for summarization and GPT-4 for trend analysis. The system processes 500+ articles daily, picks the top 10, writes summaries, and generates insights.</p>
+
+<p><strong>Tech stack:</strong> RSS feeds → Python scraper → Claude API → ConvertKit → 2 hours of human editing weekly</p>
+
+<p><strong>Results:</strong> 12,000 subscribers paying $10/month, $120K ARR. Saves 25 hours/week compared to manual curation.</p>
+
+<p><strong>Key lesson:</strong> AI handles the heavy lifting (reading/summarizing), human adds the editorial voice that subscribers actually pay for.</p>
+
+<h2>Keep Building</h2>
+
+<p>The AI landscape shifts weekly, but the fundamentals remain: start small, automate what hurts, measure everything. Hit reply and tell me about your latest automation win – I read every response and feature the best ones.</p>
+
+<p>Until next week,<br>
+[Your name]</p>

@@ -58,5 +58,25 @@
     "resource": "house-training-guide",
     "page": "free-resources",
     "timestamp": "2026-03-26T15:44:32.981442"
+  },
+  {
+    "jsonrpc": "2.0",
+    "id": 6879544,
+    "method": "initialize",
+    "params": {
+      "protocolVersion": "2025-06-18",
+      "capabilities": {
+        "sampling": {},
+        "elicitation": {},
+        "roots": {
+          "listChanged": true
+        }
+      },
+      "clientInfo": {
+        "name": "gitmc-org-mcp-scanner",
+        "version": "1.0.0"
+      }
+    },
+    "timestamp": "2026-04-02T02:14:33.558899"
   }
 ]

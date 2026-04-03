@@ -1,0 +1,42 @@
+[
+  {
+    "breed": "Golden Retriever",
+    "problem": "Barking",
+    "path": "cleverdogmethod-blog/blog-new/breed-guides/golden-retriever/barking.html"
+  },
+  {
+    "breed": "Golden Retriever",
+    "problem": "Jumping",
+    "path": "cleverdogmethod-blog/blog-new/breed-guides/golden-retriever/jumping.html"
+  },
+  {
+    "breed": "German Shepherd",
+    "problem": "Barking",
+    "path": "cleverdogmethod-blog/blog-new/breed-guides/german-shepherd/barking.html"
+  },
+  {
+    "breed": "Labrador Retriever",
+    "problem": "Barking",
+    "path": "cleverdogmethod-blog/blog-new/breed-guides/labrador-retriever/barking.html"
+  },
+  {
+    "breed": "Labrador Retriever",
+    "problem": "Jumping",
+    "path": "cleverdogmethod-blog/blog-new/breed-guides/labrador-retriever/jumping.html"
+  },
+  {
+    "breed": "Beagle",
+    "problem": "Barking",
+    "path": "cleverdogmethod-blog/blog-new/breed-guides/beagle/barking.html"
+  },
+  {
+    "breed": "Border Collie",
+    "problem": "Barking",
+    "path": "cleverdogmethod-blog/blog-new/breed-guides/border-collie/barking.html"
+  },
+  {
+    "breed": "Dachshund",
+    "problem": "Barking",
+    "path": "cleverdogmethod-blog/blog-new/breed-guides/dachshund/barking.html"
+  }
+]

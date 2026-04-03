@@ -29,6 +29,11 @@ import logging
 from dataclasses import dataclass, asdict
 from enum import Enum
 
+# Add lib path for image generation and SEO enhancements
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "lib"))
+from image_generator import generate_blog_image
+from seo_enhancements import enhance_post_html, categorize_post
+
 # ============================================================================
 # CONFIGURATION
 # ============================================================================
@@ -40,6 +45,7 @@ TEMPLATE = WORKSPACE / "templates" / "post.html"
 NEWSLETTER_DB = WORKSPACE.parent / "newsletter-ai-automation" / "database" / "newsletter.db"
 STATE_DIR = WORKSPACE / ".state"
 LOGS_DIR = WORKSPACE / "logs"
+ANALYTICS_DB = WORKSPACE / "data" / "analytics.db"
 
 # State files
 STATE_FILE = STATE_DIR / "published-posts.json"
@@ -303,6 +309,35 @@ def save_published_post(post_data: Dict):
     
     logger.info(f"💾 Saved to published state: {post_data.get('title', 'Unknown')[:50]}")
 
+def save_to_analytics(post_data: Dict):
+    """Save post metrics to analytics.db
+    
+    Args:
+        post_data: Dict with keys: slug, published_date, word_count, prompt_version
+    """
+    try:
+        conn = sqlite3.connect(ANALYTICS_DB)
+        cursor = conn.cursor()
+        
+        cursor.execute("""
+            INSERT INTO posts (slug, published_date, word_count, prompt_version)
+            VALUES (?, ?, ?, ?)
+            ON CONFLICT(slug) DO NOTHING
+        """, (
+            post_data['slug'],
+            post_data['published_date'],
+            post_data['word_count'],
+            post_data.get('prompt_version', 'v1')
+        ))
+        
+        conn.commit()
+        conn.close()
+        
+        logger.info(f"📊 Analytics saved: {post_data['slug']}")
+        
+    except Exception as e:
+        logger.warning(f"⚠️  Analytics save failed: {e}")
+
 # ============================================================================
 # ANALYTICS TRACKING
 # ============================================================================
@@ -429,94 +464,37 @@ def generate_blog_post(item: Dict) -> Optional[str]:
     
     start_time = time.time()
     
-    prompt = f"""# Blog Post Generation
+    # Load prompt template
+    prompt_file = WORKSPACE / "prompts" / "blog-generation-v2.txt"
+    
+    if prompt_file.exists():
+        with open(prompt_file, 'r') as f:
+            prompt_template = f.read()
+        
+        # Replace placeholders
+        prompt = prompt_template.replace('{item["title"]}', item["title"])
+        prompt = prompt.replace('{item["url"]}', item["url"])
+        prompt = prompt.replace('{item["summary"]}', item["summary"])
+        prompt = prompt.replace('{item["source"]}', item["source"])
+        
+        logger.info("✓ Using v2 prompt with readability focus")
+    else:
+        logger.warning("⚠️  Prompt file not found, using fallback")
+        prompt = f"""Generate a blog post about: {item["title"]}
+        
+Summary: {item["summary"]}
+Source: {item["url"]}
 
-## ROLE
-Expert content strategist for "AI Automation Builder" with 5+ years writing for solopreneurs. Voice: Alex Chen - practical, data-driven, cuts through hype with real implementation stories.
+Requirements:
+- 1000 words
+- Flesch Reading Ease 50-70
+- Short sentences (15-20 words average)
+- Simple words
+- 2-3 sentence paragraphs
+- Active voice
+- Concrete examples
 
-## INPUT
-- Title: {item["title"]}
-- URL: {item["url"]}
-- Summary: {item["summary"]}
-- Source: {item["source"]}
-
-## TASK
-Generate practical blog post targeting solopreneurs earning $50K-$500K annually who want AI automation but lack technical expertise.
-
-## REQUIREMENTS
-
-### MUST:
-- Exactly 1000 words (±100 acceptable)
-- Include minimum 2 specific solopreneur use cases with dollar/time savings
-- Link to source URL using provided data
-- Use only specified HTML tags: h2, h3, p, ul, ol, strong, em, code, a
-- Start with hook paragraph (pain point → solution preview)
-
-### SHOULD:
-- Include 3-5 actionable steps solopreneurs can implement today
-- Reference real tools/platforms by name (Zapier, Make, etc.)
-- Use Alex Chen voice examples throughout
-- Target 2-3 long-tail keywords naturally (avoid keyword stuffing)
-- Include cost/time investment estimates for recommendations
-
-### AVOID:
-- Generic phrases: "leverage," "utilize," "in today's digital landscape"
-- Vague benefits: "increase efficiency" → use "save 2.5 hours daily"
-- Technical jargon without explanation
-- News reporting without actionable takeaways
-- Lists without context or implementation guidance
-
-## CONTENT STRUCTURE
-
-### Introduction (150 words):
-Hook with specific pain point → preview main benefit → article roadmap
-
-### Main Sections (700 words):
-FOR TOOLS: Include "How to implement this" (300 words) + "Real solopreneur results" (200 words) + "Cost breakdown" (200 words)
-FOR NEWS: Include "Why this matters for solopreneurs" (300 words) + "Immediate action steps" (200 words) + "Timeline expectations" (200 words)
-
-### Conclusion (150 words):
-Summarize key action item + next step + Alex Chen-style encouragement
-
-## VOICE EXAMPLES
-
-❌ Generic: "AI automation can help streamline your business processes"
-✅ Alex Chen: "Sarah cut her invoice processing from 4 hours to 12 minutes using this exact setup"
-
-❌ Generic: "This tool offers many benefits for entrepreneurs"
-✅ Alex Chen: "Tested this across 3 consulting businesses - each saved $4,200/month in virtual assistant costs"
-
-❌ Generic: "Consider implementing this solution"
-✅ Alex Chen: "Takes 90 minutes to set up, breaks even after processing 50 leads"
-
-## OUTPUT FORMAT
-
-VALID:
-<p>Last week, marketing consultant Mike Torres was drowning in 47 unread client emails...</p>
-<h2>How This Changes Everything for Solo Consultants</h2>
-<p>The breakthrough isn't the technology - it's how <strong>implementation takes just 15 minutes</strong>...</p>
-
-INVALID:
-<h1>Title Here</h1>
-<div class="content">
-Let me explain how this amazing tool...
-</div>
-
-VALIDATION:
-- Word count 900-1100 (use counter)
-- Contains exactly 1 external link to source
-- No h1 tags, divs, or CSS classes
-- Minimum 2 specific dollar/time savings mentioned
-- All technical terms in <code> tags explained
-
-## EDGE CASES
-IF source is paywalled: THEN focus on publicly available details + general implementation
-IF tool requires coding: THEN include no-code alternatives + developer handoff advice
-IF news is negative: THEN frame as "what solopreneurs should do instead"
-ELSE: Follow standard structure
-
-## RETURN
-Return ONLY clean HTML content. No markdown code blocks. No explanations. No meta-commentary."""
+Return only HTML content (p, h2, h3, ul, ol, strong, em, code, a tags only)."""
 
     def make_api_call():
         headers = {
@@ -584,6 +562,41 @@ def create_blog_post(item: Dict, content: str) -> Optional[str]:
         post_slug = f"{date_str}-{slug}"
         post_file = POSTS_DIR / f"{post_slug}.html"
         
+        # Generate featured image
+        image_url = 'https://workless.build/images/og-default.jpg'  # Default fallback
+        try:
+            logger.info("🎨 Generating featured image...")
+            style_hint = "tech workspace, modern design, AI tools"
+            generated_url = generate_blog_image(
+                item['title'], 
+                style_hint=style_hint,
+                model='p-image'
+            )
+            
+            if generated_url:
+                # Download and save locally
+                images_dir = BLOG_DIR / "images"
+                images_dir.mkdir(parents=True, exist_ok=True)
+                local_image_path = images_dir / f"{post_slug}.jpg"
+                
+                # Download image
+                import requests
+                try:
+                    img_response = requests.get(generated_url, timeout=60)
+                    img_response.raise_for_status()
+                    with open(local_image_path, 'wb') as img_file:
+                        img_file.write(img_response.content)
+                    
+                    image_url = f"/images/{post_slug}.jpg"
+                    logger.info(f"✅ Featured image saved: {local_image_path.name}")
+                except Exception as download_err:
+                    logger.warning(f"⚠️  Image download failed, using URL: {download_err}")
+                    image_url = generated_url
+            else:
+                logger.warning("⚠️  Image generation failed, using default")
+        except Exception as img_err:
+            logger.warning(f"⚠️  Image generation error: {img_err}")
+        
         # Read template
         with open(TEMPLATE, 'r') as f:
             template = f.read()
@@ -620,8 +633,26 @@ def create_blog_post(item: Dict, content: str) -> Optional[str]:
         html = html.replace('{{MODIFIED_ISO}}', now.isoformat())
         html = html.replace('{{READ_TIME}}', str(read_time))
         html = html.replace('{{WORD_COUNT}}', str(word_count))
-        html = html.replace('{{IMAGE_URL}}', 'https://workless.build/images/og-default.jpg')
+        html = html.replace('{{IMAGE_URL}}', image_url if image_url.startswith('http') else f"https://workless.build{image_url}")
         html = html.replace('{{CONTENT}}', content + '\n\n' + product_cta)
+        
+        # Apply SEO enhancements (Week 3)
+        try:
+            category, subcategory = categorize_post(item['title'], content)
+            logger.info(f"📂 Auto-categorized: {category}/{subcategory or 'root'}")
+            
+            # TODO: Pass related_posts from database in future
+            html = enhance_post_html(
+                html_content=html,
+                category=category,
+                subcategory=subcategory,
+                title=item['title'],
+                url_path=f"/posts/{post_slug}.html",
+                related_posts=None  # Will be populated when we have post database
+            )
+            logger.info("✨ SEO enhancements applied")
+        except Exception as seo_err:
+            logger.warning(f"⚠️  SEO enhancement failed (non-critical): {seo_err}")
         
         # Save post
         with open(post_file, 'w') as f:
@@ -647,6 +678,14 @@ def create_blog_post(item: Dict, content: str) -> Optional[str]:
             'source_id': item['id'],
             'excerpt': excerpt,
             'word_count': word_count
+        })
+        
+        # Save to analytics database
+        save_to_analytics({
+            'slug': post_slug,
+            'published_date': now.strftime('%Y-%m-%d'),
+            'word_count': word_count,
+            'prompt_version': 'v1'
         })
         
         # Generate AI-optimized versions (.txt and .md)

@@ -1,0 +1,29 @@
+============================================================
+AI AUTOMATION BUILDER - WEEKLY GENERATION
+Running at: 2026-04-01 10:00:01 UTC
+============================================================
+
+📰 Generating Edition #2
+
+📊 Using 20 content items
+
+✍️  Generating newsletter #2 with Claude...
+
+✅ Generated 5798 characters
+
+📧 Generating subject lines...
+
+✗ Subject line error: Expecting value: line 1 column 1 (char 0)
+
+📧 Best subject line: AI tools & automation tips (Edition #2)
+
+⚠️  Beehiiv credentials not set, saving locally only...
+
+💾 Saved locally: /root/.openclaw/workspace/newsletter-ai-automation/content/drafts/edition-002.html
+
+✅ Telegram notification sent
+
+============================================================
+✅ WEEKLY GENERATION COMPLETE
+Edition #2 ready for review!
+============================================================

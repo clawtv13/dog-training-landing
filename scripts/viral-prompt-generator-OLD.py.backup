@@ -1,0 +1,513 @@
+#!/usr/bin/env python3
+"""
+Viral Shorts Prompt Generator - Simple Version
+Genera prompts CapCut optimizados para YouTube Shorts
+
+Usage:
+  python3 viral-prompt-generator.py               (auto-select from keywords)
+  python3 viral-prompt-generator.py "stop dog jumping"
+  python3 viral-prompt-generator.py "husky training" --formula myth_buster
+  python3 viral-prompt-generator.py --random
+"""
+
+import requests
+import json
+
+# Import refinement utilities
+try:
+    from refine_utils import refine_prompt
+    REFINEMENT_AVAILABLE = True
+except ImportError:
+    REFINEMENT_AVAILABLE = False
+
+import sys
+from datetime import datetime, timedelta
+from pathlib import Path
+
+# Config
+WORKSPACE = Path("/root/.openclaw/workspace")
+KEYWORDS_FILE = WORKSPACE / "content/cleverdogmethod/KEYWORDS-V2-EXPANSION.md"
+STATE_FILE = WORKSPACE / ".state/shorts-generated.json"
+OPENROUTER_KEY = "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"
+TELEGRAM_BOT = "8318289285:AAGFvnbGoLh0uXO9Rcz9N23iW25DEYh-BBU"
+TELEGRAM_CHAT = "8116230130"
+COOLDOWN_DAYS = 7
+
+# 6 Formulas probadas
+FORMULAS = {
+    "problem_solution": {
+        "name": "Problem → Solution",
+        "retention": 85,
+        "best_for": "Educational, quick wins",
+        "structure": """
+SCENE 1 (0-3s): Pattern interrupt
+- Text: "[PROBLEM] that EVERYONE struggles with"
+- Visual: Frustrated owner, chaotic scenario
+- Hook: Dramatic + relatable
+
+SCENE 2 (3-10s): The mistake
+- Text: "Here's what you're doing WRONG"
+- Visual: Common mistake shown
+- Build tension
+
+SCENE 3 (10-40s): The solution (step-by-step)
+- Text: "Here's the fix:"
+- Visual: Demonstrate correct method
+- 3 clear steps with visual examples
+
+SCENE 4 (40-55s): Result
+- Text: "Before vs After"
+- Visual: Split screen transformation
+- Payoff moment
+
+SCENE 5 (55-60s): CTA
+- Text: "Follow for daily dog secrets 🐕"
+- Visual: Channel branding
+- Engagement hook: "Which tip next? 👇"
+"""
+    },
+    
+    "myth_buster": {
+        "name": "Myth Buster",
+        "retention": 82,
+        "best_for": "Controversial, comment bait",
+        "structure": """
+SCENE 1 (0-3s): Controversial statement
+- Text: "STOP doing this to your dog 🚫"
+- Visual: Common mistake shown
+- Red X animation
+
+SCENE 2 (3-15s): Why it's wrong
+- Text: "This actually makes it WORSE"
+- Visual: Science/data showing harm
+- Educational angle
+
+SCENE 3 (15-40s): What actually works
+- Text: "Here's what trainers ACTUALLY do"
+- Visual: Correct method demonstrated
+- Authority positioning
+
+SCENE 4 (40-55s): Proof
+- Text: "Results in 7 days"
+- Visual: Before/after footage
+- Credibility
+
+SCENE 5 (55-60s): CTA
+- Text: "Did you know this? 👇"
+- Comment bait
+- Follow CTA
+"""
+    },
+
+    "transformation": {
+        "name": "Transformation Story",
+        "retention": 78,
+        "best_for": "Emotional, shareable",
+        "structure": """
+SCENE 1 (0-5s): Sad beginning
+- Text: "This [dog/situation] was [extreme problem]..."
+- Visual: Dark, sad, problem state
+- Emotional hook
+
+SCENE 2 (5-15s): The turning point
+- Text: "Then [owner/trainer] tried THIS"
+- Visual: First step, hope appears
+- Music shift (sad → uplifting)
+
+SCENE 3 (15-40s): The journey
+- Text: "Week 1... Week 2... Week 4..."
+- Visual: Progress montage
+- Show obstacles overcome
+
+SCENE 4 (40-55s): The victory
+- Text: "[Time] later: [Amazing outcome]"
+- Visual: Happy ending
+- Golden hour lighting, joy
+
+SCENE 5 (55-60s): CTA
+- Text: "Every dog can change ❤️"
+- Inspirational close
+- Follow for more stories
+"""
+    },
+
+    "quick_tip": {
+        "name": "Quick Tip",
+        "retention": 90,
+        "best_for": "Loop-friendly, high saves",
+        "structure": """
+SCENE 1 (0-3s): Ultra-fast hook
+- Text: "This 5-second trick [solves problem]"
+- Visual: Problem in action
+- Immediate value promise
+
+SCENE 2 (3-30s): The trick (fast demo)
+- Text: "Just do THIS:"
+- Visual: Step-by-step (3-4 steps max)
+- Clear, simple demo
+
+SCENE 3 (30-40s): Why it works
+- Text: "Why this works:"
+- Visual: Simple diagram/explanation
+- 1-sentence science
+
+SCENE 4 (40-45s): CTA
+- Text: "Save this for later 💾"
+- Save CTA (algorithm boost)
+- Follow for more hacks
+
+STYLE: Fast-paced, trending sound, minimal text, repeatable
+"""
+    },
+
+    "emotional": {
+        "name": "Emotional Arc",
+        "retention": 75,
+        "best_for": "Shares, brand loyalty",
+        "structure": """
+SCENE 1 (0-8s): The problem (heart-breaking)
+- Text: "[Sad situation] that broke my heart..."
+- Visual: Emotional imagery
+- Slow motion, sad music
+
+SCENE 2 (8-25s): The journey
+- Text: "But [person] didn't give up..."
+- Visual: Effort, bonding moments
+- Building hope
+
+SCENE 3 (25-45s): The transformation
+- Text: "Look at [dog/situation] now"
+- Visual: Happy outcome
+- Music peak, joy
+
+SCENE 4 (45-60s): The lesson
+- Text: "[Moral of story]"
+- Universal message
+- Follow CTA
+
+STYLE: Cinematic, heartwarming, storytelling focus
+"""
+    },
+
+    "controversial": {
+        "name": "Controversial Take",
+        "retention": 88,
+        "best_for": "Comments, engagement",
+        "structure": """
+SCENE 1 (0-5s): Hot take
+- Text: "Unpopular opinion: [controversial statement]"
+- Visual: Bold text, attention-grabbing
+- Pattern interrupt
+
+SCENE 2 (5-25s): The argument
+- Text: "Here's why [stance]"
+- Visual: Evidence, data, expert clips
+- Build case with facts
+
+SCENE 3 (25-45s): Address objections
+- Text: "But what about [common counter]?"
+- Visual: Debunk with science
+- Strengthen position
+
+SCENE 4 (45-55s): The verdict
+- Text: "The science is clear:"
+- Visual: Conclusion statement
+- Authority close
+
+SCENE 5 (55-60s): CTA
+- Text: "Agree or disagree? 👇"
+- Comment bait
+- Argument = algorithm boost
+
+STYLE: Bold, confident, data-backed, debate-worthy
+"""
+    }
+}
+
+# Popular dog training topics (fallback si no especifica)
+DOG_TOPICS = [
+    "stop dog jumping on people",
+    "stop dog barking excessively", 
+    "puppy biting and nipping",
+    "dog pulling on leash",
+    "dog not coming when called",
+    "aggressive dog toward strangers",
+    "dog separation anxiety",
+    "potty training puppy fast",
+    "stop dog chewing furniture",
+    "fearful rescue dog training"
+]
+
+def load_cleverdogmethod_keywords():
+    """Load keywords from CleverDog V2 expansion file"""
+    if not KEYWORDS_FILE.exists():
+        print("⚠️ Keywords V2 file not found, using fallback topics")
+        return []
+    
+    with open(KEYWORDS_FILE) as f:
+        content = f.read()
+    
+    keywords = []
+    for line in content.split('\n'):
+        if '|' in line:
+            parts = [p.strip() for p in line.split('|')]
+            if len(parts) >= 4 and parts[1] and parts[1] != 'Keyword' and not parts[1].startswith('-'):
+                keywords.append(parts[1])
+    
+    return keywords
+
+def load_state():
+    """Load generated shorts state"""
+    if not STATE_FILE.exists():
+        return []
+    
+    try:
+        with open(STATE_FILE) as f:
+            return json.load(f)
+    except:
+        return []
+
+def save_state(topic, formula):
+    """Save generated short to state"""
+    state = load_state()
+    state.append({
+        "topic": topic,
+        "formula": formula,
+        "generated_at": datetime.now().isoformat()
+    })
+    
+    STATE_FILE.parent.mkdir(exist_ok=True)
+    with open(STATE_FILE, 'w') as f:
+        json.dump(state, f, indent=2)
+
+def select_next_topic():
+    """Smart topic selection from CleverDog keywords"""
+    
+    # Load keywords
+    keywords = load_cleverdogmethod_keywords()
+    if not keywords:
+        import random
+        return random.choice(DOG_TOPICS)
+    
+    # Load state
+    state = load_state()
+    cooldown_date = datetime.now() - timedelta(days=COOLDOWN_DAYS)
+    
+    # Find used topics in cooldown period
+    used_recent = {
+        entry['topic'] for entry in state
+        if datetime.fromisoformat(entry['generated_at']) > cooldown_date
+    }
+    
+    # Filter available keywords
+    available = [k for k in keywords if k not in used_recent]
+    
+    if not available:
+        print(f"⚠️ All keywords used in last {COOLDOWN_DAYS} days, cycling back")
+        available = keywords
+    
+    # Pick first available (already sorted by priority in V2 file)
+    selected = available[0]
+    print(f"✅ Auto-selected: {selected}")
+    print(f"   Available pool: {len(available)} topics")
+    print(f"   Used recently: {len(used_recent)} topics")
+    
+    return selected
+
+def auto_select_formula(topic):
+    """Match formula to topic type"""
+    
+    topic_lower = topic.lower()
+    
+    # Quick fixes/tricks → quick_tip (highest retention)
+    if any(word in topic_lower for word in ['stop', 'fix', 'prevent', 'how to']):
+        return 'quick_tip'
+    
+    # Breed-specific → problem_solution (educational)
+    if any(breed in topic_lower for breed in ['labrador', 'husky', 'german shepherd', 'chihuahua', 'poodle']):
+        return 'problem_solution'
+    
+    # Emotional topics → transformation
+    if any(word in topic_lower for word in ['rescue', 'fearful', 'anxiety', 'aggressive']):
+        return 'transformation'
+    
+    # Training methods → myth_buster
+    if any(word in topic_lower for word in ['training', 'method', 'technique', 'approach']):
+        return 'myth_buster'
+    
+    # Default: problem_solution (safest)
+    return 'problem_solution'
+
+def generate_prompt(topic, formula_key="problem_solution", compact_mode=False):
+    """Generate CapCut prompt using OpenRouter"""
+    
+    formula = FORMULAS[formula_key]
+    
+    system_prompt = f"""You are a viral YouTube Shorts expert specializing in dog training content.
+
+FORMULA: {formula['name']}
+STRUCTURE TEMPLATE:
+{formula['structure']}
+
+Your task: Generate a CapCut AI video prompt for this topic: "{topic}"
+
+REQUIREMENTS:
+- 60 seconds total (scenes must add to 60s exactly)
+- 9:16 vertical format (YouTube Shorts)
+- Hook first 3 seconds (critical for retention)
+- Scene-by-scene breakdown with timing
+- Specific visual descriptions (CapCut needs details)
+- Text overlay suggestions
+- Style/music recommendations
+- NO external links (keep viewers on platform)
+- CTA: "Follow for daily tips" (not blog links)
+
+TARGET AUDIENCE: Dog owners struggling with [problem], want quick wins
+
+Output format:
+- Title for video (catchy, keyword-rich)
+- Scene-by-scene prompt (exact timing)
+- Style notes (music, pacing, effects)
+- Hashtag recommendations (3 broad + 3 niche)"""
+
+    user_prompt = f"Generate viral short prompt for: {topic}"
+
+    try:
+        response = requests.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {OPENROUTER_KEY}",
+                "Content-Type": "application/json"
+            },
+            json={
+                "model": "anthropic/claude-sonnet-4.5",
+                "messages": [
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                "temperature": 0.8
+            },
+            timeout=60
+        )
+        
+        if response.status_code == 200:
+            generated = response.json()['choices'][0]['message']['content']
+            
+            # Refine for CapCut AI clarity
+            if REFINEMENT_AVAILABLE:
+                refine_type = "Compacting" if compact_mode else "Enhancing"
+                print(f"🔄 {refine_type} prompt...")
+                generated = refine_prompt(generated, "youtube", compact_mode=compact_mode)
+                if compact_mode:
+                    char_count = len(generated)
+                    print(f"✨ Compacted to {char_count} chars")
+                else:
+                    print(f"✨ Enhanced (+30% specificity)")
+            
+            return generated
+        else:
+            return f"❌ Error: {response.status_code}"
+            
+    except Exception as e:
+        return f"❌ Exception: {e}"
+
+def send_telegram(message):
+    """Send prompt via Telegram"""
+    try:
+        requests.post(
+            f"https://api.telegram.org/bot{TELEGRAM_BOT}/sendMessage",
+            json={
+                "chat_id": TELEGRAM_CHAT,
+                "text": message,
+                "parse_mode": "Markdown",
+                "disable_notification": False
+            },
+            timeout=10
+        )
+        print("✅ Sent to Telegram")
+    except Exception as e:
+        print(f"⚠️ Telegram failed: {e}")
+
+def main():
+    """Main execution"""
+    
+    import argparse
+    parser = argparse.ArgumentParser(description="Generate viral shorts prompts")
+    parser.add_argument("topic", nargs="?", help="Dog training topic (optional - auto-selects if not provided)")
+    parser.add_argument("--formula", choices=list(FORMULAS.keys()), help="Force specific formula (default: auto-match)")
+    parser.add_argument("--compact", action="store_true", help="Generate ultra-compact prompts (<3K chars) for CapCut limits")
+    parser.add_argument("--random", action="store_true", help="Pick random fallback topic")
+    parser.add_argument("--list-formulas", action="store_true", help="List available formulas")
+    
+    args = parser.parse_args()
+    
+    # List formulas
+    if args.list_formulas:
+        print("\n🎬 AVAILABLE FORMULAS:\n")
+        for key, formula in FORMULAS.items():
+            print(f"  {key}")
+            print(f"    Name: {formula['name']}")
+            print(f"    Retention: {formula['retention']}%")
+            print(f"    Best for: {formula['best_for']}\n")
+        return
+    
+    # Pick topic
+    if args.random:
+        import random
+        topic = random.choice(DOG_TOPICS)
+        print(f"🎲 Random fallback topic: {topic}")
+    elif args.topic:
+        topic = args.topic
+        print(f"📌 Manual topic: {topic}")
+    else:
+        # AUTO-SELECT from CleverDog keywords
+        topic = select_next_topic()
+    
+    # Auto-select formula if not specified
+    if args.formula:
+        formula_key = args.formula
+        print(f"🎯 Manual formula: {FORMULAS[formula_key]['name']}")
+    else:
+        formula_key = auto_select_formula(topic)
+        print(f"🎯 Auto-matched formula: {FORMULAS[formula_key]['name']}")
+    
+    # Generate
+    mode_str = " (COMPACT MODE)" if args.compact else ""
+    print(f"\n🎬 Generating prompt{mode_str}...")
+    print(f"   Topic: {topic}")
+    print(f"   Formula: {FORMULAS[formula_key]['name']}")
+    print(f"   Retention: {FORMULAS[formula_key]['retention']}%\n")
+    
+    prompt = generate_prompt(topic, formula_key, compact_mode=args.compact)
+    
+    
+    # Save to state
+    save_state(topic, formula_key)
+    
+    # Display
+    print("=" * 60)
+    print(prompt)
+    print("=" * 60)
+    
+    # Send to Telegram
+    telegram_message = f"""🎬 **VIRAL SHORT PROMPT**
+
+📌 **Topic:** {topic}
+🎯 **Formula:** {FORMULAS[formula_key]['name']}
+📊 **Est. Retention:** {FORMULAS[formula_key]['retention']}%
+
+---
+
+{prompt}
+
+---
+
+**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}
+"""
+    
+    send_telegram(telegram_message)
+    
+    print("\n✅ Done! Check Telegram for prompt.")
+
+if __name__ == "__main__":
+    main()

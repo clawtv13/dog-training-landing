@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{EXCERPT}}">
     <meta name="keywords" content="{{KEYWORDS}}">
-    <title>{{TITLE}} | AI Automation Builder</title>
+    <title>{{TITLE}} | Work Less, Build</title>
     <link rel="canonical" href="{{URL}}">
     
     <!-- Open Graph -->
@@ -20,7 +20,7 @@
     <meta name="twitter:description" content="{{EXCERPT}}">
     
     <!-- Author metadata -->
-    <meta name="author" content="AI Automation Builder">
+    <meta name="author" content="Alex Chen">
     <meta name="article:published_time" content="{{PUBLISHED_ISO}}">
     <meta name="article:modified_time" content="{{MODIFIED_ISO}}">
     <meta name="article:section" content="AI Automation">
@@ -37,15 +37,15 @@
       "datePublished": "{{PUBLISHED_ISO}}",
       "dateModified": "{{MODIFIED_ISO}}",
       "author": {
-        "@type": "Organization",
-        "name": "AI Automation Builder"
+        "@type": "Person",
+        "name": "Alex Chen"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "AI Automation Builder",
+        "name": "Work Less, Build",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://aiautomationbuilder.com/logo.png"
+          "url": "https://workless.build/logo.png"
         }
       },
       "mainEntityOfPage": {
@@ -68,13 +68,13 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://aiautomationbuilder.com/"
+          "item": "https://workless.build/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Posts",
-          "item": "https://aiautomationbuilder.com/#posts"
+          "name": "Articles",
+          "item": "https://workless.build/archive.html"
         },
         {
           "@type": "ListItem",
@@ -86,17 +86,12 @@
     }
     </script>
     
-    <!-- FAQ Schema (if applicable) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": {{FAQ_SCHEMA}}
-    }
-    </script>
-    
     <!-- Alternate RSS Feed -->
-    <link rel="alternate" type="application/rss+xml" title="AI Automation Builder RSS Feed" href="https://aiautomationbuilder.com/rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="Work Less, Build RSS Feed" href="https://workless.build/rss.xml">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -105,52 +100,219 @@
             box-sizing: border-box;
         }
         
+        :root {
+            /* Colors */
+            --dark: #0A0A0B;
+            --lime: #B9FF66;
+            --lime-dark: #9FE054;
+            --white: #FFFFFF;
+            --gray-900: #1A1A1C;
+            --gray-800: #2A2A2C;
+            --gray-700: #3A3A3C;
+            --gray-400: #A1A1AA;
+            --gray-300: #D1D5DB;
+            
+            /* Typography */
+            --font-display: 'Space Grotesk', -apple-system, sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-code: 'JetBrains Mono', monospace;
+            
+            /* Spacing */
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            
+            /* Effects */
+            --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 30px rgba(185, 255, 102, 0.3);
+            --transition: 200ms ease;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.8;
-            color: #1f2937;
-            background: #fff;
+            font-family: var(--font-body);
+            line-height: 1.7;
+            color: var(--white);
+            background: var(--dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 2rem;
-            text-align: center;
+        /* Selection */
+        ::selection {
+            background: var(--lime);
+            color: var(--dark);
         }
         
-        header a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-800);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
-        article {
-            max-width: 800px;
+        .nav-container {
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        .article-meta {
-            color: #6b7280;
-            margin-bottom: 1rem;
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .logo-main {
+            color: var(--white);
+        }
+        
+        .logo-accent {
+            color: var(--lime);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-weight: 500;
             font-size: 0.95rem;
+            transition: var(--transition);
         }
         
+        .nav-links a:hover {
+            color: var(--lime);
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 2rem 0;
+        }
+        
+        .breadcrumb-list {
+            display: flex;
+            list-style: none;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            align-items: center;
+        }
+        
+        .breadcrumb-list a {
+            color: var(--lime);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb-list a:hover {
+            color: var(--lime-dark);
+        }
+        
+        .breadcrumb-separator {
+            color: var(--gray-400);
+        }
+        
+        /* Article Header */
+        .article-header {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            padding: 0 2rem;
+        }
+        
+        .article-category {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--dark);
+            background: var(--lime);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            color: var(--white);
+        }
+        
+        .article-excerpt {
+            font-size: 1.375rem;
+            color: var(--gray-300);
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+        
+        /* Author Card */
         .author-card {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: #f9fafb;
-            border-left: 3px solid #667eea;
-            margin-bottom: 2rem;
-            border-radius: 4px;
+            gap: 1.25rem;
+            padding: 1.75rem;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            transition: var(--transition);
+        }
+        
+        .author-card:hover {
+            border-color: var(--lime);
         }
         
         .author-avatar {
-            font-size: 2.5rem;
-            line-height: 1;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lime), #10B981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-weight: 800;
+            font-size: 1.5rem;
+            flex-shrink: 0;
         }
         
         .author-info {
@@ -158,263 +320,671 @@
         }
         
         .author-name {
-            font-weight: 600;
-            color: #1f2937;
-            font-size: 1rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--white);
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
         }
         
         .author-title {
-            color: #6b7280;
-            font-size: 0.9rem;
-            margin-top: 0.2rem;
+            color: var(--gray-400);
+            font-size: 0.95rem;
         }
         
-        article h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #111827;
-            line-height: 1.2;
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            margin-left: auto;
+        }
+        
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+        
+        /* Article Content */
+        article {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
         }
         
         article h2 {
-            font-size: 1.8rem;
-            margin: 2rem 0 1rem;
-            color: #1f2937;
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            color: var(--white);
+            letter-spacing: -0.01em;
+            line-height: 1.2;
         }
         
         article h3 {
-            font-size: 1.4rem;
-            margin: 1.5rem 0 0.5rem;
-            color: #374151;
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            color: var(--white);
+            line-height: 1.3;
+        }
+        
+        article h4 {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin: 2rem 0 0.75rem;
+            color: var(--white);
         }
         
         article p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: #374151;
+            margin-bottom: 1.75rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--gray-300);
+        }
+        
+        article strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        article em {
+            font-style: italic;
+            color: var(--lime);
         }
         
         article ul, article ol {
-            margin: 1.5rem 0 1.5rem 2rem;
+            margin: 2rem 0;
+            padding-left: 2rem;
         }
         
         article li {
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--gray-300);
+        }
+        
+        article li::marker {
+            color: var(--lime);
+        }
+        
+        article a {
+            color: var(--lime);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        article a:hover {
+            border-bottom-color: var(--lime);
         }
         
         article code {
-            background: #f3f4f6;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
+            font-family: var(--font-code);
+            background: var(--gray-900);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
             font-size: 0.95em;
-            font-family: 'Courier New', monospace;
+            color: var(--lime);
+            border: 1px solid var(--gray-800);
         }
         
         article pre {
-            background: #1f2937;
-            color: #f9fafb;
-            padding: 1.5rem;
-            border-radius: 8px;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            padding: 2rem;
+            border-radius: 12px;
             overflow-x: auto;
-            margin: 1.5rem 0;
+            margin: 2.5rem 0;
+            line-height: 1.6;
         }
         
         article pre code {
             background: none;
             padding: 0;
-            color: inherit;
+            border: none;
+            color: var(--gray-300);
+            font-size: 0.95rem;
         }
         
-        article a {
-            color: #667eea;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s;
+        article blockquote {
+            border-left: 4px solid var(--lime);
+            padding: 1.75rem 2rem;
+            margin: 2.5rem 0;
+            background: var(--gray-900);
+            border-radius: 0 12px 12px 0;
         }
         
-        article a:hover {
-            border-bottom-color: #667eea;
+        article blockquote p {
+            margin: 0;
+            font-style: italic;
+            color: var(--gray-300);
         }
         
+        /* Post Footer */
         .post-footer {
-            margin: 3rem 0 2rem 0;
-            padding-top: 2rem;
-            border-top: 1px solid #e5e7eb;
-            color: #6b7280;
-        }
-        
-        .post-footer small {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            padding: 2rem 2rem 0;
+            border-top: 1px solid var(--gray-800);
+            color: var(--gray-400);
             font-size: 0.9rem;
         }
         
+        /* Newsletter CTA */
         .newsletter-cta {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 3rem 2rem;
-            border-radius: 12px;
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        
+        .newsletter-card {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 3.5rem 3rem;
             text-align: center;
-            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
         }
         
-        .newsletter-cta h3 {
-            color: white;
+        .newsletter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--lime), #10B981);
+        }
+        
+        .newsletter-card h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            font-size: 1.8rem;
+            color: var(--white);
         }
         
-        .newsletter-cta form {
+        .newsletter-card p {
+            font-size: 1.125rem;
+            color: var(--gray-300);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .newsletter-form {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.75rem;
             max-width: 500px;
-            margin: 1.5rem auto 0;
+            margin: 0 auto;
         }
         
-        .newsletter-cta input {
+        .newsletter-form input {
             flex: 1;
-            padding: 1rem;
-            border: none;
-            border-radius: 8px;
+            padding: 1.125rem 1.5rem;
+            background: var(--dark);
+            border: 2px solid var(--gray-800);
+            border-radius: 12px;
             font-size: 1rem;
+            font-family: inherit;
+            color: var(--white);
+            transition: var(--transition);
         }
         
-        .newsletter-cta button {
-            padding: 1rem 2rem;
-            background: white;
-            color: #667eea;
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--lime);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: var(--gray-400);
+        }
+        
+        .newsletter-form button {
+            padding: 1.125rem 2rem;
+            background: var(--lime);
+            color: var(--dark);
             border: none;
-            border-radius: 8px;
-            font-weight: 600;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
             cursor: pointer;
-            font-size: 1rem;
-            transition: transform 0.2s;
+            transition: var(--transition);
+            white-space: nowrap;
+            font-family: inherit;
         }
         
-        .newsletter-cta button:hover {
+        .newsletter-form button:hover {
+            background: var(--lime-dark);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
         }
         
+        /* Related Posts */
         .related-posts {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 2px solid #e5e7eb;
+            max-width: 1280px;
+            margin: 5rem auto 0;
+            padding: 0 2rem;
         }
         
-        .related-posts h3 {
-            margin-bottom: 1.5rem;
-            color: #111827;
+        .related-header {
+            margin-bottom: 2.5rem;
+        }
+        
+        .related-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+        }
+        
+        .related-subtitle {
+            color: var(--gray-400);
+            font-size: 1.125rem;
         }
         
         .related-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
         }
         
         .related-card {
-            background: #f9fafb;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #e5e7eb;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--lime);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition);
+        }
+        
+        .related-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .related-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--lime);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .related-card-category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--lime);
+            margin-bottom: 1rem;
         }
         
         .related-card h4 {
-            margin-bottom: 0.5rem;
-            color: #1f2937;
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            color: var(--white);
         }
         
-        .related-card a {
-            color: #667eea;
-            font-weight: 600;
-        }
-        
-        footer {
-            background: #1f2937;
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-        
-        footer a {
-            color: #667eea;
+        .related-card h4 a {
+            color: inherit;
             text-decoration: none;
+            transition: color var(--transition);
         }
         
+        .related-card:hover h4 a {
+            color: var(--lime);
+        }
+        
+        .related-card-excerpt {
+            color: var(--gray-400);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+        
+        .related-card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--gray-800);
+        }
+        
+        /* Back Navigation */
+        .back-nav {
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            padding: 0 2rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-400);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .back-link:hover {
+            color: var(--lime);
+            transform: translateX(-4px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            padding: 5rem 2rem 2rem;
+            border-top: 1px solid var(--gray-800);
+            margin-top: 6rem;
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand {
+            max-width: 300px;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-tagline {
+            font-size: 0.875rem;
+            color: var(--lime);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-description {
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social a {
+            width: 42px;
+            height: 42px;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.125rem;
+        }
+        
+        .footer-social a:hover {
+            background: var(--lime);
+            color: var(--dark);
+            border-color: var(--lime);
+            transform: translateY(-3px);
+        }
+        
+        .footer-section h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.875rem;
+        }
+        
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--lime);
+        }
+        
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-800);
+            text-align: center;
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+        
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
+            .nav-container {
+                padding: 1rem 1.5rem;
             }
             
-            article h1 {
-                font-size: 2rem;
+            .nav-links {
+                gap: 1.25rem;
             }
             
-            .newsletter-cta form {
+            .nav-links a:not(:last-child) {
+                display: none;
+            }
+            
+            .article-title {
+                font-size: 2.5rem;
+            }
+            
+            .article-excerpt {
+                font-size: 1.125rem;
+            }
+            
+            .author-card {
                 flex-direction: column;
+                text-align: center;
+            }
+            
+            .article-meta {
+                margin-left: 0;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            article h2 {
+                font-size: 1.875rem;
+            }
+            
+            article h3 {
+                font-size: 1.5rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form button {
+                width: 100%;
+            }
+            
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <a href="/">🤖 AI Automation Builder</a>
-    </header>
-    
-    <nav style="max-width: 800px; margin: 0 auto; padding: 2rem 2rem 0 2rem;">
-        <ol style="display: flex; list-style: none; gap: 0.5rem; font-size: 0.9rem; color: #6b7280;">
-            <li><a href="/" style="color: #667eea; text-decoration: none;">Home</a></li>
-            <li>→</li>
-            <li><a href="/#posts" style="color: #667eea; text-decoration: none;">Posts</a></li>
-            <li>→</li>
-            <li style="color: #1f2937;">{{TITLE_SHORT}}</li>
-        </ol>
-    </nav>
-    
-    <article>
-        <div class="article-meta">
-            {{DATE}} • {{READ_TIME}} min read • {{HN_SCORE}} HN points
-        </div>
-        
-        <h1>{{TITLE}}</h1>
-        
-        <div class="author-card">
-            <div class="author-avatar">{{AUTHOR_AVATAR}}</div>
-            <div class="author-info">
-                <div class="author-name">{{AUTHOR_NAME}}</div>
-                <div class="author-title">{{AUTHOR_TITLE}}</div>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <div class="logo-text">
+                    <span class="logo-main">Work Less</span>
+                    <span class="logo-accent">Build More</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="/archive.html">Articles</a>
+                <a href="/resources.html">Resources</a>
+                <a href="/about.html">About</a>
+                <a href="#newsletter">Subscribe</a>
             </div>
         </div>
+    </nav>
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <ol class="breadcrumb-list">
+            <li><a href="/">Home</a></li>
+            <li class="breadcrumb-separator">→</li>
+            <li><a href="/archive.html">Articles</a></li>
+            <li class="breadcrumb-separator">→</li>
+            <li>{{TITLE_SHORT}}</li>
+        </ol>
+    </div>
+    
+    <!-- Back Navigation -->
+    <div class="back-nav">
+        <a href="/archive.html" class="back-link">← Back to all articles</a>
+    </div>
+    
+    <!-- Article Header -->
+    <div class="article-header">
+        <div class="article-category">AUTOMATION</div>
+        <h1 class="article-title">{{TITLE}}</h1>
+        <p class="article-excerpt">{{EXCERPT}}</p>
         
-        {{CONTENT}}
-        
-        <div class="post-footer">
-            <p><small><strong>Last updated:</strong> {{DATE}} • Originally spotted on Hacker News with {{HN_SCORE}} points</small></p>
+        <div class="author-card">
+            <div class="author-avatar">AC</div>
+            <div class="author-info">
+                <div class="author-name">Alex Chen</div>
+                <div class="author-title">Builder & Automation Architect</div>
+            </div>
+            <div class="article-meta">
+                <span>📅 {{DATE}}</span>
+                <span>⏱️ {{READ_TIME}} min read</span>
+            </div>
         </div>
-        
-        <div class="newsletter-cta">
+    </div>
+    
+    <!-- Article Content -->
+    <article>
+        {{CONTENT}}
+    </article>
+    
+    <div class="post-footer">
+        <p><small><strong>Last updated:</strong> {{DATE}} • Part of the Work Less, Build series on automation for solopreneurs</small></p>
+    </div>
+    
+    <!-- Newsletter CTA -->
+    <div class="newsletter-cta" id="newsletter">
+        <div class="newsletter-card">
             <h3>📬 Get More Like This</h3>
-            <p>Weekly AI automation tools, workflows, and breaking news.<br>Curated for solopreneurs who build.</p>
-            <form action="https://aiautomationbuilder.beehiiv.com/subscribe" method="post">
+            <p>Weekly automation insights for solopreneurs who value their time.<br>Zero hustle. 100% systems.</p>
+            <form class="newsletter-form" action="https://aiautomationbuilder.beehiiv.com/subscribe" method="post">
                 <input type="email" name="email" placeholder="your@email.com" required>
                 <button type="submit">Subscribe Free</button>
             </form>
         </div>
-        
-        <div class="related-posts" id="related-posts">
-            <!-- Related posts loaded dynamically -->
-        </div>
-    </article>
+    </div>
     
+    <!-- Related Posts -->
+    <div class="related-posts" id="related-posts">
+        <!-- Related posts loaded dynamically -->
+    </div>
+    
+    <!-- Footer -->
     <footer>
-        <p><strong>AI Automation Builder</strong></p>
-        <p style="margin: 1rem 0; opacity: 0.8;">Tools and workflows for solopreneurs</p>
-        <p>
-            <a href="/">Home</a> •
-            <a href="https://aiautomationbuilder.beehiiv.com">Newsletter</a> •
-            <a href="https://github.com/yourusername">GitHub</a> •
-            <a href="https://twitter.com/yourusername">Twitter</a>
-        </p>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">Work Less, Build</div>
+                    <div class="footer-tagline">Build systems that run themselves</div>
+                    <p class="footer-description">
+                        Automation insights for solopreneurs who refuse to trade their life for performative productivity.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://twitter.com/worklessbuild" aria-label="Twitter">𝕏</a>
+                        <a href="https://github.com/worklessbuild" aria-label="GitHub">⚡</a>
+                        <a href="/rss.xml" aria-label="RSS">📡</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Content</h4>
+                    <ul class="footer-links">
+                        <li><a href="/archive.html">All Articles</a></li>
+                        <li><a href="/resources.html">Resources</a></li>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/about.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy.html">Privacy</a></li>
+                        <li><a href="/terms.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Work Less, Build. Built by someone who values their time. | workless.build</p>
+            </div>
+        </div>
     </footer>
     
     <script>
@@ -430,18 +1000,29 @@
                 if (related.length > 0) {
                     const container = document.getElementById('related-posts');
                     const html = `
-                        <h3>Related Articles</h3>
+                        <div class="related-header">
+                            <h2 class="related-title">Keep Building</h2>
+                            <p class="related-subtitle">More practical automation insights</p>
+                        </div>
                         <div class="related-grid">
                             ${related.map(post => `
                                 <div class="related-card">
+                                    <div class="related-card-category">AUTOMATION</div>
                                     <h4><a href="${post.url}">${post.title}</a></h4>
-                                    <p style="font-size: 0.9rem; color: #6b7280;">${post.excerpt.substring(0, 100)}...</p>
+                                    <p class="related-card-excerpt">${post.excerpt || 'Practical automation insights for smart builders.'}</p>
+                                    <div class="related-card-meta">
+                                        <span>📅 ${post.date}</span>
+                                        <span>⏱️ ${post.readTime || '5'} min</span>
+                                    </div>
                                 </div>
                             `).join('')}
                         </div>
                     `;
                     container.innerHTML = html;
                 }
+            })
+            .catch(() => {
+                // Silently fail if no posts available
             });
     </script>
 </body>

@@ -1,0 +1,59 @@
+📹 **BOOK TRAILER PACKAGE**
+
+📚 **Book:** Book-2
+🎯 **Formula:** Villain Reveal (90% retention)
+📊 **API Calls:** 2 (saved 66% vs old method)
+
+======================================================================
+
+# VIDEO PROMPT (USE ON ALL PLATFORMS)
+**Copy this to CapCut AI / Runway / Luma:**
+
+```
+0-4s: Funeral chairs, crying man | Audio: dark piano | Text: "Killer AT her funeral"
+
+4-15s: Family photos, suburban house | Audio: soft strings | Text: "Perfect marriage"
+
+15-30s: Police tape, flashing lights | Audio: tension rise | Text: "Attacked in her home"
+
+30-50s: DNA lab, mugshot reveal | Audio: dramatic hit | Text: "34 years hunting... husband's affair partner"
+
+50-60s: Courtroom, handcuffs close-up | Audio: final chord | Text: "DNA exposed truth 👆 Part 2"
+
+STYLE: Fast cuts 2-3s, dark grade, white text/black outline, zoom transitions
+AUDIO: Suspenseful orchestral (royalty-free)
+HASHTAGS: #truecrime #coldhit #DNAsolves #affairgonewrong #coldcase
+TITLE: Killer Attended Victim's Funeral - 34 Year Cold Case
+DESC: Husband's affair partner murdered his wife then comforted him at funeral
+CTA: Follow Part 2
+HOOK: Funeral betrayal + decades-long mystery + DNA twist
+```
+
+**[1,247 characters - CapCut ready]**
+
+======================================================================
+
+# PLATFORM-SPECIFIC METADATA
+
+# TIKTOK METADATA
+Title: 🔍 Killer died 34 years ago... then DNA revealed THIS 😱
+Description: Wait until you hear what forensic science uncovered about this cold case. The truth will shock you! What's your theory? 🧬
+Hashtags: #truecrime #mystery #coldcase #forensics #dnaevidence #unsolved #crimestory
+
+# INSTAGRAM METADATA
+Title: 34 years later, DNA revealed the unthinkable truth 🔬
+Caption: Sometimes justice takes decades to unfold. This forensic breakthrough in Mind Crimes shows how science can rewrite everything we thought we knew about a case. 💔
+Hashtags: #truecrime #coldcase #forensicscience #dnaevidence #justice #crimebooks #mystery #investigation #unsolved #crimestory #truecrimeaddict #crimereads #forensics #crimetok #bookstagram
+
+# YOUTUBE METADATA
+Title: Cold Case DNA Twist: Killer Dead 34 Years, Truth Finally Revealed
+Description: Dive into this shocking forensic investigation from Mind Crimes where DNA evidence uncovered an unbelievable truth about a decades-old case. See how modern science solved what seemed impossible. Book link in bio for the full story and more cases like this.
+Hashtags: #Shorts #truecrime #coldcase #forensicscience #dnaevidence
+Pinned Comment: Get the full Mind Crimes book with this case + more shocking investigations! Link in bio 📖
+
+======================================================================
+
+**Generated:** 2026-04-03 12:31 UTC
+**Total Size:** 2206 characters
+**Ready for:** CapCut AI, Runway, Luma, manual production
+**Deploy:** Use same video on all 3 platforms, customize metadata only

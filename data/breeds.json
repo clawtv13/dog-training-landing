@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Golden Retriever",
+    "slug": "golden-retriever",
+    "traits": ["friendly", "energetic", "trainable"],
+    "energy_level": 4,
+    "trainability": 5,
+    "barking_tendency": 3,
+    "exercise_needs": "high",
+    "size": "large",
+    "temperament": ["friendly", "intelligent", "devoted"],
+    "original_purpose": "hunting companion"
+  },
+  {
+    "name": "German Shepherd",
+    "slug": "german-shepherd",
+    "traits": ["intelligent", "protective", "loyal"],
+    "energy_level": 5,
+    "trainability": 5,
+    "barking_tendency": 4,
+    "exercise_needs": "high",
+    "size": "large",
+    "temperament": ["confident", "courageous", "smart"],
+    "original_purpose": "herding and protection"
+  },
+  {
+    "name": "Labrador Retriever",
+    "slug": "labrador-retriever",
+    "traits": ["gentle", "playful", "obedient"],
+    "energy_level": 5,
+    "trainability": 5,
+    "barking_tendency": 3,
+    "exercise_needs": "high",
+    "size": "large",
+    "temperament": ["outgoing", "even-tempered", "gentle"],
+    "original_purpose": "retrieving game"
+  },
+  {
+    "name": "French Bulldog",
+    "slug": "french-bulldog",
+    "traits": ["playful", "adaptable", "smart"],
+    "energy_level": 2,
+    "trainability": 3,
+    "barking_tendency": 2,
+    "exercise_needs": "low",
+    "size": "small",
+    "temperament": ["affectionate", "patient", "playful"],
+    "original_purpose": "companion dog"
+  },
+  {
+    "name": "Beagle",
+    "slug": "beagle",
+    "traits": ["curious", "friendly", "merry"],
+    "energy_level": 4,
+    "trainability": 3,
+    "barking_tendency": 5,
+    "exercise_needs": "high",
+    "size": "medium",
+    "temperament": ["gentle", "determined", "excitable"],
+    "original_purpose": "scent hunting"
+  },
+  {
+    "name": "Siberian Husky",
+    "slug": "siberian-husky",
+    "traits": ["outgoing", "mischievous", "loyal"],
+    "energy_level": 5,
+    "trainability": 3,
+    "barking_tendency": 4,
+    "exercise_needs": "very high",
+    "size": "large",
+    "temperament": ["outgoing", "gentle", "alert"],
+    "original_purpose": "sled pulling"
+  },
+  {
+    "name": "Border Collie",
+    "slug": "border-collie",
+    "traits": ["intelligent", "energetic", "responsive"],
+    "energy_level": 5,
+    "trainability": 5,
+    "barking_tendency": 4,
+    "exercise_needs": "very high",
+    "size": "medium",
+    "temperament": ["smart", "energetic", "responsive"],
+    "original_purpose": "sheep herding"
+  },
+  {
+    "name": "Australian Shepherd",
+    "slug": "australian-shepherd",
+    "traits": ["smart", "work-oriented", "exuberant"],
+    "energy_level": 5,
+    "trainability": 5,
+    "barking_tendency": 3,
+    "exercise_needs": "very high",
+    "size": "medium",
+    "temperament": ["smart", "work-oriented", "exuberant"],
+    "original_purpose": "herding livestock"
+  },
+  {
+    "name": "Rottweiler",
+    "slug": "rottweiler",
+    "traits": ["loyal", "loving", "confident guardian"],
+    "energy_level": 4,
+    "trainability": 4,
+    "barking_tendency": 3,
+    "exercise_needs": "high",
+    "size": "large",
+    "temperament": ["loyal", "loving", "confident"],
+    "original_purpose": "guarding and herding"
+  },
+  {
+    "name": "Dachshund",
+    "slug": "dachshund",
+    "traits": ["curious", "stubborn", "spunky"],
+    "energy_level": 3,
+    "trainability": 3,
+    "barking_tendency": 5,
+    "exercise_needs": "moderate",
+    "size": "small",
+    "temperament": ["clever", "stubborn", "devoted"],
+    "original_purpose": "badger hunting"
+  }
+]

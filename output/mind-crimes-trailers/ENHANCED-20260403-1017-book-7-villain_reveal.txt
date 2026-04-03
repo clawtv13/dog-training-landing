@@ -1,0 +1,116 @@
+# ENHANCED PROMPT - 20260403-1017-book-7-villain_reveal
+Generated: 2026-04-03 10:34 UTC
+Original: 20260403-1017-book-7-villain_reveal.txt
+
+================================================================================
+
+
+**TIKTOK (ENHANCED):**
+
+# ENHANCED VIRAL TRUE CRIME TRAILER PROMPT (CAPCUT AI OPTIMIZED)
+
+## 1. HOOK
+"The killer sat in the front row at her funeral..."
+
+## 2. SCENE-BY-SCENE BREAKDOWN
+
+**SCENE 1 (0-4s): Shocking Reveal Teaser**
+- VOICEOVER: "The killer attended the victim's funeral... and gave the eulogy."
+- VISUAL: Close-up shot of wooden church podium with microphone, white lilies in foreground, blurred rows of dark-suited mourners in background, soft natural light from stained glass windows, slow zoom into empty podium
+- AUDIO: Somber organ music fading (0-1s), silence (1-2s), single heartbeat sound effect (3-4s)
+- TEXT OVERLAY: "Killer gave her eulogy" (white Impact font, black stroke, appears 1s, centered top-third)
+
+**SCENE 2 (4-15s): Happy Before** 
+- VOICEOVER: "Marjorie thought she had the perfect marriage, the perfect life..."
+- VISUAL SEQUENCE:
+  * (4-8s) Medium shot of framed wedding photo on mantle - bride in white lace dress, groom in navy suit, both smiling, golden frame, soft focus background
+  * (8-11s) Wide shot of suburban two-story brick home with white trim, green lawn, red front door, blue sky, white picket fence visible
+  * (11-15s) Close-up of interlocked hands wearing matching gold wedding bands on white bedsheet, warm afternoon sunlight streaming through window
+- AUDIO: Gentle acoustic guitar melody, major key, 80 BPM
+- TEXT OVERLAY: "Perfect marriage, perfect life" (white Helvetica Bold, appears 6s, fades 14s, centered)
+
+**SCENE 3 (15-30s): The Murder**
+- VOICEOVER: "Then one night, she never came home from work."
+- VISUAL SEQUENCE:
+  * (15-20s) Wide overhead shot of empty office parking lot at night, single streetlight creating yellow pool of light, abandoned silver Honda Accord with driver door open, papers scattered on asphalt
+  * (20-25s) Close-up of red and blue police car lights flashing against dark brick building wall, no sirens, slow rotation
+  * (25-30s) Medium shot of yellow police tape stretched across parking space numbers 23-25, white evidence marker with number "1" in foreground, detective's black shoes visible at edge of frame
+- AUDIO: Low bass drone (15-18s), police radio static burst (20s), silence (21-25s), distant siren fade-in (26-30s)
+- TEXT OVERLAY: "Never came home" (white text, red underline, appears 17s, shakes slightly at 20s)
+
+**SCENE 4 (30-50s): The Betrayal**
+- VOICEOVER: "While police searched for a stranger... the killer was sleeping in her bed."
+- VISUAL: Vertical split screen effect
+  * LEFT SIDE (30-50s): Police officers with flashlights searching wooded area at night, beam sweeps left to right, dark uniforms, yellow "POLICE" text visible on backs, misty fog between trees
+  * RIGHT SIDE (30-40s): Empty unmade bed with white sheets, one pillow indented, bedside lamp on casting warm glow, digital clock showing 2:47 AM in red numbers
+  * RIGHT SIDE (40-50s): Slow push-in on same bed, now showing man's silhouette lying on right side facing away, sheet pulled to shoulders, moonlight from window creating blue tone
+- AUDIO: Overlapping sounds - police radio chatter (left channel), heavy breathing (right channel), 30-50s continuous
+- TEXT OVERLAY: "Sleeping in her bed" (white text splits with screen, left side normal, right side blood-red, appears 35s)
+
+**SCENE 5 (50-60s): CTA + Hook**
+- VOICEOVER: "How did he hide for 6 years?"
+- VISUAL SEQUENCE:
+  * (50-54s) Extreme close-up of gloved hands placing cotton swab into clear evidence tube labeled "DNA SAMPLE" with red biohazard symbol, sterile white laboratory background
+  * (54-57s) Medium shot of silver handcuffs clicking shut on male wrists wearing dark suit jacket, police badge visible in corner, fluorescent overhead lighting
+  * (57-60s) Freeze frame on mugshot-style photo holder with "CASE CLOSED" red stamp appearing diagonally across frame, flash effect at 58s
+- AUDIO: Lab equipment beeping (50-52s), metallic handcuff click (54s), camera shutter sound (58s), triumphant single piano note (59-60s)
+- TEXT OVERLAY: "Hidden for 6 years" (appears 51s) then transforms to "👆 FULL STORY" with upward arrow bouncing animation (56-60s)
+
+## 3. TEXT OVERLAYS (EXACT SPECIFICATIONS)
+
+- Scene 1: "Killer gave her eulogy" - WHITE, Impact font, 72pt, black 4px stroke, center-top position, fade-in 1s, static 1-3.5s, fade-out 3.5-4s
+- Scene 2: "Perfect marriage, perfect life" - WHITE, Helvetica Bold, 64pt, subtle drop shadow, center position, fade-in 6s, static 6-13.5s, fade-out 13.5-15s
+- Scene 3: "Never came home" - WHITE, Anton font, 68pt, red underline 6px, center position, appear 17s with shake effect (3px amplitude), static 17-29s, fade 29-30s
+- Scene 4: "Sleeping in her bed" - WHITE (left)/BLOOD RED #8B0000 (right), Bebas Neue, 70pt, split with screen division, appear 35s, static 35-49s, fade 49-50s
+- Scene 5: "Hidden for 6 years" (51-55s) → "👆 FULL STORY" (56-60s) - WHITE, Impact, 76pt, yellow highlight background, arrow emoji bounces 2px up/down loop
+
+## 4. VISUAL SUGGESTIONS (CAPCUT AI SEARCH TERMS)
+
+- Scene 1: "church funeral podium microphone white lilies mourners pews stained glass", "empty pulpit ceremony", "funeral flowers close-up"
+- Scene 2: "wedding photo frame mantle", "suburban brick house white trim front view", "couple holding hands wedding rings sunlight bed"
+- Scene 3: "empty parking lot night overhead view streetlight", "police car lights flashing brick wall", "yellow crime scene tape evidence marker"
+- Scene 4: "police flashlight search forest night", "empty bed unmade sheets lamp", "person sleeping bed silhouette moonlight"
+- Scene 5: "gloved hands DNA swab test tube laboratory", "handcuffs closing wrists arrest", "case closed stamp file folder"
+
+## 5. AUDIO/MUSIC (EXACT TIMING)
+
+**OPTION A: Custom Suspense Build**
+- 0-4s: Somber organ fade + heartbeat (single thump at 3s)
+- 4-15s: Acoustic guitar, C major, 80 BPM, gentle fingerpicking
+- 15-30s: Bass drone (40Hz), police radio burst at 20s, siren fade 26-30s
+- 30-50s: Dual audio - police radio (left), breathing (right), 4/4 time
+- 50-60s: Lab beeps (2 beeps, 1s apart), handcuff click (54s), shutter (58s), piano note C5 (59s)
+
+**OPTION B: TikTok Trending**
+"Oh No" audio (Kreepa remix) - start at 0:08 timestamp for maximum suspense build, slow version, pitched down -2 semitones
+
+**VOLUME LEVELS:**
+- Voiceover: 100% (priority)
+- Music: 40% (0-15s), 25% (15-50s), 60% (50-60s)
+- Sound effects: 80% (punchy but not overwhelming)
+
+## 6. HASHTAGS
+#truecrime #unsolvedmurder #geneticgenealogy #justice #coldcase #betrayal #mystery
+
+## 7. TITLE
+"He gave her eulogy... then was arrested for her murder 6 years later 😳"
+
+## 8. DESCRIPTION
+"Marjorie's husband fooled everyone for 6 years until genetic genealogy exposed the truth. The betrayal will shock you. Full story in comments 👇 #truecrime #justice"
+
+## 9. PINNED COMMENT
+"Get the full shocking story of how genetic genealogy finally brought justice for Marjorie → Link in bio 📖 The twists will leave you speechless"
+
+---
+
+## CAPCUT AI GENERATION TIPS:
+
+1. **Generate scenes individually** for maximum control
+2. **Use exact search terms** provided in quotation marks
+3. **Layer text overlays** separately with specified timing
+4. **Audio mixing**: Import voiceover first (100%), add music track (adjust volume per scene), add SFX last
+5. **Transitions**: Use 0.3s cross-dissolve between scenes, except Scene 4 (hard cut for split screen impact)
+6. **Color grading**: Scene 1-2 (warm +10), Scene 3-4 (cool -15, desaturate -20), Scene 5 (neutral, high contrast)
+
+================================================================================
+
