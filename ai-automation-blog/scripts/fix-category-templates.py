@@ -367,40 +367,75 @@ def find_subcategories(category_dir):
     
     return sorted(subcats, key=lambda x: x["name"])
 
-def find_posts(category_dir, limit=10):
-    """Find posts in a category (not in subdirectories)"""
+def find_posts(category_dir, limit=20):
+    """Find all posts recursively in a category tree"""
+    import re
     posts = []
     
+    # Get list of known subcategories (directories with their own index.html)
+    subcategory_dirs = set()
     for item in category_dir.iterdir():
-        if item.is_dir() and item.name not in ["scripts"]:
-            post_html = item / "index.html"
-            if post_html.exists():
-                # Check if this is a direct child (not a subcategory)
-                depth = len(item.relative_to(category_dir).parts)
-                if depth == 1:
-                    # Read post to extract title and excerpt
-                    try:
-                        html_content = post_html.read_text()
-                        
-                        # Extract title
-                        import re
-                        title_match = re.search(r'<title>([^|<]+)', html_content)
-                        title = title_match.group(1).strip() if title_match else item.name.replace('-', ' ').title()
-                        
-                        # Extract excerpt from meta description
-                        desc_match = re.search(r'<meta[^>]*name="description"[^>]*content="([^"]+)"', html_content)
-                        excerpt = desc_match.group(1) if desc_match else ""
-                        
-                        posts.append({
-                            "title": title,
-                            "excerpt": excerpt,
-                            "path": str(item.relative_to(BLOG_DIR)),
-                            "url": f"/{item.relative_to(BLOG_DIR)}/"
-                        })
-                    except Exception as e:
-                        print(f"Error reading {post_html}: {e}")
+        if item.is_dir() and (item / "index.html").exists():
+            # Check if it looks like a subcategory (has other posts inside)
+            has_children = any(
+                d.is_dir() and (d / "index.html").exists()
+                for d in item.iterdir()
+                if d.name not in ["scripts", "assets"]
+            )
+            if has_children or item.name in ["llms", "no-code-ai", "automation-platforms", "image-generation", "business-systems"]:
+                subcategory_dirs.add(item)
     
-    return sorted(posts, key=lambda x: x["title"])[:limit]
+    # Find all index.html files recursively
+    for post_html in category_dir.rglob("index.html"):
+        # Skip the category's own index
+        if post_html.parent == category_dir:
+            continue
+        
+        # Skip subcategory index pages
+        if post_html.parent in subcategory_dirs:
+            continue
+        
+        # Skip scripts/assets directories
+        if any(part in ["scripts", "assets"] for part in post_html.parts):
+            continue
+        
+        # This is a post!
+        try:
+            html_content = post_html.read_text()
+            
+            # Extract title and clean it
+            title_match = re.search(r'<title>([^|<]+)', html_content)
+            if title_match:
+                title = title_match.group(1).strip()
+                # Remove " - Work Less, Build" suffix if present
+                title = re.sub(r'\s*-\s*Work Less,?\s*Build$', '', title, flags=re.IGNORECASE)
+            else:
+                title = post_html.parent.name.replace('-', ' ').title()
+            
+            # Extract excerpt from meta description
+            desc_match = re.search(r'<meta[^>]*name="description"[^>]*content="([^"]+)"', html_content)
+            excerpt = desc_match.group(1) if desc_match else ""
+            
+            # Extract date if available (from article or meta)
+            date_str = None
+            date_match = re.search(r'<time[^>]*datetime="([^"]+)"', html_content)
+            if date_match:
+                date_str = date_match.group(1)
+            
+            posts.append({
+                "title": title,
+                "excerpt": excerpt,
+                "path": str(post_html.parent.relative_to(BLOG_DIR)),
+                "url": f"/{post_html.parent.relative_to(BLOG_DIR)}/",
+                "date": date_str or "2025-01-01"  # fallback date
+            })
+        except Exception as e:
+            print(f"  ⚠️  Error reading {post_html}: {e}")
+    
+    # Sort by date (newest first), then by title
+    posts.sort(key=lambda x: (x["date"], x["title"]), reverse=True)
+    
+    return posts[:limit]
 
 def build_breadcrumb(category_path):
     """Build breadcrumb navigation"""
@@ -517,16 +552,22 @@ def main():
     for item in BLOG_DIR.rglob("index.html"):
         # Only category index pages (not homepage, not individual posts)
         if item.parent != BLOG_DIR and item.name == "index.html":
-            # Check if it's a category (has subdirectories with index.html)
             parent = item.parent
+            
+            # Check if it's a category (has subdirectories with index.html)
             has_subdirs = any(
                 (d / "index.html").exists() 
                 for d in parent.iterdir() 
-                if d.is_dir()
+                if d.is_dir() and d.name not in ["scripts", "assets"]
             )
             
-            # Always regenerate category pages
-            if parent.relative_to(BLOG_DIR).parts[0] in ["ai-tools", "solo-founder-strategies"]:
+            # Only process if it's a real category with subdirectories
+            # OR if it's a top-level category (ai-tools, solo-founder-strategies)
+            relative_path = parent.relative_to(BLOG_DIR)
+            is_top_level_category = len(relative_path.parts) == 1 and relative_path.parts[0] in ["ai-tools", "solo-founder-strategies", "case-studies", "tutorials"]
+            is_subcategory = len(relative_path.parts) == 2 and relative_path.parts[0] in ["ai-tools", "solo-founder-strategies"]
+            
+            if (has_subdirs and (is_top_level_category or is_subcategory)) or is_top_level_category:
                 categories_to_fix.append(parent)
     
     # Remove duplicates
