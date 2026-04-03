@@ -1,0 +1,38 @@
+{
+  "deployment_date": "2026-04-03",
+  "deployment_time": "20:53 UTC",
+  "operator": "n0mad via n0body",
+  "pilot_pages": 26,
+  "monitoring_start": "2026-04-03",
+  "decision_date": "2026-05-03",
+  "target_indexation": 0.75,
+  "pilot_urls": [
+    "https://workless.build/comparisons/airtable-vs-notion.html",
+    "https://workless.build/comparisons/claude-vs-chatgpt.html",
+    "https://workless.build/comparisons/cursor-vs-windsurf.html",
+    "https://workless.build/comparisons/make-vs-zapier.html",
+    "https://workless.build/comparisons/midjourney-vs-dalle.html",
+    "https://workless.build/comparisons/notion-vs-obsidian.html",
+    "https://workless.build/comparisons/perplexity-vs-chatgpt.html",
+    "https://workless.build/comparisons/v0-vs-bolt.html",
+    "https://workless.build/use-cases/canva-for-social-media.html",
+    "https://workless.build/use-cases/chatgpt-for-content-writing.html",
+    "https://workless.build/use-cases/chatgpt-for-customer-support.html",
+    "https://workless.build/use-cases/claude-for-coding.html",
+    "https://workless.build/use-cases/cursor-for-coding.html",
+    "https://workless.build/use-cases/make-for-workflow-automation.html",
+    "https://workless.build/use-cases/midjourney-for-product-mockups.html",
+    "https://workless.build/use-cases/notion-for-project-management.html",
+    "https://workless.build/use-cases/perplexity-for-research.html",
+    "https://workless.build/use-cases/v0-for-ui-design.html"
+  ],
+  "metrics": {
+    "total_pages_before": 50,
+    "total_pages_after": 76,
+    "growth_percent": 52,
+    "categories_added": 29,
+    "internal_links_before": "0-2 avg",
+    "internal_links_after": "12.3-26.8 avg",
+    "sitemap_urls": 128
+  }
+}
